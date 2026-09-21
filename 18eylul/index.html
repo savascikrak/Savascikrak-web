@@ -7,10 +7,30 @@
 <meta name="description" content="Savaş Çıkrak eğitim videoları giriş sayfası.">
 <title>18 Eylül | Savaş Çıkrak</title>
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100svh;background:#171717;color:#f4f0ea;font-family:'Helvetica Neue',Arial,sans-serif}.page{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,500px)}.visual{background:linear-gradient(90deg,#0002,#0009),url('../assets/still-life.jpg') center/cover no-repeat}.panel{display:flex;align-items:center;padding:48px clamp(28px,5vw,70px);border-left:1px solid #4a443d}h1{font-size:clamp(2.6rem,4.2vw,4.7rem);font-weight:300;line-height:1.12;letter-spacing:-.04em;margin:0}@media(max-width:760px){.page{display:flex;flex-direction:column}.visual{min-height:35svh;background-position:center 58%}.panel{flex:1;border:0;padding:42px 24px}h1{font-size:clamp(2.7rem,9vw,4rem)}}
+*{box-sizing:border-box}body{margin:0;min-height:100svh;background:#171717;color:#f4f0ea;font-family:'Helvetica Neue',Arial,sans-serif}.page{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,500px)}.visual{background:linear-gradient(90deg,#0002,#0009),url('../assets/still-life.jpg') center/cover no-repeat}.panel{display:flex;align-items:center;padding:48px clamp(28px,5vw,70px);border-left:1px solid #4a443d}h1{font-size:clamp(2.6rem,4.2vw,4.7rem);font-weight:300;line-height:1.12;letter-spacing:-.04em;margin:0}mux-player{display:block;width:100%;max-width:900px;aspect-ratio:16/9}@media(max-width:760px){.page{display:flex;flex-direction:column}.visual{min-height:35svh;background-position:center 58%}.panel{flex:1;border:0;padding:42px 24px}h1{font-size:clamp(2.7rem,9vw,4rem)}}
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@mux/mux-player" defer></script>
 </head>
 <body>
-<main class="page"><div class="visual" role="img" aria-label="Yumurta fotoğrafı"></div><section class="panel"><h1>Videoları görmek için giriş yapın</h1></section></main>
+<main class="page"><div class="visual" role="img" aria-label="Yumurta fotoğrafı"></div><section class="panel" id="video-panel"><h1>Videoları görmek için giriş yapın</h1></section></main>
+<script>
+async function loadVideo() {
+  try {
+    const response = await fetch('/api/playback-token', { credentials: 'same-origin', cache: 'no-store' });
+    if (!response.ok) return;
+    const { playbackId, token } = await response.json();
+    if (!playbackId || !token) return;
+    await customElements.whenDefined('mux-player');
+    const player = document.createElement('mux-player');
+    player.setAttribute('playback-id', playbackId);
+    player.setAttribute('playback-token', token);
+    player.setAttribute('metadata-video-title', '1. GÜN Bölüm 1');
+    document.getElementById('video-panel').replaceChildren(player);
+  } catch {
+    // Keep the sign-in message when playback is unavailable.
+  }
+}
+loadVideo();
+</script>
 </body>
 </html>
