@@ -4,15 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#171717">
-<meta name="description" content="Savaş Çıkrak eğitim videosu.">
-<title>18 Eylül | Savaş Çıkrak</title>
+<meta name="description" content="18-19-20 Eylül Online Ürün Fotoğrafçılığı Atölyesi videoları.">
+<title>18-19-20 Eylül Online Ürün Fotoğrafçılığı Atölyesi | Savaş Çıkrak</title>
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100svh;background:#171717;color:#f4f0ea;font-family:'Helvetica Neue',Arial,sans-serif}.page{min-height:100svh;display:grid;grid-template-columns:minmax(0,1fr) minmax(360px,500px)}.visual{background:linear-gradient(90deg,#0002,#0009),url('../assets/still-life.jpg') center/cover no-repeat}.panel{display:flex;align-items:center;padding:48px clamp(28px,5vw,70px);border-left:1px solid #4a443d}h1{font-size:clamp(2.6rem,4.2vw,4.7rem);font-weight:300;line-height:1.12;letter-spacing:-.04em;margin:0}mux-player{display:block;width:100%;max-width:900px;aspect-ratio:16/9}@media(max-width:760px){.page{display:flex;flex-direction:column}.visual{min-height:35svh;background-position:center 58%}.panel{flex:1;border:0;padding:42px 24px}h1{font-size:clamp(2.7rem,9vw,4rem)}}
+*{box-sizing:border-box}
+body{margin:0;min-height:100svh;background:#171717;color:#f4f0ea;font-family:'Helvetica Neue',Arial,sans-serif}
+.page{width:min(100% - 48px,1080px);margin:0 auto;padding:clamp(48px,8vw,96px) 0 80px}
+h1{max-width:920px;margin:0 0 clamp(28px,5vw,52px);font-size:clamp(2rem,4.4vw,4.2rem);font-weight:400;line-height:1.1;letter-spacing:-.035em}
+.video-panel{width:100%}
+.video-panel p{margin:0;color:#c8c1b8;font-size:1.05rem}
+mux-player{display:block;width:100%;aspect-ratio:16/9}
+@media(max-width:760px){.page{width:min(100% - 32px,1080px);padding:40px 0 56px}h1{font-size:clamp(1.8rem,8vw,3rem);margin-bottom:28px}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player" defer></script>
 </head>
 <body>
-<main class="page"><div class="visual" role="img" aria-label="Yumurta fotoğrafı"></div><section class="panel" id="video-panel"><h1>Video yükleniyor…</h1></section></main>
+<main class="page"><h1>18-19-20 EYLÜL ONLINE ÜRÜN FOTOĞRAFÇILIĞI ATÖLYESİ</h1><section class="video-panel" id="video-panel" aria-label="Atölye videosu"><p>Video yükleniyor…</p></section></main>
 <script>
 async function loadVideo() {
   try {
@@ -27,7 +34,7 @@ async function loadVideo() {
     player.setAttribute('metadata-video-title', '1. GÜN Bölüm 1');
     document.getElementById('video-panel').replaceChildren(player);
   } catch {
-    document.getElementById('video-panel').replaceChildren(Object.assign(document.createElement('h1'), { textContent: 'Video şu anda açılamıyor.' }));
+    document.getElementById('video-panel').replaceChildren(Object.assign(document.createElement('p'), { textContent: 'Video şu anda açılamıyor.' }));
   }
 }
 loadVideo();
