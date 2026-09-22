@@ -40,6 +40,7 @@ h1{margin:0;color:var(--gold);font-size:clamp(1.45rem,2.7vw,2.15rem);font-weight
 .play-icon{position:relative;z-index:1;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#111c;border:1px solid #fff;font-size:1.5rem;padding-left:4px}
 .play-button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
 mux-player{display:block;width:100%;height:100%;aspect-ratio:16/9}
+.player-slot iframe{display:block;width:100%;height:100%;border:0}
 .status{padding:4px 22px;color:#615c54}
 .login-dialog{width:min(100% - 32px,430px);border:1px solid #ddd;padding:0;background:#fff;color:var(--ink);box-shadow:0 24px 80px #0005}
 .login-dialog::backdrop{background:#000a}
@@ -100,6 +101,11 @@ const form = document.getElementById('login-form');
 const error = document.getElementById('login-error');
 let loggedIn = false;
 let activePlayer;
+const vimeoVideo = {
+  title: 'CaptureOne',
+  kind: 'vimeo',
+  poster: 'https://i.vimeocdn.com/video/2073862961-da07f72adc13de43fafb3d3ae9bc914df7755dcd069ba2984d850d701a4aae76-d_960?region=us',
+};
 
 function showGuest() {
   loggedIn = false;
@@ -144,8 +150,19 @@ function playButton(video, slot) {
   icon.setAttribute('aria-hidden', 'true');
   icon.textContent = '▶';
   button.append(icon);
-  button.addEventListener('click', () => loadPlayer(video, slot));
+  button.addEventListener('click', () => video.kind === 'vimeo' ? loadVimeo(slot) : loadPlayer(video, slot));
   return button;
+}
+
+function loadVimeo(slot) {
+  if (activePlayer) activePlayer.pause();
+  const player = document.createElement('iframe');
+  player.src = 'https://player.vimeo.com/video/1130241137?badge=0&autopause=0&player_id=0&app_id=58479';
+  player.title = 'CaptureOne videosu';
+  player.allow = 'autoplay; fullscreen; picture-in-picture';
+  player.allowFullscreen = true;
+  player.referrerPolicy = 'strict-origin-when-cross-origin';
+  slot.replaceChildren(player);
 }
 
 async function loadPlayer(video, slot) {
@@ -179,7 +196,7 @@ async function loadVideos() {
     if (!response.ok) throw new Error('Videos unavailable');
     const { videos } = await response.json();
     if (!Array.isArray(videos) || !videos.length) throw new Error('Videos unavailable');
-    grid.replaceChildren(...videos.map((video) => {
+    grid.replaceChildren(...[...videos, vimeoVideo].map((video) => {
       const card = document.createElement('article');
       card.className = 'video-card';
       const title = document.createElement('h2');
