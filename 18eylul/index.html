@@ -39,7 +39,7 @@ h1{margin:0;color:var(--gold);font-size:clamp(1.45rem,2.7vw,2.15rem);font-weight
 .play-button:hover img,.play-button:focus-visible img{transform:scale(1.025);opacity:1}
 .play-icon{position:relative;z-index:1;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#111c;border:1px solid #fff;font-size:1.5rem;padding-left:4px}
 .play-button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
-mux-player{display:block;width:100%;height:100%;aspect-ratio:16/9}
+mux-player{display:block;width:100%;height:100%;aspect-ratio:16/9;--seek-backward-button:block;--seek-forward-button:block}
 .player-slot iframe{display:block;width:100%;height:100%;border:0}
 .status{padding:4px 22px;color:#615c54}
 .login-dialog{width:min(100% - 32px,430px);border:1px solid #ddd;padding:0;background:#fff;color:var(--ink);box-shadow:0 24px 80px #0005}
@@ -179,6 +179,8 @@ async function loadPlayer(video, slot) {
     player.setAttribute('playback-id', playbackId);
     player.setAttribute('playback-token', token);
     player.setAttribute('metadata-video-title', video.title);
+    player.setAttribute('backward-seek-offset', '10');
+    player.setAttribute('forward-seek-offset', '10');
     player.setAttribute('preload', 'none');
     slot.replaceChildren(player);
     activePlayer = player;
