@@ -6,126 +6,94 @@
 <meta name="theme-color" content="#171717">
 <meta name="description" content="18-19-20 Eylül Online Ürün Fotoğrafçılığı Atölyesi videoları.">
 <title>18-19-20 Eylül Online Ürün Fotoğrafçılığı Atölyesi | Savaş Çıkrak</title>
-
 <style>
 *{box-sizing:border-box}
-
-body{
-  margin:0;
-  min-height:100svh;
-  background:#171717;
-  color:#f4f0ea;
-  font-family:'Helvetica Neue',Arial,sans-serif
-}
-
-.page{
-  width:min(100% - 48px,1080px);
-  margin:0 auto;
-  padding:clamp(48px,8vw,96px) 0 80px
-}
-
-h1{
-  max-width:920px;
-  margin:0 0 clamp(28px,5vw,52px);
-  font-size:clamp(2rem,4.4vw,4.2rem);
-  font-weight:400;
-  line-height:1.1;
-  letter-spacing:-.035em
-}
-
-.video-title{
-  margin:0 0 16px;
-  font-size:clamp(1.15rem,2vw,1.5rem);
-  font-weight:500;
-  line-height:1.2;
-  letter-spacing:.01em
-}
-
-.video-panel{
-  width:100%
-}
-
-.video-panel p{
-  margin:0;
-  color:#c8c1b8;
-  font-size:1.05rem
-}
-
-mux-player{
-  display:block;
-  width:100%;
-  aspect-ratio:16/9
-}
-
-@media(max-width:760px){
-  .page{
-    width:min(100% - 32px,1080px);
-    padding:40px 0 56px
-  }
-
-  h1{
-    font-size:clamp(1.8rem,8vw,3rem);
-    margin-bottom:28px
-  }
-
-  .video-title{
-    margin-bottom:12px
-  }
-}
+body{margin:0;min-height:100svh;background:#171717;color:#f4f0ea;font-family:'Helvetica Neue',Arial,sans-serif}
+.page{width:min(100% - 48px,1200px);margin:0 auto;padding:clamp(48px,8vw,96px) 0 80px}
+h1{max-width:1020px;margin:0 0 clamp(36px,5vw,60px);font-size:clamp(2rem,4.4vw,4.2rem);font-weight:400;line-height:1.1;letter-spacing:-.035em}
+.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,4vw,52px) 24px}
+.video-card{min-width:0}
+.video-card h2{margin:0 0 14px;font-size:clamp(1rem,1.8vw,1.3rem);font-weight:500;letter-spacing:.035em}
+.player-slot{width:100%;aspect-ratio:16/9;background:#0d0d0d;display:grid;place-items:center;overflow:hidden}
+.player-slot p{margin:0;color:#c8c1b8;font-size:1rem;text-align:center;padding:20px}
+.play-button{width:100%;height:100%;border:1px solid #44403b;background:linear-gradient(145deg,#25231f,#111);color:#f4f0ea;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;cursor:pointer;font:inherit;font-size:1rem}
+.play-button:hover,.play-button:focus-visible{background:linear-gradient(145deg,#332f29,#171717);outline:2px solid #f4f0ea;outline-offset:-3px}
+.play-icon{display:grid;place-items:center;width:68px;height:68px;border:1px solid #f4f0ea;border-radius:50%;font-size:1.6rem;padding-left:4px}
+mux-player{display:block;width:100%;height:100%;aspect-ratio:16/9}
+.status{margin:0;color:#c8c1b8}
+@media(max-width:760px){.page{width:min(100% - 32px,1200px);padding:40px 0 56px}h1{font-size:clamp(1.8rem,8vw,3rem);margin-bottom:36px}.video-grid{grid-template-columns:1fr;gap:32px}.video-card h2{font-size:1.1rem}}
 </style>
-
 <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player" defer></script>
 </head>
-
 <body>
-
 <main class="page">
-
   <h1>18-19-20 EYLÜL ONLINE ÜRÜN FOTOĞRAFÇILIĞI ATÖLYESİ</h1>
-
-  <h2 class="video-title">1. GÜN — BÖLÜM 1</h2>
-
-  <section class="video-panel" id="video-panel" aria-label="Atölye videosu">
-    <p>Video yükleniyor…</p>
-  </section>
-
+  <div class="video-grid" id="video-grid"><p class="status">Videolar yükleniyor…</p></div>
 </main>
-
 <script>
-async function loadVideo() {
+let activePlayer;
+
+function playButton(video, slot) {
+  const button = document.createElement('button');
+  button.className = 'play-button';
+  button.type = 'button';
+  button.setAttribute('aria-label', `${video.title} videosunu oynat`);
+  const icon = document.createElement('span');
+  icon.className = 'play-icon';
+  icon.setAttribute('aria-hidden', 'true');
+  icon.textContent = '▶';
+  const label = document.createElement('span');
+  label.textContent = 'Videoyu oynat';
+  button.append(icon, label);
+  button.addEventListener('click', () => loadPlayer(video, slot));
+  return button;
+}
+
+async function loadPlayer(video, slot) {
+  slot.replaceChildren(Object.assign(document.createElement('p'), { textContent: 'Video yükleniyor…' }));
   try {
-    const response = await fetch('/api/playback-token', {
-      credentials: 'same-origin',
-      cache: 'no-store'
-    });
-
+    const response = await fetch(`/api/playback-token?video=${encodeURIComponent(video.key)}`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Playback unavailable');
-
     const { playbackId, token } = await response.json();
-
     if (!playbackId || !token) throw new Error('Playback unavailable');
-
     await customElements.whenDefined('mux-player');
-
+    if (activePlayer) activePlayer.pause();
     const player = document.createElement('mux-player');
-
     player.setAttribute('playback-id', playbackId);
     player.setAttribute('playback-token', token);
-    player.setAttribute('metadata-video-title', '1. GÜN Bölüm 1');
-
-    document.getElementById('video-panel').replaceChildren(player);
-
+    player.setAttribute('metadata-video-title', video.title);
+    player.setAttribute('preload', 'none');
+    slot.replaceChildren(player);
+    activePlayer = player;
   } catch {
-    document.getElementById('video-panel').replaceChildren(
-      Object.assign(document.createElement('p'), {
-        textContent: 'Video şu anda açılamıyor.'
-      })
-    );
+    slot.replaceChildren(playButton(video, slot));
   }
 }
 
-loadVideo();
-</script>
+async function loadVideos() {
+  const grid = document.getElementById('video-grid');
+  try {
+    const response = await fetch('/api/playback-token', { cache: 'no-store' });
+    if (!response.ok) throw new Error('Videos unavailable');
+    const { videos } = await response.json();
+    if (!Array.isArray(videos) || !videos.length) throw new Error('Videos unavailable');
+    grid.replaceChildren(...videos.map((video) => {
+      const card = document.createElement('article');
+      card.className = 'video-card';
+      const title = document.createElement('h2');
+      title.textContent = video.title;
+      const slot = document.createElement('div');
+      slot.className = 'player-slot';
+      slot.append(playButton(video, slot));
+      card.append(title, slot);
+      return card;
+    }));
+  } catch {
+    grid.replaceChildren(Object.assign(document.createElement('p'), { className: 'status', textContent: 'Videolar şu anda açılamıyor.' }));
+  }
+}
 
+loadVideos();
+</script>
 </body>
 </html>
