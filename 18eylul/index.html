@@ -3,48 +3,147 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#171717">
-<meta name="description" content="18-19-20 Eylül Online Ürün Fotoğrafçılığı Atölyesi videoları.">
-<title>18-19-20 Eylül Online Ürün Fotoğrafçılığı Atölyesi | Savaş Çıkrak</title>
+<meta name="theme-color" content="#111111">
+<meta name="description" content="18, 19 ve 20 Eylül Online Ürün Fotoğrafçılığı Atölyesi.">
+<title>Online Ürün Fotoğrafçılığı Atölyesi | Savaş Çıkrak</title>
 <style>
+:root{color-scheme:light;--ink:#171717;--gold:#967e50;--paper:#f4f5f7;--line:#dfe1e4}
 *{box-sizing:border-box}
-body{margin:0;min-height:100svh;background:#171717;color:#f4f0ea;font-family:'Helvetica Neue',Arial,sans-serif}
-.page{width:min(100% - 48px,1200px);margin:0 auto;padding:clamp(48px,8vw,96px) 0 80px}
-h1{max-width:1020px;margin:0 0 clamp(36px,5vw,60px);font-size:clamp(2rem,4.4vw,4.2rem);font-weight:400;line-height:1.1;letter-spacing:-.035em}
-.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(32px,4vw,52px) 24px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:'Helvetica Neue',Arial,sans-serif}
+button,input{font:inherit}
+.site-header{background:#0e0e0e;color:#fff}
+.header-inner{width:min(100% - 48px,1200px);min-height:126px;margin:auto;display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:24px 0}
+.brand{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;line-height:1.1}
+.brand strong{font-size:clamp(1.25rem,2vw,1.55rem);font-weight:650;letter-spacing:.015em}
+.brand span{font-size:.94rem;font-weight:500;letter-spacing:.04em}
+.header-button{border:1px solid #888;background:transparent;color:#fff;padding:10px 22px;margin-top:4px;min-width:90px;cursor:pointer;font-weight:600}
+.header-button:hover,.header-button:focus-visible{border-color:#fff;background:#262626}
+main{width:min(100% - 48px,1200px);margin:16px auto 0}
+.title-block{min-height:160px;padding:36px 32px;background:#fff;border:1px solid #d9dcdf}
+h1{margin:0;color:var(--gold);font-size:clamp(1.45rem,2.7vw,2.15rem);font-weight:750;line-height:1.2;letter-spacing:.005em}
+.title-rule{display:block;width:52px;height:3px;background:#c89b4a;margin-top:24px}
+.content-block{background:#fff;min-height:420px;padding:36px 0 72px}
+.guest-view{min-height:350px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:32px}
+.guest-view h2{margin:0 0 28px;font-size:clamp(1.55rem,3vw,2.35rem);font-weight:450;line-height:1.25}
+.primary-button{border:0;background:var(--gold);color:#fff;padding:15px 36px;min-width:160px;cursor:pointer;font-weight:700;letter-spacing:.02em}
+.primary-button:hover,.primary-button:focus-visible{background:#78633e}
+.primary-button:disabled{opacity:.55;cursor:wait}
+.video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px 28px;padding:0 22px}
 .video-card{min-width:0}
-.video-card h2{margin:0 0 14px;font-size:clamp(1rem,1.8vw,1.3rem);font-weight:500;letter-spacing:.035em}
-.player-slot{width:100%;aspect-ratio:16/9;background:#0d0d0d;display:grid;place-items:center;overflow:hidden}
-.player-slot p{margin:0;color:#c8c1b8;font-size:1rem;text-align:center;padding:20px}
-.play-button{width:100%;height:100%;border:1px solid #44403b;background:linear-gradient(145deg,#25231f,#111);color:#f4f0ea;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;cursor:pointer;font:inherit;font-size:1rem}
-.play-button:hover,.play-button:focus-visible{background:linear-gradient(145deg,#332f29,#171717);outline:2px solid #f4f0ea;outline-offset:-3px}
-.play-icon{display:grid;place-items:center;width:68px;height:68px;border:1px solid #f4f0ea;border-radius:50%;font-size:1.6rem;padding-left:4px}
+.video-card h2{margin:0 0 12px;font-size:clamp(1.08rem,1.65vw,1.32rem);font-weight:700;letter-spacing:.01em}
+.player-slot{width:100%;aspect-ratio:16/9;background:#101010;display:grid;place-items:center;overflow:hidden}
+.player-slot p{margin:0;color:#fff;text-align:center;padding:20px}
+.play-button{position:relative;width:100%;height:100%;padding:0;border:0;background:#161616;color:#fff;cursor:pointer;display:grid;place-items:center;overflow:hidden}
+.play-button img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.86;transition:transform .3s,opacity .3s}
+.play-button:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,#0007)}
+.play-button:hover img,.play-button:focus-visible img{transform:scale(1.025);opacity:1}
+.play-icon{position:relative;z-index:1;display:grid;place-items:center;width:70px;height:70px;border-radius:50%;background:#111c;border:1px solid #fff;font-size:1.5rem;padding-left:4px}
+.play-button:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
 mux-player{display:block;width:100%;height:100%;aspect-ratio:16/9}
-.status{margin:0;color:#c8c1b8}
-@media(max-width:760px){.page{width:min(100% - 32px,1200px);padding:40px 0 56px}h1{font-size:clamp(1.8rem,8vw,3rem);margin-bottom:36px}.video-grid{grid-template-columns:1fr;gap:32px}.video-card h2{font-size:1.1rem}}
+.status{padding:4px 22px;color:#615c54}
+.login-dialog{width:min(100% - 32px,430px);border:1px solid #ddd;padding:0;background:#fff;color:var(--ink);box-shadow:0 24px 80px #0005}
+.login-dialog::backdrop{background:#000a}
+.dialog-inner{padding:32px}
+.dialog-top{display:flex;justify-content:space-between;align-items:start;gap:16px}
+.dialog-top h2{margin:0 0 24px;font-size:1.65rem}
+.close-button{border:0;background:transparent;font-size:1.7rem;line-height:1;cursor:pointer}
+.login-form{display:grid;gap:16px}
+.login-form label{display:grid;gap:7px;font-weight:600;font-size:.9rem}
+.login-form input{width:100%;padding:12px;border:1px solid #bcbcbc;border-radius:0;background:#fff;color:var(--ink);font-size:1rem}
+.login-form input:focus{outline:2px solid var(--gold);outline-offset:1px}
+.login-error{min-height:1.1em;margin:0;color:#ad2828;font-size:.9rem}
+.login-form .primary-button{width:100%}
+[hidden]{display:none!important}
+@media(max-width:760px){.header-inner{width:min(100% - 32px,1200px);min-height:102px;padding:20px 0}.brand strong{font-size:1.2rem}.brand span{font-size:.82rem}.header-button{padding:9px 15px;min-width:74px}main{width:100%;margin:12px 0 0}.title-block{min-height:135px;padding:26px 20px;margin:0 12px}h1{font-size:clamp(1.35rem,5.6vw,1.9rem)}.title-rule{margin-top:20px}.content-block{padding:24px 0 54px}.guest-view{min-height:350px}.video-grid{grid-template-columns:1fr;gap:30px;padding:0 12px}.video-card h2{padding:0 2px}}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player" defer></script>
 </head>
 <body>
-<main class="page">
-  <h1>18-19-20 EYLÜL ONLINE ÜRÜN FOTOĞRAFÇILIĞI ATÖLYESİ</h1>
-  <div class="video-grid" id="video-grid"><p class="status">Videolar yükleniyor…</p></div>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="/18eylul/" aria-label="Savaş Çıkrak Online Eğitim"><strong>SAVAŞ ÇIKRAK</strong><span>ONLINE EĞİTİM</span></a>
+    <button class="header-button" id="auth-button" type="button">Giriş</button>
+  </div>
+</header>
+<main>
+  <section class="title-block" aria-labelledby="workshop-title">
+    <h1 id="workshop-title">ONLİNE ÜRÜN FOTOĞRAFÇILIĞI - 18/19/20 EYLÜL</h1>
+    <span class="title-rule" aria-hidden="true"></span>
+  </section>
+  <section class="content-block">
+    <div class="guest-view" id="guest-view" hidden>
+      <h2>Videoları izlemek için giriş yapın</h2>
+      <button class="primary-button" id="guest-login-button" type="button">Giriş</button>
+    </div>
+    <div id="member-view" hidden><div class="video-grid" id="video-grid"></div></div>
+    <p class="status" id="loading-view">Sayfa yükleniyor…</p>
+  </section>
 </main>
+<dialog class="login-dialog" id="login-dialog" aria-labelledby="login-title">
+  <div class="dialog-inner">
+    <div class="dialog-top"><h2 id="login-title">Eğitime giriş</h2><button class="close-button" id="close-login" type="button" aria-label="Kapat">×</button></div>
+    <form class="login-form" id="login-form">
+      <label>Kullanıcı adı<input id="username" name="username" autocomplete="username" required></label>
+      <label>Şifre<input id="password" name="password" type="password" autocomplete="current-password" required></label>
+      <p class="login-error" id="login-error" role="alert"></p>
+      <button class="primary-button" id="submit-login" type="submit">Giriş yap</button>
+    </form>
+  </div>
+</dialog>
 <script>
+const authButton = document.getElementById('auth-button');
+const guestView = document.getElementById('guest-view');
+const memberView = document.getElementById('member-view');
+const loadingView = document.getElementById('loading-view');
+const dialog = document.getElementById('login-dialog');
+const form = document.getElementById('login-form');
+const error = document.getElementById('login-error');
+let loggedIn = false;
 let activePlayer;
+
+function showGuest() {
+  loggedIn = false;
+  if (activePlayer) activePlayer.pause();
+  activePlayer = null;
+  document.getElementById('video-grid').replaceChildren();
+  authButton.textContent = 'Giriş';
+  loadingView.hidden = true;
+  memberView.hidden = true;
+  guestView.hidden = false;
+}
+
+function showMember() {
+  loggedIn = true;
+  authButton.textContent = 'Çıkış';
+  loadingView.hidden = true;
+  guestView.hidden = true;
+  memberView.hidden = false;
+  loadVideos();
+}
+
+function openLogin() {
+  error.textContent = '';
+  dialog.showModal();
+  document.getElementById('username').focus();
+}
 
 function playButton(video, slot) {
   const button = document.createElement('button');
   button.className = 'play-button';
   button.type = 'button';
   button.setAttribute('aria-label', `${video.title} videosunu oynat`);
+  if (video.poster) {
+    const image = document.createElement('img');
+    image.src = video.poster;
+    image.alt = '';
+    image.loading = 'lazy';
+    button.append(image);
+  }
   const icon = document.createElement('span');
   icon.className = 'play-icon';
   icon.setAttribute('aria-hidden', 'true');
   icon.textContent = '▶';
-  const label = document.createElement('span');
-  label.textContent = 'Videoyu oynat';
-  button.append(icon, label);
+  button.append(icon);
   button.addEventListener('click', () => loadPlayer(video, slot));
   return button;
 }
@@ -53,6 +152,7 @@ async function loadPlayer(video, slot) {
   slot.replaceChildren(Object.assign(document.createElement('p'), { textContent: 'Video yükleniyor…' }));
   try {
     const response = await fetch(`/api/playback-token?video=${encodeURIComponent(video.key)}`, { cache: 'no-store' });
+    if (response.status === 401) return showGuest();
     if (!response.ok) throw new Error('Playback unavailable');
     const { playbackId, token } = await response.json();
     if (!playbackId || !token) throw new Error('Playback unavailable');
@@ -72,8 +172,10 @@ async function loadPlayer(video, slot) {
 
 async function loadVideos() {
   const grid = document.getElementById('video-grid');
+  grid.replaceChildren(Object.assign(document.createElement('p'), { className: 'status', textContent: 'Videolar yükleniyor…' }));
   try {
     const response = await fetch('/api/playback-token', { cache: 'no-store' });
+    if (response.status === 401) return showGuest();
     if (!response.ok) throw new Error('Videos unavailable');
     const { videos } = await response.json();
     if (!Array.isArray(videos) || !videos.length) throw new Error('Videos unavailable');
@@ -93,7 +195,51 @@ async function loadVideos() {
   }
 }
 
-loadVideos();
+async function checkSession() {
+  try {
+    const response = await fetch('/api/session', { cache: 'no-store' });
+    const session = await response.json();
+    if (response.ok && session.loggedIn) return showMember();
+  } catch {}
+  showGuest();
+}
+
+authButton.addEventListener('click', async () => {
+  if (!loggedIn) return openLogin();
+  try {
+    const response = await fetch('/api/logout', { method: 'POST' });
+    if (!response.ok) throw new Error('Logout unavailable');
+    showGuest();
+  } catch {
+    authButton.textContent = 'Tekrar dene';
+  }
+});
+document.getElementById('guest-login-button').addEventListener('click', openLogin);
+document.getElementById('close-login').addEventListener('click', () => dialog.close());
+dialog.addEventListener('close', () => { form.reset(); error.textContent = ''; });
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const submit = document.getElementById('submit-login');
+  submit.disabled = true;
+  error.textContent = '';
+  try {
+    const response = await fetch('/api/login', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        username: form.elements.namedItem('username').value,
+        password: form.elements.namedItem('password').value,
+      }),
+    });
+    if (!response.ok) throw new Error(response.status === 401 ? 'Kullanıcı adı veya şifre hatalı.' : 'Giriş şu anda yapılamıyor.');
+    dialog.close();
+    showMember();
+  } catch (problem) {
+    error.textContent = problem.message;
+  } finally {
+    submit.disabled = false;
+  }
+});
+checkSession();
 </script>
 </body>
 </html>

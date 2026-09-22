@@ -1,3 +1,5 @@
+import { allowedHost, json, validSession } from '../_lib/auth.js';
+
 const VIDEOS = [
   { key: "day1-part1", title: "1. GÜN - BÖLÜM 1", playbackId: "EgT4a011HEPoEzW1ARqAN1R2iVqiMLchb4UIGke9nN4s" },
   { key: "day1-part2", title: "1. GÜN - BÖLÜM 2", playbackId: "8l33fSS2MVYItAz01KvNCnT2P8cl00179bBFIcG2uY9bs" },
@@ -10,8 +12,6 @@ const VIDEOS = [
   { key: "day3-part2", title: "3. GÜN - BÖLÜM 2", playbackId: "2EK01Zfu17IZErUUWS8TNyVf4OwVilDg6IZokzfZk00ls" },
   { key: "day3-part3", title: "3. GÜN - BÖLÜM 3", playbackId: "jtsNiLqHSp6dsuhEZJ01zkCsYev3nlu5A102EJh7xEajA" },
 ];
-const ALLOWED_HOSTS = new Set(["savascikrak.com", "www.savascikrak.com"]);
-
 function encodeBase64Url(bytes) {
   let binary = "";
   for (const byte of bytes) binary += String.fromCharCode(byte);
@@ -29,7 +29,7 @@ function asn1(tag, bytes) {
   return Uint8Array.from([tag, ...length, ...bytes]);
 }
 
-async function signMuxToken(keyId, privateKeyBase64, restrictionId, playbackId) {
+async function muxSigningKey(privateKeyBase64) {
   const pem = atob(privateKeyBase64);
   const pkcs1 = pem.includes("BEGIN RSA PRIVATE KEY");
   const der = Uint8Array.from(
@@ -38,15 +38,19 @@ async function signMuxToken(keyId, privateKeyBase64, restrictionId, playbackId) 
   );
   const algorithm = Uint8Array.from([0x30, 0x0d, 0x06, 0x09, 0x2a, 0x86, 0x48, 0x86, 0xf7, 0x0d, 0x01, 0x01, 0x01, 0x05, 0x00]);
   const privateKeyDer = pkcs1 ? asn1(0x30, Uint8Array.from([0x02, 0x01, 0x00, ...algorithm, ...asn1(0x04, der)])) : der;
-  const privateKey = await crypto.subtle.importKey(
+  return crypto.subtle.importKey(
     "pkcs8", privateKeyDer, { name: "RSASSA-PKCS1-v1_5", hash: "SHA-256" }, false, ["sign"]
   );
+}
+
+async function signMuxToken(keyId, privateKey, restrictionId, playbackId, audience, extraClaims = {}) {
   const header = jsonPart({ alg: "RS256", typ: "JWT", kid: keyId });
   const payload = jsonPart({
     sub: playbackId,
-    aud: "v",
-    exp: Math.floor(Date.now() / 1000) + 2 * 60 * 60,
+    aud: audience,
+    exp: Math.floor(Date.now() / 1000) + (audience === 'v' ? 3 : 1) * 60 * 60,
     playback_restriction_id: restrictionId,
+    ...extraClaims,
   });
   const input = `${header}.${payload}`;
   const signature = new Uint8Array(await crypto.subtle.sign(
@@ -56,33 +60,33 @@ async function signMuxToken(keyId, privateKeyBase64, restrictionId, playbackId) 
 }
 
 export async function onRequestGet({ request, env }) {
-  const noStore = { "Cache-Control": "no-store", "Content-Type": "application/json; charset=utf-8" };
   const url = new URL(request.url);
-  const host = url.hostname;
-  if (!ALLOWED_HOSTS.has(host)) {
-    return new Response(JSON.stringify({ error: "Not found" }), { status: 404, headers: noStore });
-  }
-
-  const videoKey = url.searchParams.get("video");
-  if (!videoKey) {
-    return new Response(JSON.stringify({ videos: VIDEOS.map(({ key, title }) => ({ key, title })) }),
-      { status: 200, headers: noStore });
-  }
-  const video = VIDEOS.find(({ key }) => key === videoKey);
-  if (!video) {
-    return new Response(JSON.stringify({ error: "Video not found" }), { status: 404, headers: noStore });
-  }
+  if (!allowedHost(request)) return json({ error: 'Not found' }, 404);
+  if (!await validSession(request, env)) return json({ error: 'Sign in required' }, 401);
 
   const { MUX_SIGNING_KEY_ID, MUX_SIGNING_PRIVATE_KEY_B64, MUX_PLAYBACK_RESTRICTION_ID } = env;
   if (!MUX_SIGNING_KEY_ID || !MUX_SIGNING_PRIVATE_KEY_B64 || !MUX_PLAYBACK_RESTRICTION_ID) {
-    return new Response(JSON.stringify({ error: "Playback unavailable" }), { status: 503, headers: noStore });
+    return json({ error: 'Playback unavailable' }, 503);
   }
 
+  const videoKey = url.searchParams.get("video");
+  const video = VIDEOS.find(({ key }) => key === videoKey);
+  if (videoKey && !video) return json({ error: 'Video not found' }, 404);
+
   try {
-    const token = await signMuxToken(MUX_SIGNING_KEY_ID, MUX_SIGNING_PRIVATE_KEY_B64,
-      MUX_PLAYBACK_RESTRICTION_ID, video.playbackId);
-    return new Response(JSON.stringify({ playbackId: video.playbackId, token }), { status: 200, headers: noStore });
+    const key = await muxSigningKey(MUX_SIGNING_PRIVATE_KEY_B64);
+    if (!videoKey) {
+      const videos = await Promise.all(VIDEOS.map(async ({ key: id, title, playbackId }) => {
+        const token = await signMuxToken(MUX_SIGNING_KEY_ID, key, MUX_PLAYBACK_RESTRICTION_ID,
+          playbackId, 't', { time: 30 });
+        return { key: id, title, poster: `https://image.mux.com/${playbackId}/thumbnail.webp?token=${token}` };
+      }));
+      return json({ videos });
+    }
+    const token = await signMuxToken(MUX_SIGNING_KEY_ID, key, MUX_PLAYBACK_RESTRICTION_ID,
+      video.playbackId, 'v');
+    return json({ playbackId: video.playbackId, token });
   } catch {
-    return new Response(JSON.stringify({ error: "Playback unavailable" }), { status: 503, headers: noStore });
+    return json({ error: 'Playback unavailable' }, 503);
   }
 }
