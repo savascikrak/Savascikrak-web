@@ -9,13 +9,14 @@ export async function onRequestPost({ request, env }) {
   try {
     const body = await request.text();
     if (body.length > 512) return json({ error: 'Invalid request' }, 400);
-    const { username, password } = JSON.parse(body);
+    const { username, password, remember = false } = JSON.parse(body);
     if (typeof username !== 'string' || typeof password !== 'string' ||
+        typeof remember !== 'boolean' ||
         !safeEqual(username, 'online18') || !safeEqual(password, env.WORKSHOP_PASSWORD)) {
       return json({ error: 'Invalid credentials' }, 401);
     }
-    const session = await newSession(env.WORKSHOP_SESSION_SECRET);
-    return json({ loggedIn: true }, 200, { 'Set-Cookie': sessionCookie(session) });
+    const session = await newSession(env.WORKSHOP_SESSION_SECRET, remember);
+    return json({ loggedIn: true }, 200, { 'Set-Cookie': sessionCookie(session, remember) });
   } catch {
     return json({ error: 'Invalid request' }, 400);
   }

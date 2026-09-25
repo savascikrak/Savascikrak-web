@@ -1,5 +1,6 @@
 const COOKIE_NAME = '__Host-workshop_session';
 const SESSION_SECONDS = 12 * 60 * 60;
+const REMEMBERED_SESSION_SECONDS = 30 * 24 * 60 * 60;
 const encoder = new TextEncoder();
 
 export const ALLOWED_HOSTS = new Set(['savascikrak.com', 'www.savascikrak.com']);
@@ -40,8 +41,9 @@ async function sessionKey(secret) {
   return crypto.subtle.importKey('raw', encoder.encode(secret), { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);
 }
 
-export async function newSession(secret) {
-  const payload = base64Url(encoder.encode(JSON.stringify({ sub: 'online18', exp: Math.floor(Date.now() / 1000) + SESSION_SECONDS })));
+export async function newSession(secret, remember = false) {
+  const lifetime = remember ? REMEMBERED_SESSION_SECONDS : SESSION_SECONDS;
+  const payload = base64Url(encoder.encode(JSON.stringify({ sub: 'online18', exp: Math.floor(Date.now() / 1000) + lifetime })));
   const signature = base64Url(new Uint8Array(await crypto.subtle.sign('HMAC', await sessionKey(secret), encoder.encode(payload))));
   return `${payload}.${signature}`;
 }
@@ -62,8 +64,9 @@ export async function validSession(request, env) {
   }
 }
 
-export function sessionCookie(value) {
-  return `${COOKIE_NAME}=${value}; Max-Age=${SESSION_SECONDS}; Path=/; Secure; HttpOnly; SameSite=Lax`;
+export function sessionCookie(value, remember = false) {
+  const maxAge = remember ? `; Max-Age=${REMEMBERED_SESSION_SECONDS}` : '';
+  return `${COOKIE_NAME}=${value}${maxAge}; Path=/; Secure; HttpOnly; SameSite=Lax`;
 }
 
 export function clearSessionCookie() {
