@@ -27,3 +27,11 @@
 @media(max-width:1100px) and (min-width:851px){.hero h1{font-size:3.05vw}}
 @media(max-width:850px){.hero h1{font-size:clamp(2rem,5.8vw,3.3rem)}}
 @media(max-width:520px){.hero h1{font-size:7.15vw;line-height:1.16;letter-spacing:-.045em}}
+
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/fotograf-uretim-sistemi/assets/cormorant-garamond-medium.ttf') format('truetype')}
+.hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:clamp(2.6rem,3.35vw,3.3rem);line-height:1.04;letter-spacing:-.025em}
+.hero{background:#fff}
+.hero-product{background-image:url('/fotograf-uretim-sistemi/assets/bottle-white.webp');background-size:contain;background-position:center;background-color:#fff;mask-image:none;-webkit-mask-image:none}
+@media(max-width:1100px) and (min-width:851px){.hero h1{font-size:3.45vw}}
+@media(max-width:850px){.hero h1{font-size:clamp(2.2rem,6.3vw,3.6rem)}}
+@media(max-width:520px){.hero h1{font-size:8.2vw;line-height:1.08;letter-spacing:-.025em}.hero-product{background-size:contain}}
