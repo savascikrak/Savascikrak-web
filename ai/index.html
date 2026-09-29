@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ürün Fotoğrafını Yapay Zeka ile Dönüştür · Canlı Online Eğitim · Savaş Çıkrak</title>
+<meta name="description" content="Elinizdeki ürün fotoğrafından kampanya, sosyal medya ve e-ticaret görselleri üretmeyi öğrenin. Ürününüz aynı kalsın, gerisini yapay zeka üretsin. 17 Ekim 2026, Cumartesi 20:00, Zoom.">
+<meta property="og:title" content="Ürün fotoğrafını yapay zeka ile dönüştür.">
+<meta property="og:description" content="Ürününüz aynı kalsın. Gerisini yapay zeka üretsin. Canlı online eğitim, 17 Ekim 2026, 20:00.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://savascikrak.com/ai/">
+<meta property="og:image" content="https://savascikrak.com/ai/assets/og.jpg">
+<meta name="theme-color" content="#F5F0E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --bg:#F5F0E8; --card:#FBF8F3; --tint:#EFE7DA; --line:#E3DACB; --line2:#CFC3B0;
+  --ink:#1A1714; --text:#3F382F; --muted:#5E554A; --accent:#8A4B1F;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --pad:16px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+img{max-width:100%;display:block}
+a{color:var(--ink)}
+a:hover{color:var(--accent)}
+p{margin:0}
+h1,h2,h3{margin:0}
+.wrap{width:100%;max-width:1200px;margin:0 auto;padding-left:max(var(--pad),env(safe-area-inset-left,0px));padding-right:max(var(--pad),env(safe-area-inset-right,0px))}
+.sec{padding-top:40px;padding-bottom:40px;border-top:1px solid var(--line)}
+.eb{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+.h2{font-family:var(--serif);font-weight:600;font-size:32px;line-height:1.05;letter-spacing:-.02em}
+.lead{font-size:16px;line-height:1.55;color:var(--text)}
+.stack{display:flex;flex-direction:column;gap:16px}
+.btn{display:inline-flex;justify-content:center;align-items:center;min-height:54px;padding:0 28px;background:var(--ink);color:var(--bg);border-radius:10px;font-weight:600;font-size:16px;text-decoration:none;border:0;cursor:pointer;font-family:inherit}
+.btn:hover{color:var(--bg);background:#000}
+.btn.light{background:var(--bg);color:var(--ink)}
+.btn.light:hover{background:#fff;color:var(--ink)}
+
+/* Görsel yuvaları: assets klasörüne dosya eklenince görsel kutuyu kaplar */
+.ph{position:relative;overflow:hidden;background:#EDE5D8;border:1px dashed #A8987F;border-radius:12px;display:flex;flex-direction:column;justify-content:flex-end;padding:10px;font-size:11px;line-height:1.35;color:#4F473D;margin:0}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph:has(img) {border-style:solid;border-color:transparent}
+.ph strong{font-weight:600}
+.ph.white{background:#fff}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(245,240,232,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{font-family:var(--serif);font-weight:600;font-size:22px;letter-spacing:-.01em;text-decoration:none}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;align-items:center;gap:28px;font-size:15px;font-weight:500}
+.nav-links a{text-decoration:none}
+.nav-links .hide-m{display:none}
+.pill{display:inline-flex;align-items:center;height:44px;padding:0 20px;border:1px solid var(--ink);border-radius:999px;font-weight:600;font-size:14px}
+
+/* Hero */
+.hero{display:grid;grid-template-areas:"head" "visual" "details";gap:20px;padding-top:32px;padding-bottom:24px}
+.hero-head{grid-area:head;display:flex;flex-direction:column;gap:16px}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:46px;line-height:1.0;letter-spacing:-.025em}
+.hero .sub{font-family:var(--serif);font-weight:500;font-size:23px;line-height:1.2;color:var(--accent)}
+.hero-visual{grid-area:visual;display:flex;flex-direction:column;gap:10px}
+.hv-top{display:flex;gap:10px}
+.hv-top .src{width:37%;flex-shrink:0;height:260px}
+.hv-top .model{flex:1;height:260px}
+.hv-styles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.hv-styles .ph{height:180px}
+.caption{font-size:13px;color:var(--muted);text-align:center}
+.hero-details{grid-area:details;display:flex;flex-direction:column;gap:18px}
+.facts{display:flex;flex-direction:column;gap:10px;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}
+.facts div{display:flex;justify-content:space-between;gap:12px}
+.facts span{color:var(--muted)}
+.facts strong{text-align:right}
+.cta-row{display:flex;flex-direction:column;gap:6px;align-items:stretch}
+.cta-row .link{align-self:center;font-size:14px;font-weight:500;padding:10px}
+
+/* Eğitmen kartı */
+.trainer{padding-bottom:40px;overflow-x:clip}
+html,body{overflow-x:hidden}
+.tcard{position:relative;margin-top:84px;display:flex;flex-direction:column;gap:6px;min-height:290px;padding:18px 18px 20px;background:var(--tint);border-radius:16px;clip-path:inset(-600px 0 0 0 round 0 0 16px 16px)}
+.tcard img{position:absolute;right:-84px;bottom:0;height:360px;width:auto;max-width:none}
+.tcard > *:not(img){position:relative}
+.tcard .lbl{font-size:15px;font-weight:700}
+.tcard h2{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1;letter-spacing:-.025em;white-space:nowrap}
+.tcard .roles{font-size:14px;color:var(--text);margin-top:2px}
+.tcard .roles strong{color:var(--ink)}
+.tcard .bio{font-size:12.5px;line-height:1.5;color:var(--text);margin-top:8px;width:52%}
+
+/* Koruma */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.fcard{display:flex;flex-direction:column;gap:8px;padding:10px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.fcard .ph{height:110px}
+.fcard strong{font-size:15px}
+.fcard span{font-size:13px;color:var(--muted);line-height:1.4}
+
+/* Süreç */
+.steps{display:flex;flex-direction:column;gap:18px}
+.step{display:flex;gap:14px}
+.num{flex-shrink:0;width:36px;height:36px;border-radius:50%;border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600}
+.num.dark{background:var(--ink);color:var(--bg)}
+.step strong{font-size:16px;display:block;margin-bottom:4px}
+.step p{font-size:14px;line-height:1.5;color:var(--text)}
+.step-imgs .ph{height:110px}
+
+/* Video eğitimler */
+.tint{background:var(--tint);border-top:0}
+.vcards{display:flex;flex-direction:column;gap:12px}
+.vcard{display:flex;flex-direction:column;gap:10px;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.vcard .ph{height:150px}
+.vcard strong{font-size:17px}
+.vcard p{font-size:14px;line-height:1.5;color:var(--text)}
+.vcard .price{font-size:14px;font-weight:600}
+
+/* Program */
+.plist{display:flex;flex-direction:column;list-style:none;margin:0;padding:0}
+.plist li{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.plist li:last-child{border-bottom:1px solid var(--line)}
+.plist .n{font-size:13px;font-weight:600;color:var(--accent);width:22px;flex-shrink:0}
+.plist strong{font-size:15px;display:block;margin-bottom:3px}
+.plist span{font-size:14px;color:var(--muted);line-height:1.45}
+
+/* Galeri */
+.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.gallery .ph{height:180px}
+
+/* Kimler / ihtiyaç */
+.who{display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.45}
+.who div{padding:14px;background:var(--card);border:1px solid var(--line);border-radius:10px}
+.quote{font-family:var(--serif);font-size:19px;line-height:1.35}
+.chips{display:flex;flex-wrap:wrap;gap:8px;font-size:14px;font-weight:500}
+.chips span{padding:8px 14px;border:1px solid var(--line2);border-radius:999px}
+.split{display:flex;flex-direction:column;gap:0}
+.split > div{padding-top:40px;padding-bottom:40px}
+.split > div + div{border-top:1px solid var(--line)}
+
+/* Fiyat + form */
+.buy{display:flex;flex-direction:column;gap:0}
+.price-box{display:flex;flex-direction:column;gap:18px;padding:44px var(--pad);background:var(--ink);color:var(--bg);margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad))}
+.price-box .eb{color:#C9BDAA}
+.price-box .big{font-family:var(--serif);font-weight:600;font-size:56px;line-height:1;letter-spacing:-.02em}
+.incl{display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.45;list-style:none;margin:0;padding:0}
+.incl li{padding-bottom:10px;border-bottom:1px solid #3A342C}
+.incl li:last-child{border-bottom:0;padding-bottom:0}
+.pack{display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid #4A4238;border-radius:12px}
+.pack .t{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#C9BDAA}
+.form{display:flex;flex-direction:column;gap:16px;padding-top:44px;padding-bottom:44px}
+.fgrid{display:flex;flex-direction:column;gap:16px}
+.fld{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500}
+.inp{height:48px;border:1px solid var(--line2);border-radius:8px;background:#fff;padding:0 12px;font:inherit;font-size:16px;color:var(--ink);width:100%}
+.inp:focus{outline:2px solid var(--accent);outline-offset:1px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45;padding:12px;background:var(--card);border:1px solid var(--line);border-radius:10px;cursor:pointer}
+.check input{width:20px;height:20px;margin:0;flex-shrink:0;accent-color:var(--ink)}
+.note{font-size:13px;line-height:1.5;color:var(--muted)}
+.form-ok{display:none;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;font-size:15px}
+
+/* SSS */
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-weight:400;font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{font-size:14px;line-height:1.5;color:var(--text);margin-top:8px}
+
+/* Kapanış */
+.final{background:var(--tint);padding-top:44px;padding-bottom:44px}
+.final .in{display:flex;flex-direction:column;gap:18px}
+.final .big{font-family:var(--serif);font-weight:600;font-size:32px;line-height:1.08;letter-spacing:-.02em}
+footer{background:var(--ink);color:#C9BDAA;font-size:13px;padding-top:32px;padding-bottom:32px}
+footer .wrap{display:flex;flex-direction:column;gap:8px}
+footer .logo{color:var(--bg);font-size:20px}
+
+/* Mobil sabit başvuru çubuğu */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px var(--pad) calc(10px + env(safe-area-inset-bottom,0px));background:rgba(245,240,232,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sticky .info{font-size:13px;line-height:1.3}
+.sticky .info strong{display:block;font-size:14px}
+.sticky .btn{min-height:48px;padding:0 22px;font-size:15px}
+
+/* Tablet ve masaüstü */
+@media (min-width:900px){
+  :root{--pad:40px}
+  body{padding-bottom:0}
+  .sticky{display:none}
+  .nav .wrap{height:76px}
+  .logo{font-size:26px}
+  .nav-links .hide-m{display:inline}
+  .pill{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .pill:hover{color:var(--bg)}
+  .sec{padding-top:88px;padding-bottom:88px}
+  .eb{font-size:12px}
+  .h2{font-size:48px;line-height:1.04}
+  .lead{font-size:18px}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head visual" "details visual";column-gap:64px;row-gap:24px;padding-top:72px;padding-bottom:40px;align-items:start}
+  .hero h1{font-size:76px;line-height:.98;letter-spacing:-.03em}
+  .hero .sub{font-size:30px}
+  .hero-head{gap:22px;align-self:end}
+  .hv-top .src{width:190px;height:420px}
+  .hv-top .model{height:420px}
+  .hv-styles .ph{height:230px}
+  .ph{font-size:13px;padding:14px}
+  .caption{text-align:left;font-size:14px}
+  .facts{flex-direction:row;gap:28px;padding:18px 0;background:none;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;font-size:15px}
+  .facts div{flex-direction:column;gap:4px;justify-content:flex-start}
+  .facts span{font-size:13px}
+  .facts strong{text-align:left}
+  .cta-row{flex-direction:row;align-items:center;gap:24px}
+  .cta-row .btn{font-size:17px;padding:0 32px}
+  .trainer{padding-bottom:88px}
+  .tcard{margin-top:150px;min-height:400px;padding:56px 64px;justify-content:center;gap:10px;border-radius:20px;clip-path:inset(-600px 0 0 0 round 0 0 20px 20px)}
+  .tcard img{right:80px;height:560px}
+  .tcard .lbl{font-size:20px}
+  .tcard h2{font-size:80px;letter-spacing:-.03em}
+  .tcard .roles{font-size:22px}
+  .tcard .bio{font-size:18px;line-height:1.6;width:auto;max-width:460px;margin-top:12px}
+  .head2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;align-items:end}
+  .grid4{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .fcard{padding:12px;border-radius:14px}
+  .fcard .ph{height:200px}
+  .fcard strong{font-size:18px}
+  .fcard span{font-size:15px}
+  .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+  .step{flex-direction:column;gap:12px}
+  .step-imgs{display:none}
+  .step .ph-d{display:flex;height:200px}
+  .step strong{font-size:19px}
+  .step p{font-size:15px}
+  .vsec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;align-items:center}
+  .vcards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .vcard{padding:14px;border-radius:14px}
+  .vcard .ph{height:220px}
+  .vcard strong{font-size:18px}
+  .vcard p,.vcard .price{font-size:15px}
+  .psec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px}
+  .plist li{gap:18px;padding:16px 0}
+  .plist strong{font-size:17px}
+  .plist span{font-size:15px}
+  .gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .gallery .ph{height:300px}
+  .split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px}
+  .split > div{padding-top:88px;padding-bottom:88px}
+  .split > div + div{border-top:0}
+  .who{font-size:16px}
+  .quote{font-size:22px}
+  .chips{font-size:15px;gap:10px}
+  .buy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:start;padding-top:88px;padding-bottom:88px}
+  .price-box{margin:0;padding:40px;border-radius:18px;gap:20px}
+  .price-box .big{font-size:80px}
+  .incl{font-size:16px;gap:12px}
+  .form{padding:0}
+  .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .fld{font-size:14px}
+  .faqsec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px}
+  .faq summary{font-size:17px}
+  .faq p{font-size:15px}
+  .final{padding-top:80px;padding-bottom:80px}
+  .final .in{flex-direction:row;justify-content:space-between;align-items:center;gap:48px}
+  .final .big{font-size:52px;max-width:760px}
+  footer .wrap{flex-direction:row;justify-content:space-between;align-items:center}
+}
+.ph-d{display:none}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="https://savascikrak.com/">savaşçıkrak<span>.</span></a>
+    <nav class="nav-links" aria-label="Sayfa içi">
+      <a class="hide-m" href="#program">Program</a>
+      <a class="hide-m" href="#egitmen">Eğitmen</a>
+      <a class="hide-m" href="#sss">Sorular</a>
+      <a class="pill" href="#basvuru">Başvur</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="wrap hero">
+  <div class="hero-head">
+    <p class="eb">Ürün fotoğrafında yapay zeka · Canlı online eğitim</p>
+    <h1>Ürün fotoğrafını yapay zeka ile dönüştür.</h1>
+    <p class="sub">Ürününüz aynı kalsın. Gerisini yapay zeka üretsin.</p>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hv-top">
+      <figure class="ph white src"><img src="assets/saat-kaynak.jpg" alt="Beyaz fonda çekilmiş saat, kaynak fotoğraf" onerror="this.remove()"><figcaption><strong>Kaynak</strong><br>Saat, beyaz fon</figcaption></figure>
+      <figure class="ph model"><img src="assets/saat-model.jpg" alt="Aynı saat model bileğinde" onerror="this.remove()"><figcaption><strong>Model üzerinde</strong><br>Aynı saat bilekte. Ölçek ve perspektif uyumlu.</figcaption></figure>
+    </div>
+    <div class="hv-styles">
+      <figure class="ph"><img src="assets/saat-stil-1.jpg" alt="Aynı saat, lifestyle sahnesi" onerror="this.remove()"><figcaption><strong>Stil 1 · Lifestyle</strong><br>Sıcak akşam ışığı, gömlek manşeti.</figcaption></figure>
+      <figure class="ph"><img src="assets/saat-stil-2.jpg" alt="Aynı saat, kampanya sahnesi" onerror="this.remove()"><figcaption><strong>Stil 2 · Kampanya</strong><br>Koyu taş, sert ışık, yansıma.</figcaption></figure>
+    </div>
+    <p class="caption">Aynı saat. Kadran, yazılar ve akrep-yelkovan konumu korunmuş halde.</p>
+  </div>
+
+  <div class="hero-details">
+    <p class="lead">Elinizdeki ürün fotoğrafından kampanya, sosyal medya ve e-ticaret görselleri üretmeyi öğrenin. Formu, rengi, etiketi ve malzemesi olduğu gibi korunarak.</p>
+    <div class="facts">
+      <div><span>Tarih</span><strong>17 Ekim 2026, Cumartesi</strong></div>
+      <div><span>Saat</span><strong>20:00 · yaklaşık 5 saat, aralarla</strong></div>
+      <div><span>Platform</span><strong>Zoom · 30 gün kayıt erişimi</strong></div>
+    </div>
+    <div class="cta-row">
+      <a class="btn" href="#basvuru">Başvur</a>
+      <a class="link" href="#program">Eğitimde neler var?</a>
+    </div>
+  </div>
+</section>
+
+<section id="egitmen" class="wrap trainer">
+  <div class="tcard">
+    <img src="assets/portre.webp" alt="Savaş Çıkrak portresi" width="870" height="1000">
+    <p class="lbl">Eğitmen</p>
+    <h2>Savaş Çıkrak</h2>
+    <p class="roles">Fotoğrafçı / Yönetmen / <strong>Eğitmen</strong></p>
+    <p class="bio">Profesyonel ürün fotoğrafçılığı, ışık tasarımı ve yapay zeka destekli görsel üretim alanında yılların deneyimiyle, marka ve ajanslar için üretim ve eğitimler gerçekleştiriyor.</p>
+  </div>
+</section>
+
+<section class="wrap sec stack">
+  <div class="head2 stack">
+    <div class="stack"><p class="eb">Ürün koruma</p><h2 class="h2">Güzel görsel yetmez. Ürün doğru olmalı.</h2></div>
+    <p class="lead">Yapay zeka çoğu zaman ürünü yeniden çizer. Etiket bozulur, oranlar kayar, cam başka bir şeye dönüşür. Bu eğitimde ürünü koruyarak çalışmayı ve bunun nasıl kontrol edileceğini öğreneceksiniz.</p>
+  </div>
+  <div class="grid2 grid4">
+    <div class="fcard"><figure class="ph"><img src="assets/koruma-form.jpg" alt="" onerror="this.remove()"><figcaption>Detay: kavisli silüet, gerçek | AI</figcaption></figure><strong>Form</strong><span>Oranlar ve kontur birebir.</span></div>
+    <div class="fcard"><figure class="ph"><img src="assets/koruma-renk.jpg" alt="" onerror="this.remove()"><figcaption>Detay: doygun renk, gerçek | AI</figcaption></figure><strong>Renk</strong><span>Ambalajın gerçek rengi.</span></div>
+    <div class="fcard"><figure class="ph"><img src="assets/koruma-etiket.jpg" alt="" onerror="this.remove()"><figcaption>Detay: küçük puntolu etiket, gerçek | AI</figcaption></figure><strong>Logo ve etiket</strong><span>Yazılar okunur, tipografi aynı.</span></div>
+    <div class="fcard"><figure class="ph"><img src="assets/koruma-malzeme.jpg" alt="" onerror="this.remove()"><figcaption>Detay: şeffaf cam / fırçalanmış metal</figcaption></figure><strong>Malzeme</strong><span>Cam cam, metal metal kalır.</span></div>
+  </div>
+</section>
+
+<section class="wrap sec stack">
+  <div class="stack"><p class="eb">Yöntem</p><h2 class="h2">Dört adımda süreç</h2></div>
+  <div class="steps">
+    <div class="step"><figure class="ph ph-d"><img src="assets/surec-1.jpg" alt="" onerror="this.remove()"><figcaption>Ham referans fotoğrafı</figcaption></figure><span class="num">01</span><div><strong>Referans</strong><p>Her şey doğru çekilmiş bir ürün fotoğrafıyla başlar. Nelere dikkat edeceğinizi gösteriyorum.</p></div></div>
+    <div class="step"><figure class="ph ph-d"><img src="assets/surec-2.jpg" alt="" onerror="this.remove()"><figcaption>Boş sahne / sahne taslağı</figcaption></figure><span class="num">02</span><div><strong>Sahne</strong><p>Ürüne ve kullanım amacına uygun sahneyi ve atmosferi kurarsınız.</p></div></div>
+    <div class="step"><figure class="ph ph-d"><img src="assets/surec-3.jpg" alt="" onerror="this.remove()"><figcaption>Entegre edilmiş görsel</figcaption></figure><span class="num">03</span><div><strong>Entegrasyon</strong><p>Işık yönü, gölge, yansıma, perspektif. Ürünü sahneye yapıştırmak değil, oraya ait kılmak.</p></div></div>
+    <div class="step"><figure class="ph ph-d"><img src="assets/surec-4.jpg" alt="" onerror="this.remove()"><figcaption>Overlay / difference kontrolü</figcaption></figure><span class="num dark">04</span><div><strong>Kontrol</strong><p>Gerçek ürünle üst üste koyun, farkı görün. Ürün korunmadıysa görsel teslim edilmez.</p></div></div>
+  </div>
+  <div class="grid2 step-imgs">
+    <figure class="ph"><img src="assets/surec-1.jpg" alt="" onerror="this.remove()"><figcaption>01 · Ham referans fotoğrafı</figcaption></figure>
+    <figure class="ph"><img src="assets/surec-2.jpg" alt="" onerror="this.remove()"><figcaption>02 · Boş sahne / sahne taslağı</figcaption></figure>
+    <figure class="ph"><img src="assets/surec-3.jpg" alt="" onerror="this.remove()"><figcaption>03 · Entegre edilmiş görsel</figcaption></figure>
+    <figure class="ph"><img src="assets/surec-4.jpg" alt="" onerror="this.remove()"><figcaption>04 · Overlay / difference kontrolü</figcaption></figure>
+  </div>
+</section>
+
+<section class="sec tint">
+  <div class="wrap vsec stack">
+    <div class="stack">
+      <p class="eb">Video eğitimler · Ayrı satın alınabilir</p>
+      <h2 class="h2">İyi sonuç, doğru kaynak fotoğrafla başlar.</h2>
+      <p class="lead">Yapay zeka, ona verdiğiniz fotoğraftan daha iyisini üretemez. Işık yanlışsa, renk kaymışsa, detaylar net değilse sonuç da öyle olur. Kaynak fotoğrafı doğru çekmek için iki ayrı video eğitim hazırladım.</p>
+    </div>
+    <div class="vcards">
+      <div class="vcard"><figure class="ph"><img src="assets/video-telefon.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: telefonla çekim, ışık kurulumu görünür</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekenler için ışık, renk ve netlik.</p><span class="price">Fiyat yakında</span></div>
+      <div class="vcard"><figure class="ph"><img src="assets/video-profesyonel.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: kamera + ışık kurulumu, arkadan</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Kamera ve stüdyo ile çekenler için, yapay zekaya uygun kaynak fotoğraf.</p><span class="price">Fiyat yakında</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="program" class="wrap sec psec stack">
+  <div class="stack"><p class="eb">Eğitimde neler var</p><h2 class="h2">Aşama aşama öğrenin.</h2></div>
+  <ol class="plist">
+    <li><span class="n">1</span><div><strong>Kaynak fotoğrafı yapay zekaya hazırlamak</strong><span>Hangi fotoğraf iyi sonuç verir, hangisi vermez.</span></div></li>
+    <li><span class="n">2</span><div><strong>Ürünü yeni sahnelere yerleştirmek</strong><span>Lifestyle, stüdyo, mekan ve konsept sahneler.</span></div></li>
+    <li><span class="n">3</span><div><strong>Işık, gölge ve perspektif uyumu</strong><span>Ürünün sahneye gerçekten ait görünmesi.</span></div></li>
+    <li><span class="n">4</span><div><strong>Logo, etiket ve malzemeyi korumak</strong><span>Ürünün kimliği olduğu gibi kalır.</span></div></li>
+    <li><span class="n">5</span><div><strong>Kampanya, katalog ve reklam görselleri</strong><span>Aynı üründen çok sayıda varyasyon.</span></div></li>
+    <li><span class="n">6</span><div><strong>Sosyal medya ve e-ticaret çıktıları</strong><span>Her platforma uygun format ve oran.</span></div></li>
+    <li><span class="n">7</span><div><strong>Kontrol: gerçek ürünle karşılaştırma</strong><span>Görseli teslim etmeden önce ürünün korunduğunu doğrulamak.</span></div></li>
+  </ol>
+</section>
+
+<section class="wrap sec stack">
+  <div class="stack"><p class="eb">Farklı ürünler, aynı yaklaşım</p><h2 class="h2">Her malzemenin zorluğu farklı.</h2></div>
+  <div class="gallery">
+    <figure class="ph"><img src="assets/galeri-cam.jpg" alt="" onerror="this.remove()"><figcaption><strong>Cam</strong><br>Parfüm / serum · Referans: stüdyo</figcaption></figure>
+    <figure class="ph"><img src="assets/galeri-metal.jpg" alt="" onerror="this.remove()"><figcaption><strong>Metal</strong><br>Saat / takı · Referans: stüdyo</figcaption></figure>
+    <figure class="ph"><img src="assets/galeri-tekstil.jpg" alt="" onerror="this.remove()"><figcaption><strong>Tekstil</strong><br>Eşarp / çanta · Referans: telefon</figcaption></figure>
+    <figure class="ph"><img src="assets/galeri-gida.jpg" alt="" onerror="this.remove()"><figcaption><strong>Gıda ambalajı</strong><br>Referans: telefon</figcaption></figure>
+    <figure class="ph"><img src="assets/galeri-kozmetik.jpg" alt="" onerror="this.remove()"><figcaption><strong>Kozmetik tüp</strong><br>Referans: telefon</figcaption></figure>
+    <figure class="ph"><img src="assets/galeri-elektronik.jpg" alt="" onerror="this.remove()"><figcaption><strong>Elektronik</strong><br>Referans: stüdyo</figcaption></figure>
+  </div>
+</section>
+
+<section class="wrap split" style="border-top:1px solid var(--line)">
+  <div class="stack">
+    <p class="eb">Katılımcılar</p>
+    <h2 class="h2">Kimler için?</h2>
+    <div class="who">
+      <div>Ürün görseli üreten fotoğrafçılar ve ajanslar</div>
+      <div>Kendi ürününün görselini üretmek isteyen markalar ve üreticiler</div>
+      <div>Trendyol, Hepsiburada ve Amazon satıcıları</div>
+      <div>Sosyal medya için sürekli yeni görsele ihtiyaç duyan işletmeler</div>
+    </div>
+    <p class="quote">Tek tıkla hazır görsel arayanlar için değil. Ürününün doğruluğunu önemseyenler için.</p>
+  </div>
+  <div class="stack">
+    <p class="eb">Hazırlık</p>
+    <h2 class="h2">Neye ihtiyacınız var?</h2>
+    <p class="lead">Bilgisayar ve internet bağlantısı. Kurulum ya da güçlü bir ekran kartı gerekmez. Telefonla ya da kamerayla çekilmiş bir ürün fotoğrafı.</p>
+    <p class="eb" style="margin-top:6px">Eğitimde kullanılan araçlar</p>
+    <div class="chips"><span>ChatGPT</span><span>Gemini (Nano Banana)</span><span>Adobe Firefly</span><span>Photoroom</span></div>
+  </div>
+</section>
+
+<section id="basvuru" class="wrap buy" style="border-top:1px solid var(--line)">
+  <div class="price-box">
+    <p class="eb">Canlı online eğitim</p>
+    <div class="big">3.950₺</div>
+    <ul class="incl">
+      <li>Canlı eğitim, yaklaşık 5 saat · Zoom</li>
+      <li>17 Ekim 2026, Cumartesi · 20:00</li>
+      <li>30 gün kayıt erişimi</li>
+      <li>Eğitim sonrası: geliştirdiğim yapay zeka araçları katılımcılarla paylaşılır</li>
+    </ul>
+    <div class="pack"><span class="t">Paket</span><strong>Canlı eğitim + kaynak fotoğraf video eğitimi</strong><span>Paket fiyatı yakında</span></div>
+  </div>
+
+  <form class="form" id="basvuru-formu" action="mailto:iletisim@savascikrak.com" method="GET">
+    <p class="eb">Kayıt</p>
+    <h2 class="h2">Başvuru</h2>
+    <div class="fgrid">
+      <label class="fld">Ad soyad<input class="inp" type="text" name="ad_soyad" autocomplete="name" required></label>
+      <label class="fld">E-posta<input class="inp" type="email" name="eposta" autocomplete="email" required></label>
+      <label class="fld">Telefon<input class="inp" type="tel" name="telefon" autocomplete="tel" required></label>
+      <label class="fld">Hangi amaçla katılıyorsunuz?
+        <select class="inp" name="amac" required>
+          <option value="">Seçin</option>
+          <option>Fotoğrafçıyım</option>
+          <option>Marka / üreticiyim</option>
+          <option>E-ticaret satıcısıyım</option>
+          <option>Ajans / tasarımcıyım</option>
+          <option>Diğer</option>
+        </select>
+      </label>
+    </div>
+    <label class="fld">Çalıştığınız ürün grubu<input class="inp" type="text" name="urun_grubu" placeholder="Örneğin kozmetik, takı, gıda"></label>
+    <label class="check"><input type="checkbox" name="video_paketi" value="evet">Kaynak fotoğraf video eğitimini de ekle (paket fiyatı)</label>
+    <button class="btn" type="submit">Başvuruyu e-posta ile gönder</button>
+    <p class="form-ok" id="form-ok" role="status">Başvurunuz alındı. En kısa sürede size dönüş yapacağız.</p>
+    <p class="note">Kayıt sonrası, eğitimde kullanılacak araçların listesi ve hazırlık notları e-posta ile gönderilir.</p>
+  </form>
+</section>
+
+<section id="sss" class="wrap sec faqsec stack">
+  <div class="stack"><p class="eb">Sık sorulanlar</p><h2 class="h2">Sorular</h2></div>
+  <div class="faq">
+    <details><summary>Canlı katılamazsam ne olur?</summary><p>Eğitim kaydedilir. Kayda 30 gün boyunca erişebilirsiniz.</p></details>
+    <details><summary>Güçlü bir bilgisayar gerekir mi?</summary><p>Hayır. Eğitimde hazır yapay zeka araçları kullanılıyor, kurulum gerekmiyor.</p></details>
+    <details><summary>Telefonla çektiğim fotoğrafla olur mu?</summary><p>Olur. Önemli olan ışığın, rengin ve netliğin doğru olması.</p></details>
+    <details><summary>Eğitim ne kadar sürer?</summary><p>Yaklaşık 5 saat, aralarla. Saat 20:00'de başlar.</p></details>
+    <details><summary>Geliştirdiğiniz araçlar nasıl paylaşılacak?</summary><p>Eğitimden sonra katılımcılarla paylaşılır.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap in">
+    <div class="stack" style="gap:14px"><p class="eb">Aynı ürün. Yeni dünyalar.</p><p class="big">Ürününüzü değiştirmeden, dünyasını değiştirin.</p></div>
+    <a class="btn" href="#basvuru" style="flex-shrink:0">Başvur · 3.950₺</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="logo" href="https://savascikrak.com/" style="text-decoration:none">savaşçıkrak<span>.</span></a>
+    <span><a href="https://savascikrak.com/" style="color:inherit">savascikrak.com</a> · <a href="https://instagram.com/savascikrak" style="color:inherit">@savascikrak</a></span>
+  </div>
+</footer>
+
+<div class="sticky" aria-hidden="false">
+  <div class="info"><strong>17 Ekim · 20:00</strong>Canlı online eğitim</div>
+  <a class="btn" href="#basvuru">Başvur</a>
+</div>
+
+<script>
+// Başvuruyu kullanıcının e-posta uygulamasında hazırlar.
+(function(){
+  var f=document.getElementById('basvuru-formu');
+  if(!f) return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!f.reportValidity()) return;
+    var data=new FormData(f);
+    var subject='Yapay zeka eğitimi başvurusu · '+(data.get('ad_soyad')||'');
+    var lines=[
+      'Ad soyad: '+(data.get('ad_soyad')||''),
+      'E-posta: '+(data.get('eposta')||''),
+      'Telefon: '+(data.get('telefon')||''),
+      'Katılım amacı: '+(data.get('amac')||''),
+      'Ürün grubu: '+(data.get('urun_grubu')||''),
+      'Video paketi: '+(data.get('video_paketi')==='evet'?'Evet':'Hayır')
+    ];
+    window.location.href='mailto:iletisim@savascikrak.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+  });
+})();
+</script>
+</body>
+</html>

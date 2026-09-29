@@ -1,0 +1,42 @@
+savascikrak.com/ai - Görsel dosya adları
+
+Görselleri assets klasörüne aşağıdaki adlarla koyun. Dosya eklendiğinde ilgili kutuya otomatik oturur, eklenmeyen kutular yer tutucu olarak görünür.
+Önerilen: JPG, uzun kenar en fazla 1600 px, dosya başına 200 KB altı.
+
+MANŞET
+saat-kaynak.jpg        Kaynak: saat, beyaz fon (dikey, yaklaşık 1:2)
+saat-model.jpg         Aynı saat model bileğinde (4:5)
+saat-stil-1.jpg        Stil 1 - Lifestyle
+saat-stil-2.jpg        Stil 2 - Kampanya
+
+ÜRÜN KORUMA (detay kırpımları, gerçek | AI yan yana)
+koruma-form.jpg
+koruma-renk.jpg
+koruma-etiket.jpg
+koruma-malzeme.jpg
+
+SÜREÇ
+surec-1.jpg            Ham referans fotoğrafı
+surec-2.jpg            Boş sahne / sahne taslağı
+surec-3.jpg            Entegre edilmiş görsel
+surec-4.jpg            Overlay / difference kontrolü
+
+VİDEO EĞİTİMLER
+video-telefon.jpg
+video-profesyonel.jpg
+
+GALERİ
+galeri-cam.jpg
+galeri-metal.jpg
+galeri-tekstil.jpg
+galeri-gida.jpg
+galeri-kozmetik.jpg
+galeri-elektronik.jpg
+
+PAYLAŞIM GÖRSELİ (WhatsApp / Instagram link önizlemesi)
+og.jpg                 1200 x 630
+
+HAZIR
+portre.webp            Eğitmen portresi (dekupe)
+
+index.html içinde doldurulacaklar: [FİYAT] (2 yer), [PAKET FİYATI], [FORM_ADRESI]
