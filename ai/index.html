@@ -104,7 +104,7 @@ html,body{overflow-x:hidden}
 .tcard .roles{font-size:14px;color:var(--text);margin-top:2px}
 .tcard .roles strong{color:var(--ink)}
 .tcard .bio{font-size:13.5px;line-height:1.5;color:var(--text);margin-top:8px;width:52%}
-.tcard .bio .fixed-line{display:block;white-space:nowrap}
+.tcard .bio .bio-line{display:block;white-space:nowrap}
 
 /* Koruma */
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
@@ -235,6 +235,7 @@ footer .logo{color:var(--bg);font-size:20px}
   .tcard h2{font-size:80px;letter-spacing:-.03em}
   .tcard .roles{font-size:22px}
   .tcard .bio{font-size:18px;line-height:1.6;width:auto;max-width:460px;margin-top:12px}
+  .tcard .bio .bio-line{display:inline;white-space:normal}
   .head2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;align-items:end}
   .grid4{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
   .fcard{padding:12px;border-radius:14px}
@@ -331,7 +332,14 @@ footer .logo{color:var(--bg);font-size:20px}
     <img src="assets/portre.webp" alt="Savaş Çıkrak portresi" width="870" height="1000">
     <h2>Savaş Çıkrak</h2>
     <p class="roles">Fotoğrafçı / Yönetmen / <strong>Eğitmen</strong></p>
-    <p class="bio"><span class="fixed-line">Profesyonel ürün fotoğrafçılığı,</span> ışık tasarımı ve yapay zeka destekli görsel üretim alanında yılların deneyimiyle, marka ve ajanslar için üretim ve eğitimler gerçekleştiriyorum.</p>
+    <p class="bio">
+      <span class="bio-line">Profesyonel ürün fotoğrafçılığı,</span>
+      <span class="bio-line">ışık tasarımı ve yapay zeka</span>
+      <span class="bio-line">destekli görsel üretim alanında</span>
+      <span class="bio-line">yılların deneyimiyle markalar</span>
+      <span class="bio-line">ve ajanslar için üretim ve</span>
+      <span class="bio-line">eğitim çalışmaları yapıyorum.</span>
+    </p>
   </div>
 </section>
 
