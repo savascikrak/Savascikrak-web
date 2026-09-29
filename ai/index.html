@@ -63,6 +63,9 @@ h1,h2,h3{margin:0}
 .hero-head{grid-area:head;display:flex;flex-direction:column;gap:16px}
 .hero-live{align-self:center;text-align:center;font-size:14px;letter-spacing:.17em;font-weight:700;color:#267349}
 .hero-live::after{content:"";display:block;width:68px;height:3px;margin:9px auto 0;border-radius:999px;background:#267349}
+.hero-date{align-self:center;display:flex;align-items:center;gap:10px;margin-top:-5px;color:var(--text);font-size:13px;letter-spacing:.02em}
+.hero-date strong{font-size:14px;color:var(--ink)}
+.hero-date i{width:1px;height:16px;background:var(--line2)}
 .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,9vw,41px);line-height:.98;letter-spacing:-.04em;text-align:center}
 .hero h1 span{display:block;white-space:nowrap}
 .hero .sub{font-family:var(--sans);font-style:italic;font-weight:600;font-size:24px;line-height:1.16;color:var(--accent);text-align:center}
@@ -80,6 +83,10 @@ h1,h2,h3{margin:0}
 .facts strong{text-align:right}
 .cta-row{display:flex;flex-direction:column;gap:6px;align-items:stretch}
 .cta-row .link{align-self:center;font-size:14px;font-weight:500;padding:10px}
+.program-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 24px;border:1px solid #267349;border-radius:10px;color:#1F6840;font-weight:700;text-decoration:none;background:transparent}
+.program-btn::after{content:"→";font-size:20px;font-weight:400;transition:transform .2s ease}
+.program-btn:hover{color:#fff;background:#267349}
+.program-btn:hover::after{transform:translateX(3px)}
 
 /* Eğitmen kartı */
 .trainer{padding-bottom:40px;overflow-x:clip}
@@ -286,6 +293,7 @@ footer .logo{color:var(--bg);font-size:20px}
 <section class="wrap hero">
   <div class="hero-head">
     <p class="hero-live">CANLI ONLINE</p>
+    <div class="hero-date"><span>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong>20:00</strong></div>
     <h1><span>ÜRÜN FOTOĞRAFINI</span><span>YAPAY ZEKA İLE</span><span>DÖNÜŞTÜR</span></h1>
     <p class="sub">“Ürününüz aynı kalsın. Gerisini yapay zeka üretsin.”</p>
   </div>
@@ -303,15 +311,9 @@ footer .logo{color:var(--bg);font-size:20px}
   </div>
 
   <div class="hero-details">
-    <p class="lead">Elinizdeki ürün fotoğrafından kampanya, sosyal medya ve e-ticaret görselleri üretmeyi öğrenin. Formu, rengi, etiketi ve malzemesi olduğu gibi korunarak.</p>
-    <div class="facts">
-      <div><span>Tarih</span><strong>17 Ekim 2026, Cumartesi</strong></div>
-      <div><span>Saat</span><strong>20:00 · yaklaşık 5 saat, aralarla</strong></div>
-      <div><span>Platform</span><strong>Zoom · 30 gün kayıt erişimi</strong></div>
-    </div>
+    <p class="lead">Elinizdeki ürün fotoğrafından kampanya, sosyal medya ve e-ticaret görselleri üretmeyi öğrenin.</p>
     <div class="cta-row">
-      <a class="btn" href="#basvuru">Başvur</a>
-      <a class="link" href="#program">Eğitimde neler var?</a>
+      <a class="program-btn" href="#program">Eğitimde neler var?</a>
     </div>
   </div>
 </section>
