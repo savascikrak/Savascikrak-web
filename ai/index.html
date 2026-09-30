@@ -281,21 +281,123 @@ footer .logo{color:var(--bg);font-size:20px}
   footer .wrap{flex-direction:row;justify-content:space-between;align-items:center}
 }
 .ph-d{display:none}
+
+/* ===== Tasarım düzenlemesi v2 (mobil öncelikli) ===== */
+.h2{font-weight:700}
+.hero .sub{font-style:normal;font-weight:500}
+.hero-promise{background:none;border:0;padding:0;text-align:center}
+.hero-promise p{font-size:18px;font-weight:500;letter-spacing:0;color:var(--text)}
+.cta-row{gap:10px}
+.program-btn{border-color:var(--line2);color:var(--ink);font-weight:600}
+.program-btn:hover{background:var(--ink);color:var(--bg)}
+.fcard{background:none;border:0;padding:0;gap:6px}
+.who{gap:0}
+.who div{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:14px 0}
+.who div:last-child{border-bottom:1px solid var(--line)}
+.steps,.gallery{display:flex;flex-direction:row;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-left:var(--pad);margin:0 calc(-1 * var(--pad));padding:0 var(--pad) 4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.steps::-webkit-scrollbar,.gallery::-webkit-scrollbar{display:none}
+.step{flex:0 0 78%;flex-direction:column;gap:10px;scroll-snap-align:start}
+.step .ph-d{display:flex;height:200px}
+.step-imgs{display:none}
+.gallery .ph{flex:0 0 72%;height:280px;scroll-snap-align:start}
+.swipe{font-size:12px;color:var(--muted);letter-spacing:.04em;margin-top:-4px}
+@media (min-width:900px){
+  .swipe{display:none}
+  .steps,.gallery{margin:0;padding:0;overflow:visible}
+  .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+  .step{flex:none}
+  .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+  .gallery .ph{height:300px}
+  .hero h1{font-size:min(52px,3.6vw);text-align:left}
+  .hero-live,.hero-date{align-self:flex-start;text-align:left}
+  .hero-live::after{margin-left:0}
+  .hero .sub,.hero-promise{text-align:left}
+  .cta-row{flex-direction:row;align-items:center;gap:14px}
+  .psec > .stack:first-child{position:sticky;top:110px;align-self:start}
+}
+
+/* Vaat şeridi */
+.hero-promise{position:relative;margin:4px calc(-1 * var(--pad)) 0;padding:22px var(--pad);background:#6B5B47;border-radius:0;text-align:center}
+.hero-promise::before{content:"";position:absolute;left:50%;top:0;width:48px;height:3px;transform:translateX(-50%);background:#E3B98F}
+.hero-promise p{font-size:19px;font-weight:500;line-height:1.35;letter-spacing:-.01em;color:#F5F0E8}
+.hero-promise em{font-style:normal;font-weight:700;color:#F4D3AE}
+@media (min-width:900px){
+  .hero-promise{margin:0;padding:24px 28px;border-radius:14px;text-align:left}
+  .hero-promise::before{left:28px;transform:none}
+  .hero-promise p{font-size:22px}
+}
+#kimler,#cekim{scroll-margin-top:16px}
+#program{scroll-margin-top:16px}
+
+/* Program: gruplu zaman çizelgesi */
+.tl{display:flex;flex-direction:column;gap:20px}
+.tl-phase{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:6px}
+.tl-list{list-style:none;margin:0;padding:0;position:relative}
+.tl-list li:not(:last-child)::after{content:"";position:absolute;left:17px;top:44px;bottom:-8px;width:1px;background:var(--line2)}
+.tl{margin-top:6px}
+.tl-list li{position:relative;display:flex;gap:14px;align-items:flex-start;padding:8px 0}
+.tl-list .n{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--tint);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink);position:relative;z-index:1}
+.tl-list .n.dark{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+
+.tl-list strong{display:block;font-size:15px;line-height:1.35;margin-bottom:2px}
+.tl-list li span:not(.n){font-size:14px;line-height:1.45;color:var(--muted)}
+@media (min-width:900px){
+  .tl{gap:26px}
+  .tl-list strong{font-size:17px}
+  .tl-list li span:not(.n){font-size:15px}
+}
+
+/* Program detayları (açılır) */
+.tl-list details{flex:1;min-width:0;padding-top:7px}
+.tl-list summary{list-style:none;cursor:pointer;position:relative;padding-right:30px}
+.tl-list summary::-webkit-details-marker{display:none}
+.tl-list summary::after{content:"+";position:absolute;right:0;top:-3px;width:24px;height:24px;border-radius:50%;border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:16px;line-height:1;color:var(--ink);transition:transform .2s ease}
+.tl-list details[open] summary::after{content:"–";background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.tl-list summary span{display:block}
+.tl-more{margin-top:10px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;font-size:14px;line-height:1.55;color:var(--text)}
+@media (min-width:900px){.tl-more{font-size:15px}}
+
+/* Ürün kategorileri */
+.cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.cat{display:flex;flex-direction:column;gap:4px;padding:14px;background:var(--bg);text-decoration:none;color:var(--ink)}
+.cat strong{font-size:15px;line-height:1.3}
+.cat span{font-size:13px;line-height:1.45;color:var(--muted)}
+.cat-cta{grid-column:1 / -1;background:var(--tint)}
+.cat-cta span{color:var(--accent);font-weight:600}
+.cat-cta:hover{background:#E8DFD0;color:var(--ink)}
+@media (min-width:900px){
+  .cats{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cat{padding:20px}
+  .cat strong{font-size:17px}
+  .cat span{font-size:14px}
+}
+
+/* Video eğitimler: ayrı ürün, ayrışan zemin */
+.vsell{position:relative;background:#6B5B47;color:#F5F0E8}
+.vsell::before{content:"";position:absolute;left:var(--pad);top:0;width:48px;height:3px;background:#E3B98F}
+.vsell .h2{color:#F5F0E8}
+.vsell .lead{color:#EDE3D3}
+.vsell .vcard{color:var(--ink);background:#F5F0E8;border-color:transparent;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.vsell .vcard .price{color:var(--accent)}
+@media (min-width:900px){.vsell::before{left:max(40px,calc((100% - 1200px) / 2 + 40px))}}
+
+/* Kimler için ikonları */
+.who div{display:flex;align-items:center;gap:14px}
+.wi{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--tint);color:var(--accent);display:flex;align-items:center;justify-content:center}
+.wi svg{width:21px;height:21px}
+
+/* Bölüm ayracı */
+main > section{position:relative}
+.sec,.split,.buy{border-top:0 !important}
+main > section.sec:not(.vsell)::before, main > section.split::before, main > section.buy::before{content:"";position:absolute;top:0;left:var(--pad);right:var(--pad);height:1px;background:linear-gradient(90deg,transparent,var(--line2) 22%,var(--line2) 78%,transparent)}
+main > section.sec:not(.vsell)::after, main > section.split::after, main > section.buy::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;background:var(--bg);border:1px solid var(--accent);transform:rotate(45deg)}
+.vsell + section::before,.vsell + section::after{display:none !important}
+@media (min-width:900px){
+  main > section.sec:not(.vsell)::before, main > section.split::before, main > section.buy::before{left:max(40px,calc((100% - 1200px) / 2 + 40px));right:max(40px,calc((100% - 1200px) / 2 + 40px))}
+}
 </style>
 </head>
 <body>
-
-<header class="nav">
-  <div class="wrap">
-    <a class="logo" href="https://savascikrak.com/">savaşçıkrak<span>.</span></a>
-    <nav class="nav-links" aria-label="Sayfa içi">
-      <a class="hide-m" href="#program">Program</a>
-      <a class="hide-m" href="#egitmen">Eğitmen</a>
-      <a class="hide-m" href="#sss">Sorular</a>
-      <a class="pill" href="#basvuru">Başvur</a>
-    </nav>
-  </div>
-</header>
 
 <main>
 
@@ -319,9 +421,11 @@ footer .logo{color:var(--bg);font-size:20px}
   </div>
 
   <div class="hero-details">
-    <div class="hero-promise"><p>Gerçek ürün fotoğrafınızdan kampanya, sosyal medya ve e-ticaret görselleri üretmeyi öğrenin.</p></div>
+    <div class="hero-promise"><p><em>Gerçek ürün fotoğraflarınızdan</em> kampanya ve e-ticaret görselleri üretmeyi öğrenin.</p></div>
     <div class="cta-row">
       <a class="program-btn" href="#program">Eğitimde neler var?</a>
+      <a class="program-btn" href="#kimler">Eğitim kimler için?</a>
+      <a class="program-btn" href="#cekim">Doğru fotoğraf nasıl çekilir?</a>
     </div>
   </div>
 </section>
@@ -355,72 +459,30 @@ footer .logo{color:var(--bg);font-size:20px}
   </div>
 </section>
 
-<section class="wrap sec stack">
-  <div class="stack"><p class="eb">Yöntem</p><h2 class="h2">Dört adımda süreç</h2></div>
-  <div class="steps">
-    <div class="step"><figure class="ph ph-d"><img src="assets/surec-1.jpg" alt="" onerror="this.remove()"><figcaption>Ham referans fotoğrafı</figcaption></figure><span class="num">01</span><div><strong>Referans</strong><p>Her şey doğru çekilmiş bir ürün fotoğrafıyla başlar. Nelere dikkat edeceğinizi gösteriyorum.</p></div></div>
-    <div class="step"><figure class="ph ph-d"><img src="assets/surec-2.jpg" alt="" onerror="this.remove()"><figcaption>Boş sahne / sahne taslağı</figcaption></figure><span class="num">02</span><div><strong>Sahne</strong><p>Ürüne ve kullanım amacına uygun sahneyi ve atmosferi kurarsınız.</p></div></div>
-    <div class="step"><figure class="ph ph-d"><img src="assets/surec-3.jpg" alt="" onerror="this.remove()"><figcaption>Entegre edilmiş görsel</figcaption></figure><span class="num">03</span><div><strong>Entegrasyon</strong><p>Işık yönü, gölge, yansıma, perspektif. Ürünü sahneye yapıştırmak değil, oraya ait kılmak.</p></div></div>
-    <div class="step"><figure class="ph ph-d"><img src="assets/surec-4.jpg" alt="" onerror="this.remove()"><figcaption>Overlay / difference kontrolü</figcaption></figure><span class="num dark">04</span><div><strong>Kontrol</strong><p>Gerçek ürünle üst üste koyun, farkı görün. Ürün korunmadıysa görsel teslim edilmez.</p></div></div>
-  </div>
-  <div class="grid2 step-imgs">
-    <figure class="ph"><img src="assets/surec-1.jpg" alt="" onerror="this.remove()"><figcaption>01 · Ham referans fotoğrafı</figcaption></figure>
-    <figure class="ph"><img src="assets/surec-2.jpg" alt="" onerror="this.remove()"><figcaption>02 · Boş sahne / sahne taslağı</figcaption></figure>
-    <figure class="ph"><img src="assets/surec-3.jpg" alt="" onerror="this.remove()"><figcaption>03 · Entegre edilmiş görsel</figcaption></figure>
-    <figure class="ph"><img src="assets/surec-4.jpg" alt="" onerror="this.remove()"><figcaption>04 · Overlay / difference kontrolü</figcaption></figure>
-  </div>
-</section>
-
-<section class="sec tint">
-  <div class="wrap vsec stack">
-    <div class="stack">
-      <p class="eb">Video eğitimler · Ayrı satın alınabilir</p>
-      <h2 class="h2">İyi sonuç, doğru kaynak fotoğrafla başlar.</h2>
-      <p class="lead">Yapay zeka, ona verdiğiniz fotoğraftan daha iyisini üretemez. Işık yanlışsa, renk kaymışsa, detaylar net değilse sonuç da öyle olur. Kaynak fotoğrafı doğru çekmek için iki ayrı video eğitim hazırladım.</p>
-    </div>
-    <div class="vcards">
-      <div class="vcard"><figure class="ph"><img src="assets/video-telefon.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: telefonla çekim, ışık kurulumu görünür</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekenler için ışık, renk ve netlik.</p><span class="price">Fiyat yakında</span></div>
-      <div class="vcard"><figure class="ph"><img src="assets/video-profesyonel.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: kamera + ışık kurulumu, arkadan</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Kamera ve stüdyo ile çekenler için, yapay zekaya uygun kaynak fotoğraf.</p><span class="price">Fiyat yakında</span></div>
-    </div>
-  </div>
-</section>
-
 <section id="program" class="wrap sec psec stack">
   <div class="stack"><p class="eb">Eğitimde neler var</p><h2 class="h2">Aşama aşama öğrenin.</h2></div>
-  <ol class="plist">
-    <li><span class="n">1</span><div><strong>Kaynak fotoğrafı yapay zekaya hazırlamak</strong><span>Hangi fotoğraf iyi sonuç verir, hangisi vermez.</span></div></li>
-    <li><span class="n">2</span><div><strong>Ürünü yeni sahnelere yerleştirmek</strong><span>Lifestyle, stüdyo, mekan ve konsept sahneler.</span></div></li>
-    <li><span class="n">3</span><div><strong>Işık, gölge ve perspektif uyumu</strong><span>Ürünün sahneye gerçekten ait görünmesi.</span></div></li>
-    <li><span class="n">4</span><div><strong>Logo, etiket ve malzemeyi korumak</strong><span>Ürünün kimliği olduğu gibi kalır.</span></div></li>
-    <li><span class="n">5</span><div><strong>Kampanya, katalog ve reklam görselleri</strong><span>Aynı üründen çok sayıda varyasyon.</span></div></li>
-    <li><span class="n">6</span><div><strong>Sosyal medya ve e-ticaret çıktıları</strong><span>Her platforma uygun format ve oran.</span></div></li>
-    <li><span class="n">7</span><div><strong>Kontrol: gerçek ürünle karşılaştırma</strong><span>Görseli teslim etmeden önce ürünün korunduğunu doğrulamak.</span></div></li>
-  </ol>
+  <div class="tl">
+    <div class="tl-group"><p class="tl-phase">Hazırlık</p><ol class="tl-list"><li><span class="n">01</span><details><summary><strong>Kaynak fotoğrafı yapay zekaya hazırlamak</strong><span>Hangi fotoğraf iyi sonuç verir, hangisi vermez.</span></summary><p class="tl-more">Yapay zekaya verilen fotoğrafın ışığı, rengi ve netliği sonucu doğrudan belirler. Mevcut fotoğraflarınızı nasıl değerlendireceğinizi, hangi durumda yeniden çekmeniz gerektiğini ve fotoğrafı üretime nasıl hazırlayacağınızı görürsünüz.</p></details></li></ol></div>
+    <div class="tl-group"><p class="tl-phase">Üretim</p><ol class="tl-list"><li><span class="n">02</span><details><summary><strong>Ürünü yeni sahnelere yerleştirmek</strong><span>Lifestyle, stüdyo, mekan ve konsept sahneler.</span></summary><p class="tl-more">Ürünün kullanım amacına ve markanın diline uygun sahne seçimi. Lifestyle, stüdyo, mekan ve konsept sahneleri tarif ederken nelere dikkat edileceği ve aynı ürün için farklı sahne alternatiflerinin nasıl üretildiği.</p></details></li><li><span class="n">03</span><details><summary><strong>Işık, gölge ve perspektif uyumu</strong><span>Ürünün sahneye gerçekten ait görünmesi.</span></summary><p class="tl-more">Bir görseli yapay gösteren en büyük hata, ürünün ışığıyla sahnenin ışığının uyuşmaması. Işığın yönü ve sertliği, gölge, yansıma ve perspektifin sahneyle nasıl eşleştirileceği.</p></details></li><li><span class="n">04</span><details><summary><strong>Logo, etiket ve malzemeyi korumak</strong><span>Ürünün kimliği olduğu gibi kalır.</span></summary><p class="tl-more">Yapay zekanın en sık bozduğu yerler: etiket yazıları, logo, oranlar ve malzeme dokusu. Bu detayları korumak için nasıl çalışılacağı, bozulduğunda nasıl düzeltileceği.</p></details></li></ol></div>
+    <div class="tl-group"><p class="tl-phase">Çıktı ve kontrol</p><ol class="tl-list"><li><span class="n">05</span><details><summary><strong>Kampanya, katalog ve reklam görselleri</strong><span>Aynı üründen çok sayıda varyasyon.</span></summary><p class="tl-more">Tek bir ürün fotoğrafından kampanya, katalog ve reklam için tutarlı bir görsel seri üretmek. Seri boyunca ışığı, rengi ve ürünü tutarlı tutmak.</p></details></li><li><span class="n">06</span><details><summary><strong>Sosyal medya ve e-ticaret çıktıları</strong><span>Her platforma uygun format ve oran.</span></summary><p class="tl-more">Instagram, Trendyol, Hepsiburada ve Amazon gibi platformların oran ve format ihtiyaçlarına göre çıktı hazırlamak.</p></details></li><li><span class="n dark">07</span><details><summary><strong>Kontrol: gerçek ürünle karşılaştırma</strong><span>Görseli teslim etmeden önce ürünün korunduğunu doğrulamak.</span></summary><p class="tl-more">Görsel teslim edilmeden önce ürünün formu, rengi, logosu, etiketi ve malzemesi gerçek ürünle tek tek karşılaştırılır. Neyin kontrol edileceği ve bozulan detayın nasıl düzeltileceği.</p></details></li></ol></div>
+  </div>
 </section>
 
-<section class="wrap sec stack">
-  <div class="stack"><p class="eb">Farklı ürünler, aynı yaklaşım</p><h2 class="h2">Her malzemenin zorluğu farklı.</h2></div>
-  <div class="gallery">
-    <figure class="ph"><img src="assets/galeri-cam.jpg" alt="" onerror="this.remove()"><figcaption><strong>Cam</strong><br>Parfüm / serum · Referans: stüdyo</figcaption></figure>
-    <figure class="ph"><img src="assets/galeri-metal.jpg" alt="" onerror="this.remove()"><figcaption><strong>Metal</strong><br>Saat / takı · Referans: stüdyo</figcaption></figure>
-    <figure class="ph"><img src="assets/galeri-tekstil.jpg" alt="" onerror="this.remove()"><figcaption><strong>Tekstil</strong><br>Eşarp / çanta · Referans: telefon</figcaption></figure>
-    <figure class="ph"><img src="assets/galeri-gida.jpg" alt="" onerror="this.remove()"><figcaption><strong>Gıda ambalajı</strong><br>Referans: telefon</figcaption></figure>
-    <figure class="ph"><img src="assets/galeri-kozmetik.jpg" alt="" onerror="this.remove()"><figcaption><strong>Kozmetik tüp</strong><br>Referans: telefon</figcaption></figure>
-    <figure class="ph"><img src="assets/galeri-elektronik.jpg" alt="" onerror="this.remove()"><figcaption><strong>Elektronik</strong><br>Referans: stüdyo</figcaption></figure>
-  </div>
+<section id="urunler" class="wrap sec stack">
+  <div class="stack"><p class="eb">Hangi ürünler</p><h2 class="h2">Ürününüz ne olursa olsun.</h2>
+  <p class="lead">Kendi ürününü üreten çok farklı kişi var. Her malzemenin yapay zekada zorlandığı yer farklı.</p></div>
+  <div class="cats"><div class="cat"><strong>Takı ve aksesuar</strong><span>Parlama, taş detayları ve ince zincirler.</span></div><div class="cat"><strong>Kozmetik ve bakım</strong><span>Şişe formu ve küçük puntolu etiket yazıları.</span></div><div class="cat"><strong>Tekstil ve giyim</strong><span>Desen, dikiş ve kumaşın dokusu.</span></div><div class="cat"><strong>Gıda ve içecek</strong><span>İştah açan renk ve gerçekçi doku.</span></div><div class="cat"><strong>Cam ve şişe</strong><span>Yansıma, şeffaflık ve içindeki sıvı.</span></div><div class="cat"><strong>Seramik ve el yapımı</strong><span>Yüzey dokusu ve el işinin doğallığı.</span></div><div class="cat"><strong>Deri ve çanta</strong><span>Malzeme dokusu, dikiş ve metal aksam.</span></div><div class="cat"><strong>Elektronik</strong><span>Logo, ekran ve keskin kenarlar.</span></div><a class="cat cat-cta" href="#basvuru"><strong>Ürününüz listede yok mu?</strong><span>Başvuru formunda ürün grubunuzu yazın →</span></a></div>
 </section>
 
 <section class="wrap split" style="border-top:1px solid var(--line)">
-  <div class="stack">
-    <p class="eb">Katılımcılar</p>
+  <div class="stack" id="kimler">
     <h2 class="h2">Kimler için?</h2>
     <div class="who">
-      <div>Ürün görseli üreten fotoğrafçılar ve ajanslar</div>
-      <div>Kendi ürününün görselini üretmek isteyen markalar ve üreticiler</div>
-      <div>Trendyol, Hepsiburada ve Amazon satıcıları</div>
-      <div>Sosyal medya için sürekli yeni görsele ihtiyaç duyan işletmeler</div>
+      <div><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span>Ürün görseli üreten fotoğrafçılar ve ajanslar</span></div>
+      <div><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg></span><span>Kendi ürününün görselini üretmek isteyen markalar ve üreticiler</span></div>
+      <div><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg></span><span>Trendyol, Hepsiburada ve Amazon satıcıları</span></div>
+      <div><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/><path d="M10 9l2 2 3-3"/></svg></span><span>Sosyal medya için sürekli yeni görsele ihtiyaç duyan işletmeler</span></div>
     </div>
-    <p class="quote">Tek tıkla hazır görsel arayanlar için değil. Ürününün doğruluğunu önemseyenler için.</p>
   </div>
   <div class="stack">
     <p class="eb">Hazırlık</p>
@@ -428,6 +490,19 @@ footer .logo{color:var(--bg);font-size:20px}
     <p class="lead">Bilgisayar ve internet bağlantısı. Kurulum ya da güçlü bir ekran kartı gerekmez. Telefonla ya da kamerayla çekilmiş bir ürün fotoğrafı.</p>
     <p class="eb" style="margin-top:6px">Eğitimde kullanılan araçlar</p>
     <div class="chips"><span>ChatGPT</span><span>Gemini (Nano Banana)</span><span>Adobe Firefly</span><span>Photoroom</span></div>
+  </div>
+</section>
+
+<section id="cekim" class="sec tint vsell">
+  <div class="wrap vsec stack">
+    <div class="stack">
+      <h2 class="h2">İyi sonuç, doğru fotoğraf çekmekle başlar.</h2>
+      <p class="lead">Yapay zeka, ona verdiğiniz fotoğraftan daha iyisini üretemez. Çekim konusunda eksiğiniz varsa bu eğitimler de tam size göre. Üstelik online eğitime özel fiyat avantajıyla.</p>
+    </div>
+    <div class="vcards">
+      <div class="vcard"><figure class="ph"><img src="assets/video-telefon.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: telefonla çekim, ışık kurulumu görünür</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price">Fiyat yakında</span></div>
+      <div class="vcard"><figure class="ph"><img src="assets/video-profesyonel.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: kamera + ışık kurulumu, arkadan</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Ürün fotoğrafının karakterini kamera değil ışık belirler. Doğru ışık kullanımı, flaş teknikleri ve profesyonel çekim tekniklerini uygulamalı olarak anlatıyoruz. Kamerayla çekenler için hem tek başına güçlü bir fotoğraf, hem de yapay zekada ürünü koruyan sağlam bir kaynak.</p><span class="price">Fiyat yakında</span></div>
+    </div>
   </div>
 </section>
 
