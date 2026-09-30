@@ -24,7 +24,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;padding-bottom:calc(76px + env(safe-area-inset-bottom,0px))}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;padding-bottom:env(safe-area-inset-bottom,0px)}
 img{max-width:100%;display:block}
 a{color:var(--ink)}
 a:hover{color:var(--accent)}
@@ -415,6 +415,46 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
   .trainer{padding-top:88px}
   main > section.trainer::before{left:max(40px,calc((100% - 1200px) / 2 + 40px));right:max(40px,calc((100% - 1200px) / 2 + 40px))}
 }
+
+/* WhatsApp */
+.sticky-actions{display:flex;align-items:center;gap:8px}
+.wa-btn{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;background:#1FAF5A;color:#fff;flex-shrink:0}
+.wa-btn svg{width:26px;height:26px}
+.wa-btn:hover{background:#178F49;color:#fff}
+.wa-float{display:none}
+.wa-line{display:flex;align-items:center;gap:14px;margin-top:18px;padding:14px 16px;border:1px solid var(--line2);border-radius:12px;text-decoration:none;color:var(--ink);background:var(--card)}
+.wa-line svg{width:30px;height:30px;color:#1FAF5A;flex-shrink:0}
+.wa-line span{display:flex;flex-direction:column;font-size:14px;line-height:1.35;color:var(--text)}
+.wa-line strong{font-size:15px;color:var(--ink)}
+.wa-line:hover{border-color:#1FAF5A;color:var(--ink)}
+@media (min-width:900px){
+  .wa-float{position:fixed;right:24px;bottom:24px;z-index:40;display:inline-flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border-radius:999px;background:#1FAF5A;color:#fff;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+  .wa-float svg{width:24px;height:24px}
+  .wa-float:hover{background:#178F49;color:#fff}
+}
+
+/* Fiyat kutusu: başlık ve tarih */
+.price-copy h2{text-align:center;text-transform:uppercase;font-weight:400;font-size:22px;line-height:1.3;letter-spacing:.04em}
+.price-event{padding:16px 8px}
+.price-date{flex-direction:row;flex-wrap:nowrap;gap:8px;font-size:17px;font-weight:700;letter-spacing:0;white-space:nowrap}
+.price-date i{display:block;height:20px}
+.price-date strong{min-height:38px;padding:0 11px;font-size:17px;letter-spacing:.03em}
+@media (min-width:900px){
+  .price-copy h2{font-size:30px}
+  .price-date{font-size:21px}
+  .price-date strong{font-size:21px;min-height:42px}
+}
+.price-date strong{border-radius:8px;background:var(--accent);color:#FFF8EF;box-shadow:0 4px 12px rgba(138,75,31,.18)}
+.checks{display:flex;flex-direction:column;gap:8px}
+.btn-wa{gap:10px;padding:0 14px;font-size:15.5px;white-space:nowrap;background:#1FAF5A}
+.btn-wa:hover{background:#178F49}
+.btn-wa svg{width:22px;height:22px}
+
+/* Yüzen WhatsApp ikonu (tüm ekranlar) */
+.wa-float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex !important;align-items:center;justify-content:center;width:56px;height:56px;padding:0 !important;border-radius:50%;background:#1FAF5A;color:#fff;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s ease,background .2s ease}
+.wa-float svg{width:30px !important;height:30px !important}
+.wa-float:hover{background:#178F49;color:#fff;transform:scale(1.06)}
+@media (min-width:900px){.wa-float{width:60px;height:60px;right:28px;bottom:28px}}
 </style>
 </head>
 <body>
@@ -555,12 +595,12 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
       <p>Deneme yanılmayla zaman kaybetmeden, ürününüzü koruyan doğru üretim sistemini öğrenin. Kampanya, e-ticaret ve sosyal medya için ihtiyaç duyduğunuz görselleri kontrollü biçimde üretebilecek seviyeye gelin.</p>
     </div>
     <div class="price-event" aria-label="Eğitim tarihi ve saati">
-      <div class="price-date"><span>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong>20:00</strong></div>
+      <div class="price-date"><span>17 Ekim · Cumartesi</span><i aria-hidden="true"></i><strong>20:00</strong></div>
     </div>
     <div class="price-amount"><span>3.950</span><small>₺</small></div>
   </div>
 
-  <form class="form" id="basvuru-formu" action="mailto:iletisim@savascikrak.com" method="GET">
+  <form class="form" id="basvuru-formu" action="https://wa.me/905313174444" method="GET">
     <p class="eb">Kayıt</p>
     <h2 class="h2">Başvuru</h2>
     <div class="fgrid">
@@ -579,15 +619,19 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
       </label>
     </div>
     <label class="fld">Çalıştığınız ürün grubu<input class="inp" type="text" name="urun_grubu" placeholder="Örneğin kozmetik, takı, gıda"></label>
-    <label class="check"><input type="checkbox" name="video_paketi" value="evet">Kaynak fotoğraf video eğitimini de ekle (paket fiyatı)</label>
-    <button class="btn" type="submit">Başvuruyu e-posta ile gönder</button>
+    <div class="checks">
+      <label class="check"><input type="checkbox" name="video_cep_telefonu" value="evet">Cep telefonuyla ürün çekimi video eğitimini de ekle</label>
+      <label class="check"><input type="checkbox" name="video_profesyonel" value="evet">Profesyoneller için ürün çekimi video eğitimini de ekle</label>
+    </div>
+    <button class="btn btn-wa" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.6c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A7.9 7.9 0 1 1 12 19.8zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.6-.6z"/></svg>Başvuruyu WhatsApp ile gönder</button>
     <p class="form-ok" id="form-ok" role="status">Başvurunuz alındı. En kısa sürede size dönüş yapacağız.</p>
-    <p class="note">Kayıt sonrası, eğitimde kullanılacak araçların listesi ve hazırlık notları e-posta ile gönderilir.</p>
   </form>
 </section>
 
 <section id="sss" class="wrap sec faqsec stack">
-  <div class="stack"><p class="eb">Sık sorulanlar</p><h2 class="h2">Sorular</h2></div>
+  <div class="program-intro tools-intro">
+    <h2>Sık sorulan sorular</h2>
+  </div>
   <div class="faq">
     <details><summary>Canlı katılamazsam ne olur?</summary><p>Eğitim kaydedilir. Kayda 30 gün boyunca erişebilirsiniz.</p></details>
     <details><summary>Güçlü bir bilgisayar gerekir mi?</summary><p>Hayır. Eğitimde hazır yapay zeka araçları kullanılıyor, kurulum gerekmiyor.</p></details>
@@ -597,46 +641,36 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
   </div>
 </section>
 
-<section class="final">
-  <div class="wrap in">
-    <div class="stack" style="gap:14px"><p class="eb">Aynı ürün. Yeni dünyalar.</p><p class="big">Ürününüzü değiştirmeden, dünyasını değiştirin.</p></div>
-    <a class="btn" href="#basvuru" style="flex-shrink:0">Başvur · 3.950₺</a>
-  </div>
-</section>
-
 </main>
-
-<footer>
-  <div class="wrap">
-    <a class="logo" href="https://savascikrak.com/" style="text-decoration:none">savaşçıkrak<span>.</span></a>
-    <span><a href="https://savascikrak.com/" style="color:inherit">savascikrak.com</a> · <a href="https://instagram.com/savascikrak" style="color:inherit">@savascikrak</a></span>
-  </div>
-</footer>
-
-<div class="sticky" aria-hidden="false">
-  <div class="info"><strong>17 Ekim · 20:00</strong>Canlı online eğitim</div>
-  <a class="btn" href="#basvuru">Başvur</a>
-</div>
+<a class="wa-float" href="https://wa.me/905313174444?text=Merhaba%2C%20Yapay%20Zeka%20At%C3%B6lyesi%20i%C3%A7in%20yaz%C4%B1yorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.6c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A7.9 7.9 0 1 1 12 19.8zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.6-.6z"/></svg></a>
 
 <script>
-// Başvuruyu kullanıcının e-posta uygulamasında hazırlar.
+// Başvuruyu WhatsApp mesajı olarak hazırlar ve gönderir.
 (function(){
   var f=document.getElementById('basvuru-formu');
   if(!f) return;
   f.addEventListener('submit',function(e){
     e.preventDefault();
     if(!f.reportValidity()) return;
-    var data=new FormData(f);
-    var subject='Yapay zeka eğitimi başvurusu · '+(data.get('ad_soyad')||'');
+    var d=new FormData(f), v=function(k){return (d.get(k)||'').toString().trim();};
+    var videolar=[];
+    if(v('video_cep_telefonu')==='evet') videolar.push('Cep telefonuyla ürün çekimi');
+    if(v('video_profesyonel')==='evet') videolar.push('Profesyoneller için ürün çekimi');
     var lines=[
-      'Ad soyad: '+(data.get('ad_soyad')||''),
-      'E-posta: '+(data.get('eposta')||''),
-      'Telefon: '+(data.get('telefon')||''),
-      'Katılım amacı: '+(data.get('amac')||''),
-      'Ürün grubu: '+(data.get('urun_grubu')||''),
-      'Video paketi: '+(data.get('video_paketi')==='evet'?'Evet':'Hayır')
+      'Merhaba, Yapay Zeka Atölyesi (17 Ekim, 20:00) için başvurmak istiyorum.',
+      '',
+      'Ad soyad: '+v('ad_soyad'),
+      'E-posta: '+v('eposta'),
+      'Telefon: '+v('telefon'),
+      'Katılım amacı: '+v('amac'),
+      'Ürün grubu: '+(v('urun_grubu')||'-'),
+      'Video eğitim: '+(videolar.length?videolar.join(', '):'İstemiyorum')
     ];
-    window.location.href='mailto:iletisim@savascikrak.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+    var url='https://wa.me/905313174444?text='+encodeURIComponent(lines.join('\n'));
+    var w=window.open(url,'_blank');
+    if(!w) window.location.href=url;
+    var ok=document.getElementById('form-ok');
+    if(ok){ ok.textContent='WhatsApp açıldı. Mesajı göndermeyi unutmayın.'; ok.style.display='block'; }
   });
 })();
 </script>
