@@ -63,11 +63,11 @@ h1,h2,h3{margin:0}
 /* Hero */
 .hero{display:grid;grid-template-areas:"head" "visual" "details";gap:20px;padding-top:32px;padding-bottom:24px}
 .hero-head{grid-area:head;display:flex;flex-direction:column;gap:16px}
-.hero-event{align-self:center;width:min(100%,390px);padding:16px 18px 15px;border:1px solid var(--line2);border-top:3px solid var(--accent);border-radius:14px;background:linear-gradient(145deg,rgba(251,248,243,.96),rgba(239,231,218,.72));box-shadow:0 10px 28px rgba(73,54,35,.08);text-align:center}
-.hero-live{font-size:20px;line-height:1;letter-spacing:.12em;font-weight:800;color:var(--accent)}
-.hero-date{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:13px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink);font-size:15px;font-weight:600;letter-spacing:.01em}
-.hero-date strong{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:0 12px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:15px;letter-spacing:.04em}
-.hero-date i{width:1px;height:19px;background:var(--line2)}
+.hero-live{align-self:center;text-align:center;font-size:14px;letter-spacing:.17em;font-weight:700;color:#267349}
+.hero-live::after{content:"";display:block;width:68px;height:3px;margin:9px auto 0;border-radius:999px;background:#267349}
+.hero-date{align-self:center;display:flex;align-items:center;gap:10px;margin-top:-5px;color:var(--text);font-size:13px;letter-spacing:.02em}
+.hero-date strong{font-size:14px;color:var(--ink)}
+.hero-date i{width:1px;height:16px;background:var(--line2)}
 .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,9vw,41px);line-height:.98;letter-spacing:-.04em;text-align:center}
 .hero h1 span{display:block;white-space:nowrap}
 .hero .sub{font-family:var(--sans);font-style:italic;font-weight:600;font-size:24px;line-height:1.16;color:var(--accent);text-align:center}
@@ -78,33 +78,37 @@ h1,h2,h3{margin:0}
 .hv-styles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .hv-styles .ph{height:180px}
 .caption{font-size:13px;color:var(--muted);text-align:center}
+.hero-promise{display:flex;flex-direction:column;gap:8px;padding:20px;border:1px solid rgba(38,115,73,.28);border-radius:12px;background:#EAF2EC}
+.hero-promise p{font-size:20px;font-weight:700;line-height:1.32;letter-spacing:-.015em;color:var(--ink)}
+.hero-details{grid-area:details;display:flex;flex-direction:column;gap:18px}
 .facts{display:flex;flex-direction:column;gap:10px;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:12px;font-size:14px}
 .facts div{display:flex;justify-content:space-between;gap:12px}
 .facts span{color:var(--muted)}
 .facts strong{text-align:right}
+.cta-row{display:flex;flex-direction:column;gap:6px;align-items:stretch}
+.cta-row .link{align-self:center;font-size:14px;font-weight:500;padding:10px}
+.program-btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 24px;border:1px solid #267349;border-radius:10px;color:#1F6840;font-weight:700;text-decoration:none;background:transparent}
+.program-btn::after{content:"→";font-size:20px;font-weight:400;transition:transform .2s ease}
+.program-btn:hover{color:#fff;background:#267349}
+.program-btn:hover::after{transform:translateX(3px)}
 
 /* Eğitmen kartı */
 .trainer{padding-bottom:40px;overflow-x:clip}
 html,body{overflow-x:hidden}
-.tcard{position:relative;margin-top:84px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:360px;padding:18px 18px 20px;background:var(--tint);border-radius:16px;clip-path:inset(-600px 0 0 0 round 0 0 16px 16px)}
+.tcard{position:relative;margin-top:84px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:290px;padding:18px 18px 20px;background:var(--tint);border-radius:16px;clip-path:inset(-600px 0 0 0 round 0 0 16px 16px)}
 .tcard img{position:absolute;right:-84px;bottom:0;height:360px;width:auto;max-width:none}
 .tcard > *:not(img){position:relative}
 .tcard .lbl{font-size:15px;font-weight:700}
-.tcard h2{font-family:var(--serif);font-weight:600;font-size:37px;line-height:1;letter-spacing:-.025em;white-space:nowrap}
+.tcard h2{font-family:var(--serif);font-weight:600;font-size:38px;line-height:1;letter-spacing:-.025em;white-space:nowrap}
 .tcard .roles{font-size:14px;color:var(--text);margin-top:2px}
 .tcard .roles strong{color:var(--ink)}
 .tcard .bio{font-size:13.5px;line-height:1.5;color:var(--text);margin-top:8px;width:52%}
 .tcard .bio .bio-line{display:block;white-space:nowrap}
-.tcard .instagram-link{display:inline-flex;align-items:center;gap:9px;width:max-content;margin-top:9px;padding:6px 11px 6px 7px;background:transparent;border:1px solid rgba(26,23,20,.22);border-radius:7px;color:var(--ink);font-size:14px;font-weight:400;letter-spacing:.04em;text-decoration:none}
-.tcard .instagram-link:hover{border-color:var(--accent);color:var(--ink)}
-.tcard .instagram-link svg{width:30px;height:30px;flex:0 0 auto}
 
 /* Koruma */
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .fcard{display:flex;flex-direction:column;gap:8px;padding:10px;background:var(--card);border:1px solid var(--line);border-radius:12px}
 .fcard .ph{height:110px}
-.fcard .ph figcaption{position:absolute;z-index:2;left:8px;right:8px;bottom:8px;display:flex;justify-content:space-between;gap:8px;color:#fff;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
-.fcard .ph figcaption span{padding:4px 6px;border-radius:3px;background:rgba(20,18,16,.76);color:#fff;line-height:1}
 .fcard strong{font-size:15px}
 .fcard span{font-size:13px;color:var(--muted);line-height:1.4}
 
@@ -124,11 +128,7 @@ html,body{overflow-x:hidden}
 .vcard .ph{height:150px}
 .vcard strong{font-size:17px}
 .vcard p{font-size:14px;line-height:1.5;color:var(--text)}
-.vcard .price{display:flex;align-items:baseline;flex-wrap:wrap;gap:5px 8px;font-size:14px;font-weight:500}
-.vcard .price-label{color:var(--text)}
-.vcard .price-bridge{color:var(--text)}
-.vcard .old-price{color:var(--muted);font-weight:500}
-.vcard .price b{color:var(--accent);font-size:22px;line-height:1;font-weight:700}
+.vcard .price{font-size:14px;font-weight:600}
 
 /* Program */
 .plist{display:flex;flex-direction:column;list-style:none;margin:0;padding:0}
@@ -154,17 +154,14 @@ html,body{overflow-x:hidden}
 
 /* Fiyat + form */
 .buy{display:flex;flex-direction:column;gap:0}
-.price-box{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:24px;margin-top:40px;padding:30px 22px;border:1px solid var(--line2);border-top:4px solid var(--accent);border-radius:18px;background:linear-gradient(145deg,#FBF8F3 0%,#ECE2D3 100%);color:var(--ink);box-shadow:0 18px 46px rgba(73,54,35,.11)}
-.price-box::after{content:"";position:absolute;right:-90px;bottom:-110px;width:260px;height:260px;border:1px solid rgba(138,75,31,.13);border-radius:50%;box-shadow:0 0 0 34px rgba(138,75,31,.035),0 0 0 68px rgba(138,75,31,.025);pointer-events:none}
-.price-copy{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px}
-.price-copy h2{font-family:var(--serif);font-size:29px;line-height:1.08;letter-spacing:-.025em;font-weight:700}
-.price-copy p{font-size:15px;line-height:1.65;color:var(--text)}
-.price-event{position:relative;z-index:1;padding:16px 17px 15px;border:1px solid var(--line2);border-radius:13px;background:rgba(251,248,243,.72)}
-.price-date{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--ink);font-size:14px;font-weight:600;letter-spacing:.01em}
-.price-date strong{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:0 12px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:15px;letter-spacing:.04em}
-.price-date i{width:1px;height:19px;background:var(--line2)}
-.price-amount{position:relative;z-index:1;display:flex;align-items:flex-start;justify-content:center;gap:4px;padding-top:19px;border-top:1px solid var(--line);font-family:var(--serif);font-weight:700;font-size:62px;line-height:.9;letter-spacing:-.045em;color:var(--accent)}
-.price-amount small{padding-top:5px;font-family:var(--sans);font-size:24px;line-height:1;font-weight:600;letter-spacing:0}
+.price-box{display:flex;flex-direction:column;gap:18px;padding:44px var(--pad);background:var(--ink);color:var(--bg);margin-left:calc(-1 * var(--pad));margin-right:calc(-1 * var(--pad))}
+.price-box .eb{color:#C9BDAA}
+.price-box .big{font-family:var(--serif);font-weight:600;font-size:56px;line-height:1;letter-spacing:-.02em}
+.incl{display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.45;list-style:none;margin:0;padding:0}
+.incl li{padding-bottom:10px;border-bottom:1px solid #3A342C}
+.incl li:last-child{border-bottom:0;padding-bottom:0}
+.pack{display:flex;flex-direction:column;gap:6px;padding:16px;border:1px solid #4A4238;border-radius:12px}
+.pack .t{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#C9BDAA}
 .form{display:flex;flex-direction:column;gap:16px;padding-top:44px;padding-bottom:44px}
 .fgrid{display:flex;flex-direction:column;gap:16px}
 .fld{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:500}
@@ -212,30 +209,32 @@ footer .logo{color:var(--bg);font-size:20px}
   .eb{font-size:12px}
   .h2{font-size:48px;line-height:1.04}
   .lead{font-size:18px}
-  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head visual";column-gap:64px;row-gap:24px;padding-top:72px;padding-bottom:56px;align-items:start}
+  .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head visual" "details visual";column-gap:64px;row-gap:24px;padding-top:72px;padding-bottom:40px;align-items:start}
   .hero h1{font-size:66px;line-height:.98;letter-spacing:-.035em}
   .hero .sub{font-size:30px}
-  .hero-head{gap:22px;align-self:start}
+  .hero-head{gap:22px;align-self:end}
   .hv-top .src{width:190px;height:420px}
   .hv-top .model{height:420px}
   .hv-styles .ph{height:230px}
   .ph{font-size:13px;padding:14px}
   .caption{text-align:left;font-size:14px}
   .visual-tag{bottom:12px;left:12px;padding:7px 10px;font-size:10px}
+  .hero-promise{padding:24px}
+  .hero-promise p{font-size:24px}
   .facts{flex-direction:row;gap:28px;padding:18px 0;background:none;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;font-size:15px}
   .facts div{flex-direction:column;gap:4px;justify-content:flex-start}
   .facts span{font-size:13px}
   .facts strong{text-align:left}
+  .cta-row{flex-direction:row;align-items:center;gap:24px}
+  .cta-row .btn{font-size:17px;padding:0 32px}
   .trainer{padding-bottom:88px}
   .tcard{margin-top:150px;min-height:400px;padding:56px 64px;justify-content:center;gap:10px;border-radius:20px;clip-path:inset(-600px 0 0 0 round 0 0 20px 20px)}
   .tcard img{right:80px;height:560px}
   .tcard .lbl{font-size:20px}
-  .tcard h2{font-size:79px;letter-spacing:-.03em}
+  .tcard h2{font-size:80px;letter-spacing:-.03em}
   .tcard .roles{font-size:22px}
   .tcard .bio{font-size:18px;line-height:1.6;width:auto;max-width:460px;margin-top:12px}
   .tcard .bio .bio-line{display:inline;white-space:normal}
-  .tcard .instagram-link{margin-top:12px;padding:7px 14px 7px 8px;font-size:16px}
-  .tcard .instagram-link svg{width:34px;height:34px}
   .head2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:64px;align-items:end}
   .grid4{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
   .fcard{padding:12px;border-radius:14px}
@@ -267,13 +266,9 @@ footer .logo{color:var(--bg);font-size:20px}
   .quote{font-size:22px}
   .chips{font-size:15px;gap:10px}
   .buy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:48px;align-items:start;padding-top:88px;padding-bottom:88px}
-  .price-box{margin:0;padding:42px;border-radius:18px;gap:28px}
-  .price-copy h2{font-size:38px}
-  .price-copy p{font-size:16px}
-  .price-event{padding:18px 20px}
-  .price-date{font-size:15px}
-  .price-amount{font-size:82px}
-  .price-amount small{font-size:29px}
+  .price-box{margin:0;padding:40px;border-radius:18px;gap:20px}
+  .price-box .big{font-size:80px}
+  .incl{font-size:16px;gap:12px}
   .form{padding:0}
   .fgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
   .fld{font-size:14px}
@@ -290,6 +285,11 @@ footer .logo{color:var(--bg);font-size:20px}
 /* ===== Tasarım düzenlemesi v2 (mobil öncelikli) ===== */
 .h2{font-weight:700}
 .hero .sub{font-style:normal;font-weight:500}
+.hero-promise{background:none;border:0;padding:0;text-align:center}
+.hero-promise p{font-size:18px;font-weight:500;letter-spacing:0;color:var(--text)}
+.cta-row{gap:10px}
+.program-btn{border-color:var(--line2);color:var(--ink);font-weight:600}
+.program-btn:hover{background:var(--ink);color:var(--bg)}
 .fcard{background:none;border:0;padding:0;gap:6px}
 .who{gap:0}
 .who div{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:14px 0}
@@ -309,57 +309,42 @@ footer .logo{color:var(--bg);font-size:20px}
   .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .gallery .ph{height:300px}
   .hero h1{font-size:min(52px,3.6vw);text-align:left}
-  .hero-event{align-self:flex-start;width:auto;min-width:390px;text-align:left}
-  .hero-date{justify-content:flex-start}
-  .hero .sub{text-align:left}
+  .hero-live,.hero-date{align-self:flex-start;text-align:left}
+  .hero-live::after{margin-left:0}
+  .hero .sub,.hero-promise{text-align:left}
+  .cta-row{flex-direction:row;align-items:center;gap:14px}
   .psec > .stack:first-child{position:sticky;top:110px;align-self:start}
 }
 
+/* Vaat şeridi */
+.hero-promise{position:relative;margin:4px calc(-1 * var(--pad)) 0;padding:22px var(--pad);background:#6B5B47;border-radius:0;text-align:center}
+.hero-promise::before{content:"";position:absolute;left:50%;top:0;width:48px;height:3px;transform:translateX(-50%);background:#E3B98F}
+.hero-promise p{font-size:19px;font-weight:500;line-height:1.35;letter-spacing:-.01em;color:#F5F0E8}
+.hero-promise em{font-style:normal;font-weight:700;color:#F4D3AE}
+@media (min-width:900px){
+  .hero-promise{margin:0;padding:24px 28px;border-radius:14px;text-align:left}
+  .hero-promise::before{left:28px;transform:none}
+  .hero-promise p{font-size:22px}
+}
 #kimler,#cekim{scroll-margin-top:16px}
 #program{scroll-margin-top:16px}
 
 /* Program: gruplu zaman çizelgesi */
-.program-intro{position:relative;overflow:hidden;padding:26px 24px 28px;border:1px solid var(--line2);border-top:4px solid var(--accent);border-radius:16px;background:linear-gradient(145deg,#FBF8F3 0%,#ECE2D3 100%);box-shadow:0 14px 36px rgba(73,54,35,.09)}
-.program-intro::after{content:"01—08";position:absolute;right:18px;bottom:10px;font-family:var(--serif);font-size:54px;line-height:1;font-weight:700;letter-spacing:-.05em;color:rgba(138,75,31,.08);pointer-events:none}
-.program-intro h2{position:relative;z-index:1;font-family:var(--sans);font-size:20px;line-height:1.35;letter-spacing:.12em;font-weight:800;text-transform:uppercase;text-align:center;color:var(--ink)}
-.protection-intro,.tools-intro{align-self:stretch;position:relative;top:auto}
-.protection-intro::after,.tools-intro::after{display:none}
-.protection-copy{width:100%;max-width:900px;margin:4px auto 0;padding-top:12px;text-align:left}
-.protection-copy .lead{line-height:1.65}
-.campaign-intro{width:100%;max-width:900px;margin:0 auto;text-align:center}
-.campaign-showcase{display:flex;flex-direction:column;gap:14px;width:100%;max-width:900px;margin:4px auto 0}
-.campaign-card{overflow:hidden;margin:0;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 12px 30px rgba(73,54,35,.08)}
-.campaign-card figcaption{display:flex;align-items:center;gap:12px;padding:13px 15px;border-bottom:1px solid var(--line);font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink)}
-.campaign-card figcaption b{display:flex;align-items:center;justify-content:center;flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--accent);color:#fff;font-size:11px}
-.campaign-card img{display:block;width:100%;height:auto}
-.campaign-flow{display:flex;align-items:center;justify-content:center;gap:10px;color:var(--accent);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-.campaign-flow::before,.campaign-flow::after{content:"";width:54px;height:1px;background:var(--line2)}
-.campaign-flow span::after{content:"↓";margin-left:8px;font-size:16px}
 .tl{display:flex;flex-direction:column;gap:20px}
 .tl-phase{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--accent);margin-bottom:6px}
 .tl-list{list-style:none;margin:0;padding:0;position:relative}
 .tl-list li:not(:last-child)::after{content:"";position:absolute;left:17px;top:44px;bottom:-8px;width:1px;background:var(--line2)}
 .tl{margin-top:6px}
 .tl-list li{position:relative;display:flex;gap:14px;align-items:flex-start;padding:8px 0}
-.tl-list .n{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--accent);border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#FFF8EF;position:relative;z-index:1;box-shadow:0 4px 12px rgba(138,75,31,.18)}
-.tl-list .n.dark{background:var(--accent);border-color:var(--accent);color:#FFF8EF}
+.tl-list .n{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--tint);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--ink);position:relative;z-index:1}
+.tl-list .n.dark{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 
 .tl-list strong{display:block;font-size:15px;line-height:1.35;margin-bottom:2px}
 .tl-list li span:not(.n){font-size:14px;line-height:1.45;color:var(--muted)}
 @media (min-width:900px){
-  .program-intro{align-self:start;position:sticky;top:110px;padding:36px 38px 40px}
-  .protection-intro,.tools-intro{align-self:stretch;position:relative;top:auto;padding:36px 38px 40px}
-  .protection-copy{padding-top:15px}
-  .campaign-showcase{gap:18px}
-  .campaign-card figcaption{padding:16px 18px;font-size:13px}
   .tl{gap:26px}
   .tl-list strong{font-size:17px}
   .tl-list li span:not(.n){font-size:15px}
-}
-@media (max-width:899px){
-  .program-intro{padding:24px 16px 26px}
-  .program-intro h2{font-size:clamp(12px,3.8vw,16px);line-height:1.45;letter-spacing:.06em}
-  .program-intro h2 span{display:block;white-space:nowrap}
 }
 
 /* Program detayları (açılır) */
@@ -372,36 +357,41 @@ footer .logo{color:var(--bg);font-size:20px}
 .tl-more{margin-top:10px;padding:12px 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;font-size:14px;line-height:1.55;color:var(--text)}
 @media (min-width:900px){.tl-more{font-size:15px}}
 
-/* Eğitimde kullanılan araçlar */
-.tools-grid{display:grid;grid-template-columns:1fr;gap:10px}
-.tool-card{position:relative;display:flex;flex-direction:column;gap:8px;min-height:150px;padding:20px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 24px rgba(73,54,35,.06)}
-.tool-title{display:flex;align-items:center;gap:11px;min-height:38px}
-.tool-logo{flex:0 0 auto;width:34px;height:34px;object-fit:contain}
-.tool-logo.rounded{border-radius:8px}
-.tool-card strong{font-family:var(--serif);font-size:21px;line-height:1.2}
-.tool-card span{font-size:14px;line-height:1.55;color:var(--muted)}
-.tools-lead strong{display:block;margin-top:10px}
+/* Ürün kategorileri */
+.cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.cat{display:flex;flex-direction:column;gap:4px;padding:14px;background:var(--bg);text-decoration:none;color:var(--ink)}
+.cat strong{font-size:15px;line-height:1.3}
+.cat span{font-size:13px;line-height:1.45;color:var(--muted)}
+.cat-cta{grid-column:1 / -1;background:var(--tint)}
+.cat-cta span{color:var(--accent);font-weight:600}
+.cat-cta:hover{background:#E8DFD0;color:var(--ink)}
 @media (min-width:900px){
-  .tools-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-  .tool-card{min-height:190px;padding:24px}
-  .tool-card strong{font-size:23px}
-  .tool-card span{font-size:15px}
+  .cats{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .cat{padding:20px}
+  .cat strong{font-size:17px}
+  .cat span{font-size:14px}
 }
 
-.shooting-lead{width:100%;max-width:900px;margin:4px auto 0;line-height:1.65}
-.shooting-lead strong{display:block;margin-top:12px}
+/* Video eğitimler: ayrı ürün, ayrışan zemin */
+.vsell{position:relative;background:#6B5B47;color:#F5F0E8}
+.vsell::before{content:"";position:absolute;left:var(--pad);top:0;width:48px;height:3px;background:#E3B98F}
+.vsell .h2{color:#F5F0E8}
+.vsell .lead{color:#EDE3D3}
+.vsell .vcard{color:var(--ink);background:#F5F0E8;border-color:transparent;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.vsell .vcard .price{color:var(--accent)}
+@media (min-width:900px){.vsell::before{left:max(40px,calc((100% - 1200px) / 2 + 40px))}}
 
 /* Kimler için ikonları */
 .who div{display:flex;align-items:center;gap:14px}
 .wi{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--tint);color:var(--accent);display:flex;align-items:center;justify-content:center}
 .wi svg{width:21px;height:21px}
-.audience-section > .stack{width:100%;max-width:900px;margin:0 auto}
 
 /* Bölüm ayracı */
 main > section{position:relative}
 .sec,.split,.buy{border-top:0 !important}
 main > section.sec:not(.vsell)::before, main > section.split::before, main > section.buy::before{content:"";position:absolute;top:0;left:var(--pad);right:var(--pad);height:1px;background:linear-gradient(90deg,transparent,var(--line2) 22%,var(--line2) 78%,transparent)}
 main > section.sec:not(.vsell)::after, main > section.split::after, main > section.buy::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;background:var(--bg);border:1px solid var(--accent);transform:rotate(45deg)}
+.vsell + section::before,.vsell + section::after{display:none !important}
 @media (min-width:900px){
   main > section.sec:not(.vsell)::before, main > section.split::before, main > section.buy::before{left:max(40px,calc((100% - 1200px) / 2 + 40px));right:max(40px,calc((100% - 1200px) / 2 + 40px))}
 }
@@ -413,10 +403,8 @@ main > section.sec:not(.vsell)::after, main > section.split::after, main > secti
 
 <section class="wrap hero">
   <div class="hero-head">
-    <div class="hero-event" aria-label="Online workshop tarihi ve saati">
-      <p class="hero-live">ONLINE WORKSHOP</p>
-      <div class="hero-date"><span>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong>20:00</strong></div>
-    </div>
+    <p class="hero-live">CANLI ONLINE</p>
+    <div class="hero-date"><span>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong>20:00</strong></div>
     <h1><span>ÜRÜN FOTOĞRAFINI</span><span>YAPAY ZEKA İLE</span><span>DÖNÜŞTÜR</span></h1>
     <p class="sub">“Ürününüz aynı kalsın. Gerisini yapay zeka üretsin.”</p>
   </div>
@@ -432,92 +420,63 @@ main > section.sec:not(.vsell)::after, main > section.split::after, main > secti
     </div>
   </div>
 
-</section>
-
-<section id="program" class="wrap sec psec stack">
-  <div class="program-intro">
-    <h2><span>Fotoğraflarından</span> <span>e-ticaret görselleri üretmeyi</span> <span>aşama aşama öğrenin.</span></h2>
-  </div>
-  <div class="tl">
-    <div class="tl-group"><p class="tl-phase">Hazırlık</p><ol class="tl-list"><li><span class="n">01</span><details><summary><strong>Kaynak fotoğrafı yapay zekaya hazırlamak</strong><span>Hangi fotoğraf iyi sonuç verir, hangisi vermez.</span></summary><p class="tl-more">Yapay zekaya verilen fotoğrafın ışığı, rengi ve netliği sonucu doğrudan belirler. Mevcut fotoğraflarınızı nasıl değerlendireceğinizi, hangi durumda yeniden çekmeniz gerektiğini ve fotoğrafı üretime nasıl hazırlayacağınızı görürsünüz.</p></details></li><li><span class="n">02</span><details><summary><strong>Etkili prompt oluşturmak</strong><span>Ürünü ve sahneyi yapay zekaya doğru tarif etmek.</span></summary><p class="tl-more">İyi sonuç tesadüfen oluşmaz. Ürünün değişmemesi için prompt içinde hangi bilgilerin mutlaka bulunması gerektiğini, sahnenin nasıl tarif edileceğini ve başarısız sonuçların nasıl düzeltilerek geliştirileceğini öğreneceksiniz.</p></details></li></ol></div>
-    <div class="tl-group"><p class="tl-phase">Üretim</p><ol class="tl-list"><li><span class="n">03</span><details><summary><strong>Ürünü yeni sahnelere yerleştirmek</strong><span>Lifestyle, stüdyo, mekan ve konsept sahneler.</span></summary><p class="tl-more">Ürünün kullanım amacına ve markanın diline uygun sahne seçimi. Lifestyle, stüdyo, mekan ve konsept sahneleri tarif ederken nelere dikkat edileceği ve aynı ürün için farklı sahne alternatiflerinin nasıl üretildiği.</p></details></li><li><span class="n">04</span><details><summary><strong>Işık, gölge ve perspektif uyumu</strong><span>Ürünün sahneye gerçekten ait görünmesi.</span></summary><p class="tl-more">Bir görseli yapay gösteren en büyük hata, ürünün ışığıyla sahnenin ışığının uyuşmaması. Işığın yönü ve sertliği, gölge, yansıma ve perspektifin sahneyle nasıl eşleştirileceği.</p></details></li><li><span class="n">05</span><details><summary><strong>Logo, etiket ve malzemeyi korumak</strong><span>Ürünün kimliği olduğu gibi kalır.</span></summary><p class="tl-more">Yapay zekanın en sık bozduğu yerler: etiket yazıları, logo, oranlar ve malzeme dokusu. Bu detayları korumak için nasıl çalışılacağı, bozulduğunda nasıl düzeltileceği.</p></details></li></ol></div>
-    <div class="tl-group"><p class="tl-phase">Çıktı ve kontrol</p><ol class="tl-list"><li><span class="n">06</span><details><summary><strong>Kampanya, katalog ve reklam görselleri</strong><span>Aynı üründen çok sayıda varyasyon.</span></summary><p class="tl-more">Tek bir ürün fotoğrafından kampanya, katalog ve reklam için tutarlı bir görsel seri üretmek. Seri boyunca ışığı, rengi ve ürünü tutarlı tutmak.</p></details></li><li><span class="n">07</span><details><summary><strong>Sosyal medya ve e-ticaret çıktıları</strong><span>Her platforma uygun format ve oran.</span></summary><p class="tl-more">Instagram, Trendyol, Hepsiburada ve Amazon gibi platformların oran ve format ihtiyaçlarına göre çıktı hazırlamak.</p></details></li><li><span class="n dark">08</span><details><summary><strong>Kontrol: gerçek ürünle karşılaştırma</strong><span>Görseli teslim etmeden önce ürünün korunduğunu doğrulamak.</span></summary><p class="tl-more">Görsel teslim edilmeden önce ürünün formu, rengi, logosu, etiketi ve malzemesi gerçek ürünle tek tek karşılaştırılır. Neyin kontrol edileceği ve bozulan detayın nasıl düzeltileceği.</p></details></li></ol></div>
+  <div class="hero-details">
+    <div class="hero-promise"><p><em>Gerçek ürün fotoğraflarınızdan</em> kampanya ve e-ticaret görselleri üretmeyi öğrenin.</p></div>
+    <div class="cta-row">
+      <a class="program-btn" href="#program">Eğitimde neler var?</a>
+      <a class="program-btn" href="#kimler">Eğitim kimler için?</a>
+      <a class="program-btn" href="#cekim">Doğru fotoğraf nasıl çekilir?</a>
+    </div>
   </div>
 </section>
 
 <section id="egitmen" class="wrap trainer">
   <div class="tcard">
     <img src="assets/portre.webp" alt="Savaş Çıkrak portresi" width="870" height="1000">
-    <h2>SAVAŞ ÇIKRAK</h2>
+    <h2>Savaş Çıkrak</h2>
     <p class="roles">Fotoğrafçı / Yönetmen / <strong>Eğitmen</strong></p>
     <p class="bio">
       <span class="bio-line">Profesyonel ürün fotoğrafçılığı,</span>
       <span class="bio-line">ışık tasarımı ve yapay zeka</span>
       <span class="bio-line">destekli görsel üretim alanında</span>
-      <span class="bio-line">markalar ve ajanslarla çalışıyorum;</span>
-      <span class="bio-line">bu birikimimi eğitimlerimde</span>
-      <span class="bio-line">paylaşıyorum.</span>
-      <strong><span class="bio-line">Instagram’da ürettiğim içeriklerle</span>
-      <span class="bio-line">125.000 kişilik güçlü bir topluluğa</span>
-      <span class="bio-line">ulaşıyorum.</span></strong>
+      <span class="bio-line">yılların deneyimiyle markalar</span>
+      <span class="bio-line">ve ajanslar için üretim ve</span>
+      <span class="bio-line">eğitim çalışmaları yapıyorum.</span>
     </p>
-    <a class="instagram-link" href="https://instagram.com/savascikrak" target="_blank" rel="noopener noreferrer" aria-label="Savaş Çıkrak Instagram hesabı">
-      <svg viewBox="0 0 32 32" aria-hidden="true">
-        <defs><radialGradient id="instagram-gradient" cx="30%" cy="105%" r="125%"><stop offset="0" stop-color="#FFD600"></stop><stop offset=".28" stop-color="#FF7A00"></stop><stop offset=".52" stop-color="#FF0169"></stop><stop offset=".78" stop-color="#D300C5"></stop><stop offset="1" stop-color="#7638FA"></stop></radialGradient></defs>
-        <rect width="32" height="32" rx="9" fill="url(#instagram-gradient)"></rect>
-        <rect x="7.3" y="7.3" width="17.4" height="17.4" rx="5.2" fill="none" stroke="#fff" stroke-width="2.25"></rect>
-        <circle cx="16" cy="16" r="4.25" fill="none" stroke="#fff" stroke-width="2.25"></circle>
-        <circle cx="22.1" cy="9.9" r="1.35" fill="#fff"></circle>
-      </svg>
-      <span>SAVASCIKRAK</span>
-    </a>
   </div>
 </section>
 
 <section class="wrap sec stack">
-  <div class="program-intro protection-intro">
-    <h2>Yapay zekâyla üretimin sınırı yok!</h2>
+  <div class="head2 stack">
+    <div class="stack"><p class="eb">Ürün koruma</p><h2 class="h2">Güzel görsel yetmez. Ürün doğru olmalı.</h2></div>
+    <p class="lead">Yapay zeka çoğu zaman ürünü yeniden çizer. Etiket bozulur, oranlar kayar, cam başka bir şeye dönüşür. Bu eğitimde ürünü koruyarak çalışmayı ve bunun nasıl kontrol edileceğini öğreneceksiniz.</p>
   </div>
-  <div class="campaign-intro">
-    <p class="lead">Gerçek ürün fotoğraflarından, bir kampanyanın bütün görsel dünyasını oluşturabilirsiniz.</p>
-  </div>
-  <div class="campaign-showcase">
-    <figure class="campaign-card">
-      <figcaption><b>01</b><span>Gerçek ürün fotoğrafı</span></figcaption>
-      <img src="assets/gozluk-gercek-fotograf.jpg" alt="Beyaz fonda çekilmiş gerçek gözlük fotoğrafı">
-    </figure>
-    <div class="campaign-flow"><span>Tek fotoğraftan</span></div>
-    <figure class="campaign-card">
-      <figcaption><b>02</b><span>Yapay zekâ ile oluşturulan kampanya görselleri</span></figcaption>
-      <img src="assets/gozluk-kampanya-serisi.jpg" alt="Gerçek gözlük fotoğrafından yapay zekâ ile oluşturulan kampanya görsel serisi">
-    </figure>
+  <div class="grid2 grid4">
+    <div class="fcard"><figure class="ph"><img src="assets/koruma-form.jpg" alt="" onerror="this.remove()"><figcaption>Detay: kavisli silüet, gerçek | AI</figcaption></figure><strong>Form</strong><span>Oranlar ve kontur birebir.</span></div>
+    <div class="fcard"><figure class="ph"><img src="assets/koruma-renk.jpg" alt="" onerror="this.remove()"><figcaption>Detay: doygun renk, gerçek | AI</figcaption></figure><strong>Renk</strong><span>Ambalajın gerçek rengi.</span></div>
+    <div class="fcard"><figure class="ph"><img src="assets/koruma-etiket.jpg" alt="" onerror="this.remove()"><figcaption>Detay: küçük puntolu etiket, gerçek | AI</figcaption></figure><strong>Logo ve etiket</strong><span>Yazılar okunur, tipografi aynı.</span></div>
+    <div class="fcard"><figure class="ph"><img src="assets/koruma-malzeme.jpg" alt="" onerror="this.remove()"><figcaption>Detay: şeffaf cam / fırçalanmış metal</figcaption></figure><strong>Malzeme</strong><span>Cam cam, metal metal kalır.</span></div>
   </div>
 </section>
 
-
-
-<section id="araclar" class="wrap sec stack">
-  <div class="program-intro tools-intro">
-    <h2>Hangi araçlarla çalışacağız?</h2>
-  </div>
-  <p class="lead tools-lead">Yeni sahneler üretmek ve görselleri kullanıma hazırlamak için farklı yapay zeka araçlarını birlikte test edeceğiz.<strong>Bu eğitimin sonunda kendi ürünleriniz için en doğru kullanımı öğreneceksiniz.</strong></p>
-  <div class="tools-grid">
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo" src="assets/tools/chatgpt.png" alt="" width="34" height="34"><strong>ChatGPT / Sunburst</strong></div><span>Konsept tasarımı, sahne inşası, iteratif yönlendirme ve bölgesel görsel düzenleme.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo" src="assets/tools/gemini.png" alt="" width="34" height="34"><strong>Gemini / Nano Banana Pro</strong></div><span>Ürün referansından sapmadan yeni sahneler üretme; form, renk, logo ve temel detayların korunması.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo" src="assets/tools/seedream.svg" alt="" width="34" height="34"><strong>Seedream 5.0 Pro</strong></div><span>Reklam odaklı yüksek kaliteli sahneler, farklı kompozisyonlar ve çoklu referans tutarlılığı.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo rounded" src="assets/tools/photoroom.png" alt="" width="34" height="34"><strong>Photoroom</strong></div><span>Hızlı dekupe, gölge oluşturma ve e-ticaret için seri görsel hazırlama.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo rounded" src="assets/tools/fashn.png" alt="" width="34" height="34"><strong>FASHN AI</strong></div><span>Giyim ve aksesuarda Virtual Try-On; ürünü farklı modeller üzerinde görselleştirme.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo" src="assets/tools/adobe.png" alt="" width="34" height="34"><strong>Adobe Photoshop / Firefly</strong></div><span>AI çıktılarının hibrit compositing ile stüdyo standardında finalizasyonu.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo rounded" src="assets/tools/google-ai-studio.png" alt="" width="34" height="34"><strong>Google AI Studio</strong></div><span>Ürün görseli üretimine yönelik özel uygulamalar, prompt yapıları ve model mantığı geliştirme.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo rounded" src="assets/tools/veo.png" alt="" width="34" height="34"><strong>Veo</strong></div><span>Fotoğraflardan kısa AI videoları üretmeye kısaca değineceğiz. Ürün fotoğraflarından yapay zeka ile video üretimini ise çok yakında kapsamlı bir eğitimde ele alacağız.</span></article>
+<section id="program" class="wrap sec psec stack">
+  <div class="stack"><p class="eb">Eğitimde neler var</p><h2 class="h2">Aşama aşama öğrenin.</h2></div>
+  <div class="tl">
+    <div class="tl-group"><p class="tl-phase">Hazırlık</p><ol class="tl-list"><li><span class="n">01</span><details><summary><strong>Kaynak fotoğrafı yapay zekaya hazırlamak</strong><span>Hangi fotoğraf iyi sonuç verir, hangisi vermez.</span></summary><p class="tl-more">Yapay zekaya verilen fotoğrafın ışığı, rengi ve netliği sonucu doğrudan belirler. Mevcut fotoğraflarınızı nasıl değerlendireceğinizi, hangi durumda yeniden çekmeniz gerektiğini ve fotoğrafı üretime nasıl hazırlayacağınızı görürsünüz.</p></details></li></ol></div>
+    <div class="tl-group"><p class="tl-phase">Üretim</p><ol class="tl-list"><li><span class="n">02</span><details><summary><strong>Ürünü yeni sahnelere yerleştirmek</strong><span>Lifestyle, stüdyo, mekan ve konsept sahneler.</span></summary><p class="tl-more">Ürünün kullanım amacına ve markanın diline uygun sahne seçimi. Lifestyle, stüdyo, mekan ve konsept sahneleri tarif ederken nelere dikkat edileceği ve aynı ürün için farklı sahne alternatiflerinin nasıl üretildiği.</p></details></li><li><span class="n">03</span><details><summary><strong>Işık, gölge ve perspektif uyumu</strong><span>Ürünün sahneye gerçekten ait görünmesi.</span></summary><p class="tl-more">Bir görseli yapay gösteren en büyük hata, ürünün ışığıyla sahnenin ışığının uyuşmaması. Işığın yönü ve sertliği, gölge, yansıma ve perspektifin sahneyle nasıl eşleştirileceği.</p></details></li><li><span class="n">04</span><details><summary><strong>Logo, etiket ve malzemeyi korumak</strong><span>Ürünün kimliği olduğu gibi kalır.</span></summary><p class="tl-more">Yapay zekanın en sık bozduğu yerler: etiket yazıları, logo, oranlar ve malzeme dokusu. Bu detayları korumak için nasıl çalışılacağı, bozulduğunda nasıl düzeltileceği.</p></details></li></ol></div>
+    <div class="tl-group"><p class="tl-phase">Çıktı ve kontrol</p><ol class="tl-list"><li><span class="n">05</span><details><summary><strong>Kampanya, katalog ve reklam görselleri</strong><span>Aynı üründen çok sayıda varyasyon.</span></summary><p class="tl-more">Tek bir ürün fotoğrafından kampanya, katalog ve reklam için tutarlı bir görsel seri üretmek. Seri boyunca ışığı, rengi ve ürünü tutarlı tutmak.</p></details></li><li><span class="n">06</span><details><summary><strong>Sosyal medya ve e-ticaret çıktıları</strong><span>Her platforma uygun format ve oran.</span></summary><p class="tl-more">Instagram, Trendyol, Hepsiburada ve Amazon gibi platformların oran ve format ihtiyaçlarına göre çıktı hazırlamak.</p></details></li><li><span class="n dark">07</span><details><summary><strong>Kontrol: gerçek ürünle karşılaştırma</strong><span>Görseli teslim etmeden önce ürünün korunduğunu doğrulamak.</span></summary><p class="tl-more">Görsel teslim edilmeden önce ürünün formu, rengi, logosu, etiketi ve malzemesi gerçek ürünle tek tek karşılaştırılır. Neyin kontrol edileceği ve bozulan detayın nasıl düzeltileceği.</p></details></li></ol></div>
   </div>
 </section>
 
-<section class="wrap sec audience-section">
+<section id="urunler" class="wrap sec stack">
+  <div class="stack"><p class="eb">Hangi ürünler</p><h2 class="h2">Ürününüz ne olursa olsun.</h2>
+  <p class="lead">Kendi ürününü üreten çok farklı kişi var. Her malzemenin yapay zekada zorlandığı yer farklı.</p></div>
+  <div class="cats"><div class="cat"><strong>Takı ve aksesuar</strong><span>Parlama, taş detayları ve ince zincirler.</span></div><div class="cat"><strong>Kozmetik ve bakım</strong><span>Şişe formu ve küçük puntolu etiket yazıları.</span></div><div class="cat"><strong>Tekstil ve giyim</strong><span>Desen, dikiş ve kumaşın dokusu.</span></div><div class="cat"><strong>Gıda ve içecek</strong><span>İştah açan renk ve gerçekçi doku.</span></div><div class="cat"><strong>Cam ve şişe</strong><span>Yansıma, şeffaflık ve içindeki sıvı.</span></div><div class="cat"><strong>Seramik ve el yapımı</strong><span>Yüzey dokusu ve el işinin doğallığı.</span></div><div class="cat"><strong>Deri ve çanta</strong><span>Malzeme dokusu, dikiş ve metal aksam.</span></div><div class="cat"><strong>Elektronik</strong><span>Logo, ekran ve keskin kenarlar.</span></div><a class="cat cat-cta" href="#basvuru"><strong>Ürününüz listede yok mu?</strong><span>Başvuru formunda ürün grubunuzu yazın →</span></a></div>
+</section>
+
+<section class="wrap split" style="border-top:1px solid var(--line)">
   <div class="stack" id="kimler">
-    <div class="program-intro tools-intro">
-      <h2>Bu eğitim kimler için?</h2>
-    </div>
+    <h2 class="h2">Kimler için?</h2>
     <div class="who">
       <div><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.5"/></svg></span><span>Ürün görseli üreten fotoğrafçılar ve ajanslar</span></div>
       <div><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg></span><span>Kendi ürününün görselini üretmek isteyen markalar ve üreticiler</span></div>
@@ -525,29 +484,39 @@ main > section.sec:not(.vsell)::after, main > section.split::after, main > secti
       <div><span class="wi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/><path d="M10 9l2 2 3-3"/></svg></span><span>Sosyal medya için sürekli yeni görsele ihtiyaç duyan işletmeler</span></div>
     </div>
   </div>
+  <div class="stack">
+    <p class="eb">Hazırlık</p>
+    <h2 class="h2">Neye ihtiyacınız var?</h2>
+    <p class="lead">Bilgisayar ve internet bağlantısı. Kurulum ya da güçlü bir ekran kartı gerekmez. Telefonla ya da kamerayla çekilmiş bir ürün fotoğrafı.</p>
+    <p class="eb" style="margin-top:6px">Eğitimde kullanılan araçlar</p>
+    <div class="chips"><span>ChatGPT</span><span>Gemini (Nano Banana)</span><span>Adobe Firefly</span><span>Photoroom</span></div>
+  </div>
 </section>
 
-<section id="cekim" class="wrap sec stack">
-  <div class="program-intro tools-intro">
-    <h2>İyi sonuç, doğru fotoğraf çekmekle başlar.</h2>
-  </div>
-  <p class="lead shooting-lead">Yapay zeka, ona verdiğiniz fotoğraftan daha iyisini üretemez. Çekim konusunda eksiğiniz varsa bu eğitimler tam size göre.<strong>Çekim eğitimlerine, online eğitimle birlikte çok avantajlı bir fiyatla sahip olabilirsiniz!</strong></p>
-  <div class="vcards">
-    <div class="vcard"><figure class="ph"><img src="assets/egitim-cep-telefonu.jpg" alt="Beyaz fonda bir çantanın cep telefonuyla fotoğraflandığı eğitim sahnesi"><figcaption>Cep telefonuyla ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">2.990₺</span><span class="price-bridge">yerine</span><b>990₺</b></span></div>
-    <div class="vcard"><figure class="ph"><img src="assets/egitim-profesyonel-kamera.jpg" alt="Beyaz fonda bir tost makinesinin profesyonel kamerayla fotoğraflandığı eğitim sahnesi"><figcaption>Profesyonel ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Ürün fotoğrafının karakterini kamera değil ışık belirler. Doğru ışık kullanımı, flaş teknikleri ve profesyonel çekim tekniklerini uygulamalı olarak anlatıyorum. Profesyonel çekim yapanlar için hem tek başına güçlü bir fotoğraf, hem de yapay zekada ürünü koruyan sağlam bir referans.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">4.990₺</span><span class="price-bridge">yerine</span><b>1.990₺</b></span></div>
+<section id="cekim" class="sec tint vsell">
+  <div class="wrap vsec stack">
+    <div class="stack">
+      <h2 class="h2">İyi sonuç, doğru fotoğraf çekmekle başlar.</h2>
+      <p class="lead">Yapay zeka, ona verdiğiniz fotoğraftan daha iyisini üretemez. Çekim konusunda eksiğiniz varsa bu eğitimler de tam size göre. Üstelik online eğitime özel fiyat avantajıyla.</p>
+    </div>
+    <div class="vcards">
+      <div class="vcard"><figure class="ph"><img src="assets/video-telefon.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: telefonla çekim, ışık kurulumu görünür</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price">Fiyat yakında</span></div>
+      <div class="vcard"><figure class="ph"><img src="assets/video-profesyonel.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: kamera + ışık kurulumu, arkadan</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Ürün fotoğrafının karakterini kamera değil ışık belirler. Doğru ışık kullanımı, flaş teknikleri ve profesyonel çekim tekniklerini uygulamalı olarak anlatıyoruz. Kamerayla çekenler için hem tek başına güçlü bir fotoğraf, hem de yapay zekada ürünü koruyan sağlam bir kaynak.</p><span class="price">Fiyat yakında</span></div>
+    </div>
   </div>
 </section>
 
 <section id="basvuru" class="wrap buy" style="border-top:1px solid var(--line)">
   <div class="price-box">
-    <div class="price-copy">
-      <h2>Ürününüzü değiştirmeden, güçlü görseller üretin.</h2>
-      <p>Deneme yanılmayla zaman kaybetmeden, ürününüzü koruyan doğru üretim sistemini öğrenin. Kampanya, e-ticaret ve sosyal medya için ihtiyaç duyduğunuz görselleri kontrollü biçimde üretebilecek seviyeye gelin.</p>
-    </div>
-    <div class="price-event" aria-label="Eğitim tarihi ve saati">
-      <div class="price-date"><span>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong>20:00</strong></div>
-    </div>
-    <div class="price-amount"><span>3.950</span><small>₺</small></div>
+    <p class="eb">Canlı online eğitim</p>
+    <div class="big">3.950₺</div>
+    <ul class="incl">
+      <li>Canlı eğitim, yaklaşık 5 saat · Zoom</li>
+      <li>17 Ekim 2026, Cumartesi · 20:00</li>
+      <li>30 gün kayıt erişimi</li>
+      <li>Eğitim sonrası: geliştirdiğim yapay zeka araçları katılımcılarla paylaşılır</li>
+    </ul>
+    <div class="pack"><span class="t">Paket</span><strong>Canlı eğitim + kaynak fotoğraf video eğitimi</strong><span>Paket fiyatı yakında</span></div>
   </div>
 
   <form class="form" id="basvuru-formu" action="mailto:iletisim@savascikrak.com" method="GET">
