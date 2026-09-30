@@ -357,14 +357,7 @@ footer .logo{color:var(--bg);font-size:20px}
   .tool-card span{font-size:15px}
 }
 
-/* Video eğitimler: ayrı ürün, ayrışan zemin */
-.vsell{position:relative;background:#6B5B47;color:#F5F0E8}
-.vsell::before{content:"";position:absolute;left:var(--pad);top:0;width:48px;height:3px;background:#E3B98F}
-.vsell .h2{color:#F5F0E8}
-.vsell .lead{color:#EDE3D3}
-.vsell .vcard{color:var(--ink);background:#F5F0E8;border-color:transparent;box-shadow:0 10px 30px rgba(0,0,0,.18)}
-.vsell .vcard .price{color:var(--accent)}
-@media (min-width:900px){.vsell::before{left:max(40px,calc((100% - 1200px) / 2 + 40px))}}
+.shooting-lead{width:100%;max-width:900px;margin:4px auto 0;line-height:1.65}
 
 /* Kimler için ikonları */
 .who div{display:flex;align-items:center;gap:14px}
@@ -377,7 +370,6 @@ main > section{position:relative}
 .sec,.split,.buy{border-top:0 !important}
 main > section.sec:not(.vsell)::before, main > section.split::before, main > section.buy::before{content:"";position:absolute;top:0;left:var(--pad);right:var(--pad);height:1px;background:linear-gradient(90deg,transparent,var(--line2) 22%,var(--line2) 78%,transparent)}
 main > section.sec:not(.vsell)::after, main > section.split::after, main > section.buy::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;background:var(--bg);border:1px solid var(--accent);transform:rotate(45deg)}
-.vsell + section::before,.vsell + section::after{display:none !important}
 @media (min-width:900px){
   main > section.sec:not(.vsell)::before, main > section.split::before, main > section.buy::before{left:max(40px,calc((100% - 1200px) / 2 + 40px));right:max(40px,calc((100% - 1200px) / 2 + 40px))}
 }
@@ -483,16 +475,14 @@ main > section.sec:not(.vsell)::after, main > section.split::after, main > secti
   </div>
 </section>
 
-<section id="cekim" class="sec tint vsell">
-  <div class="wrap vsec stack">
-    <div class="stack">
-      <h2 class="h2">İyi sonuç, doğru fotoğraf çekmekle başlar.</h2>
-      <p class="lead">Yapay zeka, ona verdiğiniz fotoğraftan daha iyisini üretemez. Çekim konusunda eksiğiniz varsa bu eğitimler de tam size göre. Üstelik online eğitime özel fiyat avantajıyla.</p>
-    </div>
-    <div class="vcards">
-      <div class="vcard"><figure class="ph"><img src="assets/video-telefon.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: telefonla çekim, ışık kurulumu görünür</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price">Fiyat yakında</span></div>
-      <div class="vcard"><figure class="ph"><img src="assets/video-profesyonel.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: kamera + ışık kurulumu, arkadan</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Ürün fotoğrafının karakterini kamera değil ışık belirler. Doğru ışık kullanımı, flaş teknikleri ve profesyonel çekim tekniklerini uygulamalı olarak anlatıyoruz. Kamerayla çekenler için hem tek başına güçlü bir fotoğraf, hem de yapay zekada ürünü koruyan sağlam bir kaynak.</p><span class="price">Fiyat yakında</span></div>
-    </div>
+<section id="cekim" class="wrap sec stack">
+  <div class="program-intro tools-intro">
+    <h2>İyi sonuç, doğru fotoğraf çekmekle başlar.</h2>
+  </div>
+  <p class="lead shooting-lead">Yapay zeka, ona verdiğiniz fotoğraftan daha iyisini üretemez. Çekim konusunda eksiğiniz varsa bu eğitimler tam size göre. Üstelik bu eğitimleri online eğitimle birlikte satın alanlara özel fiyat avantajı sunulacak.</p>
+  <div class="vcards">
+    <div class="vcard"><figure class="ph"><img src="assets/video-telefon.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: telefonla çekim, ışık kurulumu görünür</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price">Fiyat yakında</span></div>
+    <div class="vcard"><figure class="ph"><img src="assets/video-profesyonel.jpg" alt="" onerror="this.remove()"><figcaption>Stüdyo karesi: kamera + ışık kurulumu, arkadan</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Ürün fotoğrafının karakterini kamera değil ışık belirler. Doğru ışık kullanımı, flaş teknikleri ve profesyonel çekim tekniklerini uygulamalı olarak anlatıyoruz. Kamerayla çekenler için hem tek başına güçlü bir fotoğraf, hem de yapay zekada ürünü koruyan sağlam bir kaynak.</p><span class="price">Fiyat yakında</span></div>
   </div>
 </section>
 
