@@ -85,7 +85,7 @@ h1,h2,h3{margin:0}
 
 /* Eğitmen kartı */
 .trainer{padding-bottom:40px;overflow-x:clip}
-html,body{overflow-x:hidden}
+html,body{overflow-x:clip}
 .tcard{position:relative;margin-top:84px;display:flex;flex-direction:column;justify-content:center;gap:6px;min-height:360px;padding:18px 18px 20px;background:var(--tint);border-radius:16px;clip-path:inset(-600px 0 0 0 round 0 0 16px 16px)}
 .tcard img{position:absolute;right:-84px;bottom:0;height:360px;width:auto;max-width:none}
 .tcard > *:not(img){position:relative}
@@ -464,9 +464,38 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 .legal-links{display:flex;align-items:center;justify-content:center;gap:10px}
 .legal .ig{display:inline-flex;align-items:center;gap:5px}
 .legal .ig svg{width:15px;height:15px}
+.faq details:last-child{border-bottom:0}
+#sss{padding-bottom:24px}
+
+/* Üst bar */
+.topbar{position:sticky;top:0;z-index:50;background:rgba(14,13,12,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);padding-top:env(safe-area-inset-top,0px)}
+.topbar-in{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1200px;margin:0 auto;height:60px;padding:0 max(var(--pad),env(safe-area-inset-left,0px))}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#F5F0E8}
+.brand img{width:22px;height:34px;display:block}
+.brand span{font-family:var(--sans);font-weight:300;font-size:15px;letter-spacing:.26em;line-height:1;white-space:nowrap;color:#F5F0E8}
+.brand:hover span{color:#fff}
+.topbar-cta{display:inline-flex;align-items:center;height:36px;padding:0 16px;border:1px solid rgba(245,240,232,.35);border-radius:8px;color:#F5F0E8;font-size:13px;font-weight:600;letter-spacing:.04em;text-decoration:none;transition:background .2s,border-color .2s}
+.topbar-cta:hover{background:#F5F0E8;color:#0E0D0C;border-color:#F5F0E8}
+#basvuru,#program,#kimler,#cekim,#egitmen,#araclar,#sss{scroll-margin-top:72px}
+@media (min-width:900px){
+  .topbar-in{height:72px;padding:0 40px}
+  .brand img{width:26px;height:40px}
+  .brand span{font-size:17px}
+  .topbar-cta{height:40px;padding:0 20px;font-size:14px}
+}
 </style>
 </head>
 <body>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="https://savascikrak.com/" aria-label="Savaş Çıkrak ana sayfa">
+      <img src="assets/logo-mark.png" alt="" width="22" height="34">
+      <span>SAVAŞ ÇIKRAK</span>
+    </a>
+    <a class="topbar-cta" href="#basvuru">Başvur</a>
+  </div>
+</header>
 
 <main>
 
@@ -644,9 +673,8 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
   <div class="faq">
     <details><summary>Canlı katılamazsam ne olur?</summary><p>Eğitim kaydedilir. Kayda 30 gün boyunca erişebilirsiniz.</p></details>
     <details><summary>Güçlü bir bilgisayar gerekir mi?</summary><p>Hayır. Eğitimde hazır yapay zeka araçları kullanılıyor, kurulum gerekmiyor.</p></details>
-    <details><summary>Telefonla çektiğim fotoğrafla olur mu?</summary><p>Olur. Önemli olan ışığın, rengin ve netliğin doğru olması.</p></details>
-    <details><summary>Eğitim ne kadar sürer?</summary><p>Yaklaşık 5 saat, aralarla. Saat 20:00'de başlar.</p></details>
-    <details><summary>Geliştirdiğiniz araçlar nasıl paylaşılacak?</summary><p>Eğitimden sonra katılımcılarla paylaşılır.</p></details>
+    <details><summary>Telefonla çekilen fotoğraflar olur mu?</summary><p>Olur. Önemli olan ışığın, rengin ve netliğin doğru olması.</p></details>
+    <details><summary>Eğitimin süresi ne kadar?</summary><p>Yaklaşık 5 saat, aralarla. Saat 20:00'de başlar.</p></details>
   </div>
 </section>
 
