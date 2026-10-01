@@ -515,6 +515,14 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
   .hero h1{font-size:clamp(29px,8vw,36px)}
   .hero .sub{font-size:clamp(17px,4.9vw,21px)}
 }
+.tcard .bio .bio-par{display:block;margin-top:8px}
+@media (max-width:899px){.tcard .bio{font-size:12.5px;width:auto}}
+@media (min-width:900px){.tcard .bio{max-width:none}.tcard .bio .bio-line{display:block;white-space:nowrap}}
+/* Eğitmen: çerçevesiz, yazı sola foto sağa dayalı */
+.trainer .tcard{background:transparent;border-radius:0;padding-left:0;padding-right:0;clip-path:inset(-600px 0 0 0)}
+@media (max-width:899px){.trainer .tcard{clip-path:none}.trainer .tcard img{right:calc(-1 * var(--pad) - 70px)}}
+@media (min-width:900px){.trainer .tcard{padding-left:0;padding-right:0;border-radius:0;clip-path:inset(-600px 0 0 0)}.trainer .tcard img{right:0}}
+@media (max-width:899px){.program-intro h2.h2-cekim{font-size:clamp(16px,4.6vw,21px);white-space:nowrap}}
 </style>
 </head>
 <body>
@@ -573,20 +581,19 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
     <h2>SAVAŞ ÇIKRAK</h2>
     <p class="roles">Fotoğrafçı / Yönetmen / <strong>Eğitmen</strong></p>
     <p class="bio">
-      <span class="bio-line">30 yılı aşkın süredir görsel</span>
-      <span class="bio-line">üretim alanında markalar ve</span>
-      <span class="bio-line">ajanslarla çalışıyorum.</span>
-      <span class="bio-line">Bugün çalışmalarımda, bu</span>
-      <span class="bio-line">deneyimi yeni nesil yapay</span>
-      <span class="bio-line">zeka araçlarıyla birleştirerek</span>
-      <span class="bio-line">ticari görseller üretiyor ve</span>
-      <span class="bio-line">bu alanda kapsamlı eğitimler</span>
-      <span class="bio-line">veriyorum.</span>
+      <span class="bio-line">30 yılı aşkın süredir görsel üretim</span>
+      <span class="bio-line">alanında yönetmen ve fotoğrafçı</span>
+      <span class="bio-line">olarak çalışıyorum.</span>
+      <span class="bio-par">
+      <span class="bio-line">Bugün çalışmalarımda, bu deneyimi</span>
+      <span class="bio-line">yeni nesil yapay zeka araçlarıyla</span>
+      <span class="bio-line">birleştirerek ticari görseller üretiyor ve</span>
+      <span class="bio-line">bu alanda kapsamlı eğitimler veriyorum.</span>
+      </span>
       <strong class="bio-strong">
       <span class="bio-line">Instagram’da 125.000’den fazla</span>
-      <span class="bio-line">takipçiden oluşan bir topluluğa</span>
-      <span class="bio-line">sahibim ve her geçen gün</span>
-      <span class="bio-line">büyüyoruz.</span>
+      <span class="bio-line">takipçiden oluşan bir topluluğa sahibim</span>
+      <span class="bio-line">ve her geçen gün büyüyoruz.</span>
       </strong>
     </p>
     <a class="instagram-link" href="https://instagram.com/savascikrak" target="_blank" rel="noopener noreferrer" aria-label="Savaş Çıkrak Instagram hesabı">
@@ -691,8 +698,8 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 
 <section id="cekim" class="wrap sec stack">
   <div class="program-intro tools-intro">
-    <h2>En iyi sonuç,<br>doğru fotoğraf çekmekle başlar.</h2>
-    <p class="lead shooting-lead">Yapay zeka, ona verdiğiniz fotoğraftan daha iyisini üretemez. Çekim konusunda eksiğiniz varsa bu eğitimler tam size göre.<strong>Çekim eğitimlerine, online eğitimle birlikte çok avantajlı bir fiyatla sahip olabilirsiniz!</strong></p>
+    <h2 class="h2-cekim">Doğru çekimler için<br>desteğe mi ihtiyacınız var?</h2>
+    <p class="lead shooting-lead">Yapay zekadan en iyi sonuç almak, doğru çekilmiş bir ürün fotoğrafıyla başlar. Çekim konusunda eksiğiniz varsa, bu video eğitimler tam size göre. Hem izleyin hem uygulayın; kendi ürün fotoğraflarınızı en üst seviyeye taşıyın.<strong>Online eğitimle birlikte alındığında çekim eğitimlerinde %60 indirim fırsatı!</strong></p>
   </div>
   <div class="vcards">
     <div class="vcard"><figure class="ph"><img src="assets/egitim-cep-telefonu.jpg" alt="Beyaz fonda bir çantanın cep telefonuyla fotoğraflandığı eğitim sahnesi"><figcaption>Cep telefonuyla ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">2.990₺</span><span class="price-bridge">yerine</span><b>990₺</b></span></div>
