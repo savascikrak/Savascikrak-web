@@ -23,6 +23,12 @@
 {"@type":"Event","name":"Ürün Fotoğraflarında Yapay Zeka · Canlı Online Eğitim","startDate":"2026-10-17T20:00:00+03:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","location":{"@type":"VirtualLocation","url":"https://savascikrak.com/yapay-zeka-ile-urun-fotografi/"},"image":"https://savascikrak.com/yapay-zeka-ile-urun-fotografi/assets/og.jpg","description":"Ürün fotoğrafından kampanya ve e-ticaret görselleri üretmeyi anlatan yaklaşık 5 saatlik canlı workshop (Zoom).","organizer":{"@id":"https://savascikrak.com/#savas"},"performer":{"@id":"https://savascikrak.com/#savas"},"inLanguage":"tr"}
 ]}
 </script>
+<script>
+window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+gtag('js',new Date());gtag('config','G-P03FTPWL2F');
+window.gaYukle=function(gecikme){if(window.gaYuklendi)return;window.gaYuklendi=1;setTimeout(function(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-P03FTPWL2F';document.head.appendChild(s)},gecikme||0)};
+(function(){var c=null;try{c=localStorage.getItem('cerez')}catch(e){}if(c==='1')addEventListener('load',function(){gaYukle(1500)})})();
+</script>
 <meta name="theme-color" content="#F5F0E8">
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -559,6 +565,11 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 @media (max-width:899px){.trainer .tcard{clip-path:none}.trainer .tcard img{right:calc(-1 * var(--pad) - 70px)}}
 @media (min-width:900px){.trainer .tcard{padding-left:0;padding-right:0;border-radius:0;clip-path:inset(-600px 0 0 0)}.trainer .tcard img{right:0}}
 @media (max-width:899px){.program-intro h2.h2-cekim{font-size:clamp(16px,4.6vw,21px);white-space:nowrap}}
+.cerez{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#171717;color:#fff;padding:16px max(16px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 20px;font-size:14px;line-height:1.5}
+.cerez p{margin:0;max-width:640px}.cerez a{color:#fff;text-decoration:underline}
+.cerez .cb{display:flex;gap:10px}.cerez button{font:inherit;font-weight:600;padding:9px 18px;border-radius:999px;cursor:pointer;border:1px solid #fff}
+.cerez .ck{background:#fff;color:#171717}.cerez .cr{background:transparent;color:#fff}
+.cerez-acik .wa-float{bottom:calc(var(--cbh,120px) + 16px) !important}
 </style>
 </head>
 <body>
@@ -871,6 +882,7 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycbw3dM5uCYyz3xx92DwnaP
     var lines=['Merhaba, Yapay Zeka Atölyesi (17 Ekim, 20:00) için başvurmak istiyorum.',''];
     rows.forEach(function(r){ if(r[1]) lines.push(r[0]+': '+r[1]); });
     var url='https://wa.me/905310317444?text='+encodeURIComponent(lines.join('\n'));
+    try{gtag('event','generate_lead',{method:'basvuru_formu'})}catch(_){}
     var w=window.open(url,'_blank');
     if(!w) window.location.href=url;
     var ok=document.getElementById('form-ok');
@@ -887,6 +899,21 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
     });
   });
 });
+</script>
+<script>
+(function(){
+  document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
+    if(h.indexOf('wa.me')>-1)gtag('event','whatsapp_tikla',{konum:a.classList.contains('wa-float')?'yuzen_buton':'sayfa'});
+    else if(h==='#basvuru')gtag('event','basvuru_butonu_tikla');});
+  var c=null;try{c=localStorage.getItem('cerez')}catch(e){}
+  if(c==='1'||c==='0')return;
+  var d=document.createElement('div');d.className='cerez';d.setAttribute('role','region');d.setAttribute('aria-label','Çerez tercihi');
+  d.innerHTML='<p>Sayfanın nasıl kullanıldığını ölçmek için, onay verirseniz Google Analytics çerezleri kullanırız. <a href="/kvkk/">Ayrıntılar</a></p><div class="cb"><button type="button" class="cr">Reddet</button><button type="button" class="ck">Kabul et</button></div>';
+  document.body.appendChild(d);document.body.classList.add('cerez-acik');
+  document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px');
+  function sec(v){try{localStorage.setItem('cerez',v)}catch(e){}d.remove();document.body.classList.remove('cerez-acik');if(v==='1')gaYukle(0)}
+  d.querySelector('.ck').onclick=function(){sec('1')};d.querySelector('.cr').onclick=function(){sec('0')};
+})();
 </script>
 </body>
 </html>
