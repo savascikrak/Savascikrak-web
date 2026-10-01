@@ -1,4 +1,4 @@
-savascikrak.com/ai - Görsel dosya adları
+savascikrak.com/yapay-zeka-ile-urun-fotografi/ - Görsel dosya adları
 
 Görselleri assets klasörüne aşağıdaki adlarla koyun. Dosya eklendiğinde ilgili kutuya otomatik oturur, eklenmeyen kutular yer tutucu olarak görünür.
 Önerilen: JPG, uzun kenar en fazla 1600 px, dosya başına 200 KB altı.

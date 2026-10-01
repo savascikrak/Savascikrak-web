@@ -59,7 +59,7 @@ section p{margin-top:8px;font-size:15.5px;line-height:1.7;color:var(--text)}
 (function(){
   var ref=document.referrer,same=false;
   try{same=ref&&new URL(ref).origin===location.origin}catch(e){}
-  var fallback=same?ref:'/ai/#basvuru';
+  var fallback=same?ref:'/yapay-zeka-ile-urun-fotografi/#basvuru';
   function back(){
     if(same&&history.length>1){history.back();return}
     window.close();setTimeout(function(){location.href=fallback},300);
