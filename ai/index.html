@@ -508,8 +508,6 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 }
 
 /* Akordeon: tüm satır dokunulabilir kart, ok ikonu */
-.tap-hint{position:relative;z-index:1;display:flex;align-items:center;justify-content:center;gap:6px;margin:12px auto 0;font-size:13px;font-weight:600;color:var(--accent)}
-.tap-hint::before{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px)}
 .tl-list details{padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:12px;transition:border-color .2s,box-shadow .2s}
 .tl-list details[open]{border-color:var(--accent);box-shadow:0 6px 18px rgba(138,75,31,.10)}
 .tl-list summary{padding-right:38px}
@@ -524,7 +522,6 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 .faq summary::after{right:14px}
 .faq p{margin:0;padding:0 16px 16px}
 .program-sub,.program-intro .lead{text-align:left;margin-left:0;margin-right:0;max-width:none}
-.tap-hint{justify-content:flex-start}
 .tcard .bio .bio-strong{display:block;margin-top:8px}
 .tl-list summary::after,.faq summary::after{box-sizing:border-box;border:1.25px solid var(--accent)}
 .tl-list details[open] summary::after,.faq details[open] summary::after{background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238A4B1F' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E") center/16px no-repeat;border-color:var(--accent)}
@@ -584,7 +581,6 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
   <div class="program-intro">
     <h2>NELER ÖĞRENECEKSİNİZ?</h2>
     <p class="program-sub">Ürün fotoğraflarınızı e-ticaret, kampanya ve sosyal medya görsellerine dönüştürmenin tüm aşamalarını keşfedin.</p>
-    <p class="tap-hint">Detayını görmek için başlıklara dokunun</p>
   </div>
   <div class="tl">
     <div class="tl-group"><p class="tl-phase">Hazırlık</p><ol class="tl-list"><li><span class="n">01</span><details open><summary><strong>Kaynak fotoğrafı yapay zekaya hazırlamak</strong><span>Hangi fotoğraf iyi sonuç verir, hangisi vermez.</span></summary><p class="tl-more">Yapay zekaya verilen fotoğrafın ışığı, rengi ve netliği sonucu doğrudan belirler. Mevcut fotoğraflarınızı nasıl değerlendireceğinizi, hangi durumda yeniden çekmeniz gerektiğini ve fotoğrafı üretime nasıl hazırlayacağınızı görürsünüz.</p></details></li><li><span class="n">02</span><details><summary><strong>Etkili prompt oluşturmak</strong><span>Ürünü ve sahneyi yapay zekaya doğru tarif etmek.</span></summary><p class="tl-more">İyi sonuç tesadüfen oluşmaz. Ürünün değişmemesi için prompt içinde hangi bilgilerin mutlaka bulunması gerektiğini, sahnenin nasıl tarif edileceğini ve başarısız sonuçların nasıl düzeltilerek geliştirileceğini öğreneceksiniz.</p></details></li></ol></div>
