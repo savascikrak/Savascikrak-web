@@ -25,9 +25,12 @@
 </script>
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+(function(){var c=null;try{c=localStorage.getItem('cerez')}catch(e){}window.cerezOnay=c==='1';
+window['ga-disable-G-P03FTPWL2F']=!window.cerezOnay;
+gtag('consent','default',{analytics_storage:window.cerezOnay?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
 gtag('js',new Date());gtag('config','G-P03FTPWL2F');
-window.gaYukle=function(gecikme){if(window.gaYuklendi)return;window.gaYuklendi=1;setTimeout(function(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-P03FTPWL2F';document.head.appendChild(s)},gecikme||0)};
-(function(){var c=null;try{c=localStorage.getItem('cerez')}catch(e){}if(c==='1')addEventListener('load',function(){gaYukle(1500)})})();
+window.gaYukle=function(gecikme){if(window.gaYuklendi||!window.cerezOnay)return;window.gaYuklendi=1;setTimeout(function(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-P03FTPWL2F';document.head.appendChild(s)},gecikme||0)};
+if(window.cerezOnay)addEventListener('load',function(){gaYukle(1500)})})();
 </script>
 <meta name="theme-color" content="#F5F0E8">
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -565,11 +568,18 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 @media (max-width:899px){.trainer .tcard{clip-path:none}.trainer .tcard img{right:calc(-1 * var(--pad) - 70px)}}
 @media (min-width:900px){.trainer .tcard{padding-left:0;padding-right:0;border-radius:0;clip-path:inset(-600px 0 0 0)}.trainer .tcard img{right:0}}
 @media (max-width:899px){.program-intro h2.h2-cekim{font-size:clamp(16px,4.6vw,21px);white-space:nowrap}}
-.cerez{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#171717;color:#fff;padding:16px max(16px,env(safe-area-inset-left,0px)) calc(16px + env(safe-area-inset-bottom,0px));display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 20px;font-size:14px;line-height:1.5}
-.cerez p{margin:0;max-width:640px}.cerez a{color:#fff;text-decoration:underline}
-.cerez .cb{display:flex;gap:10px}.cerez button{font:inherit;font-weight:600;padding:9px 18px;border-radius:999px;cursor:pointer;border:1px solid #fff}
-.cerez .ck{background:#fff;color:#171717}.cerez .cr{background:transparent;color:#fff}
+.cerez{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(251,248,243,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line2);box-shadow:0 -6px 20px rgba(73,54,35,.06);color:var(--text);font-size:12.5px;line-height:1.45;padding:10px max(16px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px))}
+.cerez-ic{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.cerez p{margin:0}.cerez a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.cerez .durum{color:var(--muted)}
+.cerez .cb{display:flex;gap:8px}
+.cerez button{flex:1 1 0;font:inherit;font-size:13px;font-weight:600;min-height:36px;padding:0 16px;border-radius:999px;cursor:pointer;border:1px solid var(--ink);background:transparent;color:var(--ink)}
+.cerez button:hover,.cerez button:focus-visible{background:var(--ink);color:#FBF8F3}
+@media (min-width:900px){.cerez{font-size:13px;padding-top:12px;padding-bottom:12px}.cerez-ic{flex-direction:row;align-items:center;justify-content:space-between;gap:24px}.cerez button{flex:0 0 auto;min-width:110px}}
+.cerez-acik{padding-bottom:var(--cbh,0px) !important}
 .cerez-acik .wa-float{bottom:calc(var(--cbh,120px) + 16px) !important}
+.legal .cerez-ac{font:inherit;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--line2);padding:0;cursor:pointer}
+.legal .cerez-ac:hover{color:var(--ink)}
 </style>
 </head>
 <body>
@@ -809,7 +819,7 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 </main>
 <footer class="legal">
   <p>© 2026 Savaş Çıkrak · Tüm hakları saklıdır.</p>
-  <p class="legal-links"><a href="https://savascikrak.com/">savascikrak.com</a><span aria-hidden="true">·</span><a class="ig" href="https://instagram.com/savascikrak" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>savascikrak</a></p>
+  <p class="legal-links"><a href="https://savascikrak.com/">savascikrak.com</a><span aria-hidden="true">·</span><a class="ig" href="https://instagram.com/savascikrak" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>savascikrak</a><span aria-hidden="true">·</span><button type="button" class="cerez-ac">Çerez tercihleri</button></p>
 </footer>
 
 <a class="wa-float" href="https://wa.me/905310317444?text=Merhaba%2C%20Yapay%20Zeka%20At%C3%B6lyesi%20i%C3%A7in%20yaz%C4%B1yorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.6c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A7.9 7.9 0 1 1 12 19.8zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.6-.6z"/></svg></a>
@@ -882,7 +892,7 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycbw3dM5uCYyz3xx92DwnaP
     var lines=['Merhaba, Yapay Zeka Atölyesi (17 Ekim, 20:00) için başvurmak istiyorum.',''];
     rows.forEach(function(r){ if(r[1]) lines.push(r[0]+': '+r[1]); });
     var url='https://wa.me/905310317444?text='+encodeURIComponent(lines.join('\n'));
-    try{gtag('event','generate_lead',{method:'basvuru_formu'})}catch(_){}
+    try{if(window.cerezOnay)gtag('event','generate_lead',{method:'basvuru_formu'})}catch(_){}
     var w=window.open(url,'_blank');
     if(!w) window.location.href=url;
     var ok=document.getElementById('form-ok');
@@ -903,16 +913,29 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
 <script>
 (function(){
   document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a)return;var h=a.getAttribute('href')||'';
+    if(!window.cerezOnay)return;
     if(h.indexOf('wa.me')>-1)gtag('event','whatsapp_tikla',{konum:a.classList.contains('wa-float')?'yuzen_buton':'sayfa'});
     else if(h==='#basvuru')gtag('event','basvuru_butonu_tikla');});
-  var c=null;try{c=localStorage.getItem('cerez')}catch(e){}
-  if(c==='1'||c==='0')return;
-  var d=document.createElement('div');d.className='cerez';d.setAttribute('role','region');d.setAttribute('aria-label','Çerez tercihi');
-  d.innerHTML='<p>Sayfanın nasıl kullanıldığını ölçmek için, onay verirseniz Google Analytics çerezleri kullanırız. <a href="/kvkk/">Ayrıntılar</a></p><div class="cb"><button type="button" class="cr">Reddet</button><button type="button" class="ck">Kabul et</button></div>';
-  document.body.appendChild(d);document.body.classList.add('cerez-acik');
-  document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px');
-  function sec(v){try{localStorage.setItem('cerez',v)}catch(e){}d.remove();document.body.classList.remove('cerez-acik');if(v==='1')gaYukle(0)}
-  d.querySelector('.ck').onclick=function(){sec('1')};d.querySelector('.cr').onclick=function(){sec('0')};
+  var d=null;
+  function kaydet(v){try{localStorage.setItem('cerez',v)}catch(e){}}
+  function gaSil(){var h=location.hostname,ds=['',h,'.'+h],p=h.split('.');if(p.length>2)ds.push('.'+p.slice(-2).join('.'));
+    document.cookie.split(';').forEach(function(k){var n=k.split('=')[0].trim();if(/^(_ga|_gid|_gat)/.test(n))ds.forEach(function(dm){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'+(dm?'; domain='+dm:'')})})}
+  function kapat(){if(!d)return;d.remove();d=null;document.body.classList.remove('cerez-acik')}
+  function sec(v){kaydet(v);kapat();
+    if(v==='1'){window.cerezOnay=true;window['ga-disable-G-P03FTPWL2F']=false;gtag('consent','update',{analytics_storage:'granted'});gaYukle(0)}
+    else{var onceki=window.cerezOnay;window.cerezOnay=false;window['ga-disable-G-P03FTPWL2F']=true;gtag('consent','update',{analytics_storage:'denied'});gaSil();if(onceki&&window.gaYuklendi)setTimeout(gaSil,500)}}
+  function ac(tekrar){if(d)return;var c=null;try{c=localStorage.getItem('cerez')}catch(e){}
+    d=document.createElement('div');d.className='cerez';d.setAttribute('role','region');d.setAttribute('aria-label','Çerez tercihi');
+    var durum=tekrar&&(c==='1'||c==='0')?' <span class="durum">(Şu anki tercihiniz: '+(c==='1'?'kabul':'ret')+'.)</span>':'';
+    d.innerHTML='<div class="cerez-ic"><p>Sitemizi geliştirmek için, onayınızla Google Analytics çerezleri kullanıyoruz. <a href="/kvkk/#cerezler">Çerez politikası</a>'+durum+'</p><div class="cb"><button type="button" class="cr">Reddet</button><button type="button" class="ck">Kabul et</button></div></div>';
+    document.body.appendChild(d);document.body.classList.add('cerez-acik');
+    document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px');
+    d.querySelector('.ck').onclick=function(){sec('1')};d.querySelector('.cr').onclick=function(){sec('0')};
+    if(tekrar)d.querySelector('.cr').focus({preventScroll:true})}
+  addEventListener('resize',function(){if(d)document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px')});
+  var t=document.querySelector('.cerez-ac');if(t)t.addEventListener('click',function(){ac(true)});
+  var c0=null;try{c0=localStorage.getItem('cerez')}catch(e){}
+  if(c0!=='1'&&c0!=='0')ac(false);
 })();
 </script>
 </body>
