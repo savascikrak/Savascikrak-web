@@ -4,3 +4,9 @@
 
 /api/playback-token
   Cache-Control: no-store
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/ai/assets/*
+  Cache-Control: public, max-age=604800

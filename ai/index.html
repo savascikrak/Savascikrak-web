@@ -11,9 +11,17 @@
 <meta property="og:url" content="https://savascikrak.com/ai/">
 <meta property="og:image" content="https://savascikrak.com/ai/assets/og.jpg">
 <meta name="theme-color" content="#F5F0E8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,600&family=Roboto:wght@500;600;700&display=swap">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/roboto-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter";font-style:italic;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-wght-italic.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter";font-style:italic;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-ext-wght-italic.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:500 700;font-display:swap;src:url(/fonts/roboto-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Roboto";font-style:normal;font-weight:500 700;font-display:swap;src:url(/fonts/roboto-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+</style>
 <style>
 :root{
   --bg:#F5F0E8; --card:#FBF8F3; --tint:#EFE7DA; --line:#E3DACB; --line2:#CFC3B0;
@@ -566,12 +574,12 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 
   <div class="hero-visual">
     <div class="hv-top">
-      <figure class="ph white src"><img src="assets/saat-kaynak.jpg" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" onerror="this.remove()"><span class="visual-tag source">Gerçek fotoğraf</span><figcaption><strong>Gerçek fotoğraf</strong><br>Saat, beyaz fon</figcaption></figure>
-      <figure class="ph model"><img src="assets/saat-ai1.jpg" alt="Aynı saat model bileğinde, yapay zeka ile oluşturulmuş" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Model üzerinde</strong><br>Aynı saat bilekte. Ölçek ve perspektif uyumlu.</figcaption></figure>
+      <figure class="ph white src"><img src="assets/saat-kaynak.webp" width="840" height="840" fetchpriority="high" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" onerror="this.remove()"><span class="visual-tag source">Gerçek fotoğraf</span><figcaption><strong>Gerçek fotoğraf</strong><br>Saat, beyaz fon</figcaption></figure>
+      <figure class="ph model"><img src="assets/saat-ai1.webp" width="720" height="1080" fetchpriority="high" alt="Aynı saat model bileğinde, yapay zeka ile oluşturulmuş" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Model üzerinde</strong><br>Aynı saat bilekte. Ölçek ve perspektif uyumlu.</figcaption></figure>
     </div>
     <div class="hv-styles">
-      <figure class="ph"><img src="assets/saat-ai2.jpg" alt="Aynı saat, yapay zeka ile oluşturulmuş lifestyle sahnesi" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Stil 1 · Lifestyle</strong><br>Sıcak akşam ışığı, gömlek manşeti.</figcaption></figure>
-      <figure class="ph"><img src="assets/saat-ai3.jpg" alt="Aynı saat, yapay zeka ile oluşturulmuş kampanya sahnesi" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Stil 2 · Kampanya</strong><br>Koyu taş, sert ışık, yansıma.</figcaption></figure>
+      <figure class="ph"><img src="assets/saat-ai2.webp" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş lifestyle sahnesi" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Stil 1 · Lifestyle</strong><br>Sıcak akşam ışığı, gömlek manşeti.</figcaption></figure>
+      <figure class="ph"><img src="assets/saat-ai3.webp" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş kampanya sahnesi" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Stil 2 · Kampanya</strong><br>Koyu taş, sert ışık, yansıma.</figcaption></figure>
     </div>
   </div>
 
@@ -591,7 +599,7 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 
 <section id="egitmen" class="wrap trainer">
   <div class="tcard">
-    <img src="assets/portre-2.webp" alt="Savaş Çıkrak portresi" width="873" height="910">
+    <img src="assets/portre-2.webp" loading="lazy" decoding="async" alt="Savaş Çıkrak portresi" width="873" height="910">
     <h2>SAVAŞ ÇIKRAK</h2>
     <p class="roles">Fotoğrafçı / Yönetmen / <strong>Eğitmen</strong></p>
     <p class="bio">
@@ -631,11 +639,11 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
   <div class="campaign-showcase">
     <figure class="campaign-card">
       <figcaption><b>01</b><span>Gerçek ürün fotoğrafı</span></figcaption>
-      <img src="assets/gozluk-gercek-fotograf.jpg" alt="Beyaz fonda çekilmiş gerçek gözlük fotoğrafı">
+      <img src="assets/gozluk-gercek-fotograf.webp" width="1100" height="619" loading="lazy" decoding="async" alt="Beyaz fonda çekilmiş gerçek gözlük fotoğrafı">
     </figure>
     <figure class="campaign-card">
       <figcaption><b>02</b><span>Yapay zeka ile oluşturulan kampanya görselleri</span></figcaption>
-      <img src="assets/gozluk-kampanya-serisi.jpg" alt="Gerçek gözlük fotoğrafından yapay zeka ile oluşturulan kampanya görsel serisi">
+      <img src="assets/gozluk-kampanya-serisi.webp" width="820" height="1230" loading="lazy" decoding="async" alt="Gerçek gözlük fotoğrafından yapay zeka ile oluşturulan kampanya görsel serisi">
     </figure>
   </div>
 </section>
@@ -648,14 +656,14 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
     <p class="lead tools-lead">Yeni sahneler üretmek ve görselleri kullanıma hazırlamak için farklı yapay zeka araçlarını birlikte test edeceğiz.<strong>Bu eğitimin sonunda kendi ürünleriniz için en doğru kullanımı öğreneceksiniz.</strong></p>
   </div>
   <div class="tools-grid">
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo" src="assets/tools/chatgpt.png" alt="" width="34" height="34"><strong>ChatGPT / Sunburst</strong></div><span>Konsept tasarımı, sahne inşası, iteratif yönlendirme ve bölgesel görsel düzenleme.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo" src="assets/tools/gemini.png" alt="" width="34" height="34"><strong>Gemini / Nano Banana Pro</strong></div><span>Ürün referansından sapmadan yeni sahneler üretme; form, renk, logo ve temel detayların korunması.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo" src="assets/tools/seedream.svg" alt="" width="34" height="34"><strong>Seedream 5.0 Pro</strong></div><span>Reklam odaklı yüksek kaliteli sahneler, farklı kompozisyonlar ve çoklu referans tutarlılığı.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo rounded" src="assets/tools/photoroom.png" alt="" width="34" height="34"><strong>Photoroom</strong></div><span>Hızlı dekupe, gölge oluşturma ve e-ticaret için seri görsel hazırlama.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo rounded" src="assets/tools/fashn.png" alt="" width="34" height="34"><strong>FASHN AI</strong></div><span>Giyim ve aksesuarda Virtual Try-On; ürünü farklı modeller üzerinde görselleştirme.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo" src="assets/tools/adobe.png" alt="" width="34" height="34"><strong>Adobe Photoshop / Firefly</strong></div><span>AI çıktılarının hibrit compositing ile stüdyo standardında finalizasyonu.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo rounded" src="assets/tools/google-ai-studio.png" alt="" width="34" height="34"><strong>Google AI Studio</strong></div><span>Ürün görseli üretimine yönelik özel uygulamalar, prompt yapıları ve model mantığı geliştirme.</span></article>
-    <article class="tool-card"><div class="tool-title"><img class="tool-logo rounded" src="assets/tools/veo.png" alt="" width="34" height="34"><strong>Veo</strong></div><span>Fotoğraflardan kısa AI videoları üretmeye kısaca değineceğiz. Ürün fotoğraflarından yapay zeka ile video üretimini ise çok yakında kapsamlı bir eğitimde ele alacağız.</span></article>
+    <article class="tool-card"><div class="tool-title"><img loading="lazy" decoding="async" class="tool-logo" src="assets/tools/chatgpt.png" alt="" width="34" height="34"><strong>ChatGPT / Sunburst</strong></div><span>Konsept tasarımı, sahne inşası, iteratif yönlendirme ve bölgesel görsel düzenleme.</span></article>
+    <article class="tool-card"><div class="tool-title"><img loading="lazy" decoding="async" class="tool-logo" src="assets/tools/gemini.png" alt="" width="34" height="34"><strong>Gemini / Nano Banana Pro</strong></div><span>Ürün referansından sapmadan yeni sahneler üretme; form, renk, logo ve temel detayların korunması.</span></article>
+    <article class="tool-card"><div class="tool-title"><img loading="lazy" decoding="async" class="tool-logo" src="assets/tools/seedream.svg" alt="" width="34" height="34"><strong>Seedream 5.0 Pro</strong></div><span>Reklam odaklı yüksek kaliteli sahneler, farklı kompozisyonlar ve çoklu referans tutarlılığı.</span></article>
+    <article class="tool-card"><div class="tool-title"><img loading="lazy" decoding="async" class="tool-logo rounded" src="assets/tools/photoroom.png" alt="" width="34" height="34"><strong>Photoroom</strong></div><span>Hızlı dekupe, gölge oluşturma ve e-ticaret için seri görsel hazırlama.</span></article>
+    <article class="tool-card"><div class="tool-title"><img loading="lazy" decoding="async" class="tool-logo rounded" src="assets/tools/fashn.png" alt="" width="34" height="34"><strong>FASHN AI</strong></div><span>Giyim ve aksesuarda Virtual Try-On; ürünü farklı modeller üzerinde görselleştirme.</span></article>
+    <article class="tool-card"><div class="tool-title"><img loading="lazy" decoding="async" class="tool-logo" src="assets/tools/adobe.png" alt="" width="34" height="34"><strong>Adobe Photoshop / Firefly</strong></div><span>AI çıktılarının hibrit compositing ile stüdyo standardında finalizasyonu.</span></article>
+    <article class="tool-card"><div class="tool-title"><img loading="lazy" decoding="async" class="tool-logo rounded" src="assets/tools/google-ai-studio.png" alt="" width="34" height="34"><strong>Google AI Studio</strong></div><span>Ürün görseli üretimine yönelik özel uygulamalar, prompt yapıları ve model mantığı geliştirme.</span></article>
+    <article class="tool-card"><div class="tool-title"><img loading="lazy" decoding="async" class="tool-logo rounded" src="assets/tools/veo.png" alt="" width="34" height="34"><strong>Veo</strong></div><span>Fotoğraflardan kısa AI videoları üretmeye kısaca değineceğiz. Ürün fotoğraflarından yapay zeka ile video üretimini ise çok yakında kapsamlı bir eğitimde ele alacağız.</span></article>
   </div>
 </section>
 
@@ -751,8 +759,8 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
     <p class="lead shooting-lead">Yapay zekadan en iyi sonuç almak, doğru çekilmiş bir ürün fotoğrafıyla başlar. Çekim konusunda eksiğiniz varsa, bu video eğitimler tam size göre. Hem izleyin hem uygulayın; kendi ürün fotoğraflarınızı en üst seviyeye taşıyın.<strong>Online eğitimle birlikte alındığında çekim eğitimlerinde %60 indirim fırsatı!</strong></p>
   </div>
   <div class="vcards">
-    <div class="vcard"><figure class="ph"><img src="assets/egitim-cep-telefonu.jpg" alt="Beyaz fonda bir çantanın cep telefonuyla fotoğraflandığı eğitim sahnesi"><figcaption>Cep telefonuyla ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">2.990₺</span><span class="price-bridge">yerine</span><b>990₺</b></span></div>
-    <div class="vcard"><figure class="ph"><img src="assets/egitim-profesyonel-kamera.jpg" alt="Beyaz fonda bir tost makinesinin profesyonel kamerayla fotoğraflandığı eğitim sahnesi"><figcaption>Profesyonel ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Ürün fotoğrafının karakterini kamera değil ışık belirler. Doğru ışık kullanımı, flaş teknikleri ve profesyonel çekim tekniklerini uygulamalı olarak anlatıyorum. Profesyonel çekim yapanlar için hem tek başına güçlü bir fotoğraf, hem de yapay zekada ürünü koruyan sağlam bir referans.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">4.990₺</span><span class="price-bridge">yerine</span><b>1.990₺</b></span></div>
+    <div class="vcard"><figure class="ph"><img src="assets/egitim-cep-telefonu.webp" width="1000" height="563" loading="lazy" decoding="async" alt="Beyaz fonda bir çantanın cep telefonuyla fotoğraflandığı eğitim sahnesi"><figcaption>Cep telefonuyla ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">2.990₺</span><span class="price-bridge">yerine</span><b>990₺</b></span></div>
+    <div class="vcard"><figure class="ph"><img src="assets/egitim-profesyonel-kamera.webp" width="1000" height="608" loading="lazy" decoding="async" alt="Beyaz fonda bir tost makinesinin profesyonel kamerayla fotoğraflandığı eğitim sahnesi"><figcaption>Profesyonel ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Ürün fotoğrafının karakterini kamera değil ışık belirler. Doğru ışık kullanımı, flaş teknikleri ve profesyonel çekim tekniklerini uygulamalı olarak anlatıyorum. Profesyonel çekim yapanlar için hem tek başına güçlü bir fotoğraf, hem de yapay zekada ürünü koruyan sağlam bir referans.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">4.990₺</span><span class="price-bridge">yerine</span><b>1.990₺</b></span></div>
   </div>
 </section>
 
