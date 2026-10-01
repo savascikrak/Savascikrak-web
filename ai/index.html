@@ -507,6 +507,14 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 .faq p{margin:0;padding:0 16px 16px}
 .program-sub,.program-intro .lead{text-align:left;margin-left:0;margin-right:0;max-width:none}
 .tap-hint{justify-content:flex-start}
+.tcard .bio .bio-strong{display:block;margin-top:8px}
+.tl-list summary::after,.faq summary::after{box-sizing:border-box;border:1.25px solid var(--accent)}
+.tl-list details[open] summary::after,.faq details[open] summary::after{background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238A4B1F' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E") center/16px no-repeat;border-color:var(--accent)}
+.hero .sub,.hero .sub em{font-weight:400}
+@media (max-width:899px){
+  .hero h1{font-size:clamp(29px,8vw,36px)}
+  .hero .sub{font-size:clamp(17px,4.9vw,21px)}
+}
 </style>
 </head>
 <body>
@@ -565,15 +573,21 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
     <h2>SAVAŞ ÇIKRAK</h2>
     <p class="roles">Fotoğrafçı / Yönetmen / <strong>Eğitmen</strong></p>
     <p class="bio">
-      <span class="bio-line">Profesyonel ürün fotoğrafçılığı,</span>
-      <span class="bio-line">ışık tasarımı ve yapay zeka</span>
-      <span class="bio-line">destekli görsel üretim alanında</span>
-      <span class="bio-line">markalar ve ajanslarla çalışıyorum;</span>
-      <span class="bio-line">bu birikimimi eğitimlerimde</span>
-      <span class="bio-line">paylaşıyorum.</span>
-      <strong><span class="bio-line">Instagram’da ürettiğim içeriklerle</span>
-      <span class="bio-line">125.000 kişilik güçlü bir topluluğa</span>
-      <span class="bio-line">ulaşıyorum.</span></strong>
+      <span class="bio-line">30 yılı aşkın süredir görsel</span>
+      <span class="bio-line">üretim alanında markalar ve</span>
+      <span class="bio-line">ajanslarla çalışıyorum.</span>
+      <span class="bio-line">Bugün çalışmalarımda, bu</span>
+      <span class="bio-line">deneyimi yeni nesil yapay</span>
+      <span class="bio-line">zeka araçlarıyla birleştirerek</span>
+      <span class="bio-line">ticari görseller üretiyor ve</span>
+      <span class="bio-line">bu alanda kapsamlı eğitimler</span>
+      <span class="bio-line">veriyorum.</span>
+      <strong class="bio-strong">
+      <span class="bio-line">Instagram’da 125.000’den fazla</span>
+      <span class="bio-line">takipçiden oluşan bir topluluğa</span>
+      <span class="bio-line">sahibim ve her geçen gün</span>
+      <span class="bio-line">büyüyoruz.</span>
+      </strong>
     </p>
     <a class="instagram-link" href="https://instagram.com/savascikrak" target="_blank" rel="noopener noreferrer" aria-label="Savaş Çıkrak Instagram hesabı">
       <svg viewBox="0 0 32 32" aria-hidden="true">
