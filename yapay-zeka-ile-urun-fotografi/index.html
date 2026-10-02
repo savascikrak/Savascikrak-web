@@ -77,8 +77,9 @@ h1,h2,h3{margin:0}
 .ph:has(img) {border-style:solid;border-color:transparent}
 .ph strong{font-weight:600}
 .ph.white{background:#fff}
-.visual-tag{position:absolute;z-index:2;bottom:9px;left:9px;padding:6px 9px;border-radius:999px;background:rgba(25,23,20,.88);color:#fff;font-size:9px;font-weight:700;letter-spacing:.08em;line-height:1;text-transform:uppercase;box-shadow:0 2px 10px rgba(0,0,0,.12)}
-.visual-tag.source{background:rgba(255,255,255,.94);color:var(--ink);border:1px solid rgba(26,23,20,.18)}
+.visual-tag.source{line-height:1.25}
+.visual-tag:not(.source){left:9px;transform:none}
+.visual-tag{position:absolute;z-index:2;bottom:9px;left:50%;transform:translateX(-50%);padding:6px 10px;border-radius:4px;background:rgba(255,255,255,.94);color:var(--ink);border:1px solid rgba(26,23,20,.18);text-align:center;white-space:nowrap;font-size:10.5px;font-weight:700;letter-spacing:.08em;line-height:1;text-transform:uppercase;box-shadow:0 2px 10px rgba(0,0,0,.12)}
 
 /* Nav */
 .nav{position:sticky;top:0;z-index:20;background:rgba(245,240,232,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
@@ -224,6 +225,7 @@ html,body{overflow-x:clip}
 .consent.err{color:#B3261E}
 .consent.err input{outline:2px solid #B3261E;outline-offset:1px}
 .form-err{display:none;font-size:13px;color:#B3261E}
+.form-note{font-size:14px;line-height:1.5;color:var(--muted);margin:0}
 
 /* SSS */
 .faq details{border-top:1px solid var(--line);padding:14px 0}
@@ -271,7 +273,8 @@ footer .logo{color:var(--bg);font-size:20px}
   .hv-styles .ph{height:230px}
   .ph{font-size:13px;padding:14px}
   .caption{text-align:left;font-size:14px}
-  .visual-tag{bottom:12px;left:12px;padding:7px 10px;font-size:10px}
+  .visual-tag{bottom:12px;padding:7px 11px;font-size:11px}
+  .visual-tag:not(.source){left:12px}
   .facts{flex-direction:row;gap:28px;padding:18px 0;background:none;border:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;font-size:15px}
   .facts div{flex-direction:column;gap:4px;justify-content:flex-start}
   .facts span{font-size:13px}
@@ -501,8 +504,8 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 }
 .price-date strong{border-radius:8px;background:var(--accent);color:#FFF8EF;box-shadow:0 4px 12px rgba(138,75,31,.18)}
 .checks{display:flex;flex-direction:column;gap:8px}
-.btn-wa{gap:10px;padding:0 14px;font-size:15.5px;white-space:nowrap;background:#1FAF5A}
-.btn-wa:hover{background:#178F49}
+.btn-wa{gap:10px;padding:0 14px;font-size:15.5px;white-space:nowrap;background:#13804A;color:#fff}
+.btn-wa:hover{background:#0F6B3D}
 .btn-wa svg{width:22px;height:22px}
 
 /* Yüzen WhatsApp ikonu (tüm ekranlar) */
@@ -585,6 +588,8 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
 .cerez-acik{padding-bottom:var(--cbh,0px) !important}
 .cerez-acik .wa-float{bottom:calc(var(--cbh,120px) + 16px) !important}
 @media (prefers-reduced-motion:reduce){.cerez,body,.wa-float{transition:none !important}}
+.haber .sender-form-field{width:100%;max-width:600px;min-height:1px}
+.haber:not(.hazir){padding-top:0;padding-bottom:0;border-top:0}
 .legal .cerez-ac{font:inherit;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--line2);padding:0;cursor:pointer}
 .legal .cerez-ac:hover{color:var(--ink)}
 </style>
@@ -616,7 +621,7 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
 
   <div class="hero-visual">
     <div class="hv-top">
-      <figure class="ph white src"><img src="assets/saat-kaynak.webp?v=2" srcset="assets/saat-kaynak-m.webp?v=2 520w, assets/saat-kaynak.webp?v=2 840w" sizes="(min-width:900px) 420px, 260px" width="840" height="1260" style="object-position:56% 50%" fetchpriority="high" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" onerror="this.remove()"><span class="visual-tag source">Gerçek fotoğraf</span><figcaption><strong>Gerçek fotoğraf</strong><br>Saat, beyaz fon</figcaption></figure>
+      <figure class="ph white src"><img src="assets/saat-kaynak.webp?v=2" srcset="assets/saat-kaynak-m.webp?v=2 520w, assets/saat-kaynak.webp?v=2 840w" sizes="(min-width:900px) 420px, 260px" width="840" height="1260" style="object-position:56% 50%" fetchpriority="high" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" onerror="this.remove()"><span class="visual-tag source">Gerçek<br>fotoğraf</span><figcaption><strong>Gerçek fotoğraf</strong><br>Saat, beyaz fon</figcaption></figure>
       <figure class="ph model"><img src="assets/saat-ai1.webp" srcset="assets/saat-ai1-m.webp 480w, assets/saat-ai1.webp 720w" sizes="(min-width:900px) 360px, 245px" width="720" height="1080" fetchpriority="high" alt="Aynı saat model bileğinde, yapay zeka ile oluşturulmuş" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Model üzerinde</strong><br>Aynı saat bilekte. Ölçek ve perspektif uyumlu.</figcaption></figure>
     </div>
     <div class="hv-styles">
@@ -753,7 +758,7 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
           <option>Diğer</option>
         </select>
       </label>
-      <label class="fld">Çalıştığınız ürün grubu<input class="inp" type="text" name="urun_grubu" placeholder="Örneğin kozmetik, takı, gıda" required></label>
+      <label class="fld">Çalıştığınız ürün grubu<input class="inp" type="text" name="urun_grubu" placeholder="Örneğin kozmetik, takı, gıda"></label>
       <label class="fld">Ürün fotoğraflarınızı şu an nasıl üretiyorsunuz?
         <select class="inp" name="foto_uretim" required>
           <option value="">Seçin</option>
@@ -774,7 +779,7 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
       </label>
     </div>
     <fieldset class="fld chk-group">
-      <legend>Nerede satış yapıyorsunuz? <small>(isteğe bağlı)</small></legend>
+      <legend>Nerede satış yapıyorsunuz?</legend>
       <div class="chk-list">
         <label class="chk"><input type="checkbox" name="satis" value="Trendyol">Trendyol</label>
         <label class="chk"><input type="checkbox" name="satis" value="Hepsiburada">Hepsiburada</label>
@@ -784,12 +789,13 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
         <label class="chk"><input type="checkbox" name="satis" value="Diğer">Diğer</label>
       </div>
     </fieldset>
-    <label class="fld">Eğitimde en çok ne öğrenmek istiyorsunuz? <small>(isteğe bağlı)</small><textarea class="inp inp-area" name="beklenti" rows="3"></textarea></label>
+    <label class="fld">Eğitimde en çok ne öğrenmek istiyorsunuz?<textarea class="inp inp-area" name="beklenti" rows="3"></textarea></label>
     <div class="consents">
       <label class="consent"><input type="checkbox" name="kvkk" required><span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum.</span></label>
       <label class="consent"><input type="checkbox" name="iletisim_izni"><span>Yeni eğitim ve duyurulardan e-posta ve WhatsApp ile haberdar olmak istiyorum.</span></label>
     </div>
     <p class="form-err" id="form-err" role="alert">Lütfen işaretli alanları doldurun.</p>
+    <p class="form-note">Başvurunuzun ardından kredi kartı veya havale ile ödeme ayrıntılarını size iletiyoruz. Ödemeyle birlikte kaydınız tamamlanır ve kontenjandaki yeriniz ayrılır.</p>
     <button class="btn btn-wa" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.6c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A7.9 7.9 0 1 1 12 19.8zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.6-.6z"/></svg>Başvuruyu WhatsApp ile gönder</button>
     <p class="form-ok" id="form-ok" role="status">Başvurunuz alındı. En kısa sürede size dönüş yapacağız.</p>
   </form>
@@ -818,10 +824,14 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
     <details><summary>Ürünüm yapay zeka tarafından değişir mi?</summary><p>Workshopun temel konularından biri tam olarak budur. Ürünün formunu, rengini, logosunu, etiketini, malzemesini ve önemli detaylarını birebir koruyarak yeni görseller üretmenin yöntemlerini ele alacağız. Yapay zekanın üründen saptığı durumları nasıl fark edeceğinizi ve nasıl düzelteceğinizi de göreceksiniz.</p></details>
     <details><summary>Ücretli yapay zeka üyelikleri almam gerekiyor mu?</summary><p>Workshopta farklı araçlardan yararlanacağız. Bazılarının ücretsiz kullanım seçenekleri bulunurken bazı gelişmiş özellikler kredi veya ücretli üyelik gerektirebilir. Hangi araçlara gerçekten ihtiyaç duyduğunuzu da konuşacağız.</p></details>
     <details><summary>Güçlü bir bilgisayar gerekir mi?</summary><p>Hayır. Kullandığımız yapay zeka araçlarının büyük bölümü işlemleri bulut üzerinde gerçekleştirir. Güncel bir internet tarayıcısını rahatça çalıştırabilen standart bir bilgisayar yeterlidir.</p></details>
-    <details><summary>Canlı katılamazsam ne olur?</summary><p>Workshop kayıt altına alınır ve katılımcıların erişimine açılır. Canlı katılamadığınızda eğitimi daha sonra izleyebilir, anlatılan uygulamaları kendi hızınızda tekrar edebilirsiniz.</p></details>
-    <details><summary>Eğitimin süresi ne kadar?</summary><p>Eğitim, 1 günlük ve yaklaşık 5 saatlik canlı bir workshop olarak gerçekleşir. Anlatım, uygulama örnekleri ve soru-cevap bölümleri aynı gün içinde tamamlanır.</p></details>
+    <details><summary>Canlı katılamazsam ne olur?</summary><p>Workshop kayıt altına alınır. Eğitimden sonraki 48 saat içinde izleme bağlantısı size gönderilir ve kayıt 1 ay boyunca izlenebilir. Canlı katılamadığınızda eğitimi daha sonra izleyebilir, anlatılan uygulamaları kendi hızınızda tekrar edebilirsiniz.</p></details>
+    <details><summary>Eğitimin süresi ne kadar?</summary><p>Eğitim, Zoom üzerinden 1 günlük ve yaklaşık 5 saatlik canlı bir workshop olarak gerçekleşir. Anlatım, uygulama örnekleri ve soru-cevap bölümleri aynı gün içinde tamamlanır.</p></details>
     <details><summary>Eğitim sonunda kendi ürünlerimle çalışabilecek miyim?</summary><p>Evet. Amaç yalnızca örnek uygulamaları izlemek değil, öğrendiğiniz yöntemi kendi ürünlerinize uygulayabilmenizdir. Workshop sonunda elinizdeki ürün fotoğraflarından farklı kullanım alanlarına uygun yeni görseller üretebilecek bir iş akışına sahip olacaksınız.</p></details>
   </div>
+</section>
+
+<section id="haberdar" class="wrap sec haber" aria-label="Yeni eğitim duyuruları">
+  <div style="text-align: left" class="sender-form-field" data-sender-form-id="aKr4BR"></div>
 </section>
 
 </main>
@@ -841,16 +851,27 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycbw3dM5uCYyz3xx92DwnaP
   if(!f) return;
   var err=document.getElementById('form-err');
   function markOf(el){ return el.type==='checkbox' ? el.closest('.consent') : el; }
-  f.addEventListener('input',function(e){ var m=markOf(e.target); if(m) m.classList.remove('err'); });
-  f.addEventListener('change',function(e){ var m=markOf(e.target); if(m) m.classList.remove('err'); });
+  function isOk(el){ return el.type==='checkbox' ? el.checked : el.checkValidity() && el.value.trim()!==''; }
+  function setState(el,ok){
+    var m=markOf(el); if(m) m.classList.toggle('err',!ok);
+    el.setAttribute('aria-invalid',ok?'false':'true');
+    if(ok) el.removeAttribute('aria-describedby'); else el.setAttribute('aria-describedby','form-err');
+  }
+  function onEdit(e){
+    var el=e.target;
+    if(!el.required || !el.hasAttribute('aria-invalid')) return;
+    setState(el,isOk(el));
+    if(err && !f.querySelector('[aria-invalid="true"]')) err.style.display='none';
+  }
+  f.addEventListener('input',onEdit);
+  f.addEventListener('change',onEdit);
   f.addEventListener('submit',function(e){
     e.preventDefault();
     // Zorunlu alan kontrolü
     var bad=[];
     f.querySelectorAll('[required]').forEach(function(el){
-      var ok = el.type==='checkbox' ? el.checked : el.checkValidity() && el.value.trim()!=='';
-      var m=markOf(el); if(m) m.classList.toggle('err',!ok);
-      if(el.type!=='checkbox') el.setAttribute('aria-invalid',ok?'false':'true');
+      var ok = isOk(el);
+      setState(el,ok);
       if(!ok) bad.push(el);
     });
     if(bad.length){
@@ -957,6 +978,52 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
   var c0=null;try{c0=localStorage.getItem('cerez')}catch(e){}
   if(c0!=='1'&&c0!=='0'){var bas=function(){var c1=null;try{c1=localStorage.getItem('cerez')}catch(e){}if(c1!=='1'&&c1!=='0')ac(false)};
     setTimeout(bas,3000)}
+})();
+</script>
+<script>
+// Sender abonelik formu: bölüm, form gerçekten çizilene kadar boşluksuz ve görünmez kalır;
+// yükleyici yalnızca bölüm görünüme yaklaşınca ve yalnızca bir kez eklenir.
+(function(){
+  var sec=document.getElementById('haberdar'); if(!sec) return;
+  var alan=sec.querySelector('.sender-form-field');
+  var mo=new MutationObserver(function(){ if(alan.children.length){ sec.classList.add('hazir'); mo.disconnect(); } });
+  mo.observe(alan,{childList:true,subtree:true});
+  function yukle(){
+    if(window.senderYuklendi) return; window.senderYuklendi=1;
+    (function (s, e, n, d, er) {
+      s['Sender'] = er;
+      s[er] = s[er] || function () {
+        (s[er].q = s[er].q || []).push(arguments)
+      }, s[er].l = 1 * new Date();
+      s[er].on = function(event, callback) {
+        s[er].listeners = s[er].listeners || {};
+        (s[er].listeners[event] = s[er].listeners[event] || []).push(callback);
+      };
+      var a = e.createElement(n),
+          m = e.getElementsByTagName(n)[0];
+      a.async = 1;
+      a.src = d;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script',
+       'https://cdn.sender.net/accounts_resources/universal.js',
+       'sender');
+    sender('285d5630890481');
+    // Sender, abonelik sonrası e-ticaret takibi için kimlik bırakır (sender_subscriber_id çerezi,
+    // sender_ecommerce_params). Bu sitede e-ticaret takibi yok; çerez onayı yoksa bunlar silinir.
+    setInterval(temizle,4000);
+  }
+  function temizle(){
+    if(window.cerezOnay) return;
+    ['sender_subscriber_id','sender_country'].forEach(function(n){
+      if(document.cookie.indexOf(n+'=')>-1) document.cookie=n+'=; path=/; max-age=0';
+    });
+    try{localStorage.removeItem('sender_ecommerce_params')}catch(_){}
+  }
+  temizle();
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ io.disconnect(); yukle(); } },{rootMargin:'800px 0px'});
+    io.observe(sec);
+  } else yukle();
 })();
 </script>
 </body>
