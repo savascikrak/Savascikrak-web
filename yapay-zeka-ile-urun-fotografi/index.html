@@ -943,8 +943,8 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
   addEventListener('resize',function(){if(d)document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px')});
   var t=document.querySelector('.cerez-ac');if(t)t.addEventListener('click',function(){ac(true)});
   var c0=null;try{c0=localStorage.getItem('cerez')}catch(e){}
-  if(c0!=='1'&&c0!=='0'){var zt,bas=function(){clearTimeout(zt);var c1=null;try{c1=localStorage.getItem('cerez')}catch(e){}if(c1!=='1'&&c1!=='0')ac(false)};
-    zt=setTimeout(bas,5000)}
+  if(c0!=='1'&&c0!=='0'){var zt,bas=function(){clearTimeout(zt);removeEventListener('scroll',bas);var c1=null;try{c1=localStorage.getItem('cerez')}catch(e){}if(c1!=='1'&&c1!=='0')ac(false)};
+    zt=setTimeout(bas,3000);addEventListener('scroll',bas,{passive:true})}
 })();
 </script>
 </body>
