@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ürün Fotoğraflarında Yapay Zeka Eğitimi | Savaş Çıkrak</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-64.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="description" content="Ürün fotoğrafınızdan kampanya, sosyal medya ve e-ticaret görselleri üretin, ürününüz birebir aynı kalsın. Canlı online eğitim: 17 Ekim 2026, 20:00.">
 <meta property="og:title" content="Ürün fotoğraflarını yapay zekayla dönüştür.">
 <meta property="og:description" content="Ürününüz aynı kalsın. Sahneyi yapay zeka üretsin. Canlı online eğitim, 17 Ekim 2026, 20:00.">
@@ -486,9 +489,9 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 .wa-line strong{font-size:15px;color:var(--ink)}
 .wa-line:hover{border-color:#1FAF5A;color:var(--ink)}
 @media (min-width:900px){
-  .wa-float{position:fixed;right:24px;bottom:24px;z-index:40;display:inline-flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border-radius:999px;background:#13804A;color:#fff;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+  .wa-float{position:fixed;right:24px;bottom:24px;z-index:40;display:inline-flex;align-items:center;gap:10px;padding:12px 18px 12px 14px;border-radius:999px;background:#0F6B3D;color:#fff;font-weight:600;font-size:15px;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.18)}
   .wa-float svg{width:24px;height:24px}
-  .wa-float:hover{background:#178F49;color:#fff}
+  .wa-float:hover{background:#13804A;color:#fff}
 }
 
 /* Fiyat kutusu: başlık ve tarih */
@@ -504,14 +507,14 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 }
 .price-date strong{border-radius:8px;background:var(--accent);color:#FFF8EF;box-shadow:0 4px 12px rgba(138,75,31,.18)}
 .checks{display:flex;flex-direction:column;gap:8px}
-.btn-wa{gap:10px;padding:0 14px;font-size:15.5px;white-space:nowrap;background:#13804A;color:#fff}
-.btn-wa:hover{background:#0F6B3D}
+.btn-wa{gap:10px;padding:0 14px;font-size:15.5px;white-space:nowrap;background:#0F6B3D;color:#fff;transition:background .2s ease}
+.btn-wa:hover{background:#13804A}
 .btn-wa svg{width:22px;height:22px}
 
 /* Yüzen WhatsApp ikonu (tüm ekranlar) */
-.wa-float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex !important;align-items:center;justify-content:center;width:56px;height:56px;padding:0 !important;border-radius:50%;background:#13804A;color:#fff;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s ease,background .2s ease}
+.wa-float{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex !important;align-items:center;justify-content:center;width:56px;height:56px;padding:0 !important;border-radius:50%;background:#0F6B3D;color:#fff;text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.22);transition:transform .2s ease,background .2s ease}
 .wa-float svg{width:30px !important;height:30px !important}
-.wa-float:hover{background:#178F49;color:#fff;transform:scale(1.06)}
+.wa-float:hover{background:#13804A;color:#fff;transform:scale(1.06)}
 @media (min-width:900px){.wa-float{width:60px;height:60px;right:28px;bottom:28px}}
 
 /* Alt bilgi (telif) */
@@ -589,7 +592,12 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
 .cerez-acik .wa-float{bottom:calc(var(--cbh,120px) + 16px) !important}
 @media (prefers-reduced-motion:reduce){.cerez,body,.wa-float{transition:none !important}}
 .haber .sender-form-field{width:100%;max-width:600px;min-height:1px}
-.haber:not(.hazir){padding-top:0;padding-bottom:0;border-top:0}
+.haber{position:relative;margin-top:40px;padding-top:14px}
+.form:has(+ .haber){padding-bottom:0}
+.haber::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--line2) 22%,var(--line2) 78%,transparent)}
+.haber::after{content:"";position:absolute;top:-4px;left:50%;width:8px;height:8px;margin-left:-4px;background:var(--bg);border:1px solid var(--accent);transform:rotate(45deg)}
+.haber:not(.hazir){margin-top:0;padding-top:0;padding-bottom:0}
+.haber:not(.hazir)::before,.haber:not(.hazir)::after{display:none}
 .legal .cerez-ac{font:inherit;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--line2);padding:0;cursor:pointer}
 .legal .cerez-ac:hover{color:var(--ink)}
 </style>
@@ -789,16 +797,18 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
         <label class="chk"><input type="checkbox" name="satis" value="Diğer">Diğer</label>
       </div>
     </fieldset>
-    <label class="fld">Eğitimde en çok ne öğrenmek istiyorsunuz?<textarea class="inp inp-area" name="beklenti" rows="3"></textarea></label>
+    <label class="fld">Aklınıza takılan bir şey varsa buraya yazabilirsiniz.<textarea class="inp inp-area" name="beklenti" rows="3"></textarea></label>
     <div class="consents">
       <label class="consent"><input type="checkbox" name="kvkk" required><span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum.</span></label>
       <label class="consent"><input type="checkbox" name="iletisim_izni"><span>Yeni eğitim ve duyurulardan e-posta ve WhatsApp ile haberdar olmak istiyorum.</span></label>
     </div>
     <p class="form-err" id="form-err" role="alert">Lütfen işaretli alanları doldurun.</p>
-    <p class="form-note">Başvurunuzun ardından kredi kartı veya havale ile ödeme ayrıntılarını size iletiyoruz. Ödemeyle birlikte kaydınız tamamlanır ve kontenjandaki yeriniz ayrılır.</p>
     <button class="btn btn-wa" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.6c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A7.9 7.9 0 1 1 12 19.8zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.6-.6z"/></svg>Başvuruyu WhatsApp ile gönder</button>
     <p class="form-ok" id="form-ok" role="status">Başvurunuz alındı. En kısa sürede size dönüş yapacağız.</p>
   </form>
+  <div id="haberdar" class="haber" role="region" aria-label="Yeni eğitim duyuruları">
+    <div style="text-align: left" class="sender-form-field" data-sender-form-id="aKr4BR"></div>
+  </div>
 </section>
 
 <section id="cekim" class="wrap sec stack">
@@ -828,10 +838,6 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
     <details><summary>Eğitimin süresi ne kadar?</summary><p>Eğitim, Zoom üzerinden 1 günlük ve yaklaşık 5 saatlik canlı bir workshop olarak gerçekleşir. Anlatım, uygulama örnekleri ve soru-cevap bölümleri aynı gün içinde tamamlanır.</p></details>
     <details><summary>Eğitim sonunda kendi ürünlerimle çalışabilecek miyim?</summary><p>Evet. Amaç yalnızca örnek uygulamaları izlemek değil, öğrendiğiniz yöntemi kendi ürünlerinize uygulayabilmenizdir. Workshop sonunda elinizdeki ürün fotoğraflarından farklı kullanım alanlarına uygun yeni görseller üretebilecek bir iş akışına sahip olacaksınız.</p></details>
   </div>
-</section>
-
-<section id="haberdar" class="wrap sec haber" aria-label="Yeni eğitim duyuruları">
-  <div style="text-align: left" class="sender-form-field" data-sender-form-id="aKr4BR"></div>
 </section>
 
 </main>
@@ -923,7 +929,7 @@ const SHEET_URL = "https://script.google.com/macros/s/AKfycbw3dM5uCYyz3xx92DwnaP
       ['Fotoğraf üretimi',data.foto_uretim],
       ['Yapay zeka kullanımı',data.ai_kullanim],
       ['Satış kanalları',data.satis_kanallari],
-      ['Öğrenmek istediğim',data.beklenti],
+      ['Sorum',data.beklenti],
       ['KVKK onayı',data.kvkk_onay],
       ['Duyuru izni',data.iletisim_izni]
     ];
@@ -987,6 +993,23 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
   var sec=document.getElementById('haberdar'); if(!sec) return;
   var alan=sec.querySelector('.sender-form-field');
   var mo=new MutationObserver(function(){ if(alan.children.length){ sec.classList.add('hazir'); mo.disconnect(); } });
+  // Sender formu kendi iframe'inde çizilir (aynı köken): sayfaya uygun stil iframe'in içine eklenir,
+  // ardından iframe yüksekliği içeriğe göre güncellenir.
+  var SSTIL='#sender-form-content{padding-top:4px!important;padding-bottom:20px!important}'+
+    '.sender-form .sender-form-label{display:none!important}'+
+    '.sender-form .sender-form-input{text-align:center!important}'+
+    '.sender-form .sender-form-input::placeholder{color:#A39A8E!important;opacity:1!important;text-transform:uppercase;letter-spacing:.06em;font-size:13px}'+
+    '.sender-form-bottom-text br{display:none}';
+  var stilT=setInterval(function(){
+    var fr=alan.querySelector('iframe'); if(!fr) return;
+    var d; try{ d=fr.contentDocument; }catch(e){ clearInterval(stilT); return; }
+    var kutu=d&&d.getElementById('sender-form-content'); if(!kutu) return;
+    clearInterval(stilT);
+    if(!d.getElementById('sk-stil')){ var st=d.createElement('style'); st.id='sk-stil'; st.textContent=SSTIL; d.head.appendChild(st); }
+    var gir=d.querySelector('.sender-form input[type=email]'); if(gir){ gir.setAttribute('placeholder','E-posta adresiniz'); gir.setAttribute('aria-label','E-posta adresiniz'); }
+    function boy(){ fr.style.height=kutu.offsetHeight+'px'; }
+    boy(); if(window.ResizeObserver) new ResizeObserver(boy).observe(kutu);
+  },300);
   mo.observe(alan,{childList:true,subtree:true});
   function yukle(){
     if(window.senderYuklendi) return; window.senderYuklendi=1;
