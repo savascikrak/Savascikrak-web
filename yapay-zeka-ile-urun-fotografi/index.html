@@ -683,7 +683,7 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
 /* Hero alt cumle: Forma DJR Display Regular (Adobe Fonts cle6jyr) */
 .hero .sub,.hero .sub em{font-family:"forma-djr-display",var(--sans);font-style:normal;font-weight:500}
 .br-m{display:none}
-@media (max-width:599px){.br-m{display:inline}.hero .sub{font-size:clamp(21px,6.1vw,26px)}.hero .sub,.hero .sub em{font-weight:700}}
+@media (max-width:599px){.br-m{display:inline}.hero .sub{font-size:clamp(21px,6.1vw,26px)}.hero .sub,.hero .sub em{font-weight:600}}
 /* iPad yatay / dar masaustu (900-1199): egitmen fotografi saga, ekran kenarina */
 @media (min-width:900px) and (max-width:1199px){
   .trainer .tcard img{right:-40px}
@@ -1167,11 +1167,11 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
   if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   var sec='.program-intro,.tl-group,.tcard,.campaign-card,.tool-title,.who,.price-box,#basvuru-formu,.vcard,.faq-col';
   var el=[].slice.call(document.querySelectorAll(sec));
-  var io=new IntersectionObserver(function(en){en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } });},{rootMargin:'0px 0px -8% 0px',threshold:.08});
+  var io=new IntersectionObserver(function(en){en.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); if(e.target.matches('.price-box')){ var f=document.getElementById('basvuru-formu'); if(f){ f.classList.add('on'); io.unobserve(f); } } } });},{rootMargin:'0px 0px -8% 0px',threshold:.08});
   el.forEach(function(x){
     if(x.getBoundingClientRect().top < innerHeight) return; /* ilk ekranda görünenler hareketsiz */
     var kar=[].slice.call(x.parentNode.children).filter(function(c){return c.matches(sec)});
-    var i=kar.indexOf(x); if(i>0) x.style.transitionDelay=Math.min(i,5)*90+'ms';
+    var i=kar.indexOf(x); if(i>0 && x.id!=='basvuru-formu') x.style.transitionDelay=Math.min(i,5)*90+'ms';
     x.classList.add('rv'); io.observe(x);
   });
 })();
