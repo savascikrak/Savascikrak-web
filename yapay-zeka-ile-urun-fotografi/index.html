@@ -568,16 +568,21 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 @media (max-width:899px){.trainer .tcard{clip-path:none}.trainer .tcard img{right:calc(-1 * var(--pad) - 70px)}}
 @media (min-width:900px){.trainer .tcard{padding-left:0;padding-right:0;border-radius:0;clip-path:inset(-600px 0 0 0)}.trainer .tcard img{right:0}}
 @media (max-width:899px){.program-intro h2.h2-cekim{font-size:clamp(16px,4.6vw,21px);white-space:nowrap}}
-.cerez{position:fixed;left:0;right:0;bottom:0;z-index:60;background:rgba(251,248,243,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line2);box-shadow:0 -6px 20px rgba(73,54,35,.06);color:var(--text);font-size:12.5px;line-height:1.45;padding:10px max(16px,env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px))}
-.cerez-ic{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
-.cerez p{margin:0}.cerez a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.cerez{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FBF8F3;border-top:2px solid var(--accent);box-shadow:0 -10px 30px rgba(73,54,35,.10);color:var(--text);font-size:13px;line-height:1.5;padding:14px max(16px,env(safe-area-inset-left,0px)) calc(14px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .5s cubic-bezier(.22,.8,.3,1)}
+.cerez.gor{transform:none}
+.cerez-ic{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.cerez p{margin:0}.cerez a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.cerez a:hover{color:var(--ink)}
 .cerez .durum{color:var(--muted)}
-.cerez .cb{display:flex;gap:8px}
-.cerez button{flex:1 1 0;font:inherit;font-size:13px;font-weight:600;min-height:36px;padding:0 16px;border-radius:999px;cursor:pointer;border:1px solid var(--ink);background:transparent;color:var(--ink)}
-.cerez button:hover,.cerez button:focus-visible{background:var(--ink);color:#FBF8F3}
-@media (min-width:900px){.cerez{font-size:13px;padding-top:12px;padding-bottom:12px}.cerez-ic{flex-direction:row;align-items:center;justify-content:space-between;gap:24px}.cerez button{flex:0 0 auto;min-width:110px}}
+.cerez .cb{display:flex;gap:10px}
+.cerez button{flex:1 1 0;font:inherit;font-size:14px;font-weight:600;min-height:42px;padding:0 18px;border-radius:999px;cursor:pointer;border:1.5px solid var(--accent);background:#fff;color:var(--accent);transition:background .2s ease,color .2s ease}
+.cerez button:hover,.cerez button:focus-visible{background:var(--accent);color:#FBF8F3;outline:none}
+@media (min-width:900px){.cerez{padding-top:16px;padding-bottom:16px}.cerez-ic{flex-direction:row;align-items:center;justify-content:space-between;gap:32px}.cerez p{max-width:720px}.cerez button{flex:0 0 auto;width:130px}}
+body{transition:padding-bottom .5s cubic-bezier(.22,.8,.3,1)}
+.wa-float{transition:bottom .5s cubic-bezier(.22,.8,.3,1),transform .2s ease,background .2s ease}
 .cerez-acik{padding-bottom:var(--cbh,0px) !important}
 .cerez-acik .wa-float{bottom:calc(var(--cbh,120px) + 16px) !important}
+@media (prefers-reduced-motion:reduce){.cerez,body,.wa-float{transition:none !important}}
 .legal .cerez-ac{font:inherit;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--line2);padding:0;cursor:pointer}
 .legal .cerez-ac:hover{color:var(--ink)}
 </style>
@@ -920,22 +925,26 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
   function kaydet(v){try{localStorage.setItem('cerez',v)}catch(e){}}
   function gaSil(){var h=location.hostname,ds=['',h,'.'+h],p=h.split('.');if(p.length>2)ds.push('.'+p.slice(-2).join('.'));
     document.cookie.split(';').forEach(function(k){var n=k.split('=')[0].trim();if(/^(_ga|_gid|_gat)/.test(n))ds.forEach(function(dm){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'+(dm?'; domain='+dm:'')})})}
-  function kapat(){if(!d)return;d.remove();d=null;document.body.classList.remove('cerez-acik')}
+  var azHareket=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function kapat(){if(!d)return;var e=d;d=null;document.body.classList.remove('cerez-acik');
+    if(azHareket){e.remove();return}e.classList.remove('gor');setTimeout(function(){e.remove()},550)}
   function sec(v){kaydet(v);kapat();
     if(v==='1'){window.cerezOnay=true;window['ga-disable-G-P03FTPWL2F']=false;gtag('consent','update',{analytics_storage:'granted'});gaYukle(0)}
     else{var onceki=window.cerezOnay;window.cerezOnay=false;window['ga-disable-G-P03FTPWL2F']=true;gtag('consent','update',{analytics_storage:'denied'});gaSil();if(onceki&&window.gaYuklendi)setTimeout(gaSil,500)}}
   function ac(tekrar){if(d)return;var c=null;try{c=localStorage.getItem('cerez')}catch(e){}
     d=document.createElement('div');d.className='cerez';d.setAttribute('role','region');d.setAttribute('aria-label','Çerez tercihi');
     var durum=tekrar&&(c==='1'||c==='0')?' <span class="durum">(Şu anki tercihiniz: '+(c==='1'?'kabul':'ret')+'.)</span>':'';
-    d.innerHTML='<div class="cerez-ic"><p>Sitemizi geliştirmek için, onayınızla Google Analytics çerezleri kullanıyoruz. <a href="/kvkk/#cerezler">Çerez politikası</a>'+durum+'</p><div class="cb"><button type="button" class="cr">Reddet</button><button type="button" class="ck">Kabul et</button></div></div>';
-    document.body.appendChild(d);document.body.classList.add('cerez-acik');
+    d.innerHTML='<div class="cerez-ic"><p>Hangi eğitimlerin daha çok ilgi gördüğünü anlamak ve size uygun yeni eğitimler hazırlamak için, onayınızla Google Analytics çerezlerini kullanıyoruz. Tercihinizi dilediğiniz zaman değiştirebilirsiniz. <a href="/kvkk/#cerezler">Çerez politikası</a>'+durum+'</p><div class="cb"><button type="button" class="cr">Reddet</button><button type="button" class="ck">Kabul et</button></div></div>';
+    document.body.appendChild(d);
     document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px');
+    void d.offsetHeight;d.classList.add('gor');document.body.classList.add('cerez-acik');
     d.querySelector('.ck').onclick=function(){sec('1')};d.querySelector('.cr').onclick=function(){sec('0')};
     if(tekrar)d.querySelector('.cr').focus({preventScroll:true})}
   addEventListener('resize',function(){if(d)document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px')});
   var t=document.querySelector('.cerez-ac');if(t)t.addEventListener('click',function(){ac(true)});
   var c0=null;try{c0=localStorage.getItem('cerez')}catch(e){}
-  if(c0!=='1'&&c0!=='0')ac(false);
+  if(c0!=='1'&&c0!=='0'){var zt,bas=function(){clearTimeout(zt);removeEventListener('scroll',bas);var c1=null;try{c1=localStorage.getItem('cerez')}catch(e){}if(c1!=='1'&&c1!=='0')ac(false)};
+    zt=setTimeout(bas,10000);addEventListener('scroll',bas,{passive:true})}
 })();
 </script>
 </body>
