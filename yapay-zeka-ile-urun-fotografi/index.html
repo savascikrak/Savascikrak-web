@@ -39,6 +39,8 @@ if(window.cerezOnay)addEventListener('load',function(){gaYukle(1500)})})();
 <link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/roboto-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="stylesheet" href="https://use.typekit.net/cle6jyr.css">
 <style>
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -678,6 +680,25 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
 }
 .legal .cerez-ac{font:inherit;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--line2);padding:0;cursor:pointer}
 .legal .cerez-ac:hover{color:var(--ink)}
+/* Hero alt cumle: Forma DJR Display Regular (Adobe Fonts cle6jyr) */
+.hero .sub,.hero .sub em{font-family:"forma-djr-display",var(--sans);font-style:normal;font-weight:500}
+/* iPad yatay / dar masaustu (900-1199): egitmen fotografi saga, ekran kenarina */
+@media (min-width:900px) and (max-width:1199px){
+  .trainer .tcard img{right:-40px}
+}
+/* Tablet (600-899): egitmen bolumu masaustu biyografi + masaustu foto, haberdar ortali */
+@media (min-width:600px) and (max-width:899px){
+  .trainer .tcard{min-height:600px;justify-content:center}
+  .trainer .tcard img{height:600px;right:calc(-1 * var(--pad))}
+  .tcard .bio:not(.bio-mas){display:none}
+  .tcard .bio.bio-mas{display:block;width:auto;max-width:46%;font-size:14px;line-height:1.6;margin-top:10px}
+  .tcard .bio-mas p + p{margin-top:10px}
+  .tcard .bio-mas strong{color:var(--ink);font-weight:600}
+  .haber .sender-form-field{margin-left:auto;margin-right:auto}
+  #egitmen + .sec{padding-top:0}
+  main > #egitmen + .sec::before,main > #egitmen + .sec::after{display:none}
+  #egitmen + .sec .protection-intro .lead{text-align:center}
+}
 </style>
 </head>
 <body>
@@ -733,7 +754,7 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
 
 <section id="egitmen" class="wrap trainer">
   <div class="tcard">
-    <picture><source media="(min-width:900px)" srcset="assets/savas-profil2-m.webp?v=3 524w, assets/savas-profil2.webp?v=3 786w" sizes="553px" width="786" height="1080"><img src="assets/portre-2.webp" loading="lazy" decoding="async" alt="Savaş Çıkrak portresi" width="873" height="910"></picture>
+    <picture><source media="(min-width:600px)" srcset="assets/savas-profil2-m.webp?v=3 524w, assets/savas-profil2.webp?v=3 786w" sizes="(min-width:900px) 553px, 440px" width="786" height="1080"><img src="assets/portre-2.webp" loading="lazy" decoding="async" alt="Savaş Çıkrak portresi" width="873" height="910"></picture>
     <h2>SAVAŞ ÇIKRAK</h2>
     <p class="roles">Fotoğrafçı / Yönetmen / <strong>Eğitmen</strong></p>
     <p class="bio">
