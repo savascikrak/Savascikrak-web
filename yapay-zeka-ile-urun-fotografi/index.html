@@ -1185,7 +1185,9 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
     '.sender-form .sender-form-input::placeholder{color:#A39A8E!important;opacity:1!important;text-transform:uppercase;letter-spacing:.06em;font-size:13px}'+
     '.sender-form-bottom-text br{display:none}'+
     '.sender-form button,.sender-form [type=submit]{background:#8A4B1F!important;border-color:#8A4B1F!important;transition:background-color .2s,border-color .2s}'+
-    '.sender-form button:hover,.sender-form [type=submit]:hover{background:#6F3C18!important;border-color:#6F3C18!important}';
+    '.sender-form button:hover,.sender-form [type=submit]:hover{background:#6F3C18!important;border-color:#6F3C18!important}'+
+    '.sender-form .sender-form-input:focus-visible{outline:2px solid #8A4B1F!important;outline-offset:2px!important;border-color:#8A4B1F!important}'+
+    '.sender-form button:focus-visible,.sender-form [type=submit]:focus-visible{outline:2px solid #1A1714!important;outline-offset:3px!important}';
   var stilT=setInterval(function(){
     var fr=alan.querySelector('iframe'); if(!fr) return;
     var d; try{ d=fr.contentDocument; }catch(e){ clearInterval(stilT); return; }
@@ -1193,6 +1195,11 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
     clearInterval(stilT);
     if(!d.getElementById('sk-stil')){ var st=d.createElement('style'); st.id='sk-stil'; st.textContent=SSTIL; d.head.appendChild(st); }
     var gir=d.querySelector('.sender-form input[type=email]'); if(gir){ gir.setAttribute('placeholder','E-posta adresiniz'); gir.setAttribute('aria-label','E-posta adresiniz'); }
+    // Sender hata mesajları tarayıcı dilinde (çoğu zaman İngilizce) gelir: Türkçeye çevrilir.
+    var cevir=function(){ d.querySelectorAll('.error-message').forEach(function(e){ var t=e.textContent.trim();
+      if(/fill out/i.test(t)) e.textContent='Lütfen e-posta adresinizi yazın.';
+      else if(/^please/i.test(t)) e.textContent='Lütfen geçerli bir e-posta adresi yazın.'; }); };
+    new MutationObserver(cevir).observe(d.body,{childList:true,subtree:true,characterData:true}); cevir();
     function boy(){ fr.style.height=kutu.offsetHeight+'px'; }
     boy(); if(window.ResizeObserver) new ResizeObserver(boy).observe(kutu);
   },300);
