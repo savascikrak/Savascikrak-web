@@ -6,7 +6,7 @@
 <title>Ürün Fotoğraflarında Yapay Zeka Eğitimi | Savaş Çıkrak</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-64.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <meta name="description" content="Ürün fotoğrafınızdan kampanya, sosyal medya ve e-ticaret görselleri üretin, ürününüz birebir aynı kalsın. Canlı online eğitim: 17 Ekim 2026, 20:00.">
 <meta property="og:title" content="Ürün fotoğraflarını yapay zekayla dönüştür.">
 <meta property="og:description" content="Ürününüz aynı kalsın. Sahneyi yapay zeka üretsin. Canlı online eğitim, 17 Ekim 2026, 20:00.">
@@ -107,7 +107,7 @@ h1,h2,h3{margin:0}
 .hero-date i{width:1px;height:19px;background:var(--line2)}
 .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(34px,9vw,41px);line-height:.98;letter-spacing:-.04em;text-align:center}
 .hero h1 span{display:block;white-space:nowrap}
-.hero .sub{font-family:var(--sans);font-style:italic;font-weight:600;font-size:24px;line-height:1.16;color:var(--accent);text-align:center}
+.hero .sub{font-family:var(--sans);font-style:italic;font-weight:600;font-size:22px;line-height:1.16;color:var(--accent);text-align:center}
 .hero-visual{grid-area:visual;display:flex;flex-direction:column;gap:10px}
 .hv-top{display:flex;gap:10px}
 .hv-top .src{width:37%;flex-shrink:0;height:260px}
@@ -271,7 +271,7 @@ footer .logo{color:var(--bg);font-size:20px}
   .lead{font-size:18px}
   .hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"head visual";column-gap:64px;row-gap:24px;padding-top:72px;padding-bottom:56px;align-items:start}
   .hero h1{font-size:66px;line-height:.98;letter-spacing:-.035em}
-  .hero .sub{font-size:30px}
+  .hero .sub{font-size:28px}
   .hero-head{gap:22px;align-self:start}
   .hv-top .src{width:190px;height:420px}
   .hv-top .model{height:420px}
@@ -568,7 +568,7 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 .hero .sub,.hero .sub em{font-weight:400}
 @media (max-width:899px){
   .hero h1{font-size:clamp(29px,8vw,36px)}
-  .hero .sub{font-size:clamp(17px,4.9vw,21px)}
+  .hero .sub{font-size:clamp(15px,calc(4.9vw - 2px),19px)}
 }
 .tcard .bio .bio-par{display:block;margin-top:8px}
 @media (max-width:899px){.tcard .bio{font-size:12.5px;width:auto}}
@@ -680,13 +680,15 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
 }
 .legal .cerez-ac{font:inherit;color:var(--muted);background:none;border:0;border-bottom:1px solid var(--line2);padding:0;cursor:pointer}
 .legal .cerez-ac:hover{color:var(--ink)}
-/* Hero alt cumle: Forma DJR Display Regular (Adobe Fonts cle6jyr) */
-.hero .sub,.hero .sub em{font-family:"forma-djr-display",var(--sans);font-style:normal;font-weight:500}
+/* Hero alt cumle: Roboto Medium (500), Urun Sadakati basligiyla ayni font */
+.hero .sub,.hero .sub em{font-family:var(--serif);font-style:normal;font-weight:500}
 .br-m{display:none}
-@media (max-width:599px){.br-m{display:inline}.hero .sub{font-size:clamp(21px,6.1vw,26px)}}
+@media (max-width:599px){.br-m{display:inline}.hero .sub{font-size:clamp(19px,calc(6.1vw - 2px),24px)}}
 /* iPad yatay / dar masaustu (900-1199): egitmen fotografi saga, ekran kenarina */
 @media (min-width:900px) and (max-width:1199px){
-  .trainer .tcard img{right:-40px}
+  .trainer .tcard{min-height:640px}
+  .trainer .tcard img{right:-40px;height:640px}
+  .tcard .bio.bio-mas{max-width:calc(100% - 450px);font-size:15px;line-height:1.6}
 }
 /* Tablet (600-899): egitmen bolumu masaustu biyografi + masaustu foto, haberdar ortali */
 @media (min-width:600px) and (max-width:899px){
@@ -700,6 +702,62 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
   #egitmen + .sec{padding-top:0}
   main > #egitmen + .sec::before,main > #egitmen + .sec::after{display:none}
   #egitmen + .sec .protection-intro .lead{text-align:center}
+}
+/* Ürün Sadakati (karşılaştırma) */
+.pf{gap:0;padding-top:14px;padding-bottom:14px}
+.pf-head{text-align:center}
+.pf-eyebrow{font-size:12px;line-height:1;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.pf-head h2{margin-top:0;font-family:var(--serif);font-weight:700;font-size:clamp(23px,6.3vw,28px);line-height:1.12;letter-spacing:-.02em;color:var(--ink)}
+.pf-head h2 span{display:block}
+.pf-h1{font-family:var(--sans);font-weight:800;font-size:clamp(23px,6.6vw,30px);line-height:1.1;letter-spacing:.01em;color:var(--ink);text-wrap:balance}
+.pf-h2{margin-top:8px;font-size:min(23px,calc((100vw - 74px) / 15.4));font-weight:600;line-height:1.2;color:var(--text)}
+.pf-head.program-intro h2 .pf-h2{text-transform:none;letter-spacing:0}
+.pf-head.program-intro h2 .pf-h1{letter-spacing:.01em}
+@media (max-width:599px){.pf-head h2 .pf-h2{white-space:nowrap}}
+main > section#urun-sadakati::before,main > section#urun-sadakati::after,main > section#program::before,main > section#program::after{display:none}
+.pf-head.program-intro .lead{text-align:left;max-width:none;margin:8px 0 0;font-size:15px;line-height:1.5}
+.pf-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:10px;margin-top:18px}
+.pf-card{margin:0;padding:8px;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.pf-frame{display:flex;justify-content:center;align-items:center;aspect-ratio:3/2;background:var(--bg);border-radius:8px;overflow:hidden}
+.pf-box{position:relative;height:100%;aspect-ratio:1/1;max-width:100%}
+.pf-box img{display:block;width:100%;height:100%;object-fit:contain}
+.pf-pin{position:absolute;left:var(--x);top:var(--y);width:22px;height:22px;margin:-11px 0 0 -11px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 2px 6px rgba(26,23,20,.28);color:#fff;font:700 11px/18px var(--sans);text-align:center}
+.pf-card figcaption{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 4px 2px;font-size:13px;font-weight:700;color:var(--ink)}
+.pf-card figcaption span{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.pf-card figcaption span{font-weight:700;padding:4px 8px 3px;border-radius:5px;background:#fff;border:1px solid var(--line2);color:var(--ink);line-height:1}
+.pf-card.ai figcaption span{background:#D32F2F;border-color:#D32F2F;color:#fff}
+.pf-list{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 4px 2px;padding:8px 0 0;border-top:1px solid var(--line);list-style:none;font-size:13px;line-height:1.35;color:var(--text)}
+.pf-list li{display:flex;align-items:center;gap:6px}
+.pf-list b{flex:0 0 18px;width:18px;height:18px;border-radius:50%;background:var(--accent);color:#fff;font:700 10px/18px var(--sans);text-align:center}
+.pf-vurgu{--fs:min(23px,calc((100vw - 114px) / 13.3));display:flex;align-items:center;justify-content:center;gap:14px;margin:6px 0;padding:12px 4px;line-height:1.15}
+.pf-uyari{flex:0 0 auto;width:52px;height:auto;filter:drop-shadow(0 4px 8px rgba(211,47,47,.28))}
+.pf-vurgu p{margin:0;padding-left:14px;border-left:2px solid var(--line2);text-align:left}
+.pf-vurgu strong{display:block;font-family:var(--sans);font-weight:800;font-size:var(--fs);letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+.pf-vurgu em{display:block;margin-top:5px;font-style:normal;font-weight:700;font-size:calc(var(--fs) * .82);color:var(--accent)}
+@media (min-width:600px){
+  .pf-grid{grid-template-columns:minmax(0,1fr) 130px minmax(0,1fr);gap:12px;align-items:start}
+  .pf-vurgu{align-self:center;flex-direction:column;gap:10px;margin:0;padding:16px 0}
+  .pf-vurgu p{padding-left:0;border-left:0;text-align:center}
+  .pf-uyari{width:44px}
+  .pf-vurgu strong{font-size:18px;white-space:normal}
+  .pf-vurgu em{font-size:15px;margin-top:8px}
+  .pf-frame{aspect-ratio:1/1}
+}
+@media (min-width:900px){
+  .pf{padding-top:20px;padding-bottom:20px}
+  .pf-h1{font-size:44px}
+  .pf-h2{margin-top:10px;font-size:28px}
+  .pf-head.program-intro .lead{font-size:17px}
+  .pf-grid{max-width:1100px;margin:26px auto 0;grid-template-columns:minmax(0,1fr) 270px minmax(0,1fr);gap:24px}
+  .pf-vurgu{flex-direction:row;padding:22px 0;gap:12px}
+  .pf-vurgu p{padding-left:12px;border-left:2px solid var(--line2);text-align:left}
+  .pf-uyari{width:50px}
+  .pf-vurgu strong{font-size:23px;line-height:1.12;white-space:normal}
+  .pf-vurgu em{font-size:17px;margin-top:8px;line-height:1.25}
+  .pf-card{padding:10px}
+  .pf-pin{width:28px;height:28px;margin:-14px 0 0 -14px;font-size:13px;line-height:24px}
+  .pf-card figcaption{font-size:15px;padding:10px 4px 2px}
+  .pf-list{font-size:14px;gap:6px 18px}
 }
 </style>
 </head>
@@ -739,6 +797,33 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
     </div>
   </div>
 
+</section>
+
+<section id="urun-sadakati" class="wrap sec pf" aria-labelledby="pf-baslik">
+  <div class="pf-head program-intro protection-intro">
+    <h2 id="pf-baslik"><span class="pf-h1">HERKES AYNI HATAYI YAPIYOR!</span><span class="pf-h2">Yapay zeka ürünü değiştirmemeli.</span></h2>
+    <p class="lead">Yapay zeka ile ürün görseli üretmenin en kritik noktası, gerçek ürünü korumaktır; ürünün formu, rengi, logosu, etiket yazıları ve malzeme dokusu asla değişmemelidir.</p>
+  </div>
+  <div class="pf-grid">
+    <figure class="pf-card">
+      <div class="pf-frame"><div class="pf-box"><img src="assets/product-fidelity-original.webp" width="960" height="960" loading="lazy" decoding="async" alt="Orijinal ürün: logosu, etiketi, formu, rengi ve dokusu doğru olan ürün görseli"></div></div>
+      <figcaption>Orijinal Ürün <span>Referans</span></figcaption>
+    </figure>
+    <div class="pf-vurgu"><svg class="pf-uyari" viewBox="0 0 48 44" aria-hidden="true"><path d="M21.4 3.6a3 3 0 0 1 5.2 0l19 33a3 3 0 0 1-2.6 4.4H5a3 3 0 0 1-2.6-4.4z" fill="#D32F2F"/><path d="M24 15v12" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="33.5" r="2.4" fill="#FFFFFF"/></svg><p><strong>Güzel görünmesi yetmez!</strong><em>Ürün bire bir aynı kalmalı.</em></p></div>
+    <figure class="pf-card ai">
+      <div class="pf-frame"><div class="pf-box"><img src="assets/product-fidelity-ai-errors.webp" width="960" height="960" loading="lazy" decoding="async" alt="Yapay zeka üretimi: aynı ürünün logosu değişmiş, etiketi bozulmuş, formu, rengi ve dokusu farklılaşmış hali">
+        <span class="pf-pin" style="--x:60%;--y:54%" aria-hidden="true">1</span>
+        <span class="pf-pin" style="--x:61%;--y:65%" aria-hidden="true">2</span>
+        <span class="pf-pin" style="--x:58%;--y:84%" aria-hidden="true">3</span>
+      </div></div>
+      <figcaption>Yapay Zeka Üretimi <span>Hatalı</span></figcaption>
+      <ol class="pf-list">
+        <li><b>1</b>Logo değişmiş</li>
+        <li><b>2</b>Etiket bozulmuş</li>
+        <li><b>3</b>Form, renk ve doku farklı</li>
+      </ol>
+    </figure>
+  </div>
 </section>
 
 <section id="program" class="wrap sec psec stack">
@@ -850,7 +935,7 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
   <div class="price-box">
     <div class="price-copy">
       <h2>Ürününüzü değiştirmeden, güçlü görseller üretin.</h2>
-      <p>Deneme yanılmayla zaman kaybetmeden, ürününüzü koruyan doğru üretim sistemini öğrenin. Kampanya, e-ticaret ve sosyal medya için ihtiyaç duyduğunuz görselleri kontrollü biçimde üretebilecek seviyeye gelin.</p>
+      <p>Deneme yanılmayla zaman kaybetmeden, ürününüzü koruyan doğru üretim sistemini öğrenin. Kampanya, e-ticaret ve sosyal medya için ihtiyaç duyduğunuz görselleri istediğiniz biçimde üretebilecek seviyeye gelin.</p>
     </div>
     <div class="hero-event fiyat-event" aria-label="Online workshop tarihi ve saati">
       <p class="hero-live">ONLINE WORKSHOP</p>
@@ -918,17 +1003,6 @@ body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
   </form>
   <div id="haberdar" class="haber" role="region" aria-label="Yeni eğitim duyuruları">
     <div style="text-align: left" class="sender-form-field" data-sender-form-id="aKr4BR"></div>
-  </div>
-</section>
-
-<section id="cekim" class="wrap sec stack">
-  <div class="program-intro tools-intro">
-    <h2 class="h2-cekim">Doğru çekimler için<br>desteğe mi ihtiyacınız var?</h2>
-    <p class="lead shooting-lead">Yapay zekadan en iyi sonuç almak, doğru çekilmiş bir ürün fotoğrafıyla başlar. Çekim konusunda eksiğiniz varsa, bu video eğitimler tam size göre. Hem izleyin hem uygulayın; kendi ürün fotoğraflarınızı en üst seviyeye taşıyın.<strong>Online eğitimle birlikte alındığında çekim eğitimlerinde %60 indirim fırsatı!</strong></p>
-  </div>
-  <div class="vcards">
-    <div class="vcard"><figure class="ph"><img src="assets/egitim-cep-telefonu.webp" width="1000" height="563" loading="lazy" decoding="async" alt="Beyaz fonda bir çantanın cep telefonuyla fotoğraflandığı eğitim sahnesi"><figcaption>Cep telefonuyla ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Cep telefonuyla ürün çekimi</strong><p>Telefonla çekilen ürün fotoğraflarında renk kayar, ışık ya düz ya da fazla sert kalır, detaylar netliğini kaybeder, geniş açı ürünün oranını bozar. Bu eğitimde en sık yaşanan sorunları ve her birinin çözümünü tek tek göreceksiniz. Elinizdeki telefonla, yapay zekaya hazır doğru bir kaynak fotoğraf çekmeyi öğreneceksiniz.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">2.990₺</span><span class="price-bridge">yerine</span><b>990₺</b></span></div>
-    <div class="vcard"><figure class="ph"><img src="assets/egitim-profesyonel-kamera.webp" width="1000" height="608" loading="lazy" decoding="async" alt="Beyaz fonda bir tost makinesinin profesyonel kamerayla fotoğraflandığı eğitim sahnesi"><figcaption>Profesyonel ürün çekimi eğitiminden temsili sahne</figcaption></figure><strong>Profesyoneller için ürün çekimi</strong><p>Ürün fotoğrafının karakterini kamera değil ışık belirler. Doğru ışık kullanımı, flaş teknikleri ve profesyonel çekim tekniklerini uygulamalı olarak anlatıyorum. Profesyonel çekim yapanlar için hem tek başına güçlü bir fotoğraf, hem de yapay zekada ürünü koruyan sağlam bir referans.</p><span class="price"><span class="price-label">Online eğitimle birlikte</span><span class="old-price">4.990₺</span><span class="price-bridge">yerine</span><b>1.990₺</b></span></div>
   </div>
 </section>
 
@@ -1110,7 +1184,9 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
     '.sender-form .sender-form-label{display:none!important}'+
     '.sender-form .sender-form-input{text-align:center!important}'+
     '.sender-form .sender-form-input::placeholder{color:#A39A8E!important;opacity:1!important;text-transform:uppercase;letter-spacing:.06em;font-size:13px}'+
-    '.sender-form-bottom-text br{display:none}';
+    '.sender-form-bottom-text br{display:none}'+
+    '.sender-form button,.sender-form [type=submit]{background:#8A4B1F!important;border-color:#8A4B1F!important;transition:background-color .2s,border-color .2s}'+
+    '.sender-form button:hover,.sender-form [type=submit]:hover{background:#6F3C18!important;border-color:#6F3C18!important}';
   var stilT=setInterval(function(){
     var fr=alan.querySelector('iframe'); if(!fr) return;
     var d; try{ d=fr.contentDocument; }catch(e){ clearInterval(stilT); return; }
