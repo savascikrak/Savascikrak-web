@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A1 Dent Ağız ve Diş Sağlığı Polikliniği – Kadıköy</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="description" content="A1 Dent Ağız ve Diş Sağlığı Polikliniği, Kadıköy Fikirtepe. Örnek tasarım çalışması.">
+<meta name="theme-color" content="#ffffff">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+:root{
+  --navy:#1D2A33; --navy-2:#26363F; --ink:#18222A; --muted:#66727A;
+  --gold:#C8952E; --gold-2:#B07F1F; --gold-soft:#F6EEDD;
+  --line:#E7EAEC; --bg:#fff;
+  --wrap:1240px; --gut:24px;
+  --top-h:40px; --head-h:84px;
+  --ease:cubic-bezier(.22,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+
+/* ÜST ŞERİT */
+.topbar{background:var(--navy);color:#C9D1D6;font-size:12.5px;letter-spacing:.01em}
+.topbar .wrap{height:var(--top-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.topbar .l,.topbar .r{display:flex;align-items:center;gap:22px}
+.topbar a{display:inline-flex;align-items:center;gap:8px;transition:color .2s}
+.topbar a:hover{color:#fff}
+.topbar svg{width:14px;height:14px;color:var(--gold)}
+.topbar .sep{width:1px;height:14px;background:rgba(255,255,255,.16)}
+.topbar .up{text-transform:uppercase;letter-spacing:.09em;font-size:11px;font-weight:600}
+.lang{display:flex;gap:2px;background:rgba(255,255,255,.06);border-radius:20px;padding:3px}
+.lang a{padding:3px 9px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:.06em}
+.lang a[aria-current]{background:var(--gold);color:#fff}
+
+/* ANA BAŞLIK */
+.head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.head.scrolled{border-bottom-color:var(--line);box-shadow:0 6px 24px -18px rgba(20,30,40,.35)}
+.head .wrap{height:var(--head-h);display:flex;align-items:center;gap:32px;transition:height .3s var(--ease)}
+.head.scrolled .wrap{height:68px}
+.logo{flex:none;display:block}
+.logo img{height:52px;width:auto;transition:height .3s var(--ease)}
+.head.scrolled .logo img{height:44px}
+
+.nav{margin-left:auto;display:flex;align-items:center}
+.nav>ul{list-style:none;display:flex;align-items:center;gap:2px}
+.nav>ul>li{position:relative}
+.nav>ul>li>a{display:flex;align-items:center;gap:6px;height:44px;padding:0 14px;font-size:14.5px;font-weight:500;color:var(--navy);border-radius:6px;transition:color .2s}
+.nav>ul>li>a::after{content:"";position:absolute;left:14px;right:14px;bottom:4px;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav>ul>li:hover>a,.nav>ul>li>a[aria-current]{color:var(--gold-2)}
+.nav>ul>li:hover>a::after,.nav>ul>li>a[aria-current]::after{transform:scaleX(1)}
+.nav .chev{width:10px;height:10px;opacity:.6;transition:transform .25s}
+.nav li:hover .chev{transform:rotate(180deg)}
+
+.drop{position:absolute;top:100%;left:0;min-width:240px;padding:10px;background:#fff;border:1px solid var(--line);border-radius:10px;box-shadow:0 24px 50px -24px rgba(20,30,40,.35);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .22s,transform .28s var(--ease),visibility 0s .28s;list-style:none}
+.nav li:hover>.drop,.nav li:focus-within>.drop{opacity:1;visibility:visible;transform:none;transition:opacity .22s,transform .28s var(--ease)}
+.drop a{display:block;padding:9px 12px;border-radius:6px;font-size:14px;color:var(--navy);transition:background .2s,color .2s}
+.drop a:hover{background:var(--gold-soft);color:var(--gold-2)}
+.drop small{display:block;font-size:12px;color:var(--muted);margin-top:1px}
+
+.mega{position:fixed;left:50%;top:auto;width:min(1100px,calc(100vw - 48px));transform:translate(-50%,8px);padding:28px 32px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px 28px}
+.nav li:hover>.mega,.nav li:focus-within>.mega{transform:translate(-50%,0)}
+.mega h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-2);margin:0 0 8px;padding:0 12px}
+.mega a{padding:6px 12px;font-size:13.5px}
+.mega .all{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted)}
+.mega .all a{display:inline-flex;gap:8px;align-items:center;font-weight:600;color:var(--navy);padding:0}
+
+.cta{flex:none;display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 22px;border-radius:6px;background:var(--gold);color:#fff;font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;transition:background .25s,transform .25s}
+.cta:hover{background:var(--gold-2)}
+.cta svg{width:16px;height:16px}
+
+.m-btns{display:none;margin-left:auto;gap:6px;align-items:center}
+.ibtn{width:44px;height:44px;display:grid;place-items:center;border-radius:8px;color:var(--navy)}
+.ibtn svg{width:22px;height:22px}
+.ibtn.call{background:var(--gold-soft);color:var(--gold-2)}
+.burger .bars{display:block;width:22px}
+.burger .bars span{display:block;width:22px;height:2px;background:currentColor;border-radius:2px;transition:transform .3s var(--ease),opacity .2s}
+.burger .bars span+span{margin-top:5px}
+.burger[aria-expanded=true] .bars span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] .bars span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] .bars span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* MOBİL MENÜ */
+.drawer{position:fixed;inset:0;top:var(--mh,64px);z-index:49;background:#fff;overflow-y:auto;overscroll-behavior:contain;padding:8px var(--gut) calc(32px + env(safe-area-inset-bottom));opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .25s,transform .3s var(--ease),visibility 0s .3s}
+.drawer.open{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .3s var(--ease)}
+.drawer ul{list-style:none}
+.drawer>ul>li{border-bottom:1px solid var(--line)}
+.drawer>ul>li>a,.drawer summary{display:flex;justify-content:space-between;align-items:center;padding:17px 0;font-size:17px;font-weight:500;color:var(--navy);list-style:none;cursor:pointer}
+.drawer summary::-webkit-details-marker{display:none}
+.drawer summary svg{width:12px;height:12px;transition:transform .25s}
+.drawer details[open] summary svg{transform:rotate(180deg)}
+.drawer details ul{padding:0 0 14px}
+.drawer details a{display:block;padding:9px 0 9px 14px;font-size:15px;color:var(--muted);border-left:2px solid var(--line)}
+.drawer .d-cta{display:grid;gap:10px;margin-top:24px}
+.drawer .d-cta a{display:flex;justify-content:center;align-items:center;gap:10px;height:52px;border-radius:6px;font-weight:600;font-size:14px;letter-spacing:.05em;text-transform:uppercase}
+.drawer .d-cta .p{background:var(--gold);color:#fff}
+.drawer .d-cta .s{border:1px solid var(--line);color:var(--navy)}
+.drawer .d-info{margin-top:22px;font-size:14px;color:var(--muted);display:grid;gap:6px}
+.drawer .lang{background:var(--gold-soft);width:max-content;margin-top:18px}
+.drawer .lang a{color:var(--navy)}
+.drawer .lang a[aria-current]{color:#fff}
+body.lock{overflow:hidden}
+
+/* HERO SLIDER */
+.hero{position:relative;height:clamp(560px,calc(100svh - var(--top-h) - var(--head-h)),860px);overflow:hidden;background:var(--navy);color:#fff;isolation:isolate}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.1s var(--ease),visibility 0s 1.1s}
+.slide.on{opacity:1;visibility:visible;transition:opacity 1.1s var(--ease)}
+.slide .ph{position:absolute;inset:0;overflow:hidden}
+.slide .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 7.5s cubic-bezier(.2,.5,.3,1)}
+.slide.on .ph img{transform:scale(1)}
+.slide .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,24,30,.82) 0%,rgba(16,24,30,.55) 38%,rgba(16,24,30,.08) 70%,rgba(16,24,30,0) 100%),linear-gradient(0deg,rgba(16,24,30,.55) 0%,rgba(16,24,30,0) 34%)}
+.slide .in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding-bottom:72px}
+.slide .tx{max-width:620px}
+.eyebrow{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:#E9C98A}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor}
+.slide h2{font-size:clamp(40px,5.6vw,76px);line-height:1.02;font-weight:600;letter-spacing:-.025em;margin:20px 0 22px;text-wrap:balance}
+.slide p{font-size:clamp(16px,1.45vw,19px);line-height:1.6;color:rgba(255,255,255,.86);max-width:500px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chips span{padding:8px 14px;border:1px solid rgba(255,255,255,.28);border-radius:40px;font-size:13.5px;font-weight:500;background:rgba(255,255,255,.06);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:6px;font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;transition:background .25s,color .25s,border-color .25s}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.p{background:var(--gold);color:#fff}
+.btn.p:hover{background:var(--gold-2)}
+.btn.g{border:1px solid rgba(255,255,255,.4);color:#fff}
+.btn.g:hover{background:#fff;color:var(--navy);border-color:#fff}
+
+/* metin giriş animasyonu */
+.slide .tx>*{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease),transform .9s var(--ease)}
+.slide.on .tx>*{opacity:1;transform:none}
+.slide.on .tx>*:nth-child(1){transition-delay:.35s}
+.slide.on .tx>*:nth-child(2){transition-delay:.48s}
+.slide.on .tx>*:nth-child(3){transition-delay:.62s}
+.slide.on .tx>*:nth-child(4){transition-delay:.76s}
+
+/* alt kontrol: sekmeler + oklar */
+.ctrl{position:absolute;left:0;right:0;bottom:0;z-index:5;border-top:1px solid rgba(255,255,255,.14);background:linear-gradient(0deg,rgba(16,24,30,.35),rgba(16,24,30,0))}
+.ctrl .wrap{display:flex;align-items:stretch;gap:24px}
+.tabs{flex:1;display:grid;grid-template-columns:repeat(4,1fr)}
+.tab{position:relative;text-align:left;padding:20px 18px 22px 0;color:rgba(255,255,255,.55);transition:color .3s}
+.tab:hover,.tab[aria-selected=true]{color:#fff}
+.tab b{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;color:rgba(233,201,138,.75)}
+.tab span{display:block;font-size:14px;font-weight:500;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tab i{position:absolute;left:0;right:18px;top:-1px;height:2px;background:rgba(255,255,255,0);overflow:hidden}
+.tab i::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.tab[aria-selected=true] i::after{animation:fill var(--dur,6.5s) linear forwards}
+.hero.paused .tab[aria-selected=true] i::after{animation-play-state:paused}
+@keyframes fill{to{transform:scaleX(1)}}
+.arrows{display:flex;align-items:center;gap:8px}
+.arr{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(255,255,255,.3);color:#fff;transition:background .25s,border-color .25s,color .25s}
+.arr:hover{background:#fff;color:var(--navy);border-color:#fff}
+.arr svg{width:18px;height:18px}
+.count{display:none}
+
+/* 3-4. slayt (hekimler): baş boşluğu az olsun, görsel yukarı */
+@media (max-width:1023px){
+  .slide.s-hekim .ph img{position:absolute;left:0;top:-16%;height:116%}
+}
+/* 2. slayt (çocuk): dişler görünsün; mobil/tablette görsel yukarı, karartma sadece altta */
+@media (max-width:1023px){
+  .slide.s-cocuk .ph img{position:absolute;left:0;top:-14%;height:118%}
+  .slide.s-cocuk .ph::after{background:linear-gradient(0deg,rgba(16,24,30,.92) 0%,rgba(16,24,30,.72) 30%,rgba(16,24,30,0) 50%)}
+  .slide.s-cocuk .m-gizle{display:none}
+}
+/* 4. slayt (sağa bakan hekim): tablette sola kaydır */
+@media (min-width:600px) and (max-width:1023px){
+  .slide.s-sol .ph img{object-position:88% 50%!important}
+}
+/* 1. slayt: kişi ortada, yüz kararmasın */
+@media (min-width:1024px){
+  .slide.s-orta .ph::after{background:linear-gradient(90deg,rgba(16,24,30,.78) 0%,rgba(16,24,30,.45) 28%,rgba(16,24,30,0) 46%),linear-gradient(0deg,rgba(16,24,30,.5) 0%,rgba(16,24,30,0) 30%)}
+  .slide.s-orta .tx{max-width:460px}
+}
+/* dikey görsel: masaüstünde sağ panel */
+@media (min-width:1024px){
+  .slide.split .ph{background:linear-gradient(120deg,#1D2A33 0%,#2B3C46 60%,#3A4E58 100%)}
+  .slide.split .ph img{position:absolute;right:0;top:0;width:54%;object-position:50% 28%;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
+  .slide.split .ph::after{background:linear-gradient(0deg,rgba(16,24,30,.45) 0%,rgba(16,24,30,0) 30%)}
+}
+/* ---- TABLET ---- */
+@media (max-width:1199px){
+  .nav>ul>li>a{padding:0 10px;font-size:14px}
+  .nav>ul>li>a::after{left:10px;right:10px}
+  .head .wrap{gap:20px}
+  .mega{grid-template-columns:repeat(3,1fr)}
+}
+/* ---- MOBİL + KÜÇÜK TABLET ---- */
+@media (max-width:1023px){
+  :root{--head-h:64px;--gut:20px}
+  .topbar,.nav,.head .cta{display:none}
+  .m-btns{display:flex}
+  .logo img{height:42px}
+  .head.scrolled .wrap{height:var(--head-h)}
+  .head.scrolled .logo img{height:42px}
+  .hero{height:clamp(540px,calc(100svh - var(--head-h)),760px)}
+  .slide .ph::after{background:linear-gradient(0deg,rgba(16,24,30,.92) 0%,rgba(16,24,30,.7) 38%,rgba(16,24,30,.1) 72%,rgba(16,24,30,.15) 100%)}
+  .slide .in{justify-content:flex-end;padding-bottom:104px}
+  .slide h2{margin:14px 0 14px}
+  .btns{margin-top:26px}
+  .tabs{display:none}
+  .ctrl{border-top:0;background:none}
+  .ctrl .wrap{justify-content:space-between;align-items:center;padding-bottom:28px}
+  .count{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.7)}
+  .count .bar{position:relative;width:96px;height:2px;background:rgba(255,255,255,.22);overflow:hidden}
+  .count .bar::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left}
+  .count .bar.run::after{animation:fill var(--dur,6.5s) linear forwards}
+  .hero.paused .count .bar::after{animation-play-state:paused}
+  .count em{font-style:normal;color:#fff}
+  .arr{width:44px;height:44px}
+}
+@media (max-width:599px){
+  .slide h2{font-size:clamp(34px,10vw,44px)}
+  .slide p{font-size:15.5px}
+  .chips span{font-size:12.5px;padding:7px 12px}
+  .btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .btn{justify-content:center;padding:0 12px;height:50px;font-size:12px;letter-spacing:.05em}
+  .btn svg{display:none}
+  .slide .in{padding-bottom:96px}
+  .slide[data-pos-m] .ph img{object-position:var(--pm)!important}
+}
+@media (prefers-reduced-motion:reduce){
+  .slide .ph img,.slide.on .ph img{transform:none;transition:none}
+  .slide .tx>*{transition:none;transform:none}
+}
+
+/* ===== HAKKIMIZDA ===== */
+.about{padding:clamp(80px,10vw,150px) 0;background:#fff;position:relative;overflow:hidden}
+.about::before{content:"";position:absolute;right:-180px;top:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--gold-soft) 0%,rgba(246,238,221,0) 70%);pointer-events:none}
+.about .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,7vw,110px);align-items:center}
+.ab-media{position:relative;padding:0 0 70px 0}
+.ab-media .big{border-radius:6px;overflow:hidden;aspect-ratio:4/4.4}
+.ab-media .big img{width:100%;height:100%;object-fit:cover;object-position:55% 50%}
+.ab-media .small{position:absolute;right:-36px;bottom:0;width:52%;aspect-ratio:3/2.2;border-radius:6px;overflow:hidden;border:8px solid #fff;box-shadow:0 30px 60px -30px rgba(20,30,40,.45)}
+.ab-media .small img{width:100%;height:100%;object-fit:cover}
+.ab-badge{position:absolute;left:-20px;top:44px;width:132px;height:132px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-content:center;text-align:center;box-shadow:0 20px 40px -18px rgba(20,30,40,.55)}
+.ab-badge b{font-size:30px;font-weight:600;letter-spacing:-.02em;color:#E9C98A;line-height:1}
+.ab-badge span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;margin-top:6px;color:#C9D1D6}
+.ab-badge svg{position:absolute;inset:-9px;width:150px;height:150px;animation:don 28s linear infinite}
+@keyframes don{to{transform:rotate(360deg)}}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2)}
+.kicker img{width:22px;height:22px}
+.about h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);margin:18px 0 26px;text-wrap:balance}
+.about h2 em{font-style:normal;color:var(--gold-2)}
+.about p{font-size:16.5px;line-height:1.75;color:#4E5A62;margin:0 0 16px;max-width:560px}
+.founders{display:flex;flex-wrap:wrap;gap:14px 28px;margin:32px 0 0;padding:24px 0 0;border-top:1px solid var(--line)}
+.founders .lb{width:100%;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.fd{display:flex;align-items:center;gap:14px}
+.fd img{width:56px;height:56px;border-radius:50%;object-fit:cover;object-position:50% 12%;background:var(--gold-soft)}
+.fd b{display:block;font-size:15px;font-weight:600;color:var(--navy)}
+.fd small{display:block;font-size:13px;color:var(--muted)}
+.ab-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.btn.d{background:var(--navy);color:#fff}
+.btn.d:hover{background:var(--gold-2)}
+.btn.o{border:1px solid var(--line);color:var(--navy)}
+.btn.o:hover{border-color:var(--navy)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(64px,8vw,110px);border-top:1px solid var(--line)}
+.fact{padding:30px 28px 0 0;position:relative}
+.fact+.fact{padding-left:28px;border-left:1px solid var(--line)}
+.fact b{display:block;font-size:clamp(30px,3.2vw,44px);font-weight:600;letter-spacing:-.03em;color:var(--navy);line-height:1}
+.fact b sup{font-size:.45em;color:var(--gold);vertical-align:top;margin-left:2px}
+.fact span{display:block;font-size:14px;color:var(--muted);margin-top:10px;line-height:1.45}
+/* görünce açılma */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform 1s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}.rv.d3{transition-delay:.36s}
+@media (max-width:1023px){
+  .about .grid{grid-template-columns:1fr;gap:56px}
+  .ab-media{max-width:640px;padding-bottom:56px;margin-right:24px}
+  .ab-media .big{aspect-ratio:4/3.2}
+  .ab-media .small{right:-24px;width:48%}
+  .ab-badge{left:auto;right:20px;top:-30px;width:110px;height:110px}
+  .ab-badge b{font-size:25px}
+  .ab-badge svg{width:128px;height:128px}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line);margin-top:30px}
+}
+@media (max-width:599px){
+  .ab-media .small{width:56%;border-width:6px}
+  .ab-badge{width:96px;height:96px;right:12px}
+  .ab-badge b{font-size:22px}.ab-badge span{font-size:9.5px}
+  .ab-badge svg{width:114px;height:114px}
+  .about p{font-size:15.5px}
+  .ab-btns{display:grid;grid-template-columns:1fr 1fr}
+  .ab-btns .btn{justify-content:center;padding:0 10px}
+  .fact{padding:24px 14px 0 0}
+  .fact+.fact{padding-left:14px}
+  .fact:nth-child(3){padding-left:0}
+  .fact span{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ab-badge svg{animation:none}}
+
+/* ===== DİŞ TEDAVİLERİMİZ (minimal) ===== */
+.treat{--bant-op:.78;--bant-op-h:.92;padding:clamp(8px,1.5vw,24px) 0 clamp(80px,10vw,140px);background:#fff}
+.tr-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(48px,6vw,80px)}
+.treat h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
+.treat h2 em{font-style:normal;color:var(--gold-2)}
+.tr-head p{font-size:16px;line-height:1.75;color:#4E5A62}
+.tr-head p+p{margin-top:12px}
+.tr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(40px,4.5vw,64px) clamp(20px,2.4vw,32px);list-style:none}
+.tc a{display:block}
+.tc .im{position:relative;display:block;aspect-ratio:510/550;border-radius:4px;overflow:hidden;background:#F2F3F3}
+.tc img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.tc .tx{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:16px 20px 17px;background:rgba(255,255,255,var(--bant-op));transition:background .45s}
+.tc .tx::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.tc .no{font-size:12px;font-weight:500;letter-spacing:.08em;color:var(--gold-2);font-variant-numeric:tabular-nums;padding-right:14px;border-right:1px solid rgba(29,42,51,.2);line-height:1.6}
+.tc h3{font-size:clamp(16px,1.35vw,18.5px);line-height:1.3;font-weight:500;letter-spacing:-.01em;color:var(--navy);text-wrap:balance}
+.tc .ok{width:20px;height:20px;color:var(--navy);opacity:.45;transition:transform .5s var(--ease),opacity .4s}
+@media (hover:hover){
+  .tc a:hover img{transform:scale(1.05)}
+  .tc a:hover .tx{background:rgba(255,255,255,var(--bant-op-h))}
+  .tc a:hover .tx::before{transform:scaleX(1)}
+  .tc a:hover .ok{opacity:1;transform:translateX(4px)}
+}
+@media (max-width:1023px){
+  .tr-head{grid-template-columns:1fr;gap:20px;align-items:start}
+  .tr-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:599px){
+  .tr-head p{font-size:15.5px}
+  .tr-grid{grid-template-columns:1fr;gap:36px}
+  .tc .im{aspect-ratio:4/3.3}
+  .tc .tx{padding:14px 18px 15px;gap:12px}
+  .tc .no{padding-right:12px}
+  .tc h3{font-size:17px}
+}
+.tr-ipucu{display:none;align-items:center;gap:8px;margin-top:22px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.tr-ipucu svg{width:16px;height:16px}
+@media (prefers-reduced-motion:reduce){.tc img,.tc .ok,.tc .tx::before{transition:none}}
+/* ===== DİŞ HEKİMLERİMİZ ===== */
+.team{padding:clamp(80px,10vw,140px) 0;background:#F6F7F7}
+.tm-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(48px,6vw,80px)}
+.team h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
+.team h2 em{font-style:normal;color:var(--gold-2)}
+.tm-head p{font-size:16px;line-height:1.75;color:#4E5A62}
+.tm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,2.4vw,32px);list-style:none}
+.dr a{display:block}
+.dr .im{display:block;aspect-ratio:680/775;border-radius:4px;overflow:hidden;background:#E9ECEC}
+.dr img{width:100%;height:100%;object-fit:cover;object-position:50% 20%;transition:transform 1.2s var(--ease)}
+.dr .tx{position:relative;display:block;margin-top:20px;padding-top:16px;border-top:1px solid #DDE1E3}
+.dr .tx::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
+.dr h3{font-size:clamp(16.5px,1.4vw,19px);line-height:1.3;font-weight:500;letter-spacing:-.005em;color:var(--navy);white-space:nowrap}
+.dr small{display:block;font-size:13.5px;line-height:1.45;color:var(--muted);margin-top:6px}
+@media (hover:hover){
+  .dr a:hover img{transform:scale(1.04)}
+  .dr a:hover .tx::before{transform:scaleX(1)}
+}
+@media (max-width:1023px){
+  .tm-head{grid-template-columns:1fr;gap:20px;align-items:start}
+  .tm-grid{grid-template-columns:1fr 1fr;gap:36px 18px}
+}
+@media (max-width:599px){
+  .tm-head p{font-size:15.5px}
+  .tm-grid{gap:28px 12px}
+  .dr .tx{margin-top:12px;padding-top:11px}
+  .dr h3{font-size:clamp(11.5px,calc(3.9vw - 2px),15px);letter-spacing:-.01em}
+  .dr small{font-size:12.5px;margin-top:4px}
+}
+@media (prefers-reduced-motion:reduce){.dr img,.dr .tx::before{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar" role="region" aria-label="İletişim">
+  <div class="wrap">
+    <div class="l">
+      <a href="tel:+902163462122"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+90 216 346 21 22</a>
+      <span class="sep"></span>
+      <a href="https://wa.me/905453743432" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>+90 545 374 34 32</a>
+      <span class="sep"></span>
+      <span>Fikirtepe, Kadıköy / İstanbul</span>
+    </div>
+    <div class="r">
+      <a class="up" href="#randevu">Hızlı Randevu</a>
+      <a class="up" href="#randevu">Online Randevu</a>
+      <a class="up" href="#iletisim">İletişim</a>
+      <div class="lang"><a href="#" aria-current="true">TR</a><a href="#">EN</a></div>
+    </div>
+  </div>
+</div>
+
+<header class="head" id="head">
+  <div class="wrap">
+    <a class="logo" href="/a1/" aria-label="A1 Dent anasayfa"><img src="/a1/assets/logo.png" alt="A1 Dent" width="400" height="230"></a>
+
+    <nav class="nav" aria-label="Ana menü">
+      <ul>
+        <li><a href="/a1/" aria-current="page">Anasayfa</a></li>
+        <li><a href="#">Hakkımızda <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></a>
+          <ul class="drop">
+            <li><a href="#">Hakkımızda</a></li>
+            <li><a href="#">Kliniğimiz</a></li>
+            <li><a href="#">Hasta Yorumlarımız</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </li>
+        <li class="has-mega"><a href="#">Diş Tedavileri <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></a>
+          <div class="drop mega">
+            <div><h4>Estetik Diş Hekimliği</h4><a href="#">Zirkonyum Kaplama</a><a href="#">Porselen (Yaprak) Laminalar</a><a href="#">Hollywood Smile</a><a href="#">Diş Beyazlatma</a><a href="#">Pembe Estetik</a></div>
+            <div><h4>İmplant Tedavileri</h4><a href="#">Dental İmplant Tedavisi</a><a href="#">All On Four (All On X)</a><a href="#">Kişiye Özel İmplant</a><a href="#">Kemik Tozu ve Sinüs Lifting</a></div>
+            <div><h4>Ağız ve Çene Cerrahisi</h4><a href="#">Gömülü 20 Yaş Diş Çekimi</a><a href="#">Diş Çekimi</a><a href="#">Kist Operasyonları</a><a href="#">Gummy Smile Tedavisi</a></div>
+            <div><h4>Dijital Diş Hekimliği</h4><a href="#">3D Tarama (CAD/CAM)</a><a href="#">Dijital Gülüş Tasarımı</a><a href="#">3D Radyolojik Görüntüleme</a><a href="#">Dijital Ortodonti</a></div>
+            <div><h4>Çocuk Diş Hekimliği</h4><a href="#">Fissür Örtücüler</a><a href="#">Süt Dişi Dolguları</a><a href="#">Flor Uygulaması</a></div>
+            <div><h4>Ortodonti</h4><a href="#">Şeffaf Plak – Invisalign</a><a href="#">Tel Tedavisi (Braket)</a><a href="#">Lingual Ortodonti</a></div>
+            <div><h4>Bruksizm ve TME</h4><a href="#">Botulinum Toksin Uygulaması</a><a href="#">Stabilizasyon Splinti</a><a href="#">Artrosentez</a></div>
+            <div><h4>Diğer Tedaviler</h4><a href="#">Kanal Tedavisi – Endodonti</a><a href="#">Protetik Diş Hekimliği</a><a href="#">Periodontoloji</a></div>
+            <div class="all"><span>Kişiye özel tedavi planı için ücretsiz muayene randevusu alın.</span><a href="#">Tüm tedaviler <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          </div>
+        </li>
+        <li><a href="#">Diş Hekimlerimiz <svg class="chev" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></a>
+          <ul class="drop">
+            <li><a href="#">Dr. Sedat Burdurlu<small>Diş Hekimi</small></a></li>
+            <li><a href="#">Doç. Dr. Çağrı Burdurlu<small>Ağız, Diş ve Çene Cerrahisi Uzmanı</small></a></li>
+            <li><a href="#">Dr. Begüm D. Kandemir<small>Ortodonti</small></a></li>
+            <li><a href="#">Dr. Zeynep Şahin<small>Estetik / Protetik Diş Tedavisi</small></a></li>
+          </ul>
+        </li>
+        <li><a href="#">İş Birliklerimiz</a></li>
+        <li><a href="#">İstek / Şikayet</a></li>
+      </ul>
+    </nav>
+
+    <a class="cta" href="#randevu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Randevu Al</a>
+
+    <div class="m-btns">
+      <a class="ibtn call" href="tel:+902163462122" aria-label="Kliniği ara"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></a>
+      <button class="ibtn burger" id="burger" aria-label="Menüyü aç" aria-expanded="false" aria-controls="drawer"><span class="bars"><span></span><span></span><span></span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-label="Mobil menü">
+  <ul>
+    <li><a href="/a1/">Anasayfa</a></li>
+    <li><details><summary>Hakkımızda <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></summary><ul><li><a href="#">Hakkımızda</a></li><li><a href="#">Kliniğimiz</a></li><li><a href="#">Hasta Yorumlarımız</a></li><li><a href="#">Blog</a></li></ul></details></li>
+    <li><details><summary>Diş Tedavileri <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></summary><ul><li><a href="#">Estetik Diş Hekimliği</a></li><li><a href="#">İmplant Tedavileri</a></li><li><a href="#">Ağız ve Çene Cerrahisi</a></li><li><a href="#">Dijital Diş Hekimliği</a></li><li><a href="#">Çocuk Diş Hekimliği</a></li><li><a href="#">Ortodonti Tedavileri</a></li><li><a href="#">Kanal Tedavisi – Endodonti</a></li><li><a href="#">Bruksizm ve TME</a></li><li><a href="#">Protetik Diş Hekimliği</a></li><li><a href="#">Periodontoloji</a></li></ul></details></li>
+    <li><details><summary>Diş Hekimlerimiz <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></summary><ul><li><a href="#">Dr. Sedat Burdurlu</a></li><li><a href="#">Doç. Dr. Çağrı Burdurlu</a></li><li><a href="#">Dr. Begüm D. Kandemir</a></li><li><a href="#">Dr. Zeynep Şahin</a></li></ul></details></li>
+    <li><a href="#">İş Birliklerimiz</a></li>
+    <li><a href="#">İstek / Şikayet</a></li>
+    <li><a href="#iletisim">İletişim</a></li>
+  </ul>
+  <div class="d-cta">
+    <a class="p" href="#randevu">Online Randevu</a>
+    <a class="s" href="https://wa.me/905453743432" target="_blank" rel="noopener">WhatsApp ile Yazın</a>
+  </div>
+  <div class="d-info">
+    <a href="tel:+902163462122">+90 216 346 21 22</a>
+    <a href="tel:+905453743432">+90 545 374 34 32</a>
+    <span>Fikirtepe, Kadıköy / İstanbul</span>
+  </div>
+  <div class="lang"><a href="#" aria-current="true">TR</a><a href="#">EN</a></div>
+</div>
+
+<main>
+<section class="hero" id="hero" aria-roledescription="carousel" aria-label="Öne çıkan tedaviler">
+
+  <article class="slide on s-orta" data-pos-m style="--pm:50% 30%" aria-roledescription="slide" aria-label="1 / 4">
+    <div class="ph"><img src="/a1/assets/slider-gulus-tasarimi.webp" alt="Gülümseyen kadın hasta" style="object-position:50% 26%" fetchpriority="high"></div>
+    <div class="wrap in"><div class="tx">
+      <span class="eyebrow">A1 Dent · Estetik</span>
+      <h2>Gülüş Tasarımı</h2>
+      <div class="chips"><span>Zirkonyum</span><span>E-Max</span><span>Lamina</span></div>
+      <div class="btns"><a class="btn p" href="#randevu">Online Randevu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="tel:+902163462122">Hızlı Randevu</a></div>
+    </div></div>
+  </article>
+
+  <article class="slide s-orta s-cocuk" data-pos-m style="--pm:63% 50%" aria-roledescription="slide" aria-label="2 / 4">
+    <div class="ph"><img src="/a1/assets/slider-cocuk.webp" alt="Gülümseyen çocuk hasta" style="object-position:50% 40%" loading="lazy"></div>
+    <div class="wrap in"><div class="tx">
+      <span class="eyebrow">A1 Dent · Pedodonti</span>
+      <h2>Çocuk Diş Hekimliği</h2>
+      <p>Minik dişler, büyük özen ister!<span class="m-gizle"> Uzman ekibimiz, çocuklarınızın diş sağlığına nazik ve eğlenceli bir ortamda özen gösterir.</span></p>
+      <div class="btns"><a class="btn p" href="#randevu">Online Randevu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="tel:+902163462122">Hızlı Randevu</a></div>
+    </div></div>
+  </article>
+
+  <article class="slide s-hekim" data-pos-m style="--pm:66% 50%" aria-roledescription="slide" aria-label="3 / 4">
+    <div class="ph"><img src="/a1/assets/slider-estetik.webp" alt="A1 Dent kliniğinde estetik diş tedavisi" style="object-position:65% 85%" loading="lazy"></div>
+    <div class="wrap in"><div class="tx">
+      <span class="eyebrow">A1 Dent · Estetik</span>
+      <h2>Estetik Diş Hekimliği</h2>
+      <div class="chips"><span>Zirkonyum</span><span>Laminate Veneer</span><span>Hollywood Smile</span></div>
+      <div class="btns"><a class="btn p" href="#randevu">Online Randevu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="tel:+902163462122">Hızlı Randevu</a></div>
+    </div></div>
+  </article>
+
+  <article class="slide s-sol s-hekim" data-pos-m style="--pm:73% 50%" aria-roledescription="slide" aria-label="4 / 4">
+    <div class="ph"><img src="/a1/assets/slider-cerrahi.webp" alt="Cerrahi ve implant uygulaması" style="object-position:60% 85%" loading="lazy"></div>
+    <div class="wrap in"><div class="tx">
+      <span class="eyebrow">A1 Dent · Cerrahi</span>
+      <h2>Cerrahi ve İmplantoloji</h2>
+      <div class="chips"><span>Diş İmplantları</span><span>Ağız ve Çene Cerrahisi</span></div>
+      <div class="btns"><a class="btn p" href="#randevu">Online Randevu <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn g" href="tel:+902163462122">Hızlı Randevu</a></div>
+    </div></div>
+  </article>
+
+  <div class="ctrl">
+    <div class="wrap">
+      <div class="tabs" role="tablist" aria-label="Slaytlar">
+        <button class="tab" role="tab" aria-selected="true"><i></i><b>01</b><span>Gülüş Tasarımı</span></button>
+        <button class="tab" role="tab" aria-selected="false"><i></i><b>02</b><span>Çocuk Diş Hekimliği</span></button>
+        <button class="tab" role="tab" aria-selected="false"><i></i><b>03</b><span>Estetik Diş Hekimliği</span></button>
+        <button class="tab" role="tab" aria-selected="false"><i></i><b>04</b><span>Cerrahi ve İmplantoloji</span></button>
+      </div>
+      <div class="count" aria-hidden="true"><em id="cNow">01</em><span class="bar" id="cBar"></span><span>04</span></div>
+      <div class="arrows">
+        <button class="arr" id="prev" aria-label="Önceki slayt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button>
+        <button class="arr" id="next" aria-label="Sonraki slayt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about" id="hakkimizda" aria-labelledby="ab-baslik">
+  <div class="wrap">
+    <div class="grid">
+      <div class="ab-media rv">
+        <div class="big"><img src="/a1/assets/a1dentfoto-2.webp" alt="A1 Dent kliniğinde dünya haritası duvarı" width="1000" height="666" loading="lazy"></div>
+        <div class="small"><img src="/a1/assets/a1dentfoto-1.webp" alt="A1 Dent tedavi odası" width="1000" height="666" loading="lazy"></div>
+        <div class="ab-badge" aria-hidden="true">
+          <svg viewBox="0 0 150 150"><defs><path id="ck" d="M75,75 m-62,0 a62,62 0 1,1 124,0 a62,62 0 1,1 -124,0"/></defs><text font-size="9.5" letter-spacing="3.2" fill="#C8952E" font-family="Inter,sans-serif" font-weight="600"><textPath href="#ck">A1 DENT · AĞIZ VE DİŞ SAĞLIĞI · KADIKÖY ·</textPath></text></svg>
+          <b>1980</b><span>'den bu yana</span>
+        </div>
+      </div>
+
+      <div class="ab-text">
+        <span class="kicker rv"><img src="/a1/assets/logo-isaret.png" alt="" width="22" height="22">Hakkımızda</span>
+        <h2 class="rv d1" id="ab-baslik">A1 Dent Ağız ve Diş Sağlığı <em>Polikliniği</em></h2>
+        <p class="rv d2">Özel A1 Dent Ağız ve Diş Sağlığı Polikliniği 1980 yılından günümüze kadar gelen, diş hekimliği bilgi, birikim ve deneyiminin bir sonucu olarak 2022 yılında Diş Hekimi Dt. Sedat Burdurlu ve Diş Hekimi Doç. Dr. Çağrı Burdurlu tarafından kurulmuştur.</p>
+        <p class="rv d2">Özel A1 Dent Ağız ve Diş Sağlığı Polikliniği, İstanbul’un merkez ilçelerinden biri olan Kadıköy Fikirtepe’de, başta İstanbul olmak üzere Türkiye ve dünya çapında pek çok farklı ülkeden gelen hastalarına hizmet vermektedir.</p>
+        <div class="founders rv d3">
+          <span class="lb">Kurucularımız</span>
+          <div class="fd"><img src="/a1/assets/a1dent-sedat-burdurlu.webp" alt="Dt. Sedat Burdurlu" width="56" height="56" loading="lazy"><div><b>Dt. Sedat Burdurlu</b><small>Diş Hekimi</small></div></div>
+          <div class="fd"><img src="/a1/assets/a1-dent-cagri-burdurlu.webp" alt="Doç. Dr. Çağrı Burdurlu" width="56" height="56" loading="lazy"><div><b>Doç. Dr. Çağrı Burdurlu</b><small>Ağız, Diş ve Çene Cerrahisi Uzmanı</small></div></div>
+        </div>
+        <div class="ab-btns rv d3">
+          <a class="btn d" href="#">Daha Fazla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn o" href="#">Kliniğimiz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="treat" id="tedaviler" aria-labelledby="tr-baslik">
+  <div class="wrap">
+    <div class="tr-head">
+      <div>
+        <h2 class="rv" id="tr-baslik">Diş <em>Tedavilerimiz</em></h2>
+      </div>
+      <div class="rv d2">
+        <p>Kliniğimizde, başta ağız diş ve çene cerrahisi, ortodonti tedavisi, kanal tedavisi, implant tedavisi, gülüş tasarımı ve çocuk diş tedavileri olmak üzere tüm ağız ve diş tedavilerini uyguluyoruz. Uzman diş hekimlerimiz ve deneyimli ekibimiz ile kişiye özel çözümler sunuyor, modern altyapımız ile en güncel tedavi yöntemlerini konforlu bir ortamda gerçekleştiriyoruz.</p>
+        <p>Sizleri hak ettiğiniz sağlıklı ve mutlu bir gülümseye kavuşturmak için kliniğimize bekliyoruz.</p>
+      </div>
+    </div>
+    <ul class="tr-grid">
+      <li class="tc rv"><a href="#"><span class="im"><img src="/a1/assets/t-cerrahi.webp" alt="Ağız, Diş ve Çene Cerrahisi" width="510" height="550" loading="lazy"><span class="tx"><span class="no">01</span><h3>Ağız, Diş ve Çene Cerrahisi</h3><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a></li>
+      <li class="tc rv d1"><a href="#"><span class="im"><img src="/a1/assets/t-ortodonti.webp" alt="Ortodonti Tedavileri" width="510" height="550" loading="lazy"><span class="tx"><span class="no">02</span><h3>Ortodonti Tedavileri</h3><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a></li>
+      <li class="tc rv d2"><a href="#"><span class="im"><img src="/a1/assets/t-kanal.webp" alt="Endodonti ve Kanal Tedavisi" width="510" height="550" loading="lazy"><span class="tx"><span class="no">03</span><h3>Endodonti &amp; Kanal Tedavisi</h3><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a></li>
+      <li class="tc rv"><a href="#"><span class="im"><img src="/a1/assets/t-implant.webp" alt="İmplant Tedavileri" width="510" height="550" loading="lazy"><span class="tx"><span class="no">04</span><h3>İmplant Tedavileri</h3><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a></li>
+      <li class="tc rv d1"><a href="#"><span class="im"><img src="/a1/assets/t-gulus.webp" alt="Gülüş Tasarımı ve Hollywood smile" width="510" height="550" loading="lazy"><span class="tx"><span class="no">05</span><h3>Gülüş Tasarımı &amp; Hollywood smile</h3><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a></li>
+      <li class="tc rv d2"><a href="#"><span class="im"><img src="/a1/assets/t-bruksizm.webp" alt="Bruksizm ve Diş Sıkma Tedavisi" width="510" height="550" loading="lazy"><span class="tx"><span class="no">06</span><h3>Bruksizm &amp; Diş Sıkma Tedavisi</h3><svg class="ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span></a></li>
+    </ul>
+  </div>
+</section>
+<section class="team" id="hekimler" aria-labelledby="tm-baslik">
+  <div class="wrap">
+    <div class="tm-head">
+      <h2 class="rv" id="tm-baslik">Diş <em>Hekimlerimiz</em></h2>
+      <p class="rv d1">Kliniğimizde uzman diş hekimlerimiz ve deneyimli ekibimiz ile kişiye özel çözümler sunuyor, modern altyapımız ile en güncel tedavileri konforlu bir ortamda gerçekleştiriyoruz. Sizleri hak ettiğiniz sağlıklı ve mutlu bir gülümseye kavuşturmak için kliniğimize bekliyoruz.</p>
+    </div>
+    <ul class="tm-grid">
+      <li class="dr rv"><a href="#"><span class="im"><img src="/a1/assets/a1dent-sedat-burdurlu.webp" alt="Dr. Sedat BURDURLU" width="680" height="775" loading="lazy"></span><span class="tx"><h3>Dr. Sedat BURDURLU</h3><small>Diş Hekimi</small></span></a></li>
+      <li class="dr rv d1"><a href="#"><span class="im"><img src="/a1/assets/a1-dent-cagri-burdurlu.webp" alt="Doç. Dr. Çağrı BURDURLU" width="680" height="775" loading="lazy"></span><span class="tx"><h3>Doç. Dr. Çağrı BURDURLU</h3><small>Ağız, Diş ve Çene Cerrahisi Uzmanı</small></span></a></li>
+      <li class="dr rv d2"><a href="#"><span class="im"><img src="/a1/assets/a1dent-begum-dikmetas-kandemir.webp" alt="Dr. Begüm D. KANDEMİR" width="680" height="775" loading="lazy"></span><span class="tx"><h3>Dr. Begüm D. KANDEMİR</h3><small>Ortodonti</small></span></a></li>
+      <li class="dr rv d3"><a href="#"><span class="im"><img src="/a1/assets/a1-dent-zeynep-sahin.webp" alt="Dr. Zeynep ŞAHİN" width="680" height="775" loading="lazy"></span><span class="tx"><h3>Dr. Zeynep ŞAHİN</h3><small>Estetik/Protetik Diş Tedavisi</small></span></a></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<script>
+(()=>{
+  /* başlık: kaydırınca küçül */
+  const head=document.getElementById('head');
+  const onS=()=>head.classList.toggle('scrolled',scrollY>8);
+  addEventListener('scroll',onS,{passive:true});onS();
+
+  /* mobil menü */
+  const b=document.getElementById('burger'),d=document.getElementById('drawer');
+  const setMh=()=>document.documentElement.style.setProperty('--mh',head.getBoundingClientRect().bottom+'px');
+  b.addEventListener('click',()=>{const o=!d.classList.contains('open');setMh();d.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Menüyü kapat':'Menüyü aç');document.body.classList.toggle('lock',o);});
+  d.addEventListener('click',e=>{if(e.target.closest('a')){d.classList.remove('open');b.setAttribute('aria-expanded',false);document.body.classList.remove('lock');}});
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&d.classList.contains('open'))b.click();});
+
+  /* hero slider */
+  const hero=document.getElementById('hero'),S=[...hero.querySelectorAll('.slide')],T=[...hero.querySelectorAll('.tab')];
+  const cNow=document.getElementById('cNow'),cBar=document.getElementById('cBar');
+  const DUR=6500,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  hero.style.setProperty('--dur',DUR+'ms');
+  let i=0,t=null,left=DUR,start=0,paused=false;
+  /* sonraki görseli önceden yükle */
+  const pre=n=>{const im=S[n].querySelector('img');if(im.loading==='lazy'){im.loading='eager';}};
+  const restartBars=()=>{T.forEach(x=>{const k=x.querySelector('i');k.style.display='none';k.offsetWidth;k.style.display='';});cBar.classList.remove('run');cBar.offsetWidth;cBar.classList.add('run');};
+  function go(n){
+    n=(n+S.length)%S.length; if(n===i&&S[n].classList.contains('on'))return;
+    S[i].classList.remove('on');T[i].setAttribute('aria-selected','false');
+    i=n;pre(i);pre((i+1)%S.length);
+    S[i].classList.add('on');T[i].setAttribute('aria-selected','true');
+    cNow.textContent=String(i+1).padStart(2,'0');
+    restartBars();left=DUR;schedule();
+  }
+  function schedule(){clearTimeout(t);if(paused||reduce)return;start=Date.now();t=setTimeout(()=>go(i+1),left);}
+  function pause(){if(paused)return;paused=true;hero.classList.add('paused');clearTimeout(t);left=Math.max(400,left-(Date.now()-start));}
+  function resume(){if(!paused)return;paused=false;hero.classList.remove('paused');schedule();}
+  T.forEach((x,n)=>x.addEventListener('click',()=>go(n)));
+  document.getElementById('prev').onclick=()=>go(i-1);
+  document.getElementById('next').onclick=()=>go(i+1);
+  hero.addEventListener('mouseenter',()=>matchMedia('(hover:hover)').matches&&pause());
+  hero.addEventListener('mouseleave',resume);
+  document.addEventListener('visibilitychange',()=>document.hidden?pause():resume());
+  hero.addEventListener('keydown',e=>{if(e.key==='ArrowRight')go(i+1);if(e.key==='ArrowLeft')go(i-1);});
+  /* kaydırma (swipe) */
+  let x0=null,y0=0;
+  hero.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY;},{passive:true});
+  hero.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(i+(dx<0?1:-1));x0=null;});
+  /* görünce açılma */
+  const rv=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{rootMargin:'0px 0px -8% 0px',threshold:.12});rv.forEach(e=>io.observe(e));}else rv.forEach(e=>e.classList.add('in'));
+  pre(1);restartBars();schedule();
+})();
+</script>
+</body>
+</html>

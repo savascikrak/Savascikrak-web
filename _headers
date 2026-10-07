@@ -10,3 +10,8 @@
 
 /yapay-zeka-ile-urun-fotografi/assets/*
   Cache-Control: public, max-age=604800
+
+/a1/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+/a1
+  X-Robots-Tag: noindex, nofollow, noarchive
