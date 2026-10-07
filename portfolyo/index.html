@@ -67,13 +67,12 @@ h1{margin:10px 0 0;font-weight:600;font-size:clamp(36px,7vw,72px);line-height:1;
 .ust a{color:#fff;text-decoration:none;-webkit-tap-highlight-color:transparent}
 .ust .marka{display:flex;align-items:center;gap:8px;font-weight:600;font-size:12px;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;min-width:0}
 .ust .marka img{height:24px;width:auto;display:block;flex:none}
-.ust nav{display:flex;align-items:center;gap:12px;flex:none}
-.ust .ig{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;opacity:.9}
-.ust .ig svg{width:22px;height:22px;flex:none;display:block}
-.ust .egitim{display:inline-flex;align-items:center;height:32px;padding:0 13px;border-radius:5px;background:linear-gradient(180deg,#5C3115,#43230E);border:1px solid #ffffff1a;box-shadow:inset 0 1px 0 #ffffff1f,0 2px 8px #0007;font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-.ust .egitim:active{transform:translateY(1px)}
+.ust nav{display:flex;align-items:center;gap:6px;flex:none}
+.ust .ig{display:flex;align-items:center;justify-content:center;width:34px;height:34px}
+.ust .ig svg{width:24px;height:24px;flex:none;display:block}
+.ust .wa{display:flex;align-items:center;justify-content:center;width:34px;height:34px}
+.ust .wa svg{width:24px;height:24px;display:block}
 }
-@media (max-width:359px){.ust .ig span{display:none}}
 body.duz .ust{display:none}
 /* Düzenleme modu (sadece localhost ?duzenle) */
 .duz-bar{position:sticky;top:0;z-index:40;display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px var(--pad);background:#141210;color:#fff;font-size:13px}
@@ -98,7 +97,7 @@ body.duz .secili{outline:3px solid var(--accent);outline-offset:-3px}
 <main>
 <header class="ust">
 <a class="marka" href="/"><img src="/yapay-zeka-ile-urun-fotografi/assets/logo-mark.png" width="52" height="80" alt="">Savaş Çıkrak</a>
-<nav><a class="ig" href="https://www.instagram.com/savascikrak/" rel="noopener" aria-label="Instagram: savascikrak"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><radialGradient id="igr" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#FDF497"/><stop offset=".05" stop-color="#FDF497"/><stop offset=".45" stop-color="#FD5949"/><stop offset=".6" stop-color="#D6249F"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#igr)"/><rect x="5" y="5" width="14" height="14" rx="4.2" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg><span>savascikrak</span></a><a class="egitim" href="/yapay-zeka-ile-urun-fotografi/">Eğitim</a></nav>
+<nav><a class="ig" href="https://www.instagram.com/savascikrak/" rel="noopener" aria-label="Instagram: savascikrak"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><radialGradient id="igr" cx="30%" cy="107%" r="150%"><stop offset="0" stop-color="#FDF497"/><stop offset=".05" stop-color="#FDF497"/><stop offset=".45" stop-color="#FD5949"/><stop offset=".6" stop-color="#D6249F"/><stop offset=".9" stop-color="#285AEB"/></radialGradient></defs><rect width="24" height="24" rx="6" fill="url(#igr)"/><rect x="5" y="5" width="14" height="14" rx="4.2" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="12" cy="12" r="3.3" fill="none" stroke="#fff" stroke-width="1.7"/><circle cx="16.3" cy="7.7" r="1" fill="#fff"/></svg></a><a class="wa" href="https://wa.me/905310317444?text=Merhaba%2C%20portfolyonuzu%20inceledim." rel="noopener" aria-label="WhatsApp ile yazın"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#25D366"/><g transform="translate(3.6 3.6) scale(.7)"><path fill="#fff" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.25 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.22-.16-.47-.28Z"/></g></svg></a></nav>
 </header>
 <h1 class="gizli">Savaş Çıkrak · Portfolyo</h1>
 <div class="filtre" role="toolbar" aria-label="Kategori" hidden></div>
