@@ -53,17 +53,18 @@ h1{margin:10px 0 0;font-weight:600;font-size:clamp(36px,7vw,72px);line-height:1;
 .lb img{display:block;max-width:calc(100vw - 96px);max-height:calc(100vh - 96px);max-height:calc(100svh - 96px);width:auto;height:auto;object-fit:contain;transform:scale(.97);transition:transform .45s cubic-bezier(.2,.7,.2,1),opacity .25s ease;will-change:clip-path}
 .lb.on img{transform:none}
 .lb img.yuk{opacity:0}
-.lb button{position:absolute;display:flex;align-items:center;justify-content:center;padding:0;border:1px solid rgba(255,255,255,.22);border-radius:50%;background:rgba(16,16,16,.34);-webkit-backdrop-filter:blur(12px) saturate(1.3);backdrop-filter:blur(12px) saturate(1.3);box-shadow:0 8px 28px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.12);color:#fff;cursor:pointer;opacity:.82;-webkit-tap-highlight-color:transparent;transition:opacity .25s ease,background .25s ease,transform .25s cubic-bezier(.2,.7,.2,1)}
-.lb button:hover{opacity:1;background:rgba(16,16,16,.55)}
+.lb button{position:absolute;display:flex;align-items:center;justify-content:center;padding:0;overflow:hidden;border:3px solid #3E220F;border-radius:50%;background:linear-gradient(225deg,#D9A06A 0%,#B06B35 42%,#7A4019 78%,#5C2E10 100%);box-shadow:inset 0 0 0 2px #fff,0 6px 18px rgba(0,0,0,.45);color:#fff;cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .2s cubic-bezier(.2,.7,.2,1),filter .2s ease}
+.lb button::after{content:"";position:absolute;left:4px;right:4px;top:4px;height:52%;border-radius:50% 50% 50% 50%/62% 62% 38% 38%;background:linear-gradient(180deg,rgba(255,255,255,.34),rgba(255,255,255,.1));pointer-events:none}
+.lb button:hover{filter:brightness(1.1)}
 .lb button:active{transform:scale(.94)}
-.lb svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
-.lb-p,.lb-n{top:50%;width:50px;height:50px;margin-top:-25px}
+.lb svg{position:relative;z-index:1;width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:square;stroke-linejoin:miter;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+.lb-p,.lb-n{top:50%;width:54px;height:54px;margin-top:-27px}
 .lb-p{left:18px}.lb-n{right:18px}
 .lb-p:active,.lb-n:active{transform:scale(.94)}
-.lb-x{top:max(16px,env(safe-area-inset-top,0px));right:16px;width:44px;height:44px}
-.lb-x svg{width:18px;height:18px}
+.lb-x{top:max(16px,env(safe-area-inset-top,0px));right:16px;width:46px;height:46px}
+.lb-x svg{width:18px;height:18px;stroke-width:2.4}
 .lb-s{display:none}
-@media (max-width:599px){.lb img{max-width:100vw;max-height:calc(100svh - 120px)}.lb-p,.lb-n{width:42px;height:42px;margin-top:-21px}.lb-p{left:10px}.lb-n{right:10px}.lb svg{width:18px;height:18px}}
+@media (max-width:599px){.lb img{max-width:100vw;max-height:calc(100svh - 120px)}.lb-p,.lb-n{width:44px;height:44px;margin-top:-22px}.lb-p{left:10px}.lb-n{right:10px}.lb svg{width:18px;height:18px}}
 /* Mobil üst blok */
 .ust{display:none}
 @media (max-width:899px){
@@ -191,8 +192,8 @@ body.duz .secili{outline:3px solid var(--accent);outline-offset:-3px}
 
 <div class="lb" hidden role="dialog" aria-modal="true" aria-label="Fotoğraf görüntüleyici">
 <div class="lb-cer"><img alt="">
-<button class="lb-p" type="button" aria-label="Önceki"><svg viewBox="0 0 24 24"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg></button>
-<button class="lb-n" type="button" aria-label="Sonraki"><svg viewBox="0 0 24 24"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg></button>
+<button class="lb-p" type="button" aria-label="Önceki"><svg viewBox="0 0 24 24"><path d="M15 4.5L7.5 12l7.5 7.5"/></svg></button>
+<button class="lb-n" type="button" aria-label="Sonraki"><svg viewBox="0 0 24 24"><path d="M9 4.5l7.5 7.5L9 19.5"/></svg></button>
 </div>
 <button class="lb-x" type="button" aria-label="Kapat"><svg viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg></button>
 <div class="lb-s" aria-live="polite"></div>
