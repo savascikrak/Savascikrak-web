@@ -17,6 +17,7 @@
   --gold:#C8952E; --gold-2:#B07F1F; --gold-soft:#F6EEDD;
   --line:#E7EAEC; --bg:#fff;
   --wrap:1240px; --gut:24px;
+  --blok:clamp(32px,4vw,56px); --baslik-alt:clamp(28px,3vw,44px);
   --top-h:40px; --head-h:84px;
   --ease:cubic-bezier(.22,.7,.2,1);
 }
@@ -235,7 +236,7 @@ body.lock{overflow:hidden}
 }
 
 /* ===== HAKKIMIZDA ===== */
-.about{padding:clamp(80px,10vw,150px) 0;background:#fff;position:relative;overflow:hidden}
+.about{padding:var(--blok) 0;background:#fff;position:relative;overflow:hidden}
 .about::before{content:"";position:absolute;right:-180px;top:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--gold-soft) 0%,rgba(246,238,221,0) 70%);pointer-events:none}
 .about .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,7vw,110px);align-items:center}
 .ab-media{position:relative;padding:0 0 70px 0}
@@ -302,8 +303,8 @@ body.lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.ab-badge svg{animation:none}}
 
 /* ===== DİŞ TEDAVİLERİMİZ (minimal) ===== */
-.treat{--bant-op:.78;--bant-op-h:.92;padding:clamp(8px,1.5vw,24px) 0 clamp(80px,10vw,140px);background:#fff}
-.tr-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(48px,6vw,80px)}
+.treat{--bant-op:.78;--bant-op-h:.92;padding:0 0 var(--blok);background:#fff}
+.tr-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:var(--baslik-alt)}
 .treat h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
 .treat h2 em{font-style:normal;color:var(--gold-2)}
 .tr-head p{font-size:16px;line-height:1.75;color:#4E5A62}
@@ -311,6 +312,7 @@ body.lock{overflow:hidden}
 .tr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(40px,4.5vw,64px) clamp(20px,2.4vw,32px);list-style:none}
 .tc a{display:block}
 .tc .im{position:relative;display:block;aspect-ratio:510/550;border-radius:4px;overflow:hidden;background:#F2F3F3}
+.tc .im::after{content:"";position:absolute;inset:0;border:1px solid rgba(29,42,51,.13);border-radius:inherit;pointer-events:none;z-index:2}
 .tc img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .tc .tx{position:absolute;left:0;right:0;bottom:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:16px 20px 17px;background:rgba(255,255,255,var(--bant-op));transition:background .45s}
 .tc .tx::before{content:"";position:absolute;left:0;top:-1px;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--ease)}
@@ -339,8 +341,8 @@ body.lock{overflow:hidden}
 .tr-ipucu svg{width:16px;height:16px}
 @media (prefers-reduced-motion:reduce){.tc img,.tc .ok,.tc .tx::before{transition:none}}
 /* ===== DİŞ HEKİMLERİMİZ ===== */
-.team{padding:clamp(80px,10vw,140px) 0;background:#F6F7F7}
-.tm-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(48px,6vw,80px)}
+.team{padding:var(--blok) 0;background:#F6F7F7}
+.tm-head{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:var(--baslik-alt)}
 .team h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
 .team h2 em{font-style:normal;color:var(--gold-2)}
 .tm-head p{font-size:16px;line-height:1.75;color:#4E5A62}
@@ -368,9 +370,10 @@ body.lock{overflow:hidden}
   .dr small{font-size:12.5px;margin-top:4px}
 }
 @media (prefers-reduced-motion:reduce){.dr img,.dr .tx::before{transition:none}}
+.h-logo{display:inline-block;width:.86em;height:.86em;margin-right:.32em;vertical-align:-.1em}
 /* ===== ÜCRETSİZ MUAYENE (randevu) ===== */
 section[id]{scroll-margin-top:var(--head-h)}
-.appt{padding:clamp(80px,10vw,140px) 0;background:#fff}
+.appt{padding:var(--blok) 0;background:#fff}
 .ap-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:start}
 .appt h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
 .appt h2 em{font-style:normal;color:var(--gold-2)}
@@ -589,7 +592,7 @@ section[id]{scroll-margin-top:var(--head-h)}
   <div class="wrap">
     <div class="tr-head">
       <div>
-        <h2 class="rv" id="tr-baslik">Diş <em>Tedavilerimiz</em></h2>
+        <h2 class="rv" id="tr-baslik"><img class="h-logo" src="/a1/assets/logo-isaret.png" alt="" width="50" height="50">Diş <em>Tedavilerimiz</em></h2>
       </div>
       <div class="rv d2">
         <p>Kliniğimizde, başta ağız diş ve çene cerrahisi, ortodonti tedavisi, kanal tedavisi, implant tedavisi, gülüş tasarımı ve çocuk diş tedavileri olmak üzere tüm ağız ve diş tedavilerini uyguluyoruz. Uzman diş hekimlerimiz ve deneyimli ekibimiz ile kişiye özel çözümler sunuyor, modern altyapımız ile en güncel tedavi yöntemlerini konforlu bir ortamda gerçekleştiriyoruz.</p>
@@ -609,7 +612,7 @@ section[id]{scroll-margin-top:var(--head-h)}
 <section class="team" id="hekimler" aria-labelledby="tm-baslik">
   <div class="wrap">
     <div class="tm-head">
-      <h2 class="rv" id="tm-baslik">Diş <em>Hekimlerimiz</em></h2>
+      <h2 class="rv" id="tm-baslik"><img class="h-logo" src="/a1/assets/logo-isaret.png" alt="" width="50" height="50">Diş <em>Hekimlerimiz</em></h2>
       <p class="rv d1">Kliniğimizde uzman diş hekimlerimiz ve deneyimli ekibimiz ile kişiye özel çözümler sunuyor, modern altyapımız ile en güncel tedavileri konforlu bir ortamda gerçekleştiriyoruz. Sizleri hak ettiğiniz sağlıklı ve mutlu bir gülümseye kavuşturmak için kliniğimize bekliyoruz.</p>
     </div>
     <ul class="tm-grid">
@@ -623,7 +626,7 @@ section[id]{scroll-margin-top:var(--head-h)}
 <section class="appt" id="randevu" aria-labelledby="ap-baslik">
   <div class="wrap ap-grid">
     <div class="ap-txt">
-      <h2 class="rv" id="ap-baslik">Ücretsiz Muayene İçin <em>Hemen Randevu Alın</em></h2>
+      <h2 class="rv" id="ap-baslik"><img class="h-logo" src="/a1/assets/logo-isaret.png" alt="" width="50" height="50">Ücretsiz Muayene İçin <em>Hemen Randevu Alın</em></h2>
       <p class="rv d1">Ücretsiz muayene için randevu formunu doldurarak iletişim bilgilerinizi bizimle paylaşın, sizi hemen arayalım. Ücretsiz muayene randevunuzu planlayalım!</p>
       <ul class="ap-dir rv d2">
         <li><a href="tel:+902163462122"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+90 216 346 21 22</a></li>
