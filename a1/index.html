@@ -116,7 +116,7 @@ body.lock{overflow:hidden}
 .slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .55s var(--ease),visibility 0s .55s}
 .slide.on{opacity:1;visibility:visible;transition:opacity .55s var(--ease)}
 .slide .ph{position:absolute;inset:0;overflow:hidden}
-.slide .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 7.5s cubic-bezier(.2,.5,.3,1)}
+.slide .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 4s cubic-bezier(.2,.5,.3,1)}
 .slide.on .ph img{transform:scale(1)}
 .slide .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(16,24,30,.82) 0%,rgba(16,24,30,.55) 38%,rgba(16,24,30,.08) 70%,rgba(16,24,30,0) 100%),linear-gradient(0deg,rgba(16,24,30,.55) 0%,rgba(16,24,30,0) 34%)}
 .slide .in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding-bottom:72px}
@@ -154,7 +154,7 @@ body.lock{overflow:hidden}
 .tab span{display:block;font-size:14px;font-weight:500;margin-top:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .tab i{position:absolute;left:0;right:18px;top:-1px;height:2px;background:rgba(255,255,255,0);overflow:hidden}
 .tab i::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left}
-.tab[aria-selected=true] i::after{animation:fill var(--dur,6.5s) linear forwards}
+.tab[aria-selected=true] i::after{animation:fill var(--dur,3.5s) linear forwards}
 .hero.paused .tab[aria-selected=true] i::after{animation-play-state:paused}
 @keyframes fill{to{transform:scaleX(1)}}
 .arrows{display:flex;align-items:center;gap:8px}
@@ -214,7 +214,7 @@ body.lock{overflow:hidden}
   .count{display:flex;align-items:center;gap:14px;font-size:13px;font-weight:600;letter-spacing:.1em;color:rgba(255,255,255,.7)}
   .count .bar{position:relative;width:96px;height:2px;background:rgba(255,255,255,.22);overflow:hidden}
   .count .bar::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left}
-  .count .bar.run::after{animation:fill var(--dur,6.5s) linear forwards}
+  .count .bar.run::after{animation:fill var(--dur,3.5s) linear forwards}
   .hero.paused .count .bar::after{animation-play-state:paused}
   .count em{font-style:normal;color:#fff}
   .arr{width:44px;height:44px}
@@ -660,7 +660,7 @@ section[id]{scroll-margin-top:var(--head-h)}
   /* hero slider */
   const hero=document.getElementById('hero'),S=[...hero.querySelectorAll('.slide')],T=[...hero.querySelectorAll('.tab')];
   const cNow=document.getElementById('cNow'),cBar=document.getElementById('cBar');
-  const DUR=6500,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const DUR=3500,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   hero.style.setProperty('--dur',DUR+'ms');
   let i=0,t=null,left=DUR,start=0,paused=false;
   /* sonraki görseli önceden yükle */
