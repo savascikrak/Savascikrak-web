@@ -273,10 +273,10 @@ function goster(i,yon){
  if(ilk)im.classList.add('yuk');
  var yeni=new Image();
  var cik=null;
- if(!ilk){sil();cik=im.animate([{clipPath:'inset(0 0 0 0)',opacity:1,transform:'translateX(0)'},{clipPath:yon>0?'inset(0 100% 0 0)':'inset(0 0 0 100%)',opacity:.35,transform:'translateX('+(yon>0?-14:14)+'px)'}],{duration:260,easing:'cubic-bezier(.45,0,.55,1)',fill:'forwards'})}
+ if(!ilk){sil();cik=im.animate([{clipPath:'inset(0 0 0 0)',opacity:1,transform:'translateX(0)'},{clipPath:yon>0?'inset(0 100% 0 0)':'inset(0 0 0 100%)',opacity:.35,transform:'translateX('+(yon>0?-14:14)+'px)'}],{duration:130,easing:'cubic-bezier(.45,0,.55,1)',fill:'forwards'})}
  function koy(){if(t!==tok)return;
   function gir(){if(t!==tok)return;sil();im.src=el.href;im.alt=k.alt;im.classList.remove('yuk');
-   if(!ilk)im.animate([{clipPath:yon>0?'inset(0 0 0 100%)':'inset(0 100% 0 0)',opacity:.35,transform:'translateX('+(yon>0?14:-14)+'px)'},{clipPath:'inset(0 0 0 0)',opacity:1,transform:'translateX(0)'}],{duration:480,easing:'cubic-bezier(.22,.61,.36,1)'})}
+   if(!ilk)im.animate([{clipPath:yon>0?'inset(0 0 0 100%)':'inset(0 100% 0 0)',opacity:.35,transform:'translateX('+(yon>0?14:-14)+'px)'},{clipPath:'inset(0 0 0 0)',opacity:1,transform:'translateX(0)'}],{duration:240,easing:'cubic-bezier(.22,.61,.36,1)'})}
   if(cik&&cik.playState!=='finished')cik.onfinish=gir;else gir()}
  yeni.onload=yeni.onerror=koy;yeni.src=el.href;
  s.textContent=(cur+1)+' / '+liste.length;
