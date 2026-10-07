@@ -280,9 +280,9 @@ function goster(i,yon){
    eski.style.cssText='left:'+rc.left+'px;top:'+rc.top+'px;width:'+rc.width+'px;height:'+rc.height+'px';
    lb.insertBefore(eski,lb.firstChild)}
   sil();im.src=el.href;im.alt=k.alt;im.classList.remove('yuk');
-  if(!ilk){var d=260;
-   var a=im.animate([{clipPath:yon>0?'inset(0 0 0 100%)':'inset(0 100% 0 0)',transform:'translateX('+(yon>0?36:-36)+'px)'},{clipPath:'inset(0 0 0 0)',transform:'translateX(0)'}],{duration:d,easing:'cubic-bezier(.25,.8,.25,1)'});
-   eski.animate([{opacity:1},{opacity:1,offset:.55},{opacity:0}],{duration:d,fill:'forwards'});
+  if(!ilk){var d=320;
+   var a=im.animate([{opacity:0},{opacity:1}],{duration:d,easing:'ease-in-out'});
+   eski.animate([{opacity:1},{opacity:0}],{duration:d,easing:'ease-in-out',fill:'forwards'});
    a.onfinish=a.oncancel=function(){if(eski)eski.remove()}}
  }
  yeni.onload=yeni.onerror=koy;yeni.src=el.href;
