@@ -444,6 +444,31 @@ section[id]{scroll-margin-top:var(--head-h)}
 .lbx .o2{right:10px;top:50%;margin-top:-24px}
 .lbx .sy{position:absolute;bottom:18px;left:0;right:0;text-align:center;font-size:12.5px;letter-spacing:.12em;color:rgba(255,255,255,.7);font-variant-numeric:tabular-nums}
 @media (prefers-reduced-motion:reduce){.cl-grid img,.cl-grid button::after,.lbx,.lbx img{transition:none}}
+/* 7. blok: SSS (savascikrak.com eğitim sayfası tarzı) */
+.faqs{padding:var(--blok) 0;background:#fff}
+.fq-head{margin-bottom:var(--baslik-alt)}
+.faqs h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
+.faqs h2 em{font-style:normal;color:var(--gold-2)}
+.fq-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px clamp(16px,2vw,24px);align-items:start}
+.fq-col{display:flex;flex-direction:column;gap:12px}
+.faqs details{background:#fff;border:1px solid #DDE1E3;border-radius:12px;transition:border-color .25s,box-shadow .25s}
+.faqs details[open]{border-color:var(--gold);box-shadow:0 6px 18px rgba(176,127,31,.12)}
+.faqs summary{position:relative;display:block;list-style:none;cursor:pointer;padding:18px 64px 18px 20px;font-size:16.5px;line-height:1.4;font-weight:500;color:var(--navy);transition:color .2s}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs summary::after{content:"";position:absolute;right:18px;top:50%;width:30px;height:30px;margin-top:-15px;box-sizing:border-box;border-radius:50%;border:1.25px solid var(--gold-2);background:var(--gold-2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/16px no-repeat;transition:transform .25s ease}
+.faqs details[open] summary::after{transform:rotate(180deg);background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B07F1F' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E") center/16px no-repeat}
+.faqs summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:12px}
+@media (hover:hover){.faqs summary:hover{color:var(--gold-2)}}
+.faqs details p{margin:0 20px;padding:16px 0 20px;border-top:1px solid rgba(176,127,31,.28);font-size:15.5px;line-height:1.7;color:#4E5A62}
+@media (max-width:1023px){
+  .fq-grid{grid-template-columns:1fr;gap:12px}
+}
+@media (max-width:599px){
+  .faqs summary{font-size:15.5px;padding:16px 58px 16px 16px}
+  .faqs summary::after{right:14px;width:28px;height:28px;margin-top:-14px}
+  .faqs details p{margin:0 16px;padding:14px 0 16px;font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){.faqs summary::after,.faqs details{transition:none}}
 </style>
 </head>
 <body>
@@ -696,6 +721,25 @@ section[id]{scroll-margin-top:var(--head-h)}
     </ul>
   </div>
 </section>
+<section class="faqs" id="sss" aria-labelledby="fq-baslik">
+  <div class="wrap">
+    <div class="fq-head">
+      <h2 class="rv" id="fq-baslik"><img class="h-logo" src="/a1/assets/logo-isaret.png" alt="" width="50" height="50">Sıkça Sorulan <em>Sorular</em></h2>
+    </div>
+    <div class="fq-grid rv d1">
+      <div class="fq-col">
+      <details name="sss" open><summary>Diş çekimi yapılırken acı verir mi?</summary><p>Diş çekimi esnasında lokal anestezi uygulanır, bu nedenle ağrı hissetmezsiniz. İşlem sonrasında ise hafif bir rahatsızlık veya ağrı hissedebilirsiniz ancak doktorunuz size ağrı kesici veya diğer ilaçları reçete edecektir.</p></details>
+      <details name="sss"><summary>Ağız kokusu neden olur ve nasıl önlenebilir?</summary><p>Ağız kokusu genellikle kötü hijyen, diş çürüğü, diş eti hastalığı, sigara kullanımı veya bazı sistemik sağlık sorunlarından kaynaklanır. Ağız kokusunu önlemek için düzenli diş fırçalama, diş ipi kullanımı, dil temizliği ve düzenli diş hekimi kontrolleri önemlidir.</p></details>
+      <details name="sss"><summary>Acil durumlarda ne yapmalıyım?</summary><p>Acil bir diş sorunu yaşadığınızda hemen kliniğimizi arayarak durumu bildirmeniz önemlidir. Size en kısa sürede yardımcı olmak için gereken adımları atacağız.</p></details>
+      </div>
+      <div class="fq-col">
+      <details name="sss"><summary>Diş beyazlatma işlemi ne kadar etkilidir?</summary><p>Diş beyazlatma işlemi, dişlerdeki lekeleri gidermek ve daha beyaz bir gülümseme elde etmek için etkili bir yöntemdir. Ancak, dişlerin doğal rengi ve leke tipine bağlı olarak sonuçlar değişebilir.</p></details>
+      <details name="sss"><summary>Sigara kullanırken diş beyazlatma yapabilir miyim?</summary><p>Sigara kullanımı diş beyazlatma sonuçlarını olumsuz etkileyebilir. Sigara içmek dişlerde lekelenmeye ve sararmaya yol açabilir. Eğer sigara kullanıyorsanız, diş beyazlatma sonrası sigara içmeyi bırakmanız önerilir.</p></details>
+      <details name="sss"><summary>Tedavi Ücretleri Hakkında Bilgi Alabilir miyim?</summary><p>Tedavi ücretleri, yapılacak işlemlerin türüne ve hastanın durumuna bağlı olarak değişiklik gösterir. Detaylı bir bilgilendirme için kliniğimizi arayabilir ya da iletişim kanallarımızdan bizimle iletişime geçebilirsiniz.</p></details>
+      </div>
+    </div>
+  </div>
+</section>
 <div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Klinik fotoğrafları" hidden>
   <img alt="">
   <button type="button" class="x" aria-label="Kapat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
@@ -773,6 +817,9 @@ section[id]{scroll-margin-top:var(--head-h)}
   let x0=null;L.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
   L.addEventListener('touchend',e=>{if(x0===null)return;const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>40)goster(k+(d<0?1:-1));x0=null;});
 })();
+
+/* SSS: biri açılınca diğerleri kapansın */
+(()=>{const D=[...document.querySelectorAll('.faqs details')];D.forEach(d=>d.addEventListener('toggle',()=>{if(d.open)D.forEach(o=>{if(o!==d&&o.open)o.open=false;});}));})();
 </script>
 <script>
 /* randevu formu (örnek sayfa: gönderim yok, sadece doğrulama + teşekkür) */
