@@ -238,7 +238,7 @@ body.lock{overflow:hidden}
 /* ===== HAKKIMIZDA ===== */
 .about{padding:var(--blok) 0;background:#fff;position:relative;overflow:hidden}
 .about::before{content:"";position:absolute;right:-180px;top:-140px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,var(--gold-soft) 0%,rgba(246,238,221,0) 70%);pointer-events:none}
-.about .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,7vw,110px);align-items:center}
+.about .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,7vw,110px);align-items:start}
 .ab-media{position:relative;padding:0 0 70px 0}
 .ab-media .big{border-radius:6px;overflow:hidden;aspect-ratio:4/4.4}
 .ab-media .big img{width:100%;height:100%;object-fit:cover;object-position:55% 50%}
@@ -251,9 +251,8 @@ body.lock{overflow:hidden}
 @keyframes don{to{transform:rotate(360deg)}}
 .kicker{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-2)}
 .kicker img{width:22px;height:22px}
-.about .ab-h{position:relative;font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);margin-bottom:var(--baslik-alt)}
-.about h3{font-size:clamp(22px,2.1vw,30px);line-height:1.2;font-weight:600;letter-spacing:-.018em;color:var(--navy);margin:0 0 22px;text-wrap:balance}
-.about h3 em{font-style:normal;color:var(--gold-2)}
+.about h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);margin:18px 0 26px;text-wrap:balance}
+.about h2 em{font-style:normal;color:var(--gold-2)}
 .about p{font-size:16.5px;line-height:1.75;color:#4E5A62;margin:0 0 16px;max-width:560px}
 .founders{display:flex;flex-wrap:wrap;gap:14px 28px;margin:32px 0 0;padding:24px 0 0;border-top:1px solid var(--line)}
 .founders .lb{width:100%;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
@@ -599,7 +598,6 @@ section[id]{scroll-margin-top:var(--head-h)}
 </section>
 <section class="about" id="hakkimizda" aria-labelledby="ab-baslik">
   <div class="wrap">
-    <h2 class="ab-h rv" id="ab-baslik"><img class="h-logo" src="/a1/assets/logo-isaret.png" alt="" width="50" height="50">Hakkımızda</h2>
     <div class="grid">
       <div class="ab-media rv">
         <div class="big"><img src="/a1/assets/a1dentfoto-2.webp" alt="A1 Dent kliniğinde dünya haritası duvarı" width="1000" height="666" loading="lazy"></div>
@@ -611,7 +609,8 @@ section[id]{scroll-margin-top:var(--head-h)}
       </div>
 
       <div class="ab-text">
-        <h3 class="rv d1">A1 Dent Ağız ve Diş Sağlığı <em>Polikliniği</em></h3>
+        <span class="kicker rv"><img src="/a1/assets/logo-isaret.png" alt="" width="22" height="22">Hakkımızda</span>
+        <h2 class="rv d1" id="ab-baslik">A1 Dent Ağız ve Diş Sağlığı <em>Polikliniği</em></h2>
         <p class="rv d2">Özel A1 Dent Ağız ve Diş Sağlığı Polikliniği 1980 yılından günümüze kadar gelen, diş hekimliği bilgi, birikim ve deneyiminin bir sonucu olarak 2022 yılında Diş Hekimi Dt. Sedat Burdurlu ve Diş Hekimi Doç. Dr. Çağrı Burdurlu tarafından kurulmuştur.</p>
         <p class="rv d2">Özel A1 Dent Ağız ve Diş Sağlığı Polikliniği, İstanbul’un merkez ilçelerinden biri olan Kadıköy Fikirtepe’de, başta İstanbul olmak üzere Türkiye ve dünya çapında pek çok farklı ülkeden gelen hastalarına hizmet vermektedir.</p>
         <div class="founders rv d3">
