@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Savaş Çıkrak | Fotoğraf, Video, Yapay Zeka ve Eğitim</title>
+<meta name="description" content="Savaş Çıkrak: fotoğraf ve video çekimleri (ürün, yemek, portre), sosyal medya çalışmaları, firmalara özel fotoğraf çözümleri ve yapay zeka destekli fotoğraf eğitimleri.">
+<meta name="theme-color" content="#161616">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-64.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --ink:#161616;--ink-2:#262626;--muted:#6B6762;--line:#E8E5E1;--soft:#F5F3F0;--bg:#fff;
+  --acc:#8A4B1F;--acc-2:#6F3C18;--gold:#E9C98A;
+  --wrap:1280px;--gut:24px;--blok:clamp(48px,6vw,96px);--head-h:84px;
+  --ease:cubic-bezier(.22,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+section[id],article[id]{scroll-margin-top:72px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ===== ÜST (koyu, hero ile aynı dil: siyah + şampanya altını) ===== */
+.head{position:fixed;top:0;left:0;right:0;z-index:40;color:#F4F1EA;background:rgba(11,11,13,0);transition:background .35s,box-shadow .35s}
+.head .wrap{max-width:none;padding:0 clamp(20px,3vw,48px);height:var(--head-h);display:flex;align-items:center;gap:32px;transition:height .3s}
+.head.scrolled{background:rgba(11,11,13,.92);-webkit-backdrop-filter:saturate(1.3) blur(16px);backdrop-filter:saturate(1.3) blur(16px);box-shadow:0 1px 0 rgba(216,180,119,.22)}
+.head.scrolled .wrap{height:68px}
+.marka{display:flex;align-items:center;gap:14px;font-weight:600;font-size:15px;letter-spacing:.2em;text-transform:uppercase;white-space:nowrap;color:#F4F1EA}
+.marka img{height:54px;width:auto}
+/* menü düğmeleri: hero kartlarıyla aynı dil (koyu cam + altın degrade 1px çerçeve) */
+.nav{margin-left:auto;display:flex;align-items:center;gap:8px}
+.nav a,.h-cta,.drawer a.l{position:relative;border-radius:12px;background:linear-gradient(180deg,rgba(32,31,35,.88),rgba(18,18,21,.88));box-shadow:0 14px 30px -20px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06);transition:transform .3s var(--ease),box-shadow .3s var(--ease),color .25s}
+.nav a::before,.h-cta::before,.drawer a.l::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,rgba(247,233,204,.55),rgba(216,180,119,.14) 35%,rgba(255,255,255,.05) 65%,rgba(216,180,119,.28));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.nav a{display:inline-flex;align-items:center;height:40px;padding:0 14px;font-size:11px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;white-space:nowrap;color:rgba(244,241,234,.85)}
+.nav a:hover,.nav a:focus-visible,.drawer a.l:hover{color:#fff;transform:translateY(-1px);box-shadow:0 18px 34px -18px rgba(0,0,0,.95),0 0 0 1px rgba(216,180,119,.35),inset 0 1px 0 rgba(255,255,255,.08)}
+.h-cta{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 16px 0 6px;font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;white-space:nowrap;color:#F7E9CC}
+.h-cta .ic{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:linear-gradient(145deg,#26241F,#141316);border:1px solid rgba(216,180,119,.30);color:#D8B477}
+.h-cta .ic svg{width:15px;height:15px}
+.h-cta:hover{color:#fff;transform:translateY(-1px);box-shadow:0 18px 34px -18px rgba(0,0,0,.95),0 0 0 1px rgba(216,180,119,.45),inset 0 1px 0 rgba(255,255,255,.08)}
+.m-btn{display:none;width:44px;height:44px;margin-left:auto;place-items:center;color:#F4F1EA}
+.m-btn svg{width:26px;height:26px}
+.drawer{position:fixed;inset:0;z-index:49;color:#F4F1EA;background:radial-gradient(70% 50% at 85% 15%,rgba(216,180,119,.14),rgba(216,180,119,0) 70%),#0B0B0D;padding:88px var(--gut) 32px;display:flex;flex-direction:column;gap:0;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
+.drawer.open{opacity:1;visibility:visible;transition:opacity .3s}
+.drawer a.l{display:flex;align-items:center;gap:14px;min-height:60px;margin-bottom:10px;padding:8px 16px 8px 8px;border-radius:16px;font-size:13.5px;font-weight:400;letter-spacing:.11em;text-transform:uppercase;color:#F4F1EA}
+.drawer a.l .ic{flex:none;display:grid;place-items:center;width:42px;height:42px;border-radius:11px;background:linear-gradient(145deg,#26241F,#141316);border:1px solid rgba(216,180,119,.30);color:#D8B477;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.drawer a.l .ic svg{width:20px;height:20px}
+.drawer .x{position:absolute;top:10px;right:calc(var(--gut) - 8px);width:44px;height:44px;display:grid;place-items:center}
+body.lock{overflow:hidden}
+@media (max-width:1379px){.head .wrap{gap:16px}.nav{gap:6px}.nav a{padding:0 10px;font-size:10.5px;letter-spacing:.08em}.h-cta{padding:0 12px 0 6px;letter-spacing:.1em}}
+@media (max-width:1199px){.nav,.h-cta{display:none}.m-btn{display:grid}}
+
+/* ortak düğmeler */
+.btn{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 26px;border-radius:5px;font-size:13px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;transition:background .25s,color .25s,border-color .25s}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(3px)}
+.btn.p{background:var(--acc);color:#fff}
+.btn.p:hover{background:var(--acc-2)}
+.btn.o{border:1px solid var(--line);color:var(--ink)}
+.btn.o:hover{border-color:var(--ink)}
+.btn.d{background:var(--ink);color:#fff}
+.btn.d:hover{background:var(--acc)}
+
+/* ===== HERO (Gibraltar esinli düzen, koyu premium tema: ışık + şampanya altını; stiller .hx kapsamında) ===== */
+.hx{--hx-bg:#0B0B0D;--hx-ink:#F4F1EA;--hx-mut:#A8A398;--hx-g1:#F7E9CC;--hx-g2:#D8B477;--hx-g3:#9A7442;--hx-e:cubic-bezier(.22,.61,.36,1);position:relative;overflow:hidden;color:var(--hx-ink);padding:calc(var(--head-h) + clamp(40px,6vw,96px)) 0 clamp(56px,7vw,112px);
+  background:radial-gradient(60% 70% at 78% 42%,rgba(216,180,119,.16),rgba(216,180,119,0) 70%),radial-gradient(40% 50% at 12% 0%,rgba(255,255,255,.06),rgba(255,255,255,0) 70%),var(--hx-bg)}
+.hx::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,rgba(216,180,119,0),rgba(216,180,119,.45),rgba(216,180,119,0))}
+.hx-in{position:relative;max-width:1200px;margin:0 auto;padding:0 var(--gut);display:grid;grid-template-columns:minmax(0,45fr) minmax(0,55fr);gap:clamp(32px,4.5vw,72px);align-items:center}
+.hx h1{font-size:clamp(40px,4.4vw,58px);line-height:1.08;font-weight:700;letter-spacing:-.025em;margin:0 0 24px}
+.hx h1 span{display:block}
+.hx h1 em{font-style:normal;background:linear-gradient(100deg,var(--hx-g1) 0%,var(--hx-g2) 45%,var(--hx-g3) 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hx-ek{display:flex;align-items:center;gap:14px;font-size:15.5px;line-height:1.55;color:var(--hx-mut);letter-spacing:.01em}
+.hx-ek::before{content:"";flex:none;width:36px;height:1px;background:linear-gradient(90deg,var(--hx-g2),rgba(216,180,119,0))}
+.hx-sv{position:relative;padding:clamp(28px,3.4vw,48px) 0}
+.hx-geo{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hx-geo i{position:absolute;display:block}
+.hx-geo .g1{right:-6%;top:-8%;width:66%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(247,233,204,.22),rgba(216,180,119,.07) 45%,rgba(216,180,119,0) 70%)}
+.hx-geo .g2{left:-6%;bottom:-8%;width:40%;aspect-ratio:1;border-radius:100% 0 0 0;background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.01));border-top:1px solid rgba(216,180,119,.28);border-left:1px solid rgba(216,180,119,.12)}
+.hx-geo .g3{left:16%;top:2%;width:34%;height:30%;border-radius:32px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);transform:rotate(-8deg)}
+.hx-geo .g4{right:6%;bottom:-2%;width:22%;height:24%;border-radius:0 0 40px 40px;background:linear-gradient(180deg,rgba(216,180,119,.10),rgba(216,180,119,0))}
+.hx-geo .g5{right:-1%;bottom:22%;width:64px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(216,180,119,.55)}
+.hx-ls{position:relative;z-index:1;list-style:none;display:grid;gap:14px}
+.hx-c{position:relative;display:flex;align-items:center;gap:16px;min-height:66px;padding:11px 22px 11px 11px;border-radius:18px;background:linear-gradient(180deg,rgba(32,31,35,.88),rgba(18,18,21,.88));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:0 24px 50px -28px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.06);font-size:16.5px;font-weight:500;line-height:1.3;letter-spacing:.005em;color:var(--hx-ink);transition:transform .35s var(--hx-e),box-shadow .35s var(--hx-e)}
+.hx-c::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,rgba(247,233,204,.55),rgba(216,180,119,.14) 35%,rgba(255,255,255,.05) 65%,rgba(216,180,119,.28));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none;transition:opacity .35s}
+.hx-ls>li:nth-child(1) .hx-c{margin:0 24px 0 0}
+.hx-ls>li:nth-child(2) .hx-c{margin:0 0 0 24px}
+.hx-ls>li:nth-child(3) .hx-c{margin:0 12px 0 8px}
+.hx-ls>li:nth-child(4) .hx-c{margin:0 0 0 20px}
+.hx-ls>li:nth-child(5) .hx-c{margin:0 20px 0 0}
+.hx-ls{container-type:inline-size;grid-template-columns:minmax(0,1fr)}
+.hx-t{min-width:0;white-space:nowrap;text-transform:uppercase;letter-spacing:.09em;font-size:min(15px,calc((100cqi - 120px) / 17.8))}
+.hx-ic{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:linear-gradient(145deg,#26241F,#141316);border:1px solid rgba(216,180,119,.30);color:var(--hx-g2);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.hx-ic svg{width:21px;height:21px}
+.hx-c .hx-ar{margin-left:auto;flex:none;width:18px;height:18px;color:var(--hx-g2);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s var(--hx-e)}
+a.hx-c:hover{transform:translateX(-4px);box-shadow:0 28px 56px -26px rgba(0,0,0,.95),0 0 0 1px rgba(216,180,119,.35),inset 0 1px 0 rgba(255,255,255,.08)}
+a.hx-c:hover .hx-ar,a.hx-c:focus-visible .hx-ar{opacity:1;transform:none}
+a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
+/* giriş: yalnızca JS .js ekleyince gizlenir; JS yoksa içerik görünür */
+.hx.js:not(.go) .hx-a{opacity:0;transform:translateY(28px)}
+.hx.js:not(.go) .hx-ls>li{opacity:0;transform:translateX(48px)}
+.hx.js:not(.go) .hx-geo{clip-path:inset(130% -30% -30% -30%)}
+.hx.go .hx-a,.hx.go .hx-ls>li{opacity:1;transform:none;transition:opacity .7s var(--hx-e),transform .7s var(--hx-e);transition-delay:calc(var(--i) * 135ms)}
+.hx.go .hx-geo{clip-path:inset(-30% -30% -30% -30%);transition:clip-path 1s var(--hx-e) .35s}
+@media (max-width:767px){
+  .hx{padding:calc(var(--head-h) + 32px) 0 44px}
+  .hx-in{grid-template-columns:1fr;padding:0 20px;gap:22px}
+  .hx h1{font-size:clamp(28px,9vw,40px);margin:0 0 14px}
+  .hx-ek{font-size:14.5px}
+  .hx-sv{padding:14px 0}
+  .hx-ls{gap:10px}
+  .hx-ls>li:nth-child(n) .hx-c{margin:0}
+  .hx-c{min-height:56px;gap:12px;padding:8px 14px 8px 8px;border-radius:16px;font-size:15px}
+  .hx-ic{width:40px;height:40px;border-radius:11px}
+  .hx-t{letter-spacing:.07em;font-size:min(14px,calc((100cqi - 76px) / 17.4))}
+  .hx-ic svg{width:19px;height:19px}
+  .hx-geo{opacity:.65}
+  .hx-geo .g1{width:80%;right:-16%;top:-4%}
+  .hx-geo .g2{width:52%;left:-12%}
+  .hx-geo .g3,.hx-geo .g5{display:none}
+  .hx.js:not(.go) .hx-a,.hx.js:not(.go) .hx-ls>li{transform:translateY(20px)}
+  .hx.go .hx-a,.hx.go .hx-ls>li{transition-duration:.48s;transition-delay:calc(var(--i) * 85ms)}
+}
+@media (prefers-reduced-motion:reduce){
+  .hx .hx-a,.hx .hx-ls>li,.hx .hx-geo,.hx-c,.hx-ar{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
+  .hx .hx-ar{opacity:0!important}
+  a.hx-c:hover .hx-ar,a.hx-c:focus-visible .hx-ar{opacity:1!important}
+}
+/* ===== DUYURU (hero altı: canlı online eğitim) ===== */
+.dy{position:relative;background:linear-gradient(180deg,#F6F1E8,#EFE7DA);color:#F4F1EA;padding:clamp(40px,5vw,72px) 0}
+.dy-in{max-width:1200px;margin:0 auto;padding:0 var(--gut)}
+.dy-c{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr);align-items:start;gap:clamp(18px,2.4vw,32px);padding:clamp(22px,2.6vw,34px) clamp(20px,2.8vw,38px);border-radius:22px;background:radial-gradient(70% 120% at 0% 0%,rgba(216,180,119,.15),rgba(216,180,119,0) 60%),linear-gradient(180deg,rgba(32,31,35,.92),rgba(18,18,21,.92));box-shadow:0 34px 70px -30px rgba(40,28,12,.55),0 8px 20px -10px rgba(40,28,12,.25),inset 0 1px 0 rgba(255,255,255,.06)}
+.dy-c::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(110deg,rgba(247,233,204,.75),rgba(216,180,119,.25) 30%,rgba(255,255,255,.05) 60%,rgba(216,180,119,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.dy-ic{position:relative;flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#FF5A5F,#E11D2E 55%,#9F1239);color:#fff;box-shadow:0 10px 30px -8px rgba(225,29,46,.6)}
+.dy-ic svg{width:28px;height:28px;transform:rotate(-12deg)}
+.dy-ic::before,.dy-ic::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(239,68,68,.75);animation:dyPuls 2.4s cubic-bezier(.2,.6,.3,1) infinite}
+.dy-ic::after{animation-delay:1.2s}
+@keyframes dyPuls{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.65);opacity:0}}
+.dy-tx{min-width:0;container-type:inline-size}
+.dy-k{display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 16px 0 14px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(216,180,119,.5);color:#F7E9CC;font-size:13.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.dy-k i{position:relative;flex:none;width:9px;height:9px;border-radius:50%;background:#22E36B;box-shadow:0 0 10px rgba(34,227,107,.8)}
+.dy-k i::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(34,227,107,.6);animation:dyCanli 1.6s ease-out infinite}
+@keyframes dyCanli{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.dy h2{margin-top:18px;font-size:min(68px,calc(100cqi / 14.6));line-height:.98;font-weight:900;letter-spacing:-.005em;text-transform:uppercase;filter:drop-shadow(0 4px 0 rgba(0,0,0,.55)) drop-shadow(0 10px 24px rgba(0,0,0,.6))}
+.dy h2 span{display:block;white-space:nowrap}
+.dy h2 .w{color:#fff;font-size:1.18em}
+.dy h2 .y{background:linear-gradient(180deg,#FFD84A 0%,#FFB800 45%,#FF7A00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dy-ev{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)}
+.dy-date{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.dy-date span,.dy-date strong,.dy-meta span{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.dy-date span{font-size:clamp(17px,1.7vw,22px);font-weight:700;letter-spacing:.02em;text-transform:uppercase}
+.dy-date i{width:1px;height:22px;background:rgba(255,255,255,.18)}
+.dy-date strong{min-height:38px;padding:0 14px;border-radius:9px;background:linear-gradient(100deg,#F7E9CC,#D8B477 60%,#B89058);color:#111;font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:.04em}
+.dy .ico{width:19px;height:19px;flex:none;color:#D8B477}
+.dy-date strong .ico{width:17px;height:17px;color:#111}
+.dy-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#E9E5DC}
+.dy-meta .ico{width:17px;height:17px}
+.dy-bt{display:flex;flex-wrap:wrap;align-items:center;gap:16px 24px;margin-top:24px}
+.dy-cd{display:flex;gap:8px}
+.dy-cd div{display:flex;flex-direction:column;align-items:center;justify-content:center;width:68px;height:64px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(216,180,119,.3)}
+.dy-cd b{font-size:24px;line-height:1;font-weight:600;font-variant-numeric:tabular-nums;color:#F7E9CC}
+.dy-cd span{margin-top:6px;font-size:9.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:#A8A398}
+.dy-cd.live{align-items:center;height:64px;padding:0 18px;border-radius:12px;border:1px solid rgba(239,68,68,.5);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.dy-b{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:12px;background:linear-gradient(100deg,#F7E9CC,#D8B477 55%,#B89058);color:#111;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;box-shadow:0 14px 30px -14px rgba(216,180,119,.6);transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
+.dy-b svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.dy-b:hover{transform:translateY(-2px);box-shadow:0 20px 36px -14px rgba(216,180,119,.75)}
+.dy-b:hover svg{transform:translateX(3px)}
+.dy-b:focus-visible{outline:2px solid #F7E9CC;outline-offset:3px}
+@media (max-width:767px){
+  .dy{padding:32px 0}
+  .dy-in{padding:0 20px}
+  .dy-c{display:block;padding:18px 16px 18px;border-radius:18px}
+  .dy-ic{position:absolute;top:16px;left:16px;width:42px;height:42px}.dy-ic svg{width:19px;height:19px}
+  .dy-k{margin:1px 0 0 54px}
+  .dy-k{height:40px;padding:0 14px 0 12px;font-size:12px;letter-spacing:.13em}
+  .dy h2{margin-top:18px}
+  .dy-ev{margin-top:14px;padding-top:14px}
+  .dy-date{gap:8px;flex-wrap:nowrap}
+  .dy-date span{font-size:12.5px;gap:5px;letter-spacing:.01em}
+  .dy-date i{height:18px}
+  .dy-date strong{min-height:30px;padding:0 9px;font-size:13px;gap:5px}
+  .dy .ico{width:16px;height:16px}
+  .dy-meta{gap:8px 16px;font-size:11.5px;margin-top:12px}
+  .dy-meta .ico{width:15px;height:15px}
+  .dy-bt{display:grid;gap:12px;margin-top:18px;justify-content:stretch}
+  .dy-cd{display:grid;grid-template-columns:repeat(4,1fr)}
+  .dy-cd div{width:auto;height:58px}
+  .dy-cd b{font-size:21px}
+  .dy-cd.live{display:flex;justify-content:center;height:52px}
+  .dy-b{height:52px;font-size:12px}
+}
+@media (max-width:374px){.dy-date span{font-size:12px;letter-spacing:0}}
+@media (max-width:359px){.dy-date{flex-wrap:wrap}.dy-k{font-size:10.5px;letter-spacing:.1em;padding:0 12px 0 10px;gap:8px;margin-left:50px}.dy-ic{width:38px;height:38px}.dy-ic svg{width:17px;height:17px}.dy-date span{font-size:12.5px}.dy-date strong{font-size:13px;padding:0 8px}.dy-meta{font-size:10.5px;gap:6px 12px}}
+@media (prefers-reduced-motion:reduce){.dy-ic::before,.dy-ic::after,.dy-k i::after{animation:none;opacity:0}}
+.h-act{display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px;margin-top:32px}
+.tlink{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
+.tlink svg{width:15px;height:15px;transition:transform .3s var(--ease)}
+.tlink:hover{color:var(--acc)}
+.tlink:hover svg{transform:translateX(4px)}
+/* görsel perde ile açılır (aşağıdaki bölümler) */
+.rvl{position:relative;overflow:hidden}
+.rvl img{opacity:0;transform:scale(1.12);transition:transform 1.8s cubic-bezier(.2,.6,.2,1) .55s}
+.rvl::after{content:"";position:absolute;inset:0;z-index:2;background:var(--acc);transform:scaleX(0);transform-origin:left}
+.rvl.in::after{animation:perde 1.2s cubic-bezier(.77,0,.18,1) forwards}
+.rvl.in img{animation:goster 1.2s steps(1) forwards;transform:scale(1)}
+@keyframes perde{0%{transform:scaleX(0);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}50.1%{transform:scaleX(1);transform-origin:right}100%{transform:scaleX(0);transform-origin:right}}
+@keyframes goster{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@media (prefers-reduced-motion:reduce){
+  .rvl img{opacity:1;transform:none;transition:none}.rvl::after{display:none}
+}
+
+/* ===== BÖLÜM BAŞLIKLARI ===== */
+.sec{padding:var(--blok) 0}
+.sec.soft{background:var(--soft)}
+.s-head{display:grid;grid-template-columns:1fr 1fr;gap:24px 64px;align-items:end;margin-bottom:clamp(28px,3vw,48px)}
+.kick{display:inline-flex;align-items:center;gap:12px;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--acc)}
+.kick::before{content:"";width:34px;height:1px;background:currentColor}
+.s-head h2{font-size:clamp(32px,3.6vw,52px);line-height:1.06;font-weight:600;letter-spacing:-.025em;margin-top:14px;text-wrap:balance}
+.s-head p{color:var(--muted);font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.65;max-width:520px}
+
+/* ===== ALANLAR (dönüşümlü satırlar) ===== */
+.rows{display:grid;gap:clamp(64px,9vw,140px)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,110px);align-items:center}
+.row:nth-child(even) .r-im{order:2}
+.r-im{aspect-ratio:4/5;background:var(--soft)}
+.r-im img{width:100%;height:100%;object-fit:cover}
+.r-im.wide{aspect-ratio:3/2}
+.tri{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tri a{display:block}
+.tri .rvl{aspect-ratio:3/4.4}
+.tri .rvl img{width:100%;height:100%;object-fit:cover}
+.tri span{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.tri span svg{width:14px;height:14px;transition:transform .3s var(--ease)}
+.tri a:hover span{color:var(--acc)}
+.tri a:hover svg{transform:translateX(3px)}
+.r-tx .num{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.r-tx .num b{color:var(--acc);margin-right:10px}
+.row h2{font-size:clamp(32px,3.6vw,56px);line-height:1.04;font-weight:600;letter-spacing:-.03em;margin:16px 0 20px;text-wrap:balance}
+.r-tx p{color:var(--muted);font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7;max-width:500px}
+.r-tx ul{list-style:none;margin-top:22px;border-top:1px solid var(--line);max-width:500px}
+.r-tx li{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);font-size:15px;font-weight:500}
+.r-tx li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--acc)}
+.r-tx .h-act{margin-top:30px}
+@media (max-width:1023px){
+  .row{grid-template-columns:1fr;gap:28px}
+  .row:nth-child(even) .r-im{order:0}
+  .r-im{aspect-ratio:4/3.6}
+}
+
+/* ===== SEÇİLİ İŞLER ===== */
+.works{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.works a{position:relative;aspect-ratio:4/5;overflow:hidden;background:#eee}
+.works img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease),filter .4s}
+.works a:hover img{transform:scale(1.04)}
+.w-more{display:flex;justify-content:center;margin-top:clamp(28px,3vw,44px)}
+
+/* ===== HAKKIMDA ===== */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,5vw,88px);align-items:center}
+.about .ph{aspect-ratio:1100/1020;overflow:hidden;background:#ddd}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+.about h2{font-size:clamp(32px,3.6vw,52px);line-height:1.06;font-weight:600;letter-spacing:-.025em;margin:14px 0 22px}
+.about p{color:var(--muted);font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.7}
+.about p+p{margin-top:14px}
+.facts{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:clamp(24px,4vw,56px);margin-top:34px;padding-top:28px;border-top:1px solid var(--line)}
+.facts strong{display:block;font-size:clamp(28px,2.8vw,40px);font-weight:600;letter-spacing:-.03em;line-height:1}
+.facts span{display:block;font-size:13px;color:var(--muted);margin-top:8px}
+
+/* ===== İLETİŞİM ===== */
+.contact{background:var(--ink);color:#fff;padding:var(--blok) 0}
+.contact .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px 80px;align-items:end}
+.contact h2{font-size:clamp(34px,4.2vw,60px);line-height:1.04;font-weight:600;letter-spacing:-.03em;text-wrap:balance}
+.contact h2 em{font-style:normal;color:var(--gold)}
+.contact p{color:rgba(255,255,255,.72);font-size:clamp(15.5px,1.2vw,17.5px);line-height:1.65;margin-top:18px;max-width:520px}
+.c-links{display:grid;gap:0}
+.c-links a{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;border-bottom:1px solid #ffffff1c;font-size:clamp(16px,1.4vw,19px);font-weight:500;transition:color .25s}
+.c-links a:first-child{border-top:1px solid #ffffff1c}
+.c-links a small{display:block;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(233,201,138,.8);margin-bottom:4px}
+.c-links a:hover{color:var(--gold)}
+.c-links svg{width:18px;height:18px;flex:none;transition:transform .3s var(--ease)}
+.c-links a:hover svg{transform:translateX(4px)}
+.foot{background:var(--ink);color:rgba(255,255,255,.5);font-size:13px;border-top:1px solid #ffffff12}
+.foot .wrap{display:flex;justify-content:space-between;gap:16px;padding-top:24px;padding-bottom:calc(24px + env(safe-area-inset-bottom,0px));flex-wrap:wrap}
+.foot a:hover{color:#fff}
+
+/* görünce açılma */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ---- TABLET ---- */
+@media (max-width:1199px){
+  .nav a{padding:10px 9px;font-size:13.5px}
+}
+/* ---- MOBİL + KÜÇÜK TABLET ---- */
+@media (max-width:1023px){
+  :root{--head-h:64px;--gut:20px}
+  .nav,.h-cta{display:none}
+  .m-btn{display:grid}
+  .marka{font-size:14.5px}
+  .marka img{height:42px}
+  .head.scrolled .wrap{height:var(--head-h)}
+  .s-head{grid-template-columns:1fr;align-items:start}
+  .about{grid-template-columns:1fr}
+  .contact .wrap{grid-template-columns:1fr}
+  .works{grid-template-columns:repeat(2,1fr);gap:4px}
+}
+@media (max-width:599px){
+  .facts{grid-template-columns:repeat(3,1fr);gap:16px}
+  .facts span{font-size:12px}
+}
+@media (prefers-reduced-motion:reduce){
+}
+</style>
+</head>
+<body>
+
+<header class="head" id="head">
+  <div class="wrap">
+    <a class="marka" href="/" aria-label="Savaş Çıkrak, ana sayfa"><img src="/yapay-zeka-ile-urun-fotografi/assets/logo-mark.png" width="52" height="80" alt="">Savaş Çıkrak</a>
+    <nav class="nav" aria-label="Ana menü">
+      <a href="#egitimler">Fotoğrafçılık Eğitimleri</a>
+      <a href="#cekimler">Çekimler</a>
+      <a href="#sosyal-medya">Sosyal Medya</a>
+      <a href="/fotograf-uretim-sistemi/">Firmalara Özel</a>
+      <a href="/portfolyo/">Portfolyo</a>
+      <a href="#hakkimda">Savaş Çıkrak Kimdir?</a>
+    </nav>
+    <a class="h-cta" href="#iletisim"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
+    <button class="m-btn" id="mOpen" aria-label="Menüyü aç" aria-expanded="false" aria-controls="drawer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<div class="drawer" id="drawer" aria-hidden="true">
+  <button class="x" id="mClose" aria-label="Menüyü kapat"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <a class="l" href="/yapay-zeka-ile-urun-fotografi/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>Fotoğrafçılık Eğitimleri</a>
+  <a class="l" href="/portfolyo/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span>Fotoğraf ve Video Çekimleri</a>
+  <a class="l" href="#sosyal-medya"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>Sosyal Medya Çalışmaları</a>
+  <a class="l" href="/fotograf-uretim-sistemi/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>Firmalara Özel Çözümler</a>
+  <a class="l" href="#hakkimda"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Savaş Çıkrak Kimdir?</a>
+  <a class="l" href="#iletisim"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
+</div>
+
+<main>
+<section class="hx" id="hero" aria-labelledby="hx-h">
+  <div class="hx-in">
+    <div class="hx-tx">
+      <h1 class="hx-a" id="hx-h" style="--i:0"><span>YENİ NESİL</span> <em>GÖRSEL ÜRETİM</em></h1>
+      <p class="hx-ek hx-a" style="--i:1">Fikirden görsele, deneyimden eğitime.</p>
+    </div>
+    <div class="hx-sv">
+      <div class="hx-geo" aria-hidden="true"><i class="g1"></i><i class="g2"></i><i class="g3"></i><i class="g4"></i><i class="g5"></i></div>
+      <ul class="hx-ls" aria-label="Çalışma alanları">
+      <li style="--i:2"><a class="hx-c" href="/yapay-zeka-ile-urun-fotografi/"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span><span class="hx-t">Yapay zeka çalışmaları</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li style="--i:3"><a class="hx-c" href="#cekimler"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span><span class="hx-t">Fotoğraf çekimleri</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li style="--i:4"><a class="hx-c" href="#egitimler"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="hx-t">Fotoğrafçılık eğitimleri</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li style="--i:5"><div class="hx-c"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span><span class="hx-t">Tanıtım ve reklam filmleri</span></div></li>
+      <li style="--i:6"><a class="hx-c" href="#sosyal-medya"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span><span class="hx-t">Sosyal medya çalışmaları</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<script>matchMedia('(prefers-reduced-motion: reduce)').matches||document.hidden||document.getElementById('hero').classList.add('js')</script>
+<!-- DUYURU: canlı online eğitim (18 Ekim 2026 02:00 sonrası kendiliğinden kaldırılır) -->
+<section class="dy" id="duyuru" aria-labelledby="dy-h">
+  <div class="dy-in">
+    <div class="dy-c">
+      <span class="dy-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>
+      <div class="dy-tx">
+        <p class="dy-k"><i aria-hidden="true"></i>Canlı online eğitim</p>
+        <h2 id="dy-h"><span class="w">Ürün fotoğraflarını</span> <span class="y">yapay zekayla dönüştür</span></h2>
+        <div class="dy-ev">
+          <div class="dy-date"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>20:00</strong></div>
+          <p class="dy-meta"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></svg>Canlı yayın</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h11M6.5 20.5h11M7.5 3.5c0 4.5 4.5 5.5 4.5 8.5s-4.5 4-4.5 8.5M16.5 3.5c0 4.5-4.5 5.5-4.5 8.5s4.5 4 4.5 8.5"/></svg>5 saat</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="13" height="11" rx="2.2"/><path d="M16 10.5l5-3v9l-5-3"/></svg>Kayıt var</span></p>
+        </div>
+        <div class="dy-bt">
+          <div class="dy-cd" id="dyCd" role="timer" aria-label="Eğitime kalan süre"><div><b data-u="g">--</b><span>Gün</span></div><div><b data-u="s">--</b><span>Saat</span></div><div><b data-u="d">--</b><span>Dakika</span></div><div><b data-u="n">--</b><span>Saniye</span></div></div>
+          <a class="dy-b" href="/yapay-zeka-ile-urun-fotografi/">Detaylar ve kayıt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>(function(){var B=+new Date('2026-10-17T20:00:00+03:00'),E=+new Date('2026-10-18T02:00:00+03:00'),d=document.getElementById('duyuru');if(Date.now()>E){d.remove();return}var c=document.getElementById('dyCd'),u={};c.querySelectorAll('b').forEach(function(b){u[b.dataset.u]=b});function p(n){return(n<10?'0':'')+n}function t(){var r=B-Date.now();if(r<=0){c.className='dy-cd live';c.textContent='Şu an yayında';clearInterval(h);return}var x=Math.floor(r/1e3);u.g.textContent=p(Math.floor(x/86400));u.s.textContent=p(Math.floor(x%86400/3600));u.d.textContent=p(Math.floor(x%3600/60));u.n.textContent=p(x%60)}var h=setInterval(t,1000);t()})()</script>
+
+<!-- ALANLAR -->
+<section class="sec" id="alanlar">
+  <div class="wrap">
+    <div class="s-head rv">
+      <div><span class="kick">Neler yapıyorum</span><h2>Işık, çekim, yapay zeka ve eğitim</h2></div>
+      <p>Markalar ve ajanslarla otuz yılı aşkın görsel üretim deneyimini bugün yeni nesil yapay zeka araçlarıyla birleştiriyorum.</p>
+    </div>
+    <div class="rows">
+
+      <article class="row" id="egitimler">
+        <div class="r-im rvl"><img src="/assets/still-life.jpg" alt="" loading="lazy"></div>
+        <div class="r-tx rv">
+          <span class="num"><b>01</b>Eğitimler</span>
+          <h2>Işığı anlamak, <em>yapay zekayı yönetmek.</em></h2>
+          <p>Uzun yıllardır verdiğim fotoğraf eğitimlerini bugün yapay zeka ile ticari görsel üretimiyle birlikte anlatıyorum.</p>
+          <ul><li>Canlı online eğitimler</li><li>Video dersler</li><li>Atölye</li></ul>
+          <div class="h-act"><a class="btn p" href="/yapay-zeka-ile-urun-fotografi/">Eğitimleri incele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tlink" href="https://wa.me/905310317444?text=Merhaba%2C%20e%C4%9Fitimler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Bilgi al <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="row" id="cekimler">
+        <div class="tri">
+          <a href="/portfolyo/"><div class="rvl"><img src="/portfolyo/foto/viquen-1-k.webp" alt="Ürün fotoğrafı" loading="lazy"></div><span>Ürün <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a href="/portfolyo/"><div class="rvl"><img src="/portfolyo/foto/beyoglu-cikolata-001-k.webp" alt="Yemek fotoğrafı" loading="lazy"></div><span>Yemek <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a href="/portfolyo/"><div class="rvl"><img src="/yapay-zeka-ile-urun-fotografi/assets/portre.webp" alt="Portre fotoğrafı" loading="lazy"></div><span>Portre <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        </div>
+        <div class="r-tx rv">
+          <span class="num"><b>02</b>Fotoğraf ve video çekimleri</span>
+          <h2>Ürün, yemek, portre. <em>Işıkla kurulan görüntü.</em></h2>
+          <p>Markalar için kampanya, katalog, e-ticaret ve video içerikleri. Uzmanlık alanım ışık, özellikle flaş.</p>
+          <div class="h-act"><a class="btn p" href="/portfolyo/">Portfolyo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tlink" href="https://wa.me/905310317444?text=Merhaba%2C%20%C3%A7ekim%20i%C3%A7in%20teklif%20almak%20istiyorum." target="_blank" rel="noopener">Teklif al <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="row" id="sosyal-medya">
+        <div class="r-im rvl"><img src="/yapay-zeka-ile-urun-fotografi/assets/gozluk-kampanya-serisi.webp" alt="" loading="lazy"></div>
+        <div class="r-tx rv">
+          <span class="num"><b>03</b>Sosyal medya çalışmaları</span>
+          <h2>Takip edilen içerik, <em>markanın diliyle.</em></h2>
+          <p>Kendi hesabımda 125 bini aşkın takipçiyle büyüttüğüm içerik dilini markalar için üretiyorum.</p>
+          <ul><li>Reels ve kısa video</li><li>Kampanya görselleri</li><li>Marka işbirlikleri</li></ul>
+          <div class="h-act"><a class="btn p" href="#iletisim">Birlikte çalışalım <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tlink" href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener">Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </article>
+
+      <article class="row" id="firmalar">
+        <div class="r-im wide rvl"><img src="/fotograf-uretim-sistemi/assets/studio.webp" alt="" loading="lazy"></div>
+        <div class="r-tx rv">
+          <span class="num"><b>04</b>Firmalar için fotoğraf çözümleri</span>
+          <h2>Kendi fotoğrafını <em>kendi üreten firma.</em></h2>
+          <p>Şirket içinde ürün fotoğrafını sürekli ve tutarlı üreten bir sistem kuruyorum.</p>
+          <ul><li>Stüdyo kurulumu</li><li>Ekip eğitimi</li><li>Büyük ürün serilerinde iş akışı</li></ul>
+          <div class="h-act"><a class="btn p" href="/fotograf-uretim-sistemi/">Detaylar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tlink" href="#iletisim">Görüşme planla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- SEÇİLİ İŞLER -->
+<section class="sec soft" id="isler">
+  <div class="wrap">
+    <div class="s-head rv">
+      <div><span class="kick">Seçili işler</span><h2>Son çalışmalardan</h2></div>
+      <p>Ürün, yemek, still life ve kampanya çekimlerinden bir seçki. Tamamı portfolyoda.</p>
+    </div>
+    <div class="works rv">
+      <a href="/portfolyo/"><img src="/portfolyo/foto/viquen-1-k.webp" alt="Ürün fotoğrafı" loading="lazy"></a>
+      <a href="/portfolyo/"><img src="/portfolyo/foto/still-damla-k.webp" alt="Still life fotoğrafı" loading="lazy"></a>
+      <a href="/portfolyo/"><img src="/portfolyo/foto/bal-7-bahar-02-k.webp" alt="Ürün fotoğrafı" loading="lazy"></a>
+      <a href="/portfolyo/"><img src="/portfolyo/foto/lemm-001-k.webp" alt="Ürün fotoğrafı" loading="lazy"></a>
+      <a href="/portfolyo/"><img src="/portfolyo/foto/beyoglu-cikolata-001-k.webp" alt="Yemek fotoğrafı" loading="lazy"></a>
+      <a href="/portfolyo/"><img src="/portfolyo/foto/still-krem-2-k.webp" alt="Kozmetik fotoğrafı" loading="lazy"></a>
+      <a href="/portfolyo/"><img src="/portfolyo/foto/qarma-01-k.webp" alt="Ürün fotoğrafı" loading="lazy"></a>
+      <a href="/portfolyo/"><img src="/portfolyo/foto/tost-makinesi-01-k.webp" alt="Ev aleti fotoğrafı" loading="lazy"></a>
+    </div>
+    <div class="w-more"><a class="btn d" href="/portfolyo/">Tüm portfolyo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<!-- HAKKIMDA -->
+<section class="sec" id="hakkimda">
+  <div class="wrap about">
+    <div class="ph rv"><img src="/assets/ana/savas-profil.webp" width="1100" height="1020" alt="Savaş Çıkrak" loading="lazy"></div>
+    <div class="rv">
+      <span class="kick">Hakkımda</span>
+      <h2>Savaş Çıkrak</h2>
+      <p>Fotoğrafçı ve yönetmenim. Otuz yılı aşkın süredir markalar ve ajanslarla görsel üretim yapıyorum. Uzmanlık alanım ışık, özellikle flaş.</p>
+      <p>Uzun yıllardır fotoğraf eğitimi veriyorum. Bugün bu birikimi yeni nesil yapay zeka araçlarıyla birleştirip ticari görseller üretiyor, bu alanda kapsamlı eğitimler hazırlıyorum.</p>
+      <div class="facts">
+        <div><strong>30+</strong><span>yıl görsel üretim</span></div>
+        <div><strong>125K+</strong><span>Instagram takipçisi</span></div>
+        <div><strong>3</strong><span>alan: fotoğraf, video, yapay zeka</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- İLETİŞİM -->
+<section class="contact" id="iletisim">
+  <div class="wrap">
+    <div class="rv">
+      <span class="kick" style="color:var(--gold)">İletişim</span>
+      <h2 style="margin-top:14px">Bir projeniz mi var? <em>Konuşalım.</em></h2>
+      <p>Çekim, eğitim, sosyal medya ya da firmanıza özel bir sistem için yazın, en kısa sürede dönüş yapayım.</p>
+    </div>
+    <div class="c-links rv">
+      <a href="https://wa.me/905310317444?text=Merhaba%2C%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener"><span><small>WhatsApp</small>0531 031 74 44</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="mailto:iletisim@savascikrak.com"><span><small>E-posta</small>iletisim@savascikrak.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener"><span><small>Instagram</small>@savascikrak</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap"><span>© 2026 Savaş Çıkrak</span><a href="/kvkk/">KVKK Aydınlatma Metni</a></div></footer>
+
+<script>
+(()=>{
+  /* üst bar */
+  const head=document.getElementById('head');
+  const sc=()=>head.classList.toggle('scrolled',scrollY>40);sc();addEventListener('scroll',sc,{passive:true});
+  /* mobil menü */
+  const d=document.getElementById('drawer'),mo=document.getElementById('mOpen'),mc=document.getElementById('mClose');
+  const set=o=>{d.classList.toggle('open',o);d.setAttribute('aria-hidden',!o);mo.setAttribute('aria-expanded',o);document.body.classList.toggle('lock',o);};
+  mo.onclick=()=>set(true);mc.onclick=()=>set(false);
+  d.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+  addEventListener('keydown',e=>{if(e.key==='Escape'&&d.classList.contains('open'))set(false);});
+
+/* hero giriş animasyonu (bir kez) */
+  const hx=document.getElementById('hero');
+  if(hx.classList.contains('js')){
+    if('IntersectionObserver' in window){const ho=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)){setTimeout(()=>hx.classList.add('go'),30);ho.disconnect();}},{threshold:.1});ho.observe(hx);setTimeout(()=>{hx.classList.add('go');if(document.hidden)hx.classList.remove('js','go');},1500);}
+    else hx.classList.add('go');
+  }
+
+  /* görünce açılma */
+  const rv=document.querySelectorAll('.rv,.rvl');
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{rootMargin:'0px 0px -8% 0px',threshold:.12});rv.forEach(e=>io.observe(e));}else rv.forEach(e=>e.classList.add('in'));
+})();
+</script>
+</body>
+</html>

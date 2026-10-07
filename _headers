@@ -15,3 +15,8 @@
   X-Robots-Tag: noindex, nofollow, noarchive
 /a1
   X-Robots-Tag: noindex, nofollow, noarchive
+
+/anasayfa/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+/anasayfa
+  X-Robots-Tag: noindex, nofollow, noarchive
