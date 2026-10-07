@@ -113,8 +113,8 @@ body.lock{overflow:hidden}
 
 /* HERO SLIDER */
 .hero{position:relative;height:clamp(560px,calc(100svh - var(--top-h) - var(--head-h)),860px);overflow:hidden;background:var(--navy);color:#fff;isolation:isolate}
-.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity 1.1s var(--ease),visibility 0s 1.1s}
-.slide.on{opacity:1;visibility:visible;transition:opacity 1.1s var(--ease)}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .55s var(--ease),visibility 0s .55s}
+.slide.on{opacity:1;visibility:visible;transition:opacity .55s var(--ease)}
 .slide .ph{position:absolute;inset:0;overflow:hidden}
 .slide .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.1);transition:transform 7.5s cubic-bezier(.2,.5,.3,1)}
 .slide.on .ph img{transform:scale(1)}
@@ -368,6 +368,40 @@ body.lock{overflow:hidden}
   .dr small{font-size:12.5px;margin-top:4px}
 }
 @media (prefers-reduced-motion:reduce){.dr img,.dr .tx::before{transition:none}}
+/* ===== ÜCRETSİZ MUAYENE (randevu) ===== */
+section[id]{scroll-margin-top:var(--head-h)}
+.appt{padding:clamp(80px,10vw,140px) 0;background:#fff}
+.ap-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(32px,6vw,96px);align-items:start}
+.appt h2{font-size:clamp(30px,3.4vw,46px);line-height:1.12;font-weight:600;letter-spacing:-.022em;color:var(--navy);text-wrap:balance}
+.appt h2 em{font-style:normal;color:var(--gold-2)}
+.ap-txt p{font-size:16px;line-height:1.75;color:#4E5A62;margin-top:22px;max-width:480px}
+.ap-dir{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:32px;padding-top:22px;border-top:1px solid var(--line);list-style:none}
+.ap-dir a{display:inline-flex;align-items:center;gap:10px;font-size:15px;font-weight:500;color:var(--navy);transition:color .25s}
+.ap-dir a:hover{color:var(--gold-2)}
+.ap-dir svg{width:18px;height:18px;color:var(--gold-2);flex:none}
+.ap-form{display:grid;gap:26px}
+.ap-f{position:relative;display:block}
+.ap-f span{display:block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.ap-f input{width:100%;height:52px;border:0;border-bottom:1px solid #CFD5D8;border-radius:0;background:transparent;font:inherit;font-size:17px;color:var(--ink);padding:0;outline:none;transition:border-color .25s}
+.ap-f::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.ap-f:focus-within::after{transform:scaleX(1)}
+.ap-f input::placeholder{color:#A9B2B7}
+.ap-kv{display:flex;gap:12px;align-items:flex-start;font-size:13.5px;line-height:1.55;color:var(--muted);cursor:pointer}
+.ap-kv input{flex:none;width:18px;height:18px;margin-top:1px;accent-color:var(--navy)}
+.ap-kv a{color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+.ap-alt{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.ap-alt .btn{border:0;cursor:pointer;font-family:inherit}
+.ap-ok{font-size:15px;color:var(--navy);display:none}
+.ap-form.gitti .ap-ok{display:block}
+@media (max-width:1023px){
+  .ap-grid{grid-template-columns:1fr;gap:44px}
+}
+@media (max-width:599px){
+  .ap-txt p{font-size:15.5px;margin-top:16px}
+  .ap-dir{flex-direction:column;gap:14px;margin-top:26px}
+  .ap-form{gap:22px}
+  .ap-alt .btn{width:100%}
+}
 </style>
 </head>
 <body>
@@ -586,6 +620,27 @@ body.lock{overflow:hidden}
     </ul>
   </div>
 </section>
+<section class="appt" id="randevu" aria-labelledby="ap-baslik">
+  <div class="wrap ap-grid">
+    <div class="ap-txt">
+      <h2 class="rv" id="ap-baslik">Ücretsiz Muayene İçin <em>Hemen Randevu Alın</em></h2>
+      <p class="rv d1">Ücretsiz muayene için randevu formunu doldurarak iletişim bilgilerinizi bizimle paylaşın, sizi hemen arayalım. Ücretsiz muayene randevunuzu planlayalım!</p>
+      <ul class="ap-dir rv d2">
+        <li><a href="tel:+902163462122"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>+90 216 346 21 22</a></li>
+        <li><a href="https://wa.me/905453743432" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M11 18.5h2"/></svg>+90 545 374 34 32</a></li>
+      </ul>
+    </div>
+    <form class="ap-form rv d2" id="ap-form" novalidate>
+      <label class="ap-f"><span>Adınız Soyadınız</span><input type="text" name="ad" autocomplete="name" required></label>
+      <label class="ap-f"><span>Telefon Numaranız</span><input type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="05xx xxx xx xx" required></label>
+      <label class="ap-kv"><input type="checkbox" name="kvkk" required><span><a href="#">KVKK Aydınlatma Metni</a>'ni okudum, iletişim bilgilerimin randevu amacıyla işlenmesini kabul ediyorum.</span></label>
+      <div class="ap-alt">
+        <button class="btn d" type="submit">Gönder<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h15M13 6l6 6-6 6"/></svg></button>
+        <p class="ap-ok" role="status">Teşekkürler, sizi en kısa sürede arayacağız.</p>
+      </div>
+    </form>
+  </div>
+</section>
 </main>
 
 <script>
@@ -638,6 +693,11 @@ body.lock{overflow:hidden}
   if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{rootMargin:'0px 0px -8% 0px',threshold:.12});rv.forEach(e=>io.observe(e));}else rv.forEach(e=>e.classList.add('in'));
   pre(1);restartBars();schedule();
 })();
+</script>
+<script>
+/* randevu formu (örnek sayfa: gönderim yok, sadece doğrulama + teşekkür) */
+(()=>{const f=document.getElementById('ap-form');if(!f)return;
+f.addEventListener('submit',e=>{e.preventDefault();if(!f.checkValidity()){f.reportValidity();return}f.classList.add('gitti');f.reset()});})();
 </script>
 </body>
 </html>
