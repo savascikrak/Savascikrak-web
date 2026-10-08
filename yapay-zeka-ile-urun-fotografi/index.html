@@ -874,6 +874,8 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 .mh-or{display:flex;height:calc(100% - 40px);will-change:transform}
 .mh-oc{position:relative;flex:0 0 100%;height:100%}
 .mh-oc .mh-once{transition:none}
+/* ust kart bosluklari yariya (9 Ekim): ust 14/32px, kart-slider arasi 11px */
+.mh{padding-top:calc(var(--sec-y) / 2);gap:11px}
 .mh-sl{margin-bottom:30px}
 .mh-once img{display:block;width:100%;height:auto;border-radius:8px;aspect-ratio:2/3;object-fit:cover}
 .mh-once.mh-yatay img{aspect-ratio:16/9}
@@ -894,7 +896,7 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 .mh-sl:hover .mh-ok,.mh-ok:focus-visible{opacity:1}
 .mh-ok:hover{color:#8A4B1F}
 @media (min-width:900px){
-  .mh{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);column-gap:56px;align-items:center;padding-top:64px}
+  .mh{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);column-gap:56px;align-items:center;padding-top:32px}
   .mh-dy{padding:32px 28px 26px;gap:12px}.mh-lbl{font-size:30px}.mh-tarih{font-size:30px}.mh-meta{font-size:15px}
   .mh-sh{padding:68px 28px 0}.mh-tag{top:20px;right:20px;font-size:12px}
   .mh-ok{display:inline-flex;align-items:center;justify-content:center}
