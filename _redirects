@@ -6,3 +6,5 @@
 /egitim-sayfasi-master /yapay-zeka-ile-urun-fotografi/ 301
 /beyaz-ayari/ / 301
 /beyaz-ayari / 301
+/fotograf-uretim-sistemi /firmalara-ozel-fotograf-cozumleri/ 301
+/fotograf-uretim-sistemi/* /firmalara-ozel-fotograf-cozumleri/:splat 301
