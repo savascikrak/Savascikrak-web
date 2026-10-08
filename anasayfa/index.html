@@ -10,7 +10,8 @@
 <link rel="icon" href="/favicon.ico?v=3" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-64.png?v=3">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
-<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script>
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!document.hidden){
   document.documentElement.classList.add('motion-ready');
@@ -103,7 +104,7 @@ body.lock{overflow:hidden}
 .hx-ls>li:nth-child(4) .hx-c{margin:0 0 0 20px}
 .hx-ls>li:nth-child(5) .hx-c{margin:0 20px 0 0}
 .hx-ls{container-type:inline-size;grid-template-columns:minmax(0,1fr)}
-.hx-t{min-width:0;white-space:nowrap;text-transform:uppercase;letter-spacing:.09em;font-size:min(15px,calc((100cqi - 120px) / 17.8))}
+.hx-t{min-width:0;white-space:nowrap;text-transform:uppercase;letter-spacing:.09em;font-size:min(15px,calc((100cqi - 120px) / 23.8))}
 .hx-ic{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:linear-gradient(145deg,#26241F,#141316);border:1px solid rgba(216,180,119,.30);color:var(--hx-g2);box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
 .hx-ic svg{width:21px;height:21px}
 .hx-c .hx-ar{margin-left:auto;flex:none;width:18px;height:18px;color:var(--hx-g2);opacity:0;transform:translateX(-6px);transition:opacity .3s,transform .3s var(--hx-e)}
@@ -126,7 +127,8 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
   .hx-ls>li:nth-child(n) .hx-c{margin:0}
   .hx-c{min-height:56px;gap:12px;padding:8px 14px 8px 8px;border-radius:16px;font-size:15px}
   .hx-ic{width:40px;height:40px;border-radius:11px}
-  .hx-t{letter-spacing:.07em;font-size:min(14px,calc((100cqi - 76px) / 17.4))}
+  .hx-t{letter-spacing:.03em;font-size:min(14px,calc((100cqi - 76px) / 22.4))}
+  .hx-c .hx-ar{display:none}
   .hx-ic svg{width:19px;height:19px}
   .hx-geo{opacity:.65}
   .hx-geo .g1{width:80%;right:-16%;top:-4%}
@@ -388,6 +390,61 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
 .ed-image img{width:100%;height:100%;object-fit:cover;display:block}
 .ed-visual figcaption{margin-top:12px;display:flex;align-items:center;gap:8px;color:#71695C;font-size:11px;line-height:1.5;letter-spacing:.05em}
 .ed-visual figcaption::before{content:"";width:16px;height:1px;background:#B58A4B;flex:none}
+.ed-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(32px,5vw,80px);align-items:end}
+.ed-intro .ed-lead{margin-top:0}
+.ed-intro .ed-copy{padding-left:18px;border-left:2px solid #B58A4B}
+.ed-sub-w{container-type:inline-size;margin-top:clamp(48px,6vw,84px)}
+.ed-sub{display:flex;align-items:flex-start;gap:.32em;max-width:1000px;font-size:clamp(34px,4.6vw,60px);line-height:1.04;font-weight:900;letter-spacing:-.005em;text-transform:uppercase;color:#16151A}
+.ed-sub .ai{flex:none;display:grid;place-items:center;width:1.04em;height:1.04em;border-radius:.22em;background:linear-gradient(145deg,#26252A,#121114);color:#E2BF82;box-shadow:0 10px 22px -12px rgba(0,0,0,.55)}
+.ed-sub .ai svg{width:62%;height:62%}
+.ed-sub .tx{min-width:0;text-wrap:balance}
+.ed-sub .tx span{display:inline}
+.ed-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center;margin-top:clamp(24px,3vw,36px)}
+.ed-pair{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:12px;align-items:center}
+.ed-pair figure{min-width:0}
+.ed-pair figcaption{margin-top:12px;display:flex;align-items:center;gap:8px;color:#5E5850;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.ed-pair figcaption b{color:#9A7442}
+.ed-arrow{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#16151A;color:#F7E9CC;margin-top:-28px}
+.ed-arrow svg{width:18px;height:18px}
+.ed-text .ed-copy+.ed-copy{margin-top:14px}
+/* Eğitim bloğu v3 (e2-) */
+.e2-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(32px,5vw,80px);align-items:end}
+.e2-p{margin-top:16px;padding-left:18px;border-left:2px solid #B58A4B;color:#55505A;font-size:16px;line-height:1.75;max-width:560px}
+.e2-hero{margin-top:clamp(36px,4.4vw,60px);position:relative;border-radius:20px;overflow:hidden;aspect-ratio:16/9;background:#EFEBE4;box-shadow:0 30px 60px -36px rgba(40,28,12,.5)}
+.e2-hero::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(120deg,rgba(176,138,82,.7),rgba(176,138,82,.12) 45%,rgba(176,138,82,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.e2-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.e2-ai{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(32px,5vw,80px);align-items:center;margin-top:clamp(44px,5.4vw,76px)}
+.e2-ai .e2-p{margin-top:0}
+.e2-subw{container-type:inline-size}
+.e2-sub,.e2-lead{display:flex;align-items:center;gap:14px;font-size:min(24px,calc((100cqi - 50px) / 19.2));font-weight:600;line-height:1.4;letter-spacing:-.02em;color:#16151A;white-space:nowrap}
+.e2-sub::before,.e2-lead::before{content:"";flex:none;width:36px;height:2px;border-radius:2px;background:linear-gradient(90deg,#B58A4B,rgba(181,138,75,.15))}
+.e2-sub .tx{min-width:0}
+.e2-sub .tx span{display:inline}
+.e2-pair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center;max-width:780px;margin:clamp(32px,4vw,52px) auto 0}
+.e2-pair figure{min-width:0}
+.e2-img{overflow:hidden;border-radius:18px;aspect-ratio:2/3;background:#F1EFEC;box-shadow:0 18px 40px -26px rgba(54,37,14,.35)}
+.e2-img img{width:100%;height:100%;object-fit:cover;display:block}
+.e2-pair figcaption{margin-top:12px;display:flex;align-items:center;gap:8px;color:#5E5850;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.e2-pair figcaption b{color:#9A7442}
+.e2-pair figcaption .m{display:none}
+@media (max-width:767px){.e2-pair figcaption .d{display:none}.e2-pair figcaption .m{display:inline}}
+.e2-arrow{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:#16151A;color:#F7E9CC;margin-top:-28px}
+.e2-arrow svg{width:18px;height:18px}
+.e2-end{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:clamp(32px,4vw,48px)}
+.e2-end .ed-actions{justify-content:center}
+@media (max-width:767px){
+  .e2-head,.e2-ai{grid-template-columns:minmax(0,1fr);gap:18px}
+  .e2-p{font-size:15px;line-height:1.7}
+  .e2-hero{border-radius:14px;margin-top:28px}
+  .e2-ai{margin-top:40px}
+  .e2-sub,.e2-lead{gap:10px}
+  .e2-sub::before,.e2-lead::before{width:24px}
+  .e2-sub,.e2-lead{gap:10px}
+  .e2-sub .tx span{display:inline}
+  .e2-pair{gap:8px;margin-top:28px}.e2-arrow{width:30px;height:30px;margin-top:-24px}.e2-arrow svg{width:14px;height:14px}
+  .e2-img{border-radius:14px}.e2-pair figcaption{font-size:10px;letter-spacing:.03em;gap:5px}
+  .e2-end{align-items:stretch}
+}
 .ed-topics{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:52px;padding-top:28px;border-top:1px solid #E8E2D9}
 .ed-topics li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:start}
 .ed-topics .ed-num{font-size:12px;font-weight:600;color:#9A7442;margin-top:3px}
@@ -401,6 +458,13 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
   .ed-actions{gap:10px 20px;margin-top:22px}.ed-button{width:100%}.ed-link{min-height:44px}
   .ed-visual{gap:12px;padding:0 0 12px}.ed-visual figure:last-child{margin-top:32px}.ed-image{border-radius:14px}
   .ed-visual figcaption{font-size:11px;letter-spacing:0}.ed-topics{grid-template-columns:1fr;gap:0;margin-top:28px;padding-top:0}
+  .ed-head,.ed-body{grid-template-columns:minmax(0,1fr)}.ed-head{gap:18px}
+  .ed-sub-w{margin-top:40px}
+  .ed-sub{gap:12px;font-size:calc((100cqi - 12px) / 17.7)}
+  .ed-sub .ai{width:3.12em;height:3.12em;border-radius:.5em}
+  .ed-sub .tx span{display:block;white-space:nowrap}
+  .ed-pair{gap:8px}.ed-arrow{width:30px;height:30px;margin-top:-24px}.ed-arrow svg{width:14px;height:14px}
+  .ed-pair figcaption{font-size:10px;letter-spacing:.03em;gap:5px}
   .ed-topics li{padding:20px 0;border-bottom:1px solid #E8E2D9;gap:16px}.ed-topics h3{font-size:16px}.ed-topics p{font-size:14px}
 }
 @media(prefers-reduced-motion:reduce){.ed-button{transition:none}.ed-button:hover{transform:none}}
@@ -508,6 +572,18 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
   html{scroll-behavior:auto}
   .rv,.rvl img,.motion-ready .rv:not(.in),.motion-ready .rvl:not(.in) img{opacity:1;transform:none;transition:none}
 }
+
+/* ===== SITE SISTEMI (8 Ekim): Manrope + kirmizi + bolum boslugu standardi ===== */
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(/fonts/manrope-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(/fonts/manrope-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+body,button,input,select,textarea{font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif}
+:root{--blok:28px}
+@media (min-width:900px){:root{--blok:52px}}
+.dy,.pf,.ed{padding-top:var(--blok) !important;padding-bottom:var(--blok) !important}
+.dy h2 .y{background:linear-gradient(100deg,#F7E9CC 0%,#D8B477 45%,#9A7442 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.dy-ic{background:#8A4B1F;box-shadow:0 10px 30px -8px rgba(138,75,31,.6)}
+.dy-ic::before,.dy-ic::after{border-color:rgba(138,75,31,.75)}
+.dy h2 .y{font-size:1.011em}
 </style>
 </head>
 <body>
@@ -519,7 +595,7 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
       <a href="#egitimler">Fotoğrafçılık Eğitimleri</a>
       <a href="#fotograf">Çekimler</a>
       <a href="#sosyal-medya">Sosyal Medya</a>
-      <a href="/fotograf-uretim-sistemi/">Firmalara Özel</a>
+      <a href="/firmalara-ozel-fotograf-cozumleri/">Firmalara Özel</a>
       <a href="/portfolyo/">Portfolyo</a>
       <a href="#hakkimda">Savaş Çıkrak Kimdir?</a>
     </nav>
@@ -533,7 +609,7 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
   <a class="l" href="/yapay-zeka-ile-urun-fotografi/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>Fotoğrafçılık Eğitimleri</a>
   <a class="l" href="/portfolyo/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span>Fotoğraf ve Video Çekimleri</a>
   <a class="l" href="#sosyal-medya"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>Sosyal Medya Çalışmaları</a>
-  <a class="l" href="/fotograf-uretim-sistemi/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>Firmalara Özel Çözümler</a>
+  <a class="l" href="/firmalara-ozel-fotograf-cozumleri/"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>Firmalara Özel Çözümler</a>
   <a class="l" href="#hakkimda"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Savaş Çıkrak Kimdir?</a>
   <a class="l" href="#iletisim"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
 </div>
@@ -548,11 +624,11 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
     <div class="hx-sv">
       <div class="hx-geo" aria-hidden="true"><i class="g1"></i><i class="g2"></i><i class="g3"></i><i class="g4"></i><i class="g5"></i></div>
       <ul class="hx-ls" aria-label="Çalışma alanları">
-      <li style="--i:2"><a class="hx-c" href="/yapay-zeka-ile-urun-fotografi/"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span><span class="hx-t">Yapay zeka çalışmaları</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-      <li style="--i:3"><a class="hx-c" href="#fotograf"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span><span class="hx-t">Fotoğraf çekimleri</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
-      <li style="--i:4"><a class="hx-c" href="#egitimler"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="hx-t">Fotoğrafçılık eğitimleri</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li style="--i:2"><a class="hx-c" href="#fotograf"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span><span class="hx-t">Fotoğraf çekimleri</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li style="--i:3"><a class="hx-c" href="#egitimler"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span><span class="hx-t">Fotoğrafçılık eğitimleri</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li style="--i:4"><a class="hx-c" href="/firmalara-ozel-fotograf-cozumleri/"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span><span class="hx-t">Firmalar için fotoğraf çözümleri</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
       <li style="--i:5"><div class="hx-c"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z"/><path d="m6.2 5.3 3.1 3.9"/><path d="m12.4 3.4 3.1 4"/><path d="M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/></svg></span><span class="hx-t">Tanıtım ve reklam filmleri</span></div></li>
-      <li style="--i:6"><a class="hx-c" href="#sosyal-medya"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span><span class="hx-t">Sosyal medya çalışmaları</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+      <li style="--i:6"><a class="hx-c" href="#sosyal-medya"><span class="hx-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span><span class="hx-t">Sosyal medya yönetimi</span><svg class="hx-ar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
       </ul>
     </div>
   </div>
@@ -624,28 +700,28 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
 <!-- YENİ NESİL FOTOĞRAFÇILIK EĞİTİMLERİ -->
 <section class="ed" id="egitimler" aria-labelledby="ed-h">
   <div class="ed-in">
-    <p class="ed-top rv">Deneyimden geleceğe</p>
-    <div class="ed-layout">
-      <div class="ed-text rv">
-        <h2 id="ed-h"><span>Yeni nesil</span><span>fotoğrafçılık</span><em>eğitimleri</em></h2>
-        <p class="ed-lead">Fotoğrafın temellerine hâkim olun, görsel üretimin geleceğinde yerinizi alın.</p>
-        <p class="ed-copy">30 yılı aşkın deneyimimi, yeni nesil yapay zekâ araçlarıyla birleştirerek eğitimlerime taşıyorum. Işığı yönetmekten güçlü kompozisyonlar kurmaya, ürün çekiminden yapay zekâ destekli görsel üretimine kadar; yaratıcı kararlarınızı profesyonel sonuçlara dönüştürecek bilgi ve becerileri paylaşıyorum.</p>
-        <p class="ed-formats">Canlı online eğitimler · Video dersler · Atölyeler</p>
-        <div class="ed-actions">
-          <a class="ed-button" href="/yapay-zeka-ile-urun-fotografi/">Eğitimleri incele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-          <a class="ed-link" href="https://wa.me/905310317444?text=Merhaba%2C%20e%C4%9Fitimler%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">Eğitim hakkında bilgi al <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        </div>
-      </div>
-      <div class="ed-visual rv">
-        <figure><div class="ed-image rvl"><img src="/yapay-zeka-ile-urun-fotografi/assets/saat-kaynak-m.webp" width="520" height="780" loading="lazy" decoding="async" alt="Açık fonda çekilmiş çelik kordonlu ürün saati"></div><figcaption>Ürün fotoğrafı</figcaption></figure>
-        <figure><div class="ed-image rvl"><img src="/yapay-zeka-ile-urun-fotografi/assets/saat-ai3-m.webp" width="400" height="536" loading="lazy" decoding="async" alt="Saatin yapay zekâ destekli üretilmiş yakın plan görseli"></div><figcaption>Yapay zekâ ile üretim</figcaption></figure>
+    <div class="e2-head">
+      <h2 id="ed-h" class="rv"><span>Yeni nesil</span><span>fotoğrafçılık</span><em>eğitimleri</em></h2>
+      <div class="e2-intro rv" style="container-type:inline-size">
+        <p class="e2-lead"><span>Ürün fotoğrafçılığını baştan tasarlıyoruz.</span></p>
+        <p class="e2-p">Canlı online eğitimlerde ve video derslerde ışığı nasıl kurduğumu, ürünleri nasıl çektiğimi ekranda adım adım gösteriyorum. Profesyonel işlerimde kullandığım teknikleri, neden ve nasıl kullandığımı örnekler üzerinden anlatıyorum.</p>
       </div>
     </div>
-    <ul class="ed-topics">
-      <li class="rv"><span class="ed-num">01</span><div><h3>Işık ve kompozisyon</h3><p>Işığı anlayın, görüntüyü bilinçli kararlarla kurun.</p></div></li>
-      <li class="rv"><span class="ed-num">02</span><div><h3>Ürün fotoğrafçılığı</h3><p>Ürünün dokusunu, biçimini ve karakterini ortaya çıkarın.</p></div></li>
-      <li class="rv"><span class="ed-num">03</span><div><h3>Yapay zekâ ile görsel üretim</h3><p>Çekim deneyiminizi yeni üretim olanaklarıyla birleştirin.</p></div></li>
-    </ul>
+    <figure class="e2-hero rv"><img src="/assets/ana/egitim1-m.webp" srcset="/assets/ana/egitim1-m.webp 960w, /assets/ana/egitim1.webp 1672w" sizes="(min-width:1240px) 1152px, calc(100vw - 40px)" width="1672" height="941" loading="lazy" decoding="async" alt="Savaş Çıkrak'ın online fotoğrafçılık eğitiminden bir kare"></figure>
+    <div class="e2-ai">
+      <div class="e2-subw rv"><p class="e2-sub"><span class="tx"><span>Ürün fotoğrafçısı</span> <span>yapay zekasız</span> <span>olmaz.</span></span></p></div>
+      <p class="e2-p rv">Çektiğimiz gerçek ürün fotoğraflarından ürünün tüm detaylarını koruyarak farklı sahneler kuruyor, farklı atmosferler oluşturuyor ve e-ticarette kullanılabilecek görseller üretiyoruz.</p>
+    </div>
+    <div class="e2-pair rv">
+      <figure><div class="e2-img"><img src="/yapay-zeka-ile-urun-fotografi/assets/saat-kaynak-m.webp" width="520" height="780" loading="lazy" decoding="async" alt="Stüdyoda çekilmiş çelik kordonlu ürün saati"></div><figcaption><b>01</b> Çekilen ürün fotoğrafı</figcaption></figure>
+      <span class="e2-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      <figure><div class="e2-img"><img src="/yapay-zeka-ile-urun-fotografi/assets/saat-ai1-m.webp" srcset="/yapay-zeka-ile-urun-fotografi/assets/saat-ai1-m.webp 480w, /yapay-zeka-ile-urun-fotografi/assets/saat-ai1.webp 720w" sizes="(min-width:900px) 340px, 42vw" width="720" height="1080" loading="lazy" decoding="async" alt="Aynı saat model bileğinde, yapay zeka ile üretilmiş görsel"></div><figcaption><b>02</b> <span class="d">Yapay zeka ile üretilen görsel</span><span class="m">AI ile üretilen görsel</span></figcaption></figure>
+    </div>
+    <div class="e2-end rv">
+      <div class="ed-actions">
+          <a class="ed-button" href="/yapay-zeka-ile-urun-fotografi/">Eğitimleri incele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+    </div>
   </div>
 </section>
 
@@ -684,13 +760,13 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
       </article>
 
       <article class="row" id="firmalar">
-        <div class="r-im wide rvl"><img src="/fotograf-uretim-sistemi/assets/studio.webp" alt="" loading="lazy"></div>
+        <div class="r-im wide rvl"><img src="/firmalara-ozel-fotograf-cozumleri/assets/studio.webp" alt="" loading="lazy"></div>
         <div class="r-tx rv">
           <span class="num"><b>04</b>Firmalar için fotoğraf çözümleri</span>
           <h2>Kendi fotoğrafını <em>kendi üreten firma.</em></h2>
           <p>Şirket içinde ürün fotoğrafını sürekli ve tutarlı üreten bir sistem kuruyorum.</p>
           <ul><li>Stüdyo kurulumu</li><li>Ekip eğitimi</li><li>Büyük ürün serilerinde iş akışı</li></ul>
-          <div class="h-act"><a class="btn p" href="/fotograf-uretim-sistemi/">Detaylar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tlink" href="#iletisim">Görüşme planla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+          <div class="h-act"><a class="btn p" href="/firmalara-ozel-fotograf-cozumleri/">Detaylar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tlink" href="#iletisim">Görüşme planla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
         </div>
       </article>
 

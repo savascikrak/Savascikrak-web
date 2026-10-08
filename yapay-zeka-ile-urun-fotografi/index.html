@@ -36,9 +36,8 @@ window.gaYukle=function(gecikme){if(window.gaYuklendi||!window.cerezOnay)return;
 if(window.cerezOnay)addEventListener('load',function(){gaYukle(1500)})})();
 </script>
 <meta name="theme-color" content="#F5F0E8">
-<link rel="preload" href="/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/roboto-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/manrope-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -757,9 +756,85 @@ main > section#urun-sadakati::before,main > section#urun-sadakati::after,main > 
   .pf-card figcaption{font-size:15px;padding:10px 4px 2px}
   .pf-list{font-size:14px;gap:6px 18px}
 }
+
+/* =====================================================================
+   SITE SISTEMI (firmalara-ozel ile ortak) — 8 Ekim
+   Manrope + kahve paleti + beyaz/acik kahve kartlar + bolum boslugu standardi (28/52)
+   ===================================================================== */
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(/fonts/manrope-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(/fonts/manrope-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--serif:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --g-line:#ECDFD9;--g-card:#FFFFFF;--g-soft:#FBF6ED;--g-ink:#0A0A0A;--g-text:#3F3A32;--g-brown:#8A4B1F;
+  --g-sh:0 6px 24px -8px rgba(117,70,38,.10);--g-sh-lg:0 10px 32px -12px rgba(117,70,38,.14);--sec-y:28px}
+@media (min-width:900px){:root{--sec-y:52px}}
+body{font-family:var(--sans);font-weight:400}
+h1,h2,h3,.h2{font-weight:900}
+p,.lead,.program-sub,.faq p,.tl-more,.tool-card span{font-weight:400}
+.lead,.program-sub,.hero .sub,.hero .sub em{font-weight:500}
+.btn,.topbar-cta{font-weight:800}
+
+/* Bolum boslugu standardi + ayraclar kalkti */
+main > section::before,main > section::after{display:none !important}
+main > section.sec,main > section.buy,main > section.trainer{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y) !important}
+main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y) !important}
+#egitmen + .sec{padding-top:var(--sec-y) !important}
+
+/* Bolum baslari: kart yok, ortali */
+.program-intro{background:none;border:0;box-shadow:none;padding:0 !important;text-align:center;max-width:820px;margin-left:auto;margin-right:auto;position:relative !important;top:auto !important}
+.program-intro::after{display:none}
+.program-intro h2{font-family:var(--sans);font-size:clamp(28px,7.6vw,32px);font-weight:900;line-height:1.08;letter-spacing:-.022em;text-transform:none;text-align:center;color:var(--g-ink);white-space:normal}
+.program-intro .lead,.program-intro .program-sub,.pf-head.program-intro .lead,.protection-intro .lead{margin:14px auto 0;max-width:640px;font-size:16px;line-height:1.65;text-align:center;color:var(--g-text)}
+.pf-head h2 .pf-h1{font-family:var(--sans);font-weight:900;letter-spacing:-.01em}
+@media (min-width:900px){
+  .program-intro h2{font-size:52px}
+  .program-intro .lead,.program-intro .program-sub,.pf-head.program-intro .lead,.protection-intro .lead{font-size:17.5px}
+  .psec > .program-intro{position:relative;top:auto}
+}
+
+/* Kartlar: beyaz, ince cizgi, yumusak gölge */
+.tl-list details{border:1px solid var(--g-line);border-radius:14px;box-shadow:var(--g-sh)}
+.tl-more{background:var(--g-soft);border:1px solid var(--g-line);border-radius:10px}
+.tool-card,.campaign-card,.pf-card{background:var(--g-card);border:1px solid var(--g-line);border-radius:18px;box-shadow:var(--g-sh)}
+.campaign-card figcaption{border-bottom:1px solid var(--g-line)}
+.faq details,.faq details:last-child{background:var(--g-card);border:1px solid var(--g-line);border-radius:14px;box-shadow:var(--g-sh)}
+.faq summary{font-weight:800;color:var(--g-ink)}
+.faq p,.tl-more,.tool-card span,.tl-list li span:not(.n){line-height:1.65;color:var(--g-text)}
+.hero-event{background:var(--g-card);border:1px solid var(--g-line);border-top:1px solid var(--g-line);border-radius:18px;box-shadow:var(--g-sh)}
+.hero-event .hero-live{color:var(--g-brown)}
+/* Kimler icin: satir yerine kartlar */
+.who{gap:10px}
+.who div,.who div:last-child{padding:16px;background:var(--g-card);border:1px solid var(--g-line);border-radius:18px;box-shadow:var(--g-sh);font-weight:600;color:var(--g-ink)}
+.wi{background:#F6EBDD}
+@media (min-width:900px){.audience-section > .stack{max-width:none}.who{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px}.who div{flex-direction:column;align-items:flex-start;padding:24px 20px;font-size:15px}}
+/* Fiyat kutusu: buyuk beyaz kart */
+.price-box{background:var(--g-card);border:1px solid var(--g-line);border-top:1px solid var(--g-line);border-radius:24px;box-shadow:var(--g-sh-lg)}
+.price-box::after{display:none}
+.price-box .fiyat-event{background:var(--g-soft);box-shadow:none}
+.price-date strong{background:var(--g-brown)}
+/* Dugmeler: birincil kahve, r8 */
+.btn:not(.btn-wa){background:var(--g-brown);color:#F5EFE7;border-radius:8px}
+.btn:not(.btn-wa):hover{background:#6F3C18;color:#F5EFE7}
+/* Manrope genisligi icin tek satir ayarlari */
+@media (max-width:899px){.hero h1{font-size:min(36px,calc((100vw - 32px) / 10.6))}}
+@media (max-width:359px){.hero-date{gap:6px}.hero-date > span{font-size:12.5px}.hero-date strong{padding:0 7px;font-size:13px}}
+@media (min-width:900px) and (max-width:1199px){.fiyat-event .hero-date{gap:8px}.fiyat-event .hero-date > span{font-size:14px}.fiyat-event .hero-date strong{font-size:15px;padding:0 10px}}
+@media (max-width:359px){.hero-date{gap:5px}.hero-date i{display:none}.fiyat-event .hero-date > span{font-size:11.5px}.fiyat-event .hero-date strong{font-size:12px;padding:0 6px}}
+@media (min-width:900px) and (max-width:1023px){.fiyat-event .hero-date > span{font-size:12.5px;gap:4px}.fiyat-event .hero-date strong{font-size:13px;padding:0 8px}.fiyat-event .hero-date i{display:none}.tool-card{padding:18px}.tool-card strong{font-size:17px}.tool-logo{width:28px;height:28px}}
+@media (min-width:900px) and (max-width:1023px){.fiyat-event .hero-date{gap:5px}}
+.hero h1{line-height:1.06;letter-spacing:-.025em}
+/* Baslik kesilmesi: bolum basi tasmasi acik, satir yuksekligi (8 Ekim) */
+.program-intro{overflow:visible}
+.program-intro h2,.pf-head h2 .pf-h1,.pf-head h2 .pf-h2{line-height:1.18;padding-bottom:2px}
+/* Fiyat kutusu basligi: bolum basligi stili */
+.price-copy h2{font-family:var(--sans);font-size:clamp(26px,7vw,30px);font-weight:900;line-height:1.15;letter-spacing:-.02em;text-transform:none;text-align:center;color:var(--g-ink)}
+@media (min-width:900px){.price-copy h2{font-size:38px}}
+/* Bolum basligi ile icerik arasi: mobil ~28px, masaustu ~56px */
+.stack > .program-intro,.psec > .program-intro,.pf-head{margin-bottom:12px}
+@media (min-width:900px){.stack > .program-intro,.psec > .program-intro,.pf-head{margin-bottom:24px}}
 </style>
 </head>
 <body>
+
 
 <header class="topbar">
   <div class="topbar-in">
@@ -826,7 +901,7 @@ main > section#urun-sadakati::before,main > section#urun-sadakati::after,main > 
 
 <section id="program" class="wrap sec psec stack">
   <div class="program-intro">
-    <h2>NELER ÖĞRENECEKSİNİZ?</h2>
+    <h2>Neler öğreneceksiniz?</h2>
     <p class="program-sub">Ürün fotoğraflarınızı e-ticaret, kampanya ve sosyal medya görsellerine dönüştürmenin tüm aşamalarını keşfedin.</p>
   </div>
   <div class="tl"><div class="tl-col">
