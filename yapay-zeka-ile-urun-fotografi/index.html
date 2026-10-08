@@ -870,6 +870,10 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 .mh-once{position:absolute;right:12px;bottom:-30px;z-index:4;width:30%;opacity:0;transition:opacity .45s ease;pointer-events:none;background:#fff;border-radius:12px;padding:5px;box-shadow:0 10px 24px -8px rgba(0,0,0,.45)}
 .mh-once.mh-yatay{width:40%}
 .mh-once.mh-on{opacity:1}
+.mh-ow{position:absolute;left:0;top:0;width:100%;height:calc(100% + 40px);overflow:hidden;pointer-events:none;z-index:4}
+.mh-or{display:flex;height:calc(100% - 40px);will-change:transform}
+.mh-oc{position:relative;flex:0 0 100%;height:100%}
+.mh-oc .mh-once{transition:none}
 .mh-sl{margin-bottom:30px}
 .mh-once img{display:block;width:100%;height:auto;border-radius:8px;aspect-ratio:2/3;object-fit:cover}
 .mh-once.mh-yatay img{aspect-ratio:16/9}
@@ -1201,10 +1205,19 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
   tr.insertBefore(son,gercek[0]);tr.appendChild(ilk);
   var sl=[].slice.call(tr.children); /* [kopya4,1,2,3,4,kopya1] */
   var N=document.getElementById('mh-n'),F=document.getElementById('mh-fill'),onc=[].slice.call(document.querySelectorAll('.mh-once'));
+  /* gercek fotograf kartlari: slaytlarla es zamanli kayan serit (alttan tasar) */
+  var ow=document.createElement('div');ow.className='mh-ow';ow.setAttribute('aria-hidden','true');
+  var or=document.createElement('div');or.className='mh-or';ow.appendChild(or);
+  sl.forEach(function(x){var c=document.createElement('div');c.className='mh-oc';var t=onc.filter(function(o){return o.getAttribute('data-k')===x.getAttribute('data-once');})[0];
+    if(t){t=t.cloneNode(true);t.classList.add('mh-on');t.querySelector('img').removeAttribute('loading');c.appendChild(t);}or.appendChild(c);});
+  onc.forEach(function(o){o.parentNode.removeChild(o);});
+  tr.parentNode.insertBefore(ow,tr.nextSibling);
+  var sr=0;function senk(){sr=0;or.style.transform='translate3d('+(-tr.scrollLeft)+'px,0,0)';}
+  tr.addEventListener('scroll',function(){if(!sr)sr=requestAnimationFrame(senk);},{passive:true});
   var pos=1,timer=null,SURE=5000,durdu=false,az=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function w(){return tr.clientWidth;}
-  function anlik(p,sessiz){if(sessiz)tr.classList.add('mh-anlik');tr.style.scrollBehavior='auto';tr.scrollLeft=p*w();pos=p;aktif(sessiz);requestAnimationFrame(function(){tr.style.scrollBehavior='';tr.classList.remove('mh-anlik');});}
-  function aktif(sessiz){sl.forEach(function(x,k){x.classList.toggle('mh-aktif',k===pos);});var ok=sl[pos].getAttribute('data-once');onc.forEach(function(o){o.classList.toggle('mh-on',o.getAttribute('data-k')===ok);});var r=((pos-1+say)%say)+1;N.textContent='0'+r;
+  function anlik(p,sessiz){if(sessiz)tr.classList.add('mh-anlik');tr.style.scrollBehavior='auto';tr.scrollLeft=p*w();senk();pos=p;aktif(sessiz);requestAnimationFrame(function(){tr.style.scrollBehavior='';tr.classList.remove('mh-anlik');});}
+  function aktif(sessiz){sl.forEach(function(x,k){x.classList.toggle('mh-aktif',k===pos);});var r=((pos-1+say)%say)+1;N.textContent='0'+r;
     if(sessiz)return;F.classList.remove('mh-run');if(!durdu&&!az){void F.offsetWidth;F.classList.add('mh-run');}}
   function git(p){tr.scrollTo({left:p*w(),behavior:az?'auto':'smooth'});}
   function oto(){clearTimeout(timer);if(durdu||az)return;timer=setTimeout(function(){git(pos+1);},SURE);}
@@ -1234,7 +1247,7 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
   document.getElementById('mh-ipucu-l').addEventListener('click',function(){git(pos-1);});
   window.addEventListener('resize',function(){anlik(pos,true);});
   document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(timer);else oto();});
-  tr.style.scrollBehavior='auto';tr.scrollLeft=w();tr.style.scrollBehavior='';
+  tr.style.scrollBehavior='auto';tr.scrollLeft=w();tr.style.scrollBehavior='';senk();
   requestAnimationFrame(function(){requestAnimationFrame(function(){aktif();oto();});});
 })();
 </script>
