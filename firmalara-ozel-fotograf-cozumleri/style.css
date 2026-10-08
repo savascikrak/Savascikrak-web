@@ -1092,3 +1092,6 @@ main > section.fx-hero{padding-bottom:0}
 :root{--desc-fs:17px}
 @media (min-width:900px){:root{--desc-fs:19px}}
 .fx-desc,.fx-intro .lead,.program-intro .lead,.program-sub,.program-intro .program-sub,.pf-head.program-intro .lead,.protection-intro .lead,.tools-intro .lead,.price-copy p,.tools-lead,.fx-box .price-urgency{font-size:var(--desc-fs) !important;line-height:1.6 !important}
+/* Sektorler: 12 kart — mobil 3, tablet 4, masaustu 6 sutun (9 Ekim) */
+.fx-sectors li:last-child{grid-column:auto !important}
+@media (min-width:1101px){.fx-sectors{grid-template-columns:repeat(6,minmax(0,1fr))}}
