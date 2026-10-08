@@ -867,8 +867,10 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 .mh-js .mh-s.mh-aktif .mh-l.mh-k > span{transition-delay:.3s}
 .mh-tag{position:absolute;top:14px;right:14px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:6px;background:rgba(10,9,8,.45);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1;pointer-events:none}
 .mh-tag i{color:#E9C98A;font-size:11px}
-.mh-once{position:absolute;right:12px;bottom:12px;z-index:2;width:30%;background:#fff;border-radius:12px;padding:5px;box-shadow:0 10px 24px -8px rgba(0,0,0,.45)}
+.mh-once{position:absolute;right:12px;bottom:-30px;z-index:4;width:30%;opacity:0;transition:opacity .45s ease;pointer-events:none;background:#fff;border-radius:12px;padding:5px;box-shadow:0 10px 24px -8px rgba(0,0,0,.45)}
 .mh-once.mh-yatay{width:40%}
+.mh-once.mh-on{opacity:1}
+.mh-sl{margin-bottom:30px}
 .mh-once img{display:block;width:100%;height:auto;border-radius:8px;aspect-ratio:2/3;object-fit:cover}
 .mh-once.mh-yatay img{aspect-ratio:16/9}
 .mh-once span{display:block;padding:5px 2px 1px;font-size:11px;font-weight:700;white-space:nowrap;color:#24211E;text-align:center}
@@ -892,7 +894,7 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
   .mh-dy{padding:32px 28px 26px;gap:12px}.mh-lbl{font-size:30px}.mh-tarih{font-size:30px}.mh-meta{font-size:15px}
   .mh-sh{padding:68px 28px 0}.mh-tag{top:20px;right:20px;font-size:12px}
   .mh-ok{display:inline-flex;align-items:center;justify-content:center}
-  .mh-once{right:16px;bottom:16px;width:24%}.mh-once.mh-yatay{width:36%}.mh-ind{left:20px;bottom:20px}.mh-ln{width:140px}
+  .mh-once{right:16px;width:24%}.mh-once.mh-yatay{width:36%}.mh-ind{left:20px;bottom:20px}.mh-ln{width:140px}
 }
 .mh-ipucu{position:absolute;right:0;top:50%;z-index:3;display:flex;align-items:center;justify-content:center;width:34px;height:56px;margin-top:-28px;padding:0 0 0 4px;border:0;border-radius:12px 0 0 12px;background:rgba(10,9,8,.42);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font-size:13px;cursor:pointer;transition:opacity .4s}
 .mh-ipucu i{animation:mhIt 1.6s ease-in-out infinite}
@@ -933,27 +935,25 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
   </div>
   <div class="mh-sl" aria-roledescription="carousel" aria-label="Gerçek fotoğraftan yapay zeka görselleri">
     <div class="mh-track" id="mh-track">
-      <figure class="mh-s">
+      <figure class="mh-s" data-once="saat">
         <img src="assets/saat-ai1.webp" width="720" height="1080" alt="Aynı saat model bileğinde, yapay zeka ile oluşturulmuş" fetchpriority="high">
         <figcaption class="mh-sh"><span class="mh-l"><span>Ürün fotoğraflarını</span></span><span class="mh-l mh-k"><span>yapay zeka ile dönüştür</span></span></figcaption>
-        <span class="mh-once"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
       </figure>
-      <figure class="mh-s mh-koyu">
+      <figure class="mh-s mh-koyu" data-once="goz">
         <img src="assets/gozluk-kampanya-serisi-m.webp" width="680" height="1020" alt="Gerçek gözlük fotoğrafından yapay zeka ile oluşturulan kampanya görsel serisi" loading="lazy" decoding="async">
         <figcaption class="mh-sh"><span class="mh-l"><span>Tek fotoğraftan</span></span><span class="mh-l mh-k"><span>kampanya yaratın</span></span></figcaption>
-        <span class="mh-once mh-yatay"><img src="assets/gozluk-gercek-fotograf.webp" width="1100" height="619" alt="Beyaz fonda çekilmiş gerçek gözlük fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
       </figure>
-      <figure class="mh-s">
+      <figure class="mh-s" data-once="saat">
         <img src="assets/saat-ai2.webp" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş lifestyle sahnesi" loading="lazy" decoding="async">
         <figcaption class="mh-sh"><span class="mh-l"><span>Aynı ürün,</span></span><span class="mh-l mh-k"><span>sınırsız sahne</span></span></figcaption>
-        <span class="mh-once"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
       </figure>
-      <figure class="mh-s">
+      <figure class="mh-s" data-once="saat">
         <img src="assets/saat-ai3.webp" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş kampanya sahnesi" loading="lazy" decoding="async">
         <figcaption class="mh-sh"><span class="mh-l"><span>Önce iyi bir fotoğraf,</span></span><span class="mh-l mh-k"><span>sonra yapay zeka</span></span></figcaption>
-        <span class="mh-once"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
       </figure>
     </div>
+    <span class="mh-once mh-on" data-k="saat"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı"><span>Gerçek fotoğraf</span></span>
+    <span class="mh-once mh-yatay" data-k="goz"><img src="assets/gozluk-gercek-fotograf.webp" width="1100" height="619" alt="Beyaz fonda çekilmiş gerçek gözlük fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
     <span class="mh-tag"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Yapay zeka</span>
     <div class="mh-ind" aria-hidden="true"><span class="mh-n"><b id="mh-n">01</b> / 04</span><span class="mh-ln"><i id="mh-fill"></i></span></div>
     <button class="mh-ipucu mh-ipucu-l" id="mh-ipucu-l" type="button" aria-label="Önceki görsel"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
@@ -1200,11 +1200,11 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
   [ilk,son].forEach(function(c){c.setAttribute('aria-hidden','true');c.classList.remove('mh-aktif');c.querySelectorAll('img').forEach(function(im){im.removeAttribute('fetchpriority');im.alt='';});});
   tr.insertBefore(son,gercek[0]);tr.appendChild(ilk);
   var sl=[].slice.call(tr.children); /* [kopya4,1,2,3,4,kopya1] */
-  var N=document.getElementById('mh-n'),F=document.getElementById('mh-fill');
+  var N=document.getElementById('mh-n'),F=document.getElementById('mh-fill'),onc=[].slice.call(document.querySelectorAll('.mh-once'));
   var pos=1,timer=null,SURE=5000,durdu=false,az=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   function w(){return tr.clientWidth;}
   function anlik(p,sessiz){if(sessiz)tr.classList.add('mh-anlik');tr.style.scrollBehavior='auto';tr.scrollLeft=p*w();pos=p;aktif(sessiz);requestAnimationFrame(function(){tr.style.scrollBehavior='';tr.classList.remove('mh-anlik');});}
-  function aktif(sessiz){sl.forEach(function(x,k){x.classList.toggle('mh-aktif',k===pos);});var r=((pos-1+say)%say)+1;N.textContent='0'+r;
+  function aktif(sessiz){sl.forEach(function(x,k){x.classList.toggle('mh-aktif',k===pos);});var ok=sl[pos].getAttribute('data-once');onc.forEach(function(o){o.classList.toggle('mh-on',o.getAttribute('data-k')===ok);});var r=((pos-1+say)%say)+1;N.textContent='0'+r;
     if(sessiz)return;F.classList.remove('mh-run');if(!durdu&&!az){void F.offsetWidth;F.classList.add('mh-run');}}
   function git(p){tr.scrollTo({left:p*w(),behavior:az?'auto':'smooth'});}
   function oto(){clearTimeout(timer);if(durdu||az)return;timer=setTimeout(function(){git(pos+1);},SURE);}
