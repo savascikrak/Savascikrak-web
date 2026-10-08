@@ -894,8 +894,13 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 .mh-ipucu i{animation:mhIt 1.6s ease-in-out infinite}
 .mh-ipucu i + i{margin-left:-5px;opacity:.55;animation-delay:.12s}
 @keyframes mhIt{0%,100%{transform:translateX(0)}50%{transform:translateX(4px)}}
-.mh-ipucu.mh-gitti{opacity:0;pointer-events:none}
-@media (min-width:900px){.mh-ipucu{display:none}}
+.mh-ipucu-l{right:auto;left:0;padding:0 4px 0 0;border-radius:0 12px 12px 0}
+.mh-ipucu-l i{animation-name:mhItL}
+.mh-ipucu-l i + i{margin-left:0;margin-right:-5px;order:-1}
+@keyframes mhItL{0%,100%{transform:translateX(0)}50%{transform:translateX(-4px)}}
+.mh-ipucu:hover{background:rgba(10,9,8,.6)}
+.mh-ok{display:none !important}
+@media (min-width:900px){.mh-ipucu{width:40px;height:64px;margin-top:-32px;font-size:14px}}
 @media (min-width:600px) and (max-width:899px){.mh-sl,.mh-dy{width:100%;max-width:560px;justify-self:center}}
 @media (prefers-reduced-motion:reduce){.mh-ipucu i{animation:none}.mh-js .mh-s .mh-l > span{transform:none;opacity:1;transition:none}.mh-ln i.mh-run{animation:none}}
 </style>
@@ -947,6 +952,7 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
     </div>
     <span class="mh-tag"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Yapay zeka</span>
     <div class="mh-ind" aria-hidden="true"><span class="mh-n"><b id="mh-n">01</b> / 04</span><span class="mh-ln"><i id="mh-fill"></i></span></div>
+    <button class="mh-ipucu mh-ipucu-l" id="mh-ipucu-l" type="button" aria-label="Önceki görsel"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
     <button class="mh-ipucu" id="mh-ipucu" type="button" aria-label="Sonraki görsel"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
     <button class="mh-ok mh-ok-l" id="mh-prev" type="button" aria-label="Önceki"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
     <button class="mh-ok mh-ok-r" id="mh-next" type="button" aria-label="Sonraki"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
@@ -1197,10 +1203,8 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
   tr.addEventListener('touchend',devam,{passive:true});tr.addEventListener('touchcancel',devam,{passive:true});
   tr.addEventListener('mousedown',dur);window.addEventListener('mouseup',devam);
   var ip=document.getElementById('mh-ipucu');
-  function ipucuGizle(){ip.classList.add('mh-gitti');}
-  ip.addEventListener('click',function(){git(cur+1);ipucuGizle();});
-  var ilkX=null;tr.addEventListener('touchstart',function(e){ilkX=tr.scrollLeft;},{passive:true});
-  tr.addEventListener('touchend',function(){if(ilkX!==null&&Math.abs(tr.scrollLeft-ilkX)>20)ipucuGizle();},{passive:true});
+  ip.addEventListener('click',function(){git(cur+1);});
+  document.getElementById('mh-ipucu-l').addEventListener('click',function(){git(cur-1);});
   document.getElementById('mh-prev').addEventListener('click',function(){git(cur-1);});
   document.getElementById('mh-next').addEventListener('click',function(){git(cur+1);});
   document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(timer);else oto();});
