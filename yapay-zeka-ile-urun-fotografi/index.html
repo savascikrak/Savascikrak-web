@@ -38,6 +38,7 @@ if(window.cerezOnay)addEventListener('load',function(){gaYukle(1500)})})();
 <meta name="theme-color" content="#F5F0E8">
 <link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/manrope-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/fonts/fontawesome/fa.min.css">
 <style>
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:"Inter";font-style:normal;font-weight:400 700;font-display:swap;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -836,6 +837,60 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 :root{--desc-fs:17px}
 @media (min-width:900px){:root{--desc-fs:19px}}
 .fx-desc,.fx-intro .lead,.program-intro .lead,.program-sub,.program-intro .program-sub,.pf-head.program-intro .lead,.protection-intro .lead,.tools-intro .lead,.price-copy p,.tools-lead,.fx-box .price-urgency{font-size:var(--desc-fs) !important;line-height:1.6 !important}
+
+/* =====================================================================
+   MANSET SLIDER (9 Ekim) — duyuru karti + 4 slaytli slider (mh- siniflari)
+   ===================================================================== */
+.mh{padding-top:var(--sec-y);padding-bottom:var(--sec-y);display:grid;gap:22px}
+.mh figure{margin:0}
+.mh-gizli{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.mh-dy{background:#24211E;color:#F5EFE7;border-radius:18px;padding:24px 16px 20px;display:grid;justify-items:center;text-align:center;gap:10px;box-shadow:0 14px 40px -16px rgba(60,35,15,.28)}
+.mh-dy p{margin:0}
+.mh-lbl{font-size:min(26px,calc((100vw - 64px) / 11));font-weight:900;letter-spacing:.08em;line-height:1.1;color:#E9C98A;white-space:nowrap}
+.mh-tarih{font-size:min(26px,calc((100vw - 64px) / 12.2));font-weight:900;letter-spacing:-.01em;line-height:1.15;white-space:nowrap;color:#fff}
+.mh-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;font-size:14px;font-weight:600;color:#D9D0C2}
+.mh-meta i{color:#E9C98A;margin-right:6px;font-size:13px}
+.mh-sl{min-width:0;position:relative}
+.mh-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:18px;box-shadow:0 14px 40px -16px rgba(60,35,15,.28);background:#1A1714;-webkit-overflow-scrolling:touch}
+.mh-track::-webkit-scrollbar{display:none}
+.mh-s{position:relative;flex:0 0 100%;scroll-snap-align:start;aspect-ratio:4/5;max-width:100%;overflow:hidden;container-type:inline-size}
+.mh-s > img{width:100%;height:100%;object-fit:cover;display:block}
+.mh-s::before{content:"";position:absolute;left:0;right:0;top:0;height:44%;z-index:1;background:linear-gradient(to bottom,rgba(10,9,8,.55) 0%,rgba(10,9,8,.28) 50%,rgba(10,9,8,0) 100%);pointer-events:none}
+.mh-s.mh-koyu::before{height:52%;background:linear-gradient(to bottom,rgba(10,9,8,.66) 0%,rgba(10,9,8,.42) 50%,rgba(10,9,8,0) 100%)}
+.mh-s::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34%;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0));pointer-events:none}
+.mh-sh{position:absolute;left:0;right:0;top:0;z-index:2;display:grid;gap:2px;padding:56px 18px 0;color:#fff;font-weight:900;letter-spacing:-.025em;line-height:1.08;font-size:min(44px,calc(100cqi / 12.4))}
+.mh-l{display:block;overflow:hidden;padding-bottom:.06em}
+.mh-l > span{display:inline-block;white-space:nowrap;text-shadow:0 1.5px 0 #000}
+.mh-l.mh-k{color:#E9C98A}
+.mh-js .mh-s .mh-l > span{transform:translateY(105%);opacity:0}
+.mh-js .mh-s.mh-aktif .mh-l > span{transform:none;opacity:1;transition:transform .9s cubic-bezier(.16,.84,.24,1) .15s,opacity .6s ease .15s}
+.mh-js .mh-s.mh-aktif .mh-l.mh-k > span{transition-delay:.3s}
+.mh-tag{position:absolute;top:14px;right:14px;z-index:3;display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:6px;background:rgba(10,9,8,.45);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;line-height:1;pointer-events:none}
+.mh-tag i{color:#E9C98A;font-size:11px}
+.mh-once{position:absolute;right:12px;bottom:12px;z-index:2;width:30%;background:#fff;border-radius:12px;padding:5px;box-shadow:0 10px 24px -8px rgba(0,0,0,.45)}
+.mh-once.mh-yatay{width:40%}
+.mh-once img{display:block;width:100%;height:auto;border-radius:8px;aspect-ratio:2/3;object-fit:cover}
+.mh-once.mh-yatay img{aspect-ratio:16/9}
+.mh-once span{display:block;padding:5px 2px 1px;font-size:11px;font-weight:700;white-space:nowrap;color:#24211E;text-align:center}
+.mh-ind{position:absolute;left:14px;bottom:14px;z-index:3;display:grid;gap:7px;pointer-events:none}
+.mh-n{font-size:12px;font-weight:800;letter-spacing:.08em;color:rgba(255,255,255,.7);font-variant-numeric:tabular-nums}
+.mh-n b{color:#fff;font-size:15px}
+.mh-ln{position:relative;display:block;width:96px;height:2px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden}
+.mh-ln i{position:absolute;left:0;top:0;bottom:0;width:100%;background:#fff;transform-origin:left;transform:scaleX(1)}
+.mh-ln i.mh-run{animation:mhDolum 5s linear forwards}
+@keyframes mhDolum{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.mh-ok{display:none;position:absolute;top:50%;z-index:3;width:42px;height:42px;margin-top:-21px;border-radius:50%;border:0;background:rgba(255,255,255,.88);color:#0A0A0A;cursor:pointer;font-size:14px;box-shadow:0 6px 18px -6px rgba(0,0,0,.4);opacity:0;transition:opacity .2s}
+.mh-ok-l{left:14px}.mh-ok-r{right:14px}
+.mh-sl:hover .mh-ok,.mh-ok:focus-visible{opacity:1}
+.mh-ok:hover{color:#8A4B1F}
+@media (min-width:900px){
+  .mh{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);column-gap:56px;align-items:center;padding-top:64px}
+  .mh-dy{padding:32px 28px 26px;gap:12px}.mh-lbl{font-size:30px}.mh-tarih{font-size:30px}.mh-meta{font-size:15px}
+  .mh-sh{padding:68px 28px 0}.mh-tag{top:20px;right:20px;font-size:12px}
+  .mh-ok{display:inline-flex;align-items:center;justify-content:center}
+  .mh-once{right:16px;bottom:16px;width:24%}.mh-once.mh-yatay{width:36%}.mh-ind{left:20px;bottom:20px}.mh-ln{width:140px}
+}
+@media (prefers-reduced-motion:reduce){.mh-js .mh-s .mh-l > span{transform:none;opacity:1;transition:none}.mh-ln i.mh-run{animation:none}}
 </style>
 </head>
 <body>
@@ -853,28 +908,41 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 
 <main>
 
-<section class="wrap hero">
-  <div class="hero-head">
-    <div class="hero-event" aria-label="Online workshop tarihi ve saati">
-      <p class="hero-live">ONLINE WORKSHOP</p>
-      <div class="hero-date"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>20:00</strong></div>
-      <p class="hero-meta"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></svg>CANLI YAYIN</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h11M6.5 20.5h11M7.5 3.5c0 4.5 4.5 5.5 4.5 8.5s-4.5 4-4.5 8.5M16.5 3.5c0 4.5-4.5 5.5-4.5 8.5s4.5 4 4.5 8.5"/></svg>5 SAAT</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="13" height="11" rx="2.2"/><path d="M16 10.5l5-3v9l-5-3"/></svg>KAYIT VAR</span></p>
-    </div>
-    <h1><span>ÜRÜN FOTOĞRAFLARINI</span><span>YAPAY ZEKAYLA</span><span>DÖNÜŞTÜR</span></h1>
-    <p class="sub"><em>“Ürününüz aynı kalsın. Sahneyi<br class="br-m"> Yapay Zeka üretsin.”</em></p>
+<section class="wrap mh" id="manset">
+  <div class="mh-dy" aria-label="Online workshop duyurusu">
+    <h1 class="mh-gizli">Ürün fotoğraflarını yapay zeka ile dönüştür: online workshop</h1>
+    <p class="mh-lbl">ONLINE WORKSHOP</p>
+    <p class="mh-tarih">17 Ekim Cumartesi · 20:00</p>
+    <p class="mh-meta"><span><i class="fa-solid fa-video" aria-hidden="true"></i>Zoom canlı</span><span><i class="fa-solid fa-clock" aria-hidden="true"></i>5 saat</span><span><i class="fa-solid fa-circle-play" aria-hidden="true"></i>Kayıt izlenebilir</span></p>
   </div>
-
-  <div class="hero-visual">
-    <div class="hv-top">
-      <figure class="ph white src"><img src="assets/saat-kaynak.webp?v=2" srcset="assets/saat-kaynak-m.webp?v=2 520w, assets/saat-kaynak.webp?v=2 840w" sizes="(min-width:900px) 420px, 260px" width="840" height="1260" style="object-position:56% 50%" fetchpriority="high" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" onerror="this.remove()"><span class="visual-tag source">Gerçek<br>fotoğraf</span><figcaption><strong>Gerçek fotoğraf</strong><br>Saat, beyaz fon</figcaption></figure>
-      <figure class="ph model"><img src="assets/saat-ai1.webp" srcset="assets/saat-ai1-m.webp 480w, assets/saat-ai1.webp 720w" sizes="(min-width:900px) 360px, 245px" width="720" height="1080" fetchpriority="high" alt="Aynı saat model bileğinde, yapay zeka ile oluşturulmuş" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Model üzerinde</strong><br>Aynı saat bilekte. Ölçek ve perspektif uyumlu.</figcaption></figure>
+  <div class="mh-sl" aria-roledescription="carousel" aria-label="Gerçek fotoğraftan yapay zeka görselleri">
+    <div class="mh-track" id="mh-track">
+      <figure class="mh-s">
+        <img src="assets/saat-ai1.webp" width="720" height="1080" alt="Aynı saat model bileğinde, yapay zeka ile oluşturulmuş" fetchpriority="high">
+        <figcaption class="mh-sh"><span class="mh-l"><span>Ürün fotoğraflarını</span></span><span class="mh-l mh-k"><span>yapay zeka ile dönüştür</span></span></figcaption>
+        <span class="mh-once"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
+      </figure>
+      <figure class="mh-s mh-koyu">
+        <img src="assets/gozluk-kampanya-serisi-m.webp" width="680" height="1020" alt="Gerçek gözlük fotoğrafından yapay zeka ile oluşturulan kampanya görsel serisi" loading="lazy" decoding="async">
+        <figcaption class="mh-sh"><span class="mh-l"><span>Tek fotoğraftan</span></span><span class="mh-l mh-k"><span>kampanya yaratın</span></span></figcaption>
+        <span class="mh-once mh-yatay"><img src="assets/gozluk-gercek-fotograf.webp" width="1100" height="619" alt="Beyaz fonda çekilmiş gerçek gözlük fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
+      </figure>
+      <figure class="mh-s">
+        <img src="assets/saat-ai2.webp" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş lifestyle sahnesi" loading="lazy" decoding="async">
+        <figcaption class="mh-sh"><span class="mh-l"><span>Aynı ürün,</span></span><span class="mh-l mh-k"><span>sınırsız sahne</span></span></figcaption>
+        <span class="mh-once"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
+      </figure>
+      <figure class="mh-s">
+        <img src="assets/saat-ai3.webp" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş kampanya sahnesi" loading="lazy" decoding="async">
+        <figcaption class="mh-sh"><span class="mh-l"><span>Önce iyi bir fotoğraf,</span></span><span class="mh-l mh-k"><span>sonra yapay zeka</span></span></figcaption>
+        <span class="mh-once"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
+      </figure>
     </div>
-    <div class="hv-styles">
-      <figure class="ph"><img src="assets/saat-ai2.webp" srcset="assets/saat-ai2-m.webp 400w, assets/saat-ai2.webp 640w" sizes="(min-width:900px) 300px, 190px" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş lifestyle sahnesi" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Stil 1 · Lifestyle</strong><br>Sıcak akşam ışığı, gömlek manşeti.</figcaption></figure>
-      <figure class="ph"><img src="assets/saat-ai3.webp" srcset="assets/saat-ai3-m.webp 400w, assets/saat-ai3.webp 640w" sizes="(min-width:900px) 300px, 190px" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş kampanya sahnesi" onerror="this.remove()"><span class="visual-tag">Yapay zeka</span><figcaption><strong>Stil 2 · Kampanya</strong><br>Koyu taş, sert ışık, yansıma.</figcaption></figure>
-    </div>
+    <span class="mh-tag"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Yapay zeka</span>
+    <div class="mh-ind" aria-hidden="true"><span class="mh-n"><b id="mh-n">01</b> / 04</span><span class="mh-ln"><i id="mh-fill"></i></span></div>
+    <button class="mh-ok mh-ok-l" id="mh-prev" type="button" aria-label="Önceki"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
+    <button class="mh-ok mh-ok-r" id="mh-next" type="button" aria-label="Sonraki"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
   </div>
-
 </section>
 
 <section id="urun-sadakati" class="wrap sec pf" aria-labelledby="pf-baslik">
@@ -1104,6 +1172,25 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 </section>
 
 </main>
+<script>
+/* MANSET SLIDER (9 Ekim) */
+(function(){
+  var tr=document.getElementById('mh-track');if(!tr)return;
+  document.documentElement.classList.add('mh-js');
+  var sl=[].slice.call(tr.children),N=document.getElementById('mh-n'),F=document.getElementById('mh-fill');
+  var cur=0,timer=null,SURE=5000,durdu=false,az=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function goster(i){cur=(i+sl.length)%sl.length;sl.forEach(function(x,k){x.classList.toggle('mh-aktif',k===cur);});N.textContent='0'+(cur+1);F.classList.remove('mh-run');if(!durdu&&!az){void F.offsetWidth;F.classList.add('mh-run');}}
+  function git(i){tr.scrollTo({left:((i+sl.length)%sl.length)*tr.clientWidth,behavior:az?'auto':'smooth'});}
+  function oto(){clearTimeout(timer);if(durdu||az)return;timer=setTimeout(function(){git(cur+1);},SURE);}
+  var st;tr.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){var i=Math.round(tr.scrollLeft/tr.clientWidth);if(i!==cur){goster(i);oto();}},80);},{passive:true});
+  function dur(){durdu=true;clearTimeout(timer);F.classList.remove('mh-run');}
+  tr.addEventListener('pointerdown',dur);tr.addEventListener('touchstart',dur,{passive:true});
+  document.getElementById('mh-prev').addEventListener('click',function(){dur();git(cur-1);});
+  document.getElementById('mh-next').addEventListener('click',function(){dur();git(cur+1);});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(timer);else oto();});
+  requestAnimationFrame(function(){requestAnimationFrame(function(){goster(0);oto();});});
+})();
+</script>
 <footer class="legal">
   <p>© 2026 Savaş Çıkrak · Tüm hakları saklıdır.</p>
   <p class="legal-links"><a href="https://savascikrak.com/">savascikrak.com</a><span aria-hidden="true">·</span><a class="ig" href="https://instagram.com/savascikrak" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.6" fill="currentColor"/></svg>savascikrak</a><span aria-hidden="true">·</span><button type="button" class="cerez-ac">Çerez tercihleri</button></p>
