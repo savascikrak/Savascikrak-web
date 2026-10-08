@@ -1087,3 +1087,8 @@ main > section.sec,main > section.fx-steps-sec{padding-top:var(--sec-y) !importa
 main > section.fx-hero{padding-bottom:0}
 /* Ust baslik: adim karti stili (beyaz, ince cizgi, hafif golge) */
 .fx-kicker{background:#FFFFFF;border:1px solid var(--g-line);box-shadow:var(--g-sh)}
+
+/* STANDART: baslik alti aciklamalar tek boyut — mobil 17px, masaustu 19px, lh 1.6 (9 Ekim) */
+:root{--desc-fs:17px}
+@media (min-width:900px){:root{--desc-fs:19px}}
+.fx-desc,.fx-intro .lead,.program-intro .lead,.program-sub,.program-intro .program-sub,.pf-head.program-intro .lead,.protection-intro .lead,.tools-intro .lead,.price-copy p,.tools-lead,.fx-box .price-urgency{font-size:var(--desc-fs) !important;line-height:1.6 !important}
