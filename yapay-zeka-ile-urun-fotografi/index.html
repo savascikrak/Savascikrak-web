@@ -877,6 +877,7 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 .mh-n b{color:#fff;font-size:15px}
 .mh-ln{position:relative;display:block;width:96px;height:2px;border-radius:2px;background:rgba(255,255,255,.3);overflow:hidden}
 .mh-ln i{position:absolute;left:0;top:0;bottom:0;width:100%;background:#fff;transform-origin:left;transform:scaleX(1)}
+.mh-anlik .mh-l > span{transition:none !important}
 .mh-ln i.mh-run{animation:mhDolum 5s linear forwards}
 @keyframes mhDolum{from{transform:scaleX(0)}to{transform:scaleX(1)}}
 .mh-ok{display:none;position:absolute;top:50%;z-index:3;width:42px;height:42px;margin-top:-21px;border-radius:50%;border:0;background:rgba(255,255,255,.88);color:#0A0A0A;cursor:pointer;font-size:14px;box-shadow:0 6px 18px -6px rgba(0,0,0,.4);opacity:0;transition:opacity .2s}
@@ -1187,28 +1188,39 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 
 </main>
 <script>
-/* MANSET SLIDER (9 Ekim) */
+/* MANSET SLIDER (9 Ekim) — sonsuz dongu: basa ve sona kopya slayt */
 (function(){
   var tr=document.getElementById('mh-track');if(!tr)return;
   document.documentElement.classList.add('mh-js');
-  var sl=[].slice.call(tr.children),N=document.getElementById('mh-n'),F=document.getElementById('mh-fill');
-  var cur=0,timer=null,SURE=5000,durdu=false,az=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function goster(i){cur=(i+sl.length)%sl.length;sl.forEach(function(x,k){x.classList.toggle('mh-aktif',k===cur);});N.textContent='0'+(cur+1);F.classList.remove('mh-run');if(!durdu&&!az){void F.offsetWidth;F.classList.add('mh-run');}}
-  function git(i){tr.scrollTo({left:((i+sl.length)%sl.length)*tr.clientWidth,behavior:az?'auto':'smooth'});}
-  function oto(){clearTimeout(timer);if(durdu||az)return;timer=setTimeout(function(){git(cur+1);},SURE);}
-  var st;tr.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){var i=Math.round(tr.scrollLeft/tr.clientWidth);if(i!==cur){goster(i);oto();}},80);},{passive:true});
+  var gercek=[].slice.call(tr.children),say=gercek.length;
+  var ilk=gercek[0].cloneNode(true),son=gercek[say-1].cloneNode(true);
+  [ilk,son].forEach(function(c){c.setAttribute('aria-hidden','true');c.classList.remove('mh-aktif');c.querySelectorAll('img').forEach(function(im){im.removeAttribute('fetchpriority');im.alt='';});});
+  tr.insertBefore(son,gercek[0]);tr.appendChild(ilk);
+  var sl=[].slice.call(tr.children); /* [kopya4,1,2,3,4,kopya1] */
+  var N=document.getElementById('mh-n'),F=document.getElementById('mh-fill');
+  var pos=1,timer=null,SURE=5000,durdu=false,az=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function w(){return tr.clientWidth;}
+  function anlik(p,sessiz){if(sessiz)tr.classList.add('mh-anlik');tr.style.scrollBehavior='auto';tr.scrollLeft=p*w();pos=p;aktif(sessiz);requestAnimationFrame(function(){tr.style.scrollBehavior='';tr.classList.remove('mh-anlik');});}
+  function aktif(sessiz){sl.forEach(function(x,k){x.classList.toggle('mh-aktif',k===pos);});var r=((pos-1+say)%say)+1;N.textContent='0'+r;
+    if(sessiz)return;F.classList.remove('mh-run');if(!durdu&&!az){void F.offsetWidth;F.classList.add('mh-run');}}
+  function git(p){tr.scrollTo({left:p*w(),behavior:az?'auto':'smooth'});}
+  function oto(){clearTimeout(timer);if(durdu||az)return;timer=setTimeout(function(){git(pos+1);},SURE);}
+  function yerles(){var p=Math.round(tr.scrollLeft/w());
+    if(p===0){anlik(say);oto();return;}
+    if(p===say+1){anlik(1);oto();return;}
+    if(p!==pos){pos=p;aktif();oto();}}
+  var st;tr.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(yerles,110);},{passive:true});
   function dur(){durdu=true;clearTimeout(timer);F.classList.remove('mh-run');}
-  function devam(){if(!durdu)return;durdu=false;goster(cur);oto();}
+  function devam(){if(!durdu)return;durdu=false;aktif();oto();}
   tr.addEventListener('touchstart',dur,{passive:true});
   tr.addEventListener('touchend',devam,{passive:true});tr.addEventListener('touchcancel',devam,{passive:true});
   tr.addEventListener('mousedown',dur);window.addEventListener('mouseup',devam);
-  var ip=document.getElementById('mh-ipucu');
-  ip.addEventListener('click',function(){git(cur+1);});
-  document.getElementById('mh-ipucu-l').addEventListener('click',function(){git(cur-1);});
-  document.getElementById('mh-prev').addEventListener('click',function(){git(cur-1);});
-  document.getElementById('mh-next').addEventListener('click',function(){git(cur+1);});
+  document.getElementById('mh-ipucu').addEventListener('click',function(){git(pos+1);});
+  document.getElementById('mh-ipucu-l').addEventListener('click',function(){git(pos-1);});
+  window.addEventListener('resize',function(){anlik(pos,true);});
   document.addEventListener('visibilitychange',function(){if(document.hidden)clearTimeout(timer);else oto();});
-  requestAnimationFrame(function(){requestAnimationFrame(function(){goster(0);oto();});});
+  tr.style.scrollBehavior='auto';tr.scrollLeft=w();tr.style.scrollBehavior='';
+  requestAnimationFrame(function(){requestAnimationFrame(function(){aktif();oto();});});
 })();
 </script>
 <footer class="legal">
