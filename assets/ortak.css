@@ -75,7 +75,7 @@ body.ub-kilit{overflow:hidden}
 .ab .ab-lk button{font:inherit;color:inherit;background:none;border:0;padding:0;margin:0;cursor:pointer;min-height:0}
 .ab .ab-lk button:hover{color:#F7E9CC}
 @media (max-width:900px){.ab-in{grid-template-columns:1fr 1fr}.ab-k1{grid-column:1/-1}}
-@media (max-width:560px){.ab-in{grid-template-columns:1fr;gap:32px}}
+@media (max-width:560px){.ab-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px 16px}.ab-k{font-size:13px;min-width:0}.ab-k a{overflow-wrap:anywhere}}
 @media print{.ub,.ub-bos,.ub-cek{display:none}}
 
 /* ACORDEON GOSTERGE (9 Ekim, oturum 6): kapaliyken halka+ok (fm-ch), acikken halka+X (kapatma) — anasayfa maddeleri */
