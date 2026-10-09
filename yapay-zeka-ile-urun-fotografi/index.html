@@ -1058,11 +1058,16 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
 .dy .dy-h2{margin:14px 0 0;font-size:min(68px,calc(100cqi / 14.6));line-height:.98;font-weight:900;letter-spacing:-.005em;text-transform:uppercase;filter:drop-shadow(0 4px 0 rgba(0,0,0,.55)) drop-shadow(0 10px 24px rgba(0,0,0,.6))}
 .dy .dy-h2 span{display:block;white-space:nowrap}.dy .dy-h2 .w{color:#fff;font-size:1.18em}
 .dy .dy-h2 .y{background:linear-gradient(100deg,#F7E9CC 0%,#D8B477 45%,#9A7442 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;font-size:1.011em}
-.mh .dy-c{margin-top:30px;padding-top:56px}
+.mh .dy-c{margin-top:0}
+.dy .dy-h2{margin-top:0 !important}
+.dy .dy-h2 .y{margin-top:.1em}
+.dy-meta span:first-child .ico{color:#22E36B;filter:drop-shadow(0 0 6px rgba(34,227,107,.7));animation:dyYayin 1.6s ease-in-out infinite}
+@keyframes dyYayin{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.86)}}
+@media (prefers-reduced-motion:reduce){.dy-meta span:first-child .ico{animation:none}}
 .mh .dy-k{height:60px;padding:0 27px 0 81px;gap:14px;font-size:20px;font-weight:800;letter-spacing:.14em}
 .mh .dy-ic{left:-30px;margin-top:-42px;width:84px;height:84px}.mh .dy-ic svg{width:36px;height:36px}
 @media (max-width:767px){
-  .mh .dy-c{padding-top:44px}
+  .mh .dy-c{padding-top:18px}
   .mh .dy-k{height:52px;padding:0 16px 0 56px;gap:10px;font-size:15px;letter-spacing:.1em;transform:translate(calc(-50% + 9px),-50%)}
   .mh .dy-ic{left:-18px;margin-top:-32px;width:64px;height:64px}.mh .dy-ic svg{width:27px;height:27px}
 }
@@ -1088,10 +1093,10 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
     <h1 class="mh-gizli">Ürün fotoğraflarını yapay zeka ile dönüştür: online workshop</h1>
         <div class="dy-c">
         <div class="dy-tx">
-          <p class="dy-k"><span class="dy-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>Canlı online eğitim</p>
           <p role="presentation" class="dy-h2" id="dy-h" aria-hidden="true"><span class="w">Ürün fotoğraflarını</span> <span class="y">yapay zekayla dönüştür</span></p>
           <div class="dy-ev">
             <div class="dy-date"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>20:00</strong></div>
+            <p class="dy-meta"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></svg>Canlı yayın</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h11M6.5 20.5h11M7.5 3.5c0 4.5 4.5 5.5 4.5 8.5s-4.5 4-4.5 8.5M16.5 3.5c0 4.5-4.5 5.5-4.5 8.5s4.5 4 4.5 8.5"/></svg>5 saat</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="13" height="11" rx="2.2"/><path d="M16 10.5l5-3v9l-5-3"/></svg>Kayıt var</span></p>
           </div>
         </div>
       </div>
