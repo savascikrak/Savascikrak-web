@@ -886,8 +886,8 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 /* slayt basliklari: en uzun satir (11.31em) ic genislige sigar — mobil pay 18+18, masaustu 28+28 */
 .mh-sh{font-size:min(44px,calc((100cqi - 40px) / 11.45))}
 @media (min-width:900px){.mh-sh{font-size:min(44px,calc((100cqi - 60px) / 11.45))}}
-/* egitmen karti biyografi: eski satir duzeni korunur; yuze degmeyecek en buyuk boyut (390'a kadar 12.5, 430'da 13.3, 465+ 14px) */
-@media (max-width:599px){.tcard .bio:not(.bio-mas){font-size:clamp(12.5px,calc(2vw + 4.7px),14px)}}
+/* egitmen karti biyografi: her telefonda 14px, eski satirlar; yazi yuze degmesin diye dar telefonda fotograf saga kayar */
+@media (max-width:599px){.tcard .bio:not(.bio-mas){font-size:14px}.trainer .tcard img{right:calc(-1 * var(--pad) - 70px - max(0px, (428px - 100vw) * .6) - max(0px, (470px - 100vw) * .42))}}
 /* ust kart bosluklari yariya (9 Ekim): ust 14/32px, kart-slider arasi 11px */
 .mh{padding-top:calc(var(--sec-y) / 2);gap:11px}
 .mh-sl{margin-bottom:30px}
