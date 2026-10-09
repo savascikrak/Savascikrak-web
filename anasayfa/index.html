@@ -478,7 +478,7 @@ main .sm-l{white-space:normal}
 .fm-ti{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:16px;align-items:start}
 .fm-ti:not(:last-child)::before{content:"";position:absolute;left:31px;top:64px;bottom:-22px;width:2px;background:linear-gradient(180deg,#744A17,rgba(116,74,23,.45))}
 .fm-n{position:relative;z-index:1;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:21px;font-weight:700;background:linear-gradient(155deg,#94641F,#744A17 48%,#4C300E);box-shadow:0 0 0 6px #F3E6D6,0 8px 18px rgba(116,74,23,.28)}
-.fm-card{background:#F5EFE7;border:1px solid #E6DCCD;border-radius:18px;box-shadow:0 10px 30px -18px rgba(40,28,12,.25)}
+.fm-card{background:#fff;border:1px solid #ECE3D8;border-radius:18px;box-shadow:0 10px 30px -18px rgba(40,28,12,.25)}
 .fm-card summary{list-style:none;cursor:pointer;display:grid;gap:12px;padding:18px 18px 18px}
 .fm-card summary::-webkit-details-marker{display:none}
 .fm-tag{display:inline-flex;align-items:center;gap:8px;width:fit-content;padding:7px 11px;border-radius:8px;background:#F6EBDD;border:1px solid #E9D5BF;color:#8C6738;font-size:11.5px;font-weight:500;letter-spacing:.14em;line-height:1;text-transform:uppercase}
@@ -542,8 +542,11 @@ main .sm-l{white-space:normal}
 @media (min-width:900px){.sm-d p{font-size:15px}}
 /* NELER YAPIYORUM: egitim sayfasi akordeon stili, beyaz */
 .sm-ne .sm-ls li{background:none;border:0;border-radius:0}
-.sm-d{background:#F5EFE7;border:1px solid #E6DCCD;border-radius:14px;box-shadow:0 8px 22px -16px rgba(40,28,12,.22);transition:border-color .2s,box-shadow .2s}
+.sm-d{background:#fff;border:1px solid #ECE3D8;border-radius:14px;box-shadow:0 8px 22px -16px rgba(40,28,12,.22);transition:border-color .2s,box-shadow .2s}
 .sm-d[open]{border-color:#744A17;box-shadow:0 6px 18px rgba(116,74,23,.10)}
+.fm-card,.sm-d{overflow:hidden}
+.fm-card p,.sm-d p{background:#F5EFE7;border-top:1px solid #E6DCCD;padding-top:16px}
+.fm-card p{padding-bottom:20px}
 .sm-d summary{position:relative;padding-right:calc(clamp(14px,1.4vw,18px) + 40px)}
 .sm-d summary::after{content:"";position:absolute;right:clamp(14px,1.4vw,18px);top:50%;width:30px;height:30px;margin-top:-15px;box-sizing:border-box;border-radius:50%;border:1.25px solid #744A17;background:#744A17 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFF8EF' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/15px no-repeat}
 .sm-d[open] summary::after{background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23744A17' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/14px no-repeat}
