@@ -40,8 +40,8 @@ body[data-ub=seffaf] .ub-bos{display:none}
 .ub-l .ub-ic svg{width:20px;height:20px}
 .ub-cek .ub-x{position:absolute;top:10px;right:calc(var(--ub-gut) - 8px);width:44px;height:44px;justify-content:center}
 body.ub-kilit{overflow:hidden}
-@media (max-width:1499px){.ub-in{gap:16px}.ub-nav{gap:6px}.ub .ub-nav a{padding:0 10px;font-size:10.5px;letter-spacing:.08em}.ub .ub-cta{padding:0 12px 0 6px;letter-spacing:.1em}.ub-nav+.ub-cta+.ub-sos{margin-left:-10px}.ub-sos{gap:6px}}
-@media (max-width:1279px){.ub-nav,.ub .ub-cta{display:none}.ub-sos{margin-left:auto !important}.ub .ub-mbtn{display:inline-flex}}
+@media (max-width:1799px){.ub-in{gap:16px}.ub-nav{gap:5px}.ub .ub-nav a{padding:0 8px;font-size:10px;letter-spacing:.04em}.ub .ub-cta{padding:0 12px 0 6px;letter-spacing:.1em}.ub-nav+.ub-cta+.ub-sos{margin-left:-10px}.ub-sos{gap:6px}}
+@media (max-width:1699px){.ub-nav,.ub .ub-cta{display:none}.ub-sos{margin-left:auto !important}.ub .ub-mbtn{display:inline-flex}}
 @media (max-width:1023px){:root{--ub-h:64px}.ub.ub-k .ub-in{height:var(--ub-h)}.ub .ub-marka{font-size:14.5px}.ub-marka img{height:42px}.ub-in{padding:0 20px;gap:10px}.ub-cek{padding-left:20px;padding-right:20px}.ub-cek .ub-x{right:12px}}
 @media (max-width:400px){.ub .ub-marka{font-size:13px;letter-spacing:.14em;gap:10px}.ub-marka img{height:36px}.ub .ub-s{width:38px;height:38px}.ub-sos{gap:5px}.ub-in{gap:6px}}
 
