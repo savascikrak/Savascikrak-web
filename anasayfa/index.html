@@ -505,16 +505,27 @@ main .sm-l{white-space:normal}
 .sm + #firmalar{margin-top:var(--blok)}
 #firmalar{background:#F5EFE7;box-shadow:0 0 0 100vmax #F5EFE7;clip-path:inset(0 -100vmax);padding:var(--blok) 0}
 #alanlar{padding-bottom:0}
-/* YENI EGITIMLERDEN HABERDAR OL: koyu, duyuru kutusuyla ayni dil */
-.hb{background:#fff;min-height:1px}
-.hb:not(.hazir) .hb-in{display:none}
-.hb.hazir{padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(8px,1.5vw,20px)}
+/* YENI EGITIMLERDEN HABERDAR OL: beyaz, tek cerceveli, tiklayinca asagi acilir */
+.hb{background:#fff;padding:clamp(40px,5vw,72px) 0 clamp(8px,1.5vw,20px)}
 .hb-w{max-width:1200px;margin:0 auto;padding:0 var(--gut)}
-.hb-in{position:relative;padding:clamp(30px,3.8vw,46px) clamp(20px,2.8vw,38px) clamp(26px,3vw,38px);border-radius:22px;text-align:center;color:#F4F1EA;background:radial-gradient(70% 120% at 0% 0%,rgba(216,180,119,.15),rgba(216,180,119,0) 60%),linear-gradient(180deg,rgba(32,31,35,.92),rgba(18,18,21,.92));box-shadow:0 34px 70px -30px rgba(40,28,12,.55),0 8px 20px -10px rgba(40,28,12,.25),inset 0 1px 0 rgba(255,255,255,.06)}
-.hb-in::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(110deg,rgba(247,233,204,.75),rgba(216,180,119,.25) 30%,rgba(255,255,255,.05) 60%,rgba(216,180,119,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
-.hb h2{margin:0 0 clamp(26px,3vw,36px);font-family:"Manrope",system-ui,sans-serif;font-size:clamp(22px,2.6vw,32px);line-height:1.2;font-weight:750;letter-spacing:-.025em;color:#F4F1EA}
-.hb-f{max-width:520px;margin:0 auto}
+.hb-in{max-width:560px;margin:0 auto;background:#fff;border:1px solid #ECE3D8;border-radius:16px;box-shadow:0 8px 22px -16px rgba(40,28,12,.22);transition:border-color .2s,box-shadow .2s}
+.hb-in.acik{border-color:#744A17;box-shadow:0 6px 18px rgba(116,74,23,.10)}
+.hb-t{width:100%;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 14px 14px 22px;text-align:left;cursor:pointer;font-family:"Manrope",system-ui,sans-serif;font-size:clamp(17px,1.9vw,20px);line-height:1.25;font-weight:750;letter-spacing:-.02em;color:#16151A}
+.hb-t:hover{color:#744A17}
+.hb-ic{position:relative;flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:#744A17;color:#FFF8EF;transition:background .25s,color .25s;animation:hbPuls 2.6s ease-out infinite}
+.hb-ic svg{width:19px;height:19px;grid-area:1/1;transition:opacity .2s,transform .3s}
+.hb-ic .x{opacity:0;transform:rotate(-45deg)}
+.hb-in.acik .hb-ic{background:transparent;color:#744A17;box-shadow:inset 0 0 0 1.25px #744A17;animation:none}
+.hb-in.acik .hb-ic .p{opacity:0}
+.hb-in.acik .hb-ic .x{opacity:1;transform:none}
+@keyframes hbPuls{0%{box-shadow:0 0 0 0 rgba(116,74,23,.35)}70%,100%{box-shadow:0 0 0 11px rgba(116,74,23,0)}}
+.hb-p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.22,.7,.2,1)}
+.hb-in.acik .hb-p{grid-template-rows:1fr}
+.hb-pi{min-height:0;overflow:hidden;visibility:hidden;transition:visibility 0s .45s}
+.hb-in.acik .hb-pi{visibility:visible;transition-delay:0s}
+.hb-f{padding:2px 22px 16px}
 .hb .sender-form-field{width:100%;min-height:1px}
+@media (prefers-reduced-motion:reduce){.hb-ic{animation:none}.hb-p,.hb-pi{transition:none}}
 /* TANITIM VE REKLAM FILMLERI: beyaz zemin */
 #firmalar + #reklam{margin-top:0}
 #reklam{background:#fff;box-shadow:0 0 0 100vmax #fff;clip-path:inset(0 -100vmax);padding:var(--blok) 0}
@@ -861,10 +872,10 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
 <script>(function(){var E=+new Date('2026-10-18T02:00:00+03:00'),d=document.getElementById('duyuru');if(Date.now()>E)d.remove()})()</script>
 
 <!-- YENİ EĞİTİMLERDEN HABERDAR OL (Sender formu; form çizilince görünür) -->
-<section class="hb" id="haberdar" aria-labelledby="hb-h">
-  <div class="hb-w"><div class="hb-in">
-    <h2 id="hb-h">Yeni eğitimlerden haberdar ol</h2>
-    <div class="hb-f"><div style="text-align: left" class="sender-form-field" data-sender-form-id="aKr4BR"></div></div>
+<section class="hb" id="haberdar" aria-label="Yeni eğitim duyuruları">
+  <div class="hb-w"><div class="hb-in" id="hb-in">
+    <button type="button" class="hb-t" id="hb-t" aria-expanded="false" aria-controls="hb-p"><span>Yeni eğitimlerden haberdar ol</span><i class="hb-ic" aria-hidden="true"><svg class="p" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9l5 12 1.8-5.2L21 14z"/><path d="M7.2 2.2 8 5M3.2 6.1 6 7M13.9 3.3l-1.3 2.7M4.3 12.6l2.6-1.3"/></svg><svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 7l10 10M17 7L7 17"/></svg></i></button>
+    <div class="hb-p" id="hb-p"><div class="hb-pi"><div class="hb-f"><div style="text-align: left" class="sender-form-field" data-sender-form-id="aKr4BR"></div></div></div></div>
   </div></div>
 </section>
 
@@ -1216,26 +1227,27 @@ fetch("/api/iletisim",{method:"POST",headers:{"Content-Type":"application/json"}
 if(x.ok){f.reset();m.textContent="Teşekkürler, mesajınız ulaştı. En kısa sürede dönüş yapacağım.";m.classList.add("ok");return}
 if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.alan].focus();return}throw 0}).catch(function(){m.textContent="Mesaj gönderilemedi. Lütfen sağ alttaki WhatsApp düğmesinden yazın.";m.classList.add("err")}).finally(function(){b.disabled=false})})})()</script>
 <script>
-// Sender abonelik formu (anasayfa): bölüm, form çizilene kadar görünmez kalır; yükleyici bölüm yaklaşınca bir kez eklenir.
+// Haberdar ol: tek çerçeveli düğme, tıklayınca form aşağı açılır; kayıt bilgisi görününce 2,5 sn sonra kapanır.
+// Sender formu bölüm yaklaşınca ya da ilk tıklamada bir kez yüklenir.
 (function(){
   var sec=document.getElementById('haberdar'); if(!sec) return;
-  var alan=sec.querySelector('.sender-form-field');
-  var mo=new MutationObserver(function(){ if(alan.children.length){ sec.classList.add('hazir'); mo.disconnect(); } });
+  var kutu0=document.getElementById('hb-in'), dugme=document.getElementById('hb-t'), alan=sec.querySelector('.sender-form-field');
+  var boyFn=null, kapaT=null;
+  function ac(){ kutu0.classList.add('acik'); dugme.setAttribute('aria-expanded','true'); yukle(); if(boyFn){ setTimeout(boyFn,60); setTimeout(boyFn,500); } }
+  function kapa(){ clearTimeout(kapaT); kapaT=null; kutu0.classList.remove('acik'); dugme.setAttribute('aria-expanded','false'); }
+  dugme.addEventListener('click',function(){ if(kutu0.classList.contains('acik')) kapa(); else ac(); });
   var SSTIL='html,body,#sender-form-content,.sender-form-box,.box-bg{background:transparent!important;box-shadow:none!important}'+
-    '#sender-form-content{padding:0!important}'+
+    '#sender-form-content{padding:0 0 2px!important}'+
     '.sender-form .sender-form-title,.sender-form .sender-form-label{display:none!important}'+
     'a[href*="sender.net"]{display:none!important}'+
-    '.sender-form .sender-form-input{text-align:center!important;color:#F4F1EA!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.18)!important;background:rgba(255,255,255,.05)!important}'+
-    '.sender-form .sender-form-input::placeholder{color:rgba(244,241,234,.55)!important;opacity:1!important;text-transform:uppercase;letter-spacing:.06em;font-size:13px}'+
+    '.sender-form .sender-form-input{text-align:center!important;border-radius:12px!important;border:1px solid #DED6CA!important;background:#fff!important}'+
+    '.sender-form .sender-form-input::placeholder{color:#9A948B!important;opacity:1!important;text-transform:uppercase;letter-spacing:.06em;font-size:13px}'+
     '.sender-form-bottom-text br{display:none}'+
-    '.sender-form-bottom-text,.sender-form-bottom-text p{color:rgba(244,241,234,.7)!important}'+
-    '.sender-form-bottom-text a{color:#D8B477!important}'+
-    '.sender-form-success *{color:#F4F1EA!important}'+
-    '.sender-form .error-message{color:#F28B7D!important}'+
-    '.sender-form button,.sender-form [type=submit]{border-radius:12px!important;color:#16151A!important;background:linear-gradient(100deg,#F7E9CC,#D8B477 60%,#B89058)!important;border-color:#D8B477!important;transition:filter .2s,transform .2s}'+
-    '.sender-form button:hover,.sender-form [type=submit]:hover{filter:brightness(1.06)}'+
-    '.sender-form .sender-form-input:focus-visible{outline:2px solid #D8B477!important;outline-offset:2px!important;border-color:#D8B477!important}'+
-    '.sender-form button:focus-visible,.sender-form [type=submit]:focus-visible{outline:2px solid #F4F1EA!important;outline-offset:3px!important}';
+    '.sender-form-bottom-text a{color:#744A17!important}'+
+    '.sender-form button,.sender-form [type=submit]{border-radius:12px!important;background:linear-gradient(135deg,#94641F,#5A3810)!important;border-color:#744A17!important;transition:background-color .2s,border-color .2s}'+
+    '.sender-form button:hover,.sender-form [type=submit]:hover{background:linear-gradient(135deg,#825219,#482C0C)!important;border-color:#482C0C!important}'+
+    '.sender-form .sender-form-input:focus-visible{outline:2px solid #744A17!important;outline-offset:2px!important;border-color:#744A17!important}'+
+    '.sender-form button:focus-visible,.sender-form [type=submit]:focus-visible{outline:2px solid #1A1714!important;outline-offset:3px!important}';
   var stilT=setInterval(function(){
     var fr=alan.querySelector('iframe'); if(!fr) return;
     var d; try{ d=fr.contentDocument; }catch(e){ clearInterval(stilT); return; }
@@ -1247,11 +1259,11 @@ if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.ala
     var cevir=function(){ d.querySelectorAll('.error-message').forEach(function(e){ var t=e.textContent.trim();
       if(/fill out/i.test(t)) e.textContent='Lütfen e-posta adresinizi yazın.';
       else if(/^please/i.test(t)) e.textContent='Lütfen geçerli bir e-posta adresi yazın.'; }); };
-    new MutationObserver(cevir).observe(d.body,{childList:true,subtree:true,characterData:true}); cevir();
-    function boy(){ fr.style.height=kutu.offsetHeight+'px'; }
-    boy(); if(window.ResizeObserver) new ResizeObserver(boy).observe(kutu);
+    function basari(){ var s=d.querySelector('.sender-form-success'); return !!s&&d.defaultView.getComputedStyle(s).display!=='none'; }
+    new MutationObserver(function(){ cevir(); if(basari()&&!kapaT) kapaT=setTimeout(kapa,2500); }).observe(d.body,{childList:true,subtree:true,attributes:true,characterData:true}); cevir();
+    boyFn=function(){ fr.style.height=kutu.offsetHeight+'px'; };
+    boyFn(); if(window.ResizeObserver) new ResizeObserver(boyFn).observe(kutu);
   },300);
-  mo.observe(alan,{childList:true,subtree:true});
   function yukle(){
     if(window.senderYuklendi) return; window.senderYuklendi=1;
     (function (s, e, n, d, er) {
@@ -1276,7 +1288,7 @@ if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.ala
   if('IntersectionObserver' in window){
     var io=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ io.disconnect(); yukle(); } },{rootMargin:'1200px 0px'});
     io.observe(sec);
-  } else yukle();
+  }
 })();
 </script>
 <script src="/assets/ortak.js?v=a4448f90" defer></script>
