@@ -886,39 +886,6 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 /* slayt basliklari: en uzun satir (11.31em) ic genislige sigar — mobil pay 18+18, masaustu 28+28 */
 .mh-sh{font-size:min(44px,calc((100cqi - 40px) / 11.45))}
 @media (min-width:900px){.mh-sh{font-size:min(44px,calc((100cqi - 60px) / 11.45))}}
-/* URUN SADAKATI v2 (9 Ekim): ikonlu sola dayali baslik, ayrac, fotograflar yan yana, uyari altta */
-#urun-sadakati .pf-head{text-align:left;max-width:820px;margin-left:0;margin-right:0;container-type:inline-size}
-#urun-sadakati .pf2-h{display:flex;align-items:center;gap:.32em;margin:0;text-align:left;font-size:min(44px,calc(100cqi / 10.6));line-height:1.08;white-space:normal}
-#urun-sadakati .pf2-ic{flex:0 0 auto;display:grid;place-items:center;width:2.16em;height:2.16em;border-radius:50%;background:#D32F2F;color:#fff;font-size:1em;box-shadow:0 8px 20px -8px rgba(211,47,47,.6)}
-#urun-sadakati .pf2-ic i{font-size:1.25em}
-#urun-sadakati .pf2-t{display:grid}
-#urun-sadakati .pf2-t > span{display:block;white-space:nowrap;font-family:var(--sans);font-weight:900;letter-spacing:-.01em;color:var(--g-ink,#0A0A0A);font-size:1em;line-height:1.08}
-#urun-sadakati .pf2-alt{margin:14px 0 0;font-size:min(23px,calc(100cqi / 16.7));font-weight:700;line-height:1.25;color:var(--text);white-space:nowrap;text-align:left}
-#urun-sadakati .pf2-ayrac{position:relative;display:block;height:3px;margin:18px 0 16px}
-#urun-sadakati .pf2-ayrac::before{content:"";position:absolute;left:0;right:0;top:1px;height:1px;background:var(--line2)}
-#urun-sadakati .pf2-ayrac::after{content:"";position:absolute;left:50%;top:0;width:72px;height:3px;margin-left:-36px;border-radius:2px;background:#8A4B1F}
-#urun-sadakati .pf-head .lead{text-align:left !important;margin:0 !important;max-width:none}
-#urun-sadakati .pf-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start;max-width:1100px;margin-left:0;margin-right:0}
-#urun-sadakati .pf-frame{aspect-ratio:1/1}
-#urun-sadakati .pf-card{padding:6px}
-#urun-sadakati .pf-card figcaption{flex-wrap:wrap;gap:4px 6px;font-size:12px;padding:8px 2px 2px}
-#urun-sadakati .pf-card figcaption span{font-size:10px}
-#urun-sadakati .pf-list{flex-direction:column;gap:5px;font-size:12px;margin:8px 2px 2px}
-#urun-sadakati .pf-pin{width:20px;height:20px;margin:-10px 0 0 -10px;font-size:10px;line-height:16px}
-#urun-sadakati .pf2-vurgu{justify-content:flex-start;margin:18px 0 0;padding:0}
-@media (min-width:600px){
-  #urun-sadakati .pf-grid{gap:20px}
-  #urun-sadakati .pf-card{padding:10px}
-  #urun-sadakati .pf-card figcaption{font-size:15px;padding:10px 4px 2px}
-  #urun-sadakati .pf-card figcaption span{font-size:11px}
-  #urun-sadakati .pf-list{flex-direction:row;flex-wrap:wrap;gap:6px 18px;font-size:14px}
-  #urun-sadakati .pf-pin{width:28px;height:28px;margin:-14px 0 0 -14px;font-size:13px;line-height:24px}
-}
-@media (min-width:900px){
-  #urun-sadakati .pf2-vurgu{flex-direction:row;padding:0;margin-top:26px}
-  #urun-sadakati .pf-grid{max-width:820px;gap:24px}
-  #urun-sadakati .pf2-vurgu p{padding-left:12px;border-left:2px solid var(--line2);text-align:left}
-}
 /* ust kart bosluklari yariya (9 Ekim): ust 14/32px, kart-slider arasi 11px */
 .mh{padding-top:calc(var(--sec-y) / 2);gap:11px}
 .mh-sl{margin-bottom:30px}
@@ -1015,10 +982,8 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 </section>
 
 <section id="urun-sadakati" class="wrap sec pf" aria-labelledby="pf-baslik">
-  <div class="pf-head program-intro protection-intro pf2">
-    <h2 id="pf-baslik" class="pf2-h"><span class="pf2-ic" aria-hidden="true"><i class="fa-solid fa-exclamation"></i></span><span class="pf2-t"><span>HERKES AYNI</span><span>HATAYI YAPIYOR!</span></span></h2>
-    <p class="pf2-alt">Yapay zeka ürünü değiştirmemeli.</p>
-    <span class="pf2-ayrac" aria-hidden="true"></span>
+  <div class="pf-head program-intro protection-intro">
+    <h2 id="pf-baslik"><span class="pf-h1">HERKES AYNI HATAYI YAPIYOR!</span><span class="pf-h2">Yapay zeka ürünü değiştirmemeli.</span></h2>
     <p class="lead">Yapay zeka ile ürün görseli üretmenin en kritik noktası, gerçek ürünü korumaktır; ürünün formu, rengi, logosu, etiket yazıları ve malzeme dokusu asla değişmemelidir.</p>
   </div>
   <div class="pf-grid">
@@ -1026,6 +991,7 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
       <div class="pf-frame"><div class="pf-box"><img src="assets/product-fidelity-original.webp" width="960" height="960" loading="lazy" decoding="async" alt="Orijinal ürün: logosu, etiketi, formu, rengi ve dokusu doğru olan ürün görseli"></div></div>
       <figcaption>Orijinal Ürün <span>Referans</span></figcaption>
     </figure>
+    <div class="pf-vurgu"><svg class="pf-uyari" viewBox="0 0 48 44" aria-hidden="true"><path d="M21.4 3.6a3 3 0 0 1 5.2 0l19 33a3 3 0 0 1-2.6 4.4H5a3 3 0 0 1-2.6-4.4z" fill="#D32F2F"/><path d="M24 15v12" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="33.5" r="2.4" fill="#FFFFFF"/></svg><p><strong>Güzel görünmesi yetmez!</strong><em>Ürün bire bir aynı kalmalı.</em></p></div>
     <figure class="pf-card ai">
       <div class="pf-frame"><div class="pf-box"><img src="assets/product-fidelity-ai-errors.webp" width="960" height="960" loading="lazy" decoding="async" alt="Yapay zeka üretimi: aynı ürünün logosu değişmiş, etiketi bozulmuş, formu, rengi ve dokusu farklılaşmış hali">
         <span class="pf-pin" style="--x:60%;--y:54%" aria-hidden="true">1</span>
@@ -1040,7 +1006,6 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
       </ol>
     </figure>
   </div>
-  <div class="pf-vurgu pf2-vurgu"><svg class="pf-uyari" viewBox="0 0 48 44" aria-hidden="true"><path d="M21.4 3.6a3 3 0 0 1 5.2 0l19 33a3 3 0 0 1-2.6 4.4H5a3 3 0 0 1-2.6-4.4z" fill="#D32F2F"/><path d="M24 15v12" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="33.5" r="2.4" fill="#FFFFFF"/></svg><p><strong>Güzel görünmesi yetmez!</strong><em>Ürün bire bir aynı kalmalı.</em></p></div>
 </section>
 
 <section id="program" class="wrap sec psec stack">
