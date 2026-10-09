@@ -505,14 +505,16 @@ main .sm-l{white-space:normal}
 .sm + #firmalar{margin-top:var(--blok)}
 #firmalar{background:#F5EFE7;box-shadow:0 0 0 100vmax #F5EFE7;clip-path:inset(0 -100vmax);padding:var(--blok) 0}
 #alanlar{padding-bottom:0}
-/* YENI EGITIMLERDEN HABERDAR OL: beyaz, minimal */
+/* YENI EGITIMLERDEN HABERDAR OL: koyu, duyuru kutusuyla ayni dil */
 .hb{background:#fff;min-height:1px}
 .hb:not(.hazir) .hb-in{display:none}
-.hb.hazir{padding-top:var(--blok);padding-bottom:20px}
-.hb-in{max-width:520px;margin:0 auto;padding:clamp(22px,3vw,30px) clamp(20px,3vw,30px) 20px;background:#fff;border:1px solid #ECE3D8;border-radius:20px;box-shadow:0 10px 30px -18px rgba(40,28,12,.25)}
-.hb h2{margin:0 0 14px;font-family:"Manrope",system-ui,sans-serif;font-size:clamp(21px,2.3vw,26px);line-height:1.2;font-weight:750;letter-spacing:-.025em;color:#16151A}
+.hb.hazir{padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(8px,1.5vw,20px)}
+.hb-w{max-width:1200px;margin:0 auto;padding:0 var(--gut)}
+.hb-in{position:relative;padding:clamp(30px,3.8vw,46px) clamp(20px,2.8vw,38px) clamp(26px,3vw,38px);border-radius:22px;text-align:center;color:#F4F1EA;background:radial-gradient(70% 120% at 0% 0%,rgba(216,180,119,.15),rgba(216,180,119,0) 60%),linear-gradient(180deg,rgba(32,31,35,.92),rgba(18,18,21,.92));box-shadow:0 34px 70px -30px rgba(40,28,12,.55),0 8px 20px -10px rgba(40,28,12,.25),inset 0 1px 0 rgba(255,255,255,.06)}
+.hb-in::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(110deg,rgba(247,233,204,.75),rgba(216,180,119,.25) 30%,rgba(255,255,255,.05) 60%,rgba(216,180,119,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.hb h2{margin:0 0 clamp(26px,3vw,36px);font-family:"Manrope",system-ui,sans-serif;font-size:clamp(22px,2.6vw,32px);line-height:1.2;font-weight:750;letter-spacing:-.025em;color:#F4F1EA}
+.hb-f{max-width:520px;margin:0 auto}
 .hb .sender-form-field{width:100%;min-height:1px}
-@media (max-width:560px){.hb{padding-left:var(--gut);padding-right:var(--gut)}}
 /* TANITIM VE REKLAM FILMLERI: beyaz zemin */
 #firmalar + #reklam{margin-top:0}
 #reklam{background:#fff;box-shadow:0 0 0 100vmax #fff;clip-path:inset(0 -100vmax);padding:var(--blok) 0}
@@ -860,10 +862,10 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
 
 <!-- YENİ EĞİTİMLERDEN HABERDAR OL (Sender formu; form çizilince görünür) -->
 <section class="hb" id="haberdar" aria-labelledby="hb-h">
-  <div class="hb-in">
+  <div class="hb-w"><div class="hb-in">
     <h2 id="hb-h">Yeni eğitimlerden haberdar ol</h2>
     <div class="hb-f"><div style="text-align: left" class="sender-form-field" data-sender-form-id="aKr4BR"></div></div>
-  </div>
+  </div></div>
 </section>
 
 <!-- SAVAŞ ÇIKRAK KİMDİR? -->
@@ -1219,17 +1221,21 @@ if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.ala
   var sec=document.getElementById('haberdar'); if(!sec) return;
   var alan=sec.querySelector('.sender-form-field');
   var mo=new MutationObserver(function(){ if(alan.children.length){ sec.classList.add('hazir'); mo.disconnect(); } });
-  var SSTIL='#sender-form-content,.sender-form-box,.box-bg{background:#fff!important;box-shadow:none!important}'+
-    '#sender-form-content{padding:0 0 14px!important}'+
-    '.sender-form .sender-form-title{display:none!important}'+
-    '.sender-form .sender-form-label{display:none!important}'+
-    '.sender-form .sender-form-input{border-radius:12px!important;border:1px solid #DED6CA!important;background:#fff!important}'+
-    '.sender-form .sender-form-input::placeholder{color:#9A948B!important;opacity:1!important}'+
+  var SSTIL='html,body,#sender-form-content,.sender-form-box,.box-bg{background:transparent!important;box-shadow:none!important}'+
+    '#sender-form-content{padding:0!important}'+
+    '.sender-form .sender-form-title,.sender-form .sender-form-label{display:none!important}'+
+    'a[href*="sender.net"]{display:none!important}'+
+    '.sender-form .sender-form-input{text-align:center!important;color:#F4F1EA!important;border-radius:12px!important;border:1px solid rgba(255,255,255,.18)!important;background:rgba(255,255,255,.05)!important}'+
+    '.sender-form .sender-form-input::placeholder{color:rgba(244,241,234,.55)!important;opacity:1!important;text-transform:uppercase;letter-spacing:.06em;font-size:13px}'+
     '.sender-form-bottom-text br{display:none}'+
-    '.sender-form button,.sender-form [type=submit]{border-radius:12px!important;background:linear-gradient(135deg,#94641F,#5A3810)!important;border-color:#744A17!important;transition:background-color .2s,border-color .2s}'+
-    '.sender-form button:hover,.sender-form [type=submit]:hover{background:linear-gradient(135deg,#825219,#482C0C)!important;border-color:#482C0C!important}'+
-    '.sender-form .sender-form-input:focus-visible{outline:2px solid #744A17!important;outline-offset:2px!important;border-color:#744A17!important}'+
-    '.sender-form button:focus-visible,.sender-form [type=submit]:focus-visible{outline:2px solid #1A1714!important;outline-offset:3px!important}';
+    '.sender-form-bottom-text,.sender-form-bottom-text p{color:rgba(244,241,234,.7)!important}'+
+    '.sender-form-bottom-text a{color:#D8B477!important}'+
+    '.sender-form-success *{color:#F4F1EA!important}'+
+    '.sender-form .error-message{color:#F28B7D!important}'+
+    '.sender-form button,.sender-form [type=submit]{border-radius:12px!important;color:#16151A!important;background:linear-gradient(100deg,#F7E9CC,#D8B477 60%,#B89058)!important;border-color:#D8B477!important;transition:filter .2s,transform .2s}'+
+    '.sender-form button:hover,.sender-form [type=submit]:hover{filter:brightness(1.06)}'+
+    '.sender-form .sender-form-input:focus-visible{outline:2px solid #D8B477!important;outline-offset:2px!important;border-color:#D8B477!important}'+
+    '.sender-form button:focus-visible,.sender-form [type=submit]:focus-visible{outline:2px solid #F4F1EA!important;outline-offset:3px!important}';
   var stilT=setInterval(function(){
     var fr=alan.querySelector('iframe'); if(!fr) return;
     var d; try{ d=fr.contentDocument; }catch(e){ clearInterval(stilT); return; }
@@ -1237,6 +1243,7 @@ if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.ala
     clearInterval(stilT);
     if(!d.getElementById('sk-stil')){ var st=d.createElement('style'); st.id='sk-stil'; st.textContent=SSTIL; d.head.appendChild(st); }
     var gir=d.querySelector('.sender-form input[type=email]'); if(gir){ gir.setAttribute('placeholder','E-posta adresiniz'); gir.setAttribute('aria-label','E-posta adresiniz'); }
+    d.querySelectorAll('a[href*="sender.net"]').forEach(function(a){ var q=a.parentNode; a.style.display='none'; if(q&&q.tagName==='DIV'&&q.id!=='sender-form-content') q.style.display='none'; });
     var cevir=function(){ d.querySelectorAll('.error-message').forEach(function(e){ var t=e.textContent.trim();
       if(/fill out/i.test(t)) e.textContent='Lütfen e-posta adresinizi yazın.';
       else if(/^please/i.test(t)) e.textContent='Lütfen geçerli bir e-posta adresi yazın.'; }); };
