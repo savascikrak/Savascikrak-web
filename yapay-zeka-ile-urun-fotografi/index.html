@@ -995,6 +995,77 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
 .mh-js .mh-s.mh-aktif .mh-sh::before{transform:none;opacity:1;transition:transform .9s cubic-bezier(.16,.84,.24,1) .15s,opacity .6s ease .15s}
 .mh-anlik .mh-sh::before{transition:none !important}
 @media (prefers-reduced-motion:reduce){.mh-js .mh-s .mh-sh::before{transform:none;opacity:1;transition:none}}
+/* ===== DUYURU BLOGU (anasayfadan, 9 Ekim; geri sayim ve dugme yok) ===== */
+.dy{position:relative;background:linear-gradient(180deg,#F6F1E8,#EFE7DA);color:#F4F1EA;padding:clamp(40px,5vw,72px) 0}
+.dy-in{max-width:1200px;margin:0 auto;padding:0 var(--gut)}
+.dy-c{position:relative;display:block;padding:clamp(22px,2.6vw,34px) clamp(20px,2.8vw,38px);border-radius:22px;background:radial-gradient(70% 120% at 0% 0%,rgba(216,180,119,.15),rgba(216,180,119,0) 60%),linear-gradient(180deg,rgba(32,31,35,.92),rgba(18,18,21,.92));box-shadow:0 34px 70px -30px rgba(40,28,12,.55),0 8px 20px -10px rgba(40,28,12,.25),inset 0 1px 0 rgba(255,255,255,.06)}
+.dy-c::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(110deg,rgba(247,233,204,.75),rgba(216,180,119,.25) 30%,rgba(255,255,255,.05) 60%,rgba(216,180,119,.4));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.dy-ic{position:absolute;z-index:2;top:50%;left:-22px;margin-top:-32px;flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#FF5A5F,#E11D2E 55%,#9F1239);color:#fff;box-shadow:0 10px 30px -8px rgba(225,29,46,.6)}
+.dy-ic svg{width:28px;height:28px;transform:rotate(-12deg)}
+.dy-ic::before,.dy-ic::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid rgba(239,68,68,.75);animation:dyPuls 2.4s cubic-bezier(.2,.6,.3,1) infinite}
+.dy-ic::after{animation-delay:1.2s}
+@keyframes dyPuls{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.65);opacity:0}}
+.dy-tx{min-width:0;container-type:inline-size}
+.dy-k{position:absolute;z-index:2;top:0;left:50%;transform:translate(calc(-50% + 11px),-50%);display:inline-flex;align-items:center;gap:10px;height:40px;padding:0 18px 0 54px;border-radius:12px;background:linear-gradient(180deg,#26252A,#18171B);border:1px solid rgba(216,180,119,.5);color:#F7E9CC;font-size:13.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;box-shadow:0 10px 24px -10px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06)}
+.dy-k i{position:relative;flex:none;width:9px;height:9px;border-radius:50%;background:#22E36B;box-shadow:0 0 10px rgba(34,227,107,.8)}
+.dy-k i::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid rgba(34,227,107,.6);animation:dyCanli 1.6s ease-out infinite}
+@keyframes dyCanli{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.6);opacity:0}}
+.dy h2{margin-top:14px;font-size:min(68px,calc(100cqi / 14.6));line-height:.98;font-weight:900;letter-spacing:-.005em;text-transform:uppercase;filter:drop-shadow(0 4px 0 rgba(0,0,0,.55)) drop-shadow(0 10px 24px rgba(0,0,0,.6))}
+.dy h2 span{display:block;white-space:nowrap}
+.dy h2 .w{color:#fff;font-size:1.18em}
+.dy h2 .y{background:linear-gradient(180deg,#FFD84A 0%,#FFB800 45%,#FF7A00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.dy-ev{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)}
+.dy-date{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px}
+.dy-date span,.dy-date strong,.dy-meta span{display:inline-flex;align-items:center;gap:8px;white-space:nowrap}
+.dy-date span{font-size:clamp(17px,1.7vw,22px);font-weight:700;letter-spacing:.02em;text-transform:uppercase}
+.dy-date i{width:1px;height:22px;background:rgba(255,255,255,.18)}
+.dy-date strong{min-height:38px;padding:0 14px;border-radius:9px;background:linear-gradient(100deg,#F7E9CC,#D8B477 60%,#B89058);color:#111;font-size:clamp(16px,1.6vw,20px);font-weight:700;letter-spacing:.04em}
+.dy .ico{width:19px;height:19px;flex:none;color:#D8B477}
+.dy-date strong .ico{width:17px;height:17px;color:#111}
+.dy-meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:14px;font-size:13px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:#E9E5DC}
+.dy-meta .ico{width:17px;height:17px}
+@media (max-width:767px){
+  .dy{padding:32px 0}
+  .dy-in{padding:0 20px}
+  .dy-c{display:block;padding:18px 16px 18px;border-radius:18px}
+  .dy-ic{left:-14px;margin-top:-23px;width:46px;height:46px}.dy-ic svg{width:20px;height:20px}
+  .dy-c{padding-top:30px}
+  .dy-k{height:40px;padding:0 14px 0 40px;font-size:12px;letter-spacing:.13em;transform:translate(calc(-50% + 7px),-50%)}
+  .dy h2{margin-top:16px}
+  .dy-ev{margin-top:14px;padding-top:14px}
+  .dy-date{gap:8px;flex-wrap:nowrap}
+  .dy-date span{font-size:12.5px;gap:5px;letter-spacing:.01em}
+  .dy-date i{height:18px}
+  .dy-date strong{min-height:30px;padding:0 9px;font-size:13px;gap:5px}
+  .dy .ico{width:16px;height:16px}
+  .dy-meta{gap:8px 16px;font-size:11.5px;margin-top:12px}
+  .dy-meta .ico{width:15px;height:15px}
+}
+@media (max-width:374px){.dy-date span{font-size:12px;letter-spacing:0}}
+@media (max-width:359px){.dy-date{flex-wrap:wrap}.dy-k{font-size:10.5px;letter-spacing:.1em;padding:0 12px 0 38px;gap:8px}.dy-date span{font-size:12.5px}.dy-date strong{font-size:13px;padding:0 8px}.dy-meta{font-size:10.5px;gap:6px 12px}}
+@media (prefers-reduced-motion:reduce){.dy-ic::before,.dy-ic::after,.dy-k i::after{animation:none;opacity:0}}
+/* DUYURU ORTALI + tarih/meta az buyuk (9 Ekim) */
+.dy-tx{text-align:center}
+.dy-date,.dy-meta{justify-content:center}
+.dy-date span{font-size:clamp(18px,1.8vw,24px)}
+.dy-date strong{font-size:clamp(17px,1.7vw,21px)}
+.dy-meta{font-size:14px}
+@media (max-width:767px){.dy-date span,.dy-date strong,.dy-meta{font-size:14px}}
+@media (max-width:374px){.dy-date span,.dy-date strong,.dy-meta{font-size:14px}}
+@media (max-width:359px){.dy-date span,.dy-date strong,.dy-meta{font-size:14px}}
+/* egitim sayfasi uyarlama */
+.mh .dy{background:none;padding:0;color:#F4F1EA}
+.dy .dy-h2{margin:14px 0 0;font-size:min(68px,calc(100cqi / 14.6));line-height:.98;font-weight:900;letter-spacing:-.005em;text-transform:uppercase;filter:drop-shadow(0 4px 0 rgba(0,0,0,.55)) drop-shadow(0 10px 24px rgba(0,0,0,.6))}
+.dy .dy-h2 span{display:block;white-space:nowrap}.dy .dy-h2 .w{color:#fff;font-size:1.18em}
+.dy .dy-h2 .y{background:linear-gradient(180deg,#FFD84A 0%,#FFB800 45%,#FF7A00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mh .dy-c{margin-top:30px;padding-top:56px}
+.mh .dy-k{height:60px;padding:0 27px 0 81px;gap:14px;font-size:20px;font-weight:800;letter-spacing:.14em}
+.mh .dy-ic{left:-30px;margin-top:-42px;width:84px;height:84px}.mh .dy-ic svg{width:36px;height:36px}
+@media (max-width:767px){
+  .mh .dy-c{padding-top:44px}
+  .mh .dy-k{height:52px;padding:0 16px 0 56px;gap:10px;font-size:15px;letter-spacing:.1em;transform:translate(calc(-50% + 9px),-50%)}
+  .mh .dy-ic{left:-18px;margin-top:-32px;width:64px;height:64px}.mh .dy-ic svg{width:27px;height:27px}
+}
 </style>
 </head>
 <body>
@@ -1013,11 +1084,18 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
 <main>
 
 <section class="wrap mh" id="manset">
-  <div class="mh-dy" aria-label="Online workshop duyurusu">
+  <div class="dy" aria-label="Online workshop duyurusu">
     <h1 class="mh-gizli">Ürün fotoğraflarını yapay zeka ile dönüştür: online workshop</h1>
-    <p class="mh-lbl">ONLINE WORKSHOP</p>
-    <p class="mh-tarih">17 Ekim Cumartesi · 20:00</p>
-    <p class="mh-meta"><span><i class="fa-solid fa-video" aria-hidden="true"></i>Zoom canlı</span><span><i class="fa-solid fa-clock" aria-hidden="true"></i>5 saat</span><span><i class="fa-solid fa-circle-play" aria-hidden="true"></i>Kayıt izlenebilir</span></p>
+        <div class="dy-c">
+        <div class="dy-tx">
+          <p class="dy-k"><span class="dy-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>Canlı online eğitim</p>
+          <p role="presentation" class="dy-h2" id="dy-h" aria-hidden="true"><span class="w">Ürün fotoğraflarını</span> <span class="y">yapay zekayla dönüştür</span></p>
+          <div class="dy-ev">
+            <div class="dy-date"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>20:00</strong></div>
+            <p class="dy-meta"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></svg>Canlı yayın</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h11M6.5 20.5h11M7.5 3.5c0 4.5 4.5 5.5 4.5 8.5s-4.5 4-4.5 8.5M16.5 3.5c0 4.5-4.5 5.5-4.5 8.5s4.5 4 4.5 8.5"/></svg>5 saat</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="13" height="11" rx="2.2"/><path d="M16 10.5l5-3v9l-5-3"/></svg>Kayıt var</span></p>
+          </div>
+        </div>
+      </div>
   </div>
   <div class="mh-sl" aria-roledescription="carousel" aria-label="Gerçek fotoğraftan yapay zeka görselleri">
     <div class="mh-track" id="mh-track">

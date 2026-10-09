@@ -209,6 +209,15 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
 @media (max-width:374px){.dy-date span{font-size:12px;letter-spacing:0}}
 @media (max-width:359px){.dy-date{flex-wrap:wrap}.dy-k{font-size:10.5px;letter-spacing:.1em;padding:0 12px 0 38px;gap:8px}.dy-date span{font-size:12.5px}.dy-date strong{font-size:13px;padding:0 8px}.dy-meta{font-size:10.5px;gap:6px 12px}}
 @media (prefers-reduced-motion:reduce){.dy-ic::before,.dy-ic::after,.dy-k i::after{animation:none;opacity:0}}
+/* DUYURU ORTALI + tarih/meta az buyuk (9 Ekim) */
+.dy-tx{text-align:center}
+.dy-date,.dy-meta,.dy-bt{justify-content:center}
+.dy-date span{font-size:clamp(18px,1.8vw,24px)}
+.dy-date strong{font-size:clamp(17px,1.7vw,21px)}
+.dy-meta{font-size:14px}
+@media (max-width:767px){.dy-date span,.dy-date strong,.dy-meta{font-size:14px}}
+@media (max-width:374px){.dy-date span,.dy-date strong,.dy-meta{font-size:14px}}
+@media (max-width:359px){.dy-date span,.dy-date strong,.dy-meta{font-size:14px}}
 /* ===== SAVAŞ ÇIKRAK KİMDİR? (eğitim sayfası eğitmen kartı düzeni: dekupe portre karttan yukarı taşar; bizim kalın + altın dil) ===== */
 .sk{position:relative;background:#fff;color:#16151A;padding:clamp(176px,16vw,224px) 0 clamp(56px,7vw,96px);overflow-x:clip}
 .sk-in{max-width:1200px;margin:0 auto;padding:0 var(--gut)}
@@ -682,14 +691,13 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
           <p class="dy-meta"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.2" fill="currentColor"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M5 5a10 10 0 0 0 0 14M19 5a10 10 0 0 1 0 14"/></svg>Canlı yayın</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3.5h11M6.5 20.5h11M7.5 3.5c0 4.5 4.5 5.5 4.5 8.5s-4.5 4-4.5 8.5M16.5 3.5c0 4.5-4.5 5.5-4.5 8.5s4.5 4 4.5 8.5"/></svg>5 saat</span><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="13" height="11" rx="2.2"/><path d="M16 10.5l5-3v9l-5-3"/></svg>Kayıt var</span></p>
         </div>
         <div class="dy-bt">
-          <div class="dy-cd" id="dyCd" role="timer" aria-label="Eğitime kalan süre"><div><b data-u="g">--</b><span>Gün</span></div><div><b data-u="s">--</b><span>Saat</span></div><div><b data-u="d">--</b><span>Dakika</span></div><div><b data-u="n">--</b><span>Saniye</span></div></div>
           <a class="dy-b" href="/yapay-zeka-ile-urun-fotografi/">Detaylar ve kayıt <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </div>
   </div>
 </section>
-<script>(function(){var B=+new Date('2026-10-17T20:00:00+03:00'),E=+new Date('2026-10-18T02:00:00+03:00'),d=document.getElementById('duyuru');if(Date.now()>E){d.remove();return}var c=document.getElementById('dyCd'),u={};c.querySelectorAll('b').forEach(function(b){u[b.dataset.u]=b});function p(n){return(n<10?'0':'')+n}function t(){var r=B-Date.now();if(r<=0){c.className='dy-cd live';c.textContent='Şu an yayında';clearInterval(h);return}var x=Math.floor(r/1e3);u.g.textContent=p(Math.floor(x/86400));u.s.textContent=p(Math.floor(x%86400/3600));u.d.textContent=p(Math.floor(x%3600/60));u.n.textContent=p(x%60)}var h=setInterval(t,1000);t()})()</script>
+<script>(function(){var E=+new Date('2026-10-18T02:00:00+03:00'),d=document.getElementById('duyuru');if(Date.now()>E)d.remove()})()</script>
 
 <!-- SAVAŞ ÇIKRAK KİMDİR? -->
 <section class="sk" id="hakkimda" aria-labelledby="sk-h">
