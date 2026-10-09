@@ -1150,3 +1150,5 @@ a:hover,.fx-kicker,.fx-tl-tag,.consent a,.cerez a,.tl-list summary:hover strong,
 @media (min-width:900px){.fx-tl-item:last-child::before{left:47px;top:40px;bottom:0}.fx-tl-item:last-child::after{left:37px;bottom:0;width:22px}}
 /* ===== HAFIF YAZI GRADYANI (9 Ekim, Savas): kahve yazilar + baslik 2. satirlari #9A743F -> #8C6738 -> #6B4A22 (cok acik baslamaz) ===== */
 .fx-h-b,main .pf3-hw .pf3-h em,.hero-live,.hero .sub,.plist .n,.price-amount,.tl-phase,.pf-vurgu em,.vcard .price b,.price-urgency strong,.logo span,.fx-flogo span{background-image:linear-gradient(100deg,#B89154 0%,#8C6738 50%,#6B4A22 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+/* Akordeon acikken ok yerine carpi (9 Ekim) */
+.tl-list details[open] summary::after,.faq details[open] summary::after{background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23744A17' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/15px no-repeat;border-color:var(--accent);transform:none}

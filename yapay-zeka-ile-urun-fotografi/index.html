@@ -979,6 +979,22 @@ a:hover,.consent a,.cerez a,.tl-list summary:hover strong,.faq summary:hover{col
 main .pf3-h em{background:none;-webkit-background-clip:border-box;background-clip:border-box;-webkit-text-fill-color:#8C6738;color:#8C6738}
 /* ===== HAFIF YAZI GRADYANI (9 Ekim, Savas): kahve yazilar + baslik 2. satirlari #9A743F -> #8C6738 -> #6B4A22 (cok acik baslamaz) ===== */
 main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amount,.tl-phase,.pf-eyebrow,.pf-vurgu em,.vcard .price b,.price-urgency strong,.logo span{background-image:linear-gradient(100deg,#B89154 0%,#8C6738 50%,#6B4A22 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+/* Akordeon acikken ok yerine carpi (9 Ekim) */
+.tl-list details[open] summary::after,.faq details[open] summary::after{background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23744A17' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/15px no-repeat;border-color:var(--accent);transform:none}
+/* ONLINE WORKSHOP + slider yazilari: ince, zarif (9 Ekim) */
+.mh-lbl{font-weight:300;letter-spacing:.24em;font-size:min(26px,calc((100cqi - 8px) / 14));padding-left:.24em}
+@media (min-width:900px){.mh-lbl{font-size:min(30px,calc((100cqi - 8px) / 14))}}
+.mh-sh{font-weight:300;letter-spacing:-.015em}
+.mh-l.mh-k{font-weight:500}
+.mh-l > span{text-shadow:0 1px 10px rgba(0,0,0,.45),0 1px 1px rgba(0,0,0,.35)}
+/* Slider yazilari: basta kalin siyah cizgi; slayt gelince soldan girer, yazilar ayni anda belirir (9 Ekim) */
+.mh-sh{--pt:56px;--px:18px;padding:var(--pt) var(--px) 0 calc(var(--px) + 14px);font-size:min(44px,calc((100cqi - 54px) / 11.45))}
+@media (min-width:900px){.mh-sh{--pt:68px;--px:28px;font-size:min(44px,calc((100cqi - 74px) / 11.45))}}
+.mh-sh::before{content:"";position:absolute;left:var(--px);top:calc(var(--pt) + .06em);bottom:.1em;width:7px;border-radius:1px;background:#FFFFFF;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+.mh-js .mh-s .mh-sh::before{transform:translateX(calc(-1 * var(--px) - 8px));opacity:0}
+.mh-js .mh-s.mh-aktif .mh-sh::before{transform:none;opacity:1;transition:transform .9s cubic-bezier(.16,.84,.24,1) .15s,opacity .6s ease .15s}
+.mh-anlik .mh-sh::before{transition:none !important}
+@media (prefers-reduced-motion:reduce){.mh-js .mh-s .mh-sh::before{transform:none;opacity:1;transition:none}}
 </style>
 </head>
 <body>
@@ -1015,11 +1031,11 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
       </figure>
       <figure class="mh-s" data-once="saat">
         <img src="assets/saat-ai2.webp" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş lifestyle sahnesi" loading="lazy" decoding="async">
-        <figcaption class="mh-sh"><span class="mh-l"><span>Aynı ürün,</span></span><span class="mh-l mh-k"><span>sınırsız sahne</span></span></figcaption>
+        <figcaption class="mh-sh"><span class="mh-l"><span>Aynı ürün</span></span><span class="mh-l mh-k"><span>sınırsız sahne</span></span></figcaption>
       </figure>
       <figure class="mh-s" data-once="saat">
         <img src="assets/saat-ai3.webp" width="640" height="857" alt="Aynı saat, yapay zeka ile oluşturulmuş kampanya sahnesi" loading="lazy" decoding="async">
-        <figcaption class="mh-sh"><span class="mh-l"><span>Önce iyi bir fotoğraf,</span></span><span class="mh-l mh-k"><span>sonra yapay zeka</span></span></figcaption>
+        <figcaption class="mh-sh"><span class="mh-l"><span>Önce iyi bir fotoğraf</span></span><span class="mh-l mh-k"><span>sonra yapay zeka</span></span></figcaption>
       </figure>
     </div>
     <span class="mh-once mh-on" data-k="saat"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı"><span>Gerçek fotoğraf</span></span>
@@ -1080,7 +1096,7 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
     <p class="roles">Fotoğrafçı / Yönetmen / <strong>Eğitmen</strong></p>
     <p class="bio">
       <span class="bio-line">30 yılı aşkın süredir görsel üretim</span>
-      <span class="bio-line">alanında yönetmen ve fotoğrafçılık</span>
+      <span class="bio-line">alanında yönetmenlik ve fotoğrafçılık</span>
       <span class="bio-line">yapıyorum.</span>
       <span class="bio-par">
       <span class="bio-line">Çalışmalarımda, bu deneyimi yeni nesil</span>
