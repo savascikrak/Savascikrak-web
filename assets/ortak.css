@@ -157,3 +157,18 @@ button.pf-b{border:0;font-family:inherit;cursor:pointer}
 .pf-x:hover{transform:translateY(-2px);background:rgba(216,180,119,.14);border-color:#D8B477}
 .pf-x:focus-visible{outline:2px solid #F7E9CC;outline-offset:3px}
 @media (max-width:767px){.pf-x{width:52px;height:52px}.pf-more .pf-b{flex:1;width:auto}}
+/* ===== ÇEREZ UYARISI (tüm sayfalar; assets/cerez.js) ===== */
+.cerez{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FBF8F3;border-top:2px solid #744A17;box-shadow:0 -10px 30px rgba(73,54,35,.10);color:#3F382F;font:13px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:14px max(16px,env(safe-area-inset-left,0px)) calc(14px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.cerez.gor{transform:none}
+.cerez-ic{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.cerez p{margin:0}
+.cerez a{color:#744A17;font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
+.cerez a:hover{color:#1A1714}
+.cerez .durum{color:#5E554A}
+.cerez .cb{display:flex;gap:10px}
+.cerez button{flex:1 1 0;font:inherit;font-size:14px;font-weight:600;min-height:42px;padding:0 18px;border-radius:999px;cursor:pointer;border:1.5px solid #744A17;background:#fff;color:#744A17;transition:background .2s ease,color .2s ease}
+.cerez button:hover,.cerez button:focus-visible{background:#744A17;color:#FBF8F3;outline:none}
+@media (min-width:900px){.cerez{padding-top:16px;padding-bottom:16px}.cerez-ic{flex-direction:row;align-items:center;justify-content:space-between;gap:32px}.cerez p{max-width:720px}.cerez button{flex:0 0 auto;width:130px}}
+body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
+.cerez-acik{padding-bottom:var(--cbh,0px) !important}
+@media (prefers-reduced-motion:reduce){.cerez,body{transition:none !important}}

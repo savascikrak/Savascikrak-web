@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>İletişim · Savaş Çıkrak</title>
+<meta name="description" content="Savaş Çıkrak ile iletişime geçin: çekim, eğitim, sosyal medya ve firmalara özel çözümler için form, e-posta, telefon, WhatsApp ve yol tarifi.">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="/favicon.ico?v=3" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-64.png?v=3">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+<link rel="canonical" href="https://savascikrak.com/iletisim/">
+<link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter";font-style:normal;font-weight:100 900;font-display:swap;src:url(/fonts/inter-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(/fonts/manrope-latin-wght-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:200 800;font-display:swap;src:url(/fonts/manrope-latin-ext-wght-normal.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+:root{--ink:#16151A;--text:#55505A;--muted:#8A857E;--line:#E9E3DA;--acc:#744A17;--acc-t:#8C6738;--gut:24px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.ic-w{max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,88px) var(--gut) clamp(56px,7vw,104px)}
+/* baslik sablonu */
+.ic-hd{margin-bottom:clamp(36px,5vw,64px)}
+.ic-hw{container-type:inline-size;max-width:640px}
+.ic-h{font-family:Manrope,system-ui,sans-serif;font-size:min(clamp(36px,5.2vw,68px),calc(100cqi / 6.6));line-height:1.04;font-weight:750;letter-spacing:-.035em;text-transform:uppercase;color:var(--ink)}
+.ic-h span,.ic-h em{display:block;padding:.14em 0;margin:-.14em 0}
+.ic-h em{font-style:normal;background:linear-gradient(100deg,#B89154 0%,#8C6738 50%,#6B4A22 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.ic-p{margin-top:22px;padding-left:18px;border-left:2px solid #B58A4B;max-width:540px;font-size:16px;line-height:1.75;color:var(--text)}
+/* govde */
+.ic-g{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(36px,6vw,96px);align-items:start}
+.ic-t{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--acc-t);margin-bottom:18px}
+/* form */
+.ic-f{display:grid;gap:16px}
+.ic-r{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.ic-f label{display:grid;gap:7px}
+.ic-f small{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.ic-f input,.ic-f select,.ic-f textarea{width:100%;font-size:16px;background:#fff;border:1px solid #DED6CA;border-radius:12px;padding:14px 15px;outline:none;transition:border-color .2s,box-shadow .2s}
+.ic-f input:focus,.ic-f select:focus,.ic-f textarea:focus{border-color:var(--acc);box-shadow:0 0 0 3px rgba(116,74,23,.10)}
+.ic-f select{appearance:none;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23744A17' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 14px center/16px;padding-right:42px}
+.ic-f select.bos{color:#9A948B}
+.ic-f option{color:var(--ink)}
+.ic-f textarea{resize:vertical;min-height:140px}
+.ic-f label[hidden]{display:none}
+.ic-f .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ic-kv{display:flex!important;grid-template-columns:none;align-items:flex-start;gap:10px!important;font-size:13.5px;line-height:1.5;color:var(--text)}
+.ic-kv input{width:18px;height:18px;flex:none;margin-top:1px;padding:0;accent-color:#744A17}
+.ic-kv a{color:var(--acc);text-decoration:underline;text-underline-offset:2px}
+.ic-er{display:block;font-style:normal;font-size:12.5px;line-height:1.4;color:#C0392B}.ic-er:empty{display:none}
+.ic-f label.bad input,.ic-f label.bad select,.ic-f label.bad textarea{border-color:#C0392B;background-color:rgba(192,57,43,.04)}
+.ic-fe{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px;margin-top:4px}
+.ic-b{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 28px;border:0;border-radius:12px;cursor:pointer;font-size:15px;font-weight:700;color:#fff;background:linear-gradient(135deg,#94641F,#5A3810);transition:background .3s,transform .3s}
+.ic-b:hover{background:linear-gradient(135deg,#825219,#482C0C);transform:translateY(-1px)}
+.ic-b[disabled]{opacity:.6;cursor:wait}
+.ic-b svg{width:18px;height:18px}
+.ic-m{font-size:14px;color:var(--text)}.ic-m.ok{color:#2E7D4F}.ic-m.err{color:#C0392B}
+/* bilgiler */
+.ic-ls{list-style:none;display:grid;gap:0}
+.ic-ls li{border-bottom:1px solid var(--line)}
+.ic-ls li:first-child{border-top:1px solid var(--line)}
+.ic-ls a,.ic-ls .ic-it{display:flex;align-items:center;gap:16px;padding:18px 0}
+.ic-ls a{transition:color .2s}
+.ic-ls a:hover{color:var(--acc)}
+.ic-i{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#744A17;background:linear-gradient(135deg,rgba(184,145,84,.14),rgba(116,74,23,.06));border:1px solid rgba(116,74,23,.22)}
+.ic-i svg{width:20px;height:20px}
+.ic-ls small{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.ic-ls b{font-size:clamp(16px,1.4vw,18px);font-weight:600;letter-spacing:-.01em;word-break:break-word}
+/* harita */
+.ic-hr{margin-top:clamp(48px,6vw,88px)}
+.ic-hrh{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px 24px;margin-bottom:20px}
+.ic-hrh .ic-t{margin:0 0 6px}
+.ic-ad{font-size:16px;line-height:1.65;color:var(--text);font-weight:500}.ic-ad strong{color:var(--ink);font-weight:700}
+.ic-bt{display:flex;flex-wrap:wrap;gap:10px}
+.ic-bt a{display:inline-flex;align-items:center;gap:9px;min-height:46px;padding:0 18px;border-radius:12px;font-size:14px;font-weight:700;border:1px solid rgba(116,74,23,.3);color:var(--acc);background:#fff;transition:border-color .2s,background .2s}
+.ic-bt a:hover{border-color:var(--acc);background:rgba(116,74,23,.05)}
+.ic-bt a.pr{border:0;color:#fff;background:linear-gradient(135deg,#94641F,#5A3810)}
+.ic-bt a.pr:hover{background:linear-gradient(135deg,#825219,#482C0C)}
+.ic-bt svg{width:17px;height:17px}
+.ic-hrt{width:100%;height:clamp(300px,38vw,440px);border:1px solid var(--line);border-radius:20px;display:block;background:#F5F1EA}
+@media (max-width:860px){.ic-g{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:560px){.ic-r{grid-template-columns:minmax(0,1fr)}.ic-p{font-size:15px;line-height:1.7}}
+</style>
+<script src="/assets/cerez.js?v=1"></script>
+<link rel="stylesheet" href="/assets/ortak.css?v=a4448f90">
+</head>
+<body>
+<!--UB-->
+<header class="ub" id="ub">
+  <div class="ub-in">
+    <a class="ub-marka" href="/anasayfa/" aria-label="Savaş Çıkrak, ana sayfa"><img src="/yapay-zeka-ile-urun-fotografi/assets/logo-mark.png" width="52" height="80" alt="">Savaş Çıkrak</a>
+    <nav class="ub-nav" aria-label="Ana menü">
+      <a href="/anasayfa/#egitimler">Fotoğrafçılık Eğitimleri</a>
+      <a href="/anasayfa/#fotograf">Çekimler</a>
+      <a href="/anasayfa/#sosyal-medya">Sosyal Medya</a>
+      <a href="/firmalara-ozel-fotograf-cozumleri/">Firmalara Özel</a>
+      <a href="/portfolyo/">Portfolyo</a>
+      <a href="/anasayfa/#hakkimda">Savaş Çıkrak Kimdir?</a>
+    </nav>
+    <a class="ub-cta" href="/iletisim/"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
+    <div class="ub-sos"><a class="ub-s ub-wa" href="https://wa.me/905310317444?text=Merhaba%2C%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.6c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A7.9 7.9 0 1 1 12 19.8zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.6-.6z"/></svg></a><a class="ub-s ub-ig" href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener" aria-label="Instagram: savascikrak"><svg viewBox="0 0 24 24" fill="none" stroke="url(#ubIgG)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="ubIgG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F9C46B"/><stop offset=".35" stop-color="#F0703A"/><stop offset=".65" stop-color="#D9407F"/><stop offset="1" stop-color="#8E5BD6"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="#D9407F" stroke="none"/></svg></a></div>
+    <button class="ub-mbtn" id="ub-ac" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="ub-cek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<div class="ub-bos" aria-hidden="true"></div>
+<div class="ub-cek" id="ub-cek" aria-hidden="true">
+  <button class="ub-x" id="ub-kapa" type="button" aria-label="Menüyü kapat"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    <a class="ub-l" href="/yapay-zeka-ile-urun-fotografi/"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>Fotoğrafçılık Eğitimleri</a>
+    <a class="ub-l" href="/portfolyo/"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span>Fotoğraf ve Video Çekimleri</a>
+    <a class="ub-l" href="/anasayfa/#sosyal-medya"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>Sosyal Medya Çalışmaları</a>
+    <a class="ub-l" href="/firmalara-ozel-fotograf-cozumleri/"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>Firmalara Özel Çözümler</a>
+    <a class="ub-l" href="/anasayfa/#hakkimda"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Savaş Çıkrak Kimdir?</a>
+    <a class="ub-l" href="/iletisim/"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
+</div>
+<!--/UB-->
+<main class="ic-w">
+  <header class="ic-hd">
+    <div class="ic-hw"><h1 class="ic-h"><span>Projenizi</span><em>konuşalım</em></h1></div>
+    <p class="ic-p">Çekim, eğitim, sosyal medya ya da firmanıza özel bir sistem için yazın, en kısa sürede dönüş yapayım.</p>
+  </header>
+
+  <div class="ic-g">
+    <form class="ic-f" id="ic-form" novalidate>
+      <p class="ic-t">Mesaj gönderin</p>
+      <div class="ic-r">
+        <label><small>Adınız *</small><input name="ad" type="text" autocomplete="name" maxlength="100"><em class="ic-er" aria-live="polite"></em></label>
+        <label><small>E-posta *</small><input name="eposta" type="email" autocomplete="email" inputmode="email" maxlength="120"><em class="ic-er" aria-live="polite"></em></label>
+      </div>
+      <div class="ic-r">
+        <label><small>Telefon</small><input name="telefon" type="tel" autocomplete="tel" inputmode="tel" maxlength="20"><em class="ic-er" aria-live="polite"></em></label>
+        <label><small>Konu *</small><select name="konu" class="bos"><option value="" selected disabled hidden>Seçiniz</option><option>Fotoğraf Çekimi</option><option>Video Çekimi</option><option>Fotoğrafçılık Eğitimi</option><option>Sosyal Medya Yönetimi</option><option>Firmalara Özel Fotoğraf Çözümleri</option><option>Diğer</option></select><em class="ic-er" aria-live="polite"></em></label>
+      </div>
+      <label class="ic-dg" hidden><small>Konunuz *</small><input name="konu_diger" type="text" maxlength="80" placeholder="Kısaca yazın"><em class="ic-er" aria-live="polite"></em></label>
+      <label><small>Mesajınız *</small><textarea name="mesaj" rows="5" maxlength="4000"></textarea><em class="ic-er" aria-live="polite"></em></label>
+      <label class="hp" aria-hidden="true">Web<input name="web" type="text" tabindex="-1" autocomplete="off"></label>
+      <label class="ic-kv"><input name="kvkk" type="checkbox"><span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum, iletişim için bilgilerimin kullanılmasını kabul ediyorum.<em class="ic-er" aria-live="polite"></em></span></label>
+      <div class="ic-fe"><button type="submit" class="ic-b">Gönder <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><p class="ic-m" id="ic-msg" role="status" aria-live="polite"></p></div>
+    </form>
+
+    <div>
+      <p class="ic-t">İletişim bilgileri</p>
+      <ul class="ic-ls">
+        <li><a href="mailto:iletisim@savascikrak.com"><i class="ic-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></i><span><small>E-posta</small><b>iletisim@savascikrak.com</b></span></a></li>
+        <li><a href="tel:+905310317444"><i class="ic-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></i><span><small>Telefon</small><b>0531 031 74 44</b></span></a></li>
+        <li><a href="https://wa.me/905310317444?text=Merhaba%2C%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener"><i class="ic-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.3-4.2A8 8 0 1 1 8.3 18.8z"/><path d="M9 9.5c.3 2 2.5 4.2 4.5 4.5l1.3-1.1-1.8-1-.8.6a3 3 0 0 1-1.5-1.5l.6-.8-1-1.8z"/></svg></i><span><small>WhatsApp</small><b>Mesaj yazın</b></span></a></li>
+        <li><a href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener"><i class="ic-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".6" fill="currentColor"/></svg></i><span><small>Instagram</small><b>@savascikrak</b></span></a></li>
+      </ul>
+    </div>
+  </div>
+
+  <section class="ic-hr" aria-label="Adres ve yol tarifi">
+    <div class="ic-hrh">
+      <div><p class="ic-t">Adres</p><p class="ic-ad" id="ic-ad"><strong>Nefis Kareler Fotoğraf Film ve Prodüksiyon Limited Şirketi</strong><br>Fikirtepe Mah. Mandıra Cad. B Blok No: 29-55/1N<br>34720 Kadıköy / İstanbul</p></div>
+      <div class="ic-bt">
+        <a class="pr" id="ic-yol" href="https://www.google.com/maps/dir/?api=1&amp;destination=Fikirtepe%20Mah.%20Mand%C4%B1ra%20Cad.%20B%20Blok%20No%3A29-55%2034720%20Kad%C4%B1k%C3%B6y%20%C4%B0stanbul" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l18-8-8 18-2-8z"/></svg>Yol tarifi al</a>
+        <a id="ic-hrt" href="https://www.google.com/maps/search/?api=1&amp;query=Fikirtepe%20Mah.%20Mand%C4%B1ra%20Cad.%20B%20Blok%20No%3A29-55%2034720%20Kad%C4%B1k%C3%B6y%20%C4%B0stanbul" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5a7 7 0 0 0-14 0C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Google Haritalar'da aç</a>
+      </div>
+    </div>
+    <iframe class="ic-hrt" id="ic-harita" title="Konum haritası" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Fikirtepe%20Mah.%20Mand%C4%B1ra%20Cad.%20B%20Blok%20No%3A29-55%2034720%20Kad%C4%B1k%C3%B6y%20%C4%B0stanbul&amp;z=16&amp;output=embed"></iframe>
+  </section>
+</main>
+<!--AB-->
+<footer class="ab">
+  <div class="ab-in">
+    <div class="ab-k1">
+      <a class="ab-marka" href="/anasayfa/"><img src="/yapay-zeka-ile-urun-fotografi/assets/logo-mark.png" width="52" height="80" alt="" loading="lazy">Savaş Çıkrak</a>
+      <p>Fotoğraf, video, yapay zeka ve eğitim.<br>İstanbul</p>
+      <div class="ab-sos"><a class="ub-s" href="https://wa.me/905310317444?text=Merhaba%2C%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.6c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A7.9 7.9 0 1 1 12 19.8zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.6-.6z"/></svg></a><a class="ub-s" href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener" aria-label="Instagram: savascikrak"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg></a></div>
+    </div>
+    <nav class="ab-k" aria-label="Alt menü">
+      <h2>Sayfalar</h2>
+      <a href="/yapay-zeka-ile-urun-fotografi/">Fotoğrafçılık Eğitimleri</a>
+      <a href="/anasayfa/#fotograf">Fotoğraf ve Video Çekimleri</a>
+      <a href="/anasayfa/#sosyal-medya">Sosyal Medya Yönetimi</a>
+      <a href="/firmalara-ozel-fotograf-cozumleri/">Firmalara Özel Çözümler</a>
+      <a href="/portfolyo/">Portfolyo</a>
+      <a href="/anasayfa/#hakkimda">Savaş Çıkrak Kimdir?</a>
+    </nav>
+    <div class="ab-k">
+      <h2>İletişim</h2>
+      <a href="mailto:iletisim@savascikrak.com">iletisim@savascikrak.com</a>
+      <a href="https://wa.me/905310317444" target="_blank" rel="noopener">WhatsApp: 0531 031 74 44</a>
+      <a href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener">Instagram: @savascikrak</a>
+      <a href="/iletisim/">İletişim formu</a>
+    </div>
+  </div>
+  <div class="ab-alt">
+    <span>© 2026 Savaş Çıkrak · Tüm hakları saklıdır.</span>
+    <span class="ab-lk"><a href="/kvkk/">KVKK Aydınlatma Metni</a><button type="button" class="cerez-ac">Çerez tercihleri</button></span>
+  </div>
+</footer>
+<!--/AB-->
+
+<script>(function(){var f=document.getElementById("ic-form");if(!f)return;var m=document.getElementById("ic-msg"),b=f.querySelector(".ic-b"),dg=f.querySelector(".ic-dg");
+var RE=/^[^\s@]+@([A-Za-z0-9ğüşıöçĞÜŞİÖÇ-]+\.)+[A-Za-z]{2,}$/;
+function lab(el){return el.closest("label")}
+function errEl(l){return l.querySelector(".ic-er")}
+function hata(el,t){var l=lab(el);l.classList.add("bad");errEl(l).textContent=t;el.setAttribute("aria-invalid","true")}
+function temiz(el){var l=lab(el);if(!l||!l.classList.contains("bad"))return;l.classList.remove("bad");errEl(l).textContent="";el.removeAttribute("aria-invalid")}
+function konuAyar(){var d=f.konu.value==="Diğer";dg.hidden=!d;f.konu.classList.toggle("bos",!f.konu.value);if(!d)temiz(f.konu_diger)}
+f.addEventListener("input",function(e){temiz(e.target)});f.addEventListener("change",function(e){temiz(e.target);if(e.target===f.konu)konuAyar()});
+f.addEventListener("reset",function(){setTimeout(konuAyar,0)});
+function denetle(){var ilk=null;function h(el,t){hata(el,t);if(!ilk)ilk=el}
+[].forEach.call(f.querySelectorAll("label.bad"),function(l){l.classList.remove("bad");errEl(l).textContent=""});
+if(!f.ad.value.trim())h(f.ad,"Adınızı yazın.");
+var ep=f.eposta.value.trim();if(!ep)h(f.eposta,"E-posta adresinizi yazın.");else if(!RE.test(ep))h(f.eposta,"Geçerli bir e-posta adresi yazın (ör. ad@alanadi.com).");
+var tl=f.telefon.value.trim(),rk=tl.replace(/\D/g,"");if(tl&&(!/^[\d\s()+\-.]+$/.test(tl)||rk.length<10||rk.length>13))h(f.telefon,"Geçerli bir telefon numarası yazın (ör. 0532 123 45 67).");
+if(!f.konu.value)h(f.konu,"Bir konu seçin.");else if(f.konu.value==="Diğer"&&!f.konu_diger.value.trim())h(f.konu_diger,"Konunuzu kısaca yazın.");
+var ms=f.mesaj.value.trim();if(!ms)h(f.mesaj,"Mesajınızı yazın.");else if(ms.length<10)h(f.mesaj,"Mesajınız en az 10 karakter olmalı ("+ms.length+"/10).");
+if(!f.kvkk.checked)h(f.kvkk,"Göndermek için KVKK onayını işaretleyin.");
+return ilk}
+f.addEventListener("submit",function(e){e.preventDefault();m.className="ic-m";m.textContent="";var ilk=denetle();if(ilk){ilk.focus({preventScroll:true});lab(ilk).scrollIntoView({behavior:"smooth",block:"center"});return}
+var d={ad:f.ad.value.trim(),eposta:f.eposta.value.trim(),telefon:f.telefon.value.trim(),konu:f.konu.value,konu_diger:f.konu_diger.value.trim(),mesaj:f.mesaj.value.trim(),web:f.web.value,kvkk:f.kvkk.checked};
+b.disabled=true;m.textContent="Gönderiliyor…";
+fetch("/api/iletisim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{ok:r.ok,j:j}})}).then(function(x){
+if(x.ok){f.reset();m.textContent="Teşekkürler, mesajınız ulaştı. En kısa sürede dönüş yapacağım.";m.classList.add("ok");return}
+if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.alan].focus();return}throw 0}).catch(function(){m.textContent="Mesaj gönderilemedi. Lütfen WhatsApp'tan ya da iletisim@savascikrak.com adresinden yazın.";m.classList.add("err")}).finally(function(){b.disabled=false})})})()</script>
+<script src="/assets/ortak.js?v=a4448f90" defer></script>
+</body>
+</html>

@@ -26,15 +26,6 @@
 {"@type":"Event","name":"Ürün Fotoğraflarında Yapay Zeka · Canlı Online Eğitim","startDate":"2026-10-17T20:00:00+03:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OnlineEventAttendanceMode","location":{"@type":"VirtualLocation","url":"https://savascikrak.com/yapay-zeka-ile-urun-fotografi/"},"image":"https://savascikrak.com/yapay-zeka-ile-urun-fotografi/assets/og.jpg","description":"Ürün fotoğrafından kampanya ve e-ticaret görselleri üretmeyi anlatan yaklaşık 5 saatlik canlı workshop (Zoom).","organizer":{"@id":"https://savascikrak.com/#savas"},"performer":{"@id":"https://savascikrak.com/#savas"},"inLanguage":"tr","offers":{"@type":"Offer","price":"3950","priceCurrency":"TRY","availability":"https://schema.org/InStock","url":"https://savascikrak.com/yapay-zeka-ile-urun-fotografi/#basvuru","validFrom":"2026-09-01T00:00:00+03:00"}}
 ]}
 </script>
-<script>
-window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
-(function(){var c=null;try{c=localStorage.getItem('cerez')}catch(e){}window.cerezOnay=c==='1';
-window['ga-disable-G-P03FTPWL2F']=!window.cerezOnay;
-gtag('consent','default',{analytics_storage:window.cerezOnay?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
-gtag('js',new Date());gtag('config','G-P03FTPWL2F');
-window.gaYukle=function(gecikme){if(window.gaYuklendi||!window.cerezOnay)return;window.gaYuklendi=1;setTimeout(function(){var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id=G-P03FTPWL2F';document.head.appendChild(s)},gecikme||0)};
-if(window.cerezOnay)addEventListener('load',function(){gaYukle(1500)})})();
-</script>
 <meta name="theme-color" content="#F5F0E8">
 <link rel="preload" href="/fonts/manrope-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/manrope-latin-ext-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -584,21 +575,7 @@ main > section.trainer::after{content:"";position:absolute;top:-4px;left:50%;wid
 @media (max-width:899px){.trainer .tcard{clip-path:none}.trainer .tcard img{right:calc(-1 * var(--pad) - 70px - max(0px, (428px - 100vw) * .6))}}
 @media (min-width:900px){.trainer .tcard{padding-left:0;padding-right:0;border-radius:0;clip-path:inset(-600px 0 0 0)}.trainer .tcard img{right:0}}
 @media (max-width:899px){.program-intro h2.h2-cekim{font-size:clamp(16px,4.6vw,21px);white-space:nowrap}}
-.cerez{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#FBF8F3;border-top:2px solid var(--accent);box-shadow:0 -10px 30px rgba(73,54,35,.10);color:var(--text);font-size:13px;line-height:1.5;padding:14px max(16px,env(safe-area-inset-left,0px)) calc(14px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .7s cubic-bezier(.16,1,.3,1)}
-.cerez.gor{transform:none}
-.cerez-ic{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-.cerez p{margin:0}.cerez a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}
-.cerez a:hover{color:var(--ink)}
-.cerez .durum{color:var(--muted)}
-.cerez .cb{display:flex;gap:10px}
-.cerez button{flex:1 1 0;font:inherit;font-size:14px;font-weight:600;min-height:42px;padding:0 18px;border-radius:999px;cursor:pointer;border:1.5px solid var(--accent);background:#fff;color:var(--accent);transition:background .2s ease,color .2s ease}
-.cerez button:hover,.cerez button:focus-visible{background:var(--accent);color:#FBF8F3;outline:none}
-@media (min-width:900px){.cerez{padding-top:16px;padding-bottom:16px}.cerez-ic{flex-direction:row;align-items:center;justify-content:space-between;gap:32px}.cerez p{max-width:720px}.cerez button{flex:0 0 auto;width:130px}}
-body{transition:padding-bottom .7s cubic-bezier(.16,1,.3,1)}
 .wa-float{transition:bottom .7s cubic-bezier(.16,1,.3,1),transform .2s ease,background .2s ease}
-.cerez-acik{padding-bottom:var(--cbh,0px) !important}
-.cerez-acik .wa-float{bottom:calc(var(--cbh,120px) + 16px) !important}
-@media (prefers-reduced-motion:reduce){.cerez,body,.wa-float{transition:none !important}}
 .haber .sender-form-field{width:100%;max-width:600px;min-height:1px}
 .haber{position:relative;margin-top:40px;padding-top:14px}
 .form:has(+ .haber){padding-bottom:0}
@@ -1072,7 +1049,8 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
   .mh .dy-ic{left:-18px;margin-top:-32px;width:64px;height:64px}.mh .dy-ic svg{width:27px;height:27px}
 }
 </style>
-<link rel="stylesheet" href="/assets/ortak.css?v=7b9c2233">
+<script src="/assets/cerez.js?v=1"></script>
+<link rel="stylesheet" href="/assets/ortak.css?v=a4448f90">
 </head>
 <body>
 <!--UB-->
@@ -1087,7 +1065,7 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
       <a href="/portfolyo/">Portfolyo</a>
       <a href="/anasayfa/#hakkimda">Savaş Çıkrak Kimdir?</a>
     </nav>
-    <a class="ub-cta" href="/anasayfa/#iletisim"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
+    <a class="ub-cta" href="/iletisim/"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
     <div class="ub-sos"><a class="ub-s ub-wa" href="https://wa.me/905310317444?text=Merhaba%2C%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2.2a9.7 9.7 0 0 0-8.4 14.6L2.3 21.7l5-1.3A9.7 9.7 0 1 0 12 2.2zm0 17.6c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A7.9 7.9 0 1 1 12 19.8zm4.4-5.9c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 4.9 4.9 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6.5-.1 1.4-.6 1.6-1.2.2-.6.2-1.1.1-1.2l-.6-.6z"/></svg></a><a class="ub-s ub-ig" href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener" aria-label="Instagram: savascikrak"><svg viewBox="0 0 24 24" fill="none" stroke="url(#ubIgG)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><defs><linearGradient id="ubIgG" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#F9C46B"/><stop offset=".35" stop-color="#F0703A"/><stop offset=".65" stop-color="#D9407F"/><stop offset="1" stop-color="#8E5BD6"/></linearGradient></defs><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r=".9" fill="#D9407F" stroke="none"/></svg></a></div>
     <button class="ub-mbtn" id="ub-ac" type="button" aria-label="Menüyü aç" aria-expanded="false" aria-controls="ub-cek"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
@@ -1100,7 +1078,7 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
     <a class="ub-l" href="/anasayfa/#sosyal-medya"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>Sosyal Medya Çalışmaları</a>
     <a class="ub-l" href="/firmalara-ozel-fotograf-cozumleri/"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>Firmalara Özel Çözümler</a>
     <a class="ub-l" href="/anasayfa/#hakkimda"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Savaş Çıkrak Kimdir?</a>
-    <a class="ub-l" href="/anasayfa/#iletisim"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
+    <a class="ub-l" href="/iletisim/"><span class="ub-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>İletişim</a>
 </div>
 <!--/UB-->
 
@@ -1399,7 +1377,7 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
       <a href="mailto:iletisim@savascikrak.com">iletisim@savascikrak.com</a>
       <a href="https://wa.me/905310317444" target="_blank" rel="noopener">WhatsApp: 0531 031 74 44</a>
       <a href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener">Instagram: @savascikrak</a>
-      <a href="/anasayfa/#iletisim">İletişim formu</a>
+      <a href="/iletisim/">İletişim formu</a>
     </div>
   </div>
   <div class="ab-alt">
@@ -1581,31 +1559,6 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
     if(!window.cerezOnay)return;
     if(h.indexOf('wa.me')>-1)gtag('event','whatsapp_tikla',{konum:a.classList.contains('wa-float')?'yuzen_buton':'sayfa'});
     else if(h==='#basvuru')gtag('event','basvuru_butonu_tikla');});
-  var d=null;
-  function kaydet(v){try{localStorage.setItem('cerez',v)}catch(e){}}
-  function gaSil(){var h=location.hostname,ds=['',h,'.'+h],p=h.split('.');if(p.length>2)ds.push('.'+p.slice(-2).join('.'));
-    document.cookie.split(';').forEach(function(k){var n=k.split('=')[0].trim();if(/^(_ga|_gid|_gat)/.test(n))ds.forEach(function(dm){document.cookie=n+'=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/'+(dm?'; domain='+dm:'')})})}
-  var azHareket=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function kapat(){if(!d)return;var e=d;d=null;document.body.classList.remove('cerez-acik');
-    if(azHareket){e.remove();return}e.classList.remove('gor');setTimeout(function(){e.remove()},750)}
-  function sec(v){kaydet(v);kapat();
-    if(v==='1'){window.cerezOnay=true;window['ga-disable-G-P03FTPWL2F']=false;gtag('consent','update',{analytics_storage:'granted'});gaYukle(0)}
-    else{var onceki=window.cerezOnay;window.cerezOnay=false;window['ga-disable-G-P03FTPWL2F']=true;gtag('consent','update',{analytics_storage:'denied'});gaSil();if(onceki&&window.gaYuklendi)setTimeout(gaSil,500)}}
-  function ac(tekrar){if(d)return;var c=null;try{c=localStorage.getItem('cerez')}catch(e){}
-    d=document.createElement('div');d.className='cerez';d.setAttribute('role','region');d.setAttribute('aria-label','Çerez tercihi');
-    var durum=tekrar&&(c==='1'||c==='0')?' <span class="durum">(Şu anki tercihiniz: '+(c==='1'?'kabul':'ret')+'.)</span>':'';
-    d.innerHTML='<div class="cerez-ic"><p>Hangi eğitimlerin daha çok ilgi gördüğünü anlamak ve size uygun yeni eğitimler hazırlamak için, onayınızla Google Analytics çerezlerini kullanıyoruz. Tercihinizi dilediğiniz zaman değiştirebilirsiniz. <a href="/kvkk/#cerezler">Çerez politikası</a>'+durum+'</p><div class="cb"><button type="button" class="cr">Reddet</button><button type="button" class="ck">Kabul et</button></div></div>';
-    document.body.appendChild(d);
-    document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px');
-    void d.offsetHeight;d.classList.add('gor');document.body.classList.add('cerez-acik');
-    d.querySelector('.ck').onclick=function(){sec('1')};d.querySelector('.cr').onclick=function(){sec('0')};
-    if(tekrar)d.querySelector('.cr').focus({preventScroll:true})}
-  addEventListener('resize',function(){if(d)document.documentElement.style.setProperty('--cbh',d.offsetHeight+'px')});
-  var t=document.querySelector('.cerez-ac');if(t)t.addEventListener('click',function(){ac(true)});
-  var c0=null;try{c0=localStorage.getItem('cerez')}catch(e){}
-  if(c0!=='1')gaSil(); // onay yoksa eski _ga çerezlerini de temizle
-  if(c0!=='1'&&c0!=='0'){var bas=function(){var c1=null;try{c1=localStorage.getItem('cerez')}catch(e){}if(c1!=='1'&&c1!=='0')ac(false)};
-    setTimeout(bas,3000)}
 })();
 </script>
 <script>
@@ -1696,6 +1649,6 @@ document.querySelectorAll('.tl, .faq').forEach(function(grp){
   });
 })();
 </script>
-<script src="/assets/ortak.js?v=7b9c2233" defer></script>
+<script src="/assets/ortak.js?v=a4448f90" defer></script>
 </body>
 </html>
