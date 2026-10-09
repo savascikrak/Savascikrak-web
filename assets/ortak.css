@@ -83,3 +83,46 @@ body.ub-kilit{overflow:hidden}
 .contact .c-fh{margin-top:0}
 .contact .c-form{margin-top:16px}
 @media (min-width:1024px){.contact .c-form{margin-top:0}}
+
+/* FIRMANIZA OZEL: maddeler 'Neler yapiyorum' stilinde (sm-d), 4 madde 2x2, etiket/numara yok */
+.fm-ne{margin-top:clamp(24px,3vw,36px)}
+.fm-ne .sm-ls{margin-top:0;grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:640px){.fm-ne .sm-ls{grid-template-columns:minmax(0,1fr)}}
+.sm-d summary{min-width:0}.sm-d .sm-dt{overflow-wrap:anywhere}
+
+/* SAVAS CIKRAK KARTI (tablet 768-1099): fotograf sagdaki kol cercevenin ic kenarina dayanana kadar saga cekildi (kol gorunur sag ucu = %85.8 genislik) */
+@media (min-width:768px) and (max-width:1099px){.sk-c picture img{transform:translateX(calc(14.2% - 30px))}}
+
+/* CANLI EGITIM KUTUSU: alt golge kalkti (9 Ekim oturum 6) */
+.dy-c{box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+/* SAVAS CIKRAK KARTI: cerceve (halka) kalkti; kart alttan siyah blokla (fotograf bolumu) birlesir; ust bosluk = diger bloklar gibi (2 x --blok) */
+.sk-c::before{display:none}
+#hakkimda.sk{padding:var(--blok) 0 0}
+@media (min-width:768px){.sk-c{border-radius:24px 24px 0 0;clip-path:inset(-600px 0 0 0)}}
+
+/* SAVAS CIKRAK KARTI (mobil, <768): egitim sayfasi (#egitmen) ile ayni olcu/yerlesim; arkadaki halka (sari cerceve) kalkti, yumusak grafik daireler (.sk::before) kaldi */
+@media (max-width:767px){
+.sk::after{display:none}
+.sk-c picture img{top:auto;bottom:0;left:145px;right:auto;height:360px;width:auto}
+.sk-r{margin-top:2px;color:#3F382F}
+.sk-bio{margin-top:8px;color:#3F382F}
+.sk-ig{margin-top:9px}
+}
+@media (min-width:360px) and (max-width:767px){.sk-bio{font-size:14px;line-height:21px}}
+
+/* SAVAS CIKRAK KARTI: Instagram ikonu ust bardakiyle ayni (gradyan cizgi), yaninda kucuk harf kullanici adi */
+.sk-ig svg{width:32px;height:32px}
+.sk-ig span{font-size:15px;font-weight:600;letter-spacing:.01em;text-transform:none}
+@media (max-width:767px){.sk-ig svg{width:32px;height:32px}.sk-ig span{font-size:14px;font-weight:500;letter-spacing:.01em}}
+/* FOTOGRAF CEKIMLERI: Daha fazla ile eklenen bloklar ayni stilde asagi uzar; yeni fotograflar sirayla belirir; tum fotograflar gosterilince dugme pasif */
+.pf-g2{margin-top:clamp(10px,1.2vw,16px)}
+@media (max-width:767px){.pf-g2{margin-top:10px}}
+.pf-t.yeni{opacity:0;transform:translateY(22px)}
+.pf-t.yeni.on{opacity:1;transform:none;transition:opacity .7s cubic-bezier(.2,.6,.2,1),transform .7s cubic-bezier(.2,.6,.2,1)}
+@media (prefers-reduced-motion:reduce){.pf-t.yeni,.pf-t.yeni.on{transition:none;transform:none}}
+button.pf-b{border:0;font-family:inherit;cursor:pointer}
+.pf-b.pasif,.pf-b[aria-disabled="true"]{cursor:default;pointer-events:none;background:linear-gradient(100deg,#3A372F,#2B2924);color:rgba(244,241,234,.45);box-shadow:none}
+/* SAVAS CIKRAK KARTI: Instagram baglantisi cerceve/zemin olmadan */
+.sk-ig,.sk-ig:hover{border:0;background:none;padding:0;border-radius:0;box-shadow:none}
+.sk-ig:hover{transform:none}
+@media (max-width:767px){.sk-ig{padding:0;border:0;background:none}}
