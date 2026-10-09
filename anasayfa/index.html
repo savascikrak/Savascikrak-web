@@ -769,7 +769,7 @@ main .pf3-dark .pf3-h em{background:linear-gradient(100deg,#F7E9CC 0%,#D8B477 45
 .sk h2 em,.ed h2 em,main .pf3-hw:not(.pf3-dark) .pf3-h em,.ed-top,.ed-pair figcaption b,.e2-pair figcaption b,.ed-topics .ed-num{background-image:linear-gradient(100deg,#B89154 0%,#8C6738 50%,#6B4A22 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw .pf3-h em{background-image:linear-gradient(100deg,#F7E9CC 0%,#D8B477 45%,#9A7442 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 </style>
-<link rel="stylesheet" href="/assets/ortak.css?v=3bcd981e">
+<link rel="stylesheet" href="/assets/ortak.css?v=7b9c2233">
 </head>
 <body data-ub="seffaf">
 <!--UB-->
@@ -1174,6 +1174,6 @@ b.disabled=true;m.textContent="Gönderiliyor…";
 fetch("/api/iletisim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{ok:r.ok,j:j}})}).then(function(x){
 if(x.ok){f.reset();m.textContent="Teşekkürler, mesajınız ulaştı. En kısa sürede dönüş yapacağım.";m.classList.add("ok");return}
 if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.alan].focus();return}throw 0}).catch(function(){m.textContent="Mesaj gönderilemedi. Lütfen sağ alttaki WhatsApp düğmesinden yazın.";m.classList.add("err")}).finally(function(){b.disabled=false})})})()</script>
-<script src="/assets/ortak.js?v=3bcd981e" defer></script>
+<script src="/assets/ortak.js?v=7b9c2233" defer></script>
 </body>
 </html>

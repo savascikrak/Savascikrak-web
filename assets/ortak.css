@@ -127,17 +127,28 @@ button.pf-b{border:0;font-family:inherit;cursor:pointer}
 .sk-ig:hover{transform:none}
 @media (max-width:767px){.sk-ig{padding:0;border:0;background:none}}
 
-/* BUYUK GORUNTULEME OKLARI/CARPI: egitim sayfasi slider oklariyla ayni stil (beyaz yuvarlak, koyu ok), daha buyuk */
-.lb button{width:64px;height:64px;border:0;background:rgba(255,255,255,.9);box-shadow:0 8px 24px -6px rgba(0,0,0,.55);color:#0A0A0A}
+/* BUYUK GORUNTULEME OKLARI/CARPI: egitim sayfasi slider'indaki hareketli cift ok (mh-ipucu) stili — kenara yapisik cam sekme, cift ok kayarak dalgalanir; daha buyuk. Carpi ayni cam yapida. */
+.lb button{border:0;background:rgba(10,9,8,.42);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 12px 30px -12px rgba(0,0,0,.7);color:#fff;border-radius:16px;transition:background .25s,transform .3s}
+.lb button:hover{filter:none;background:rgba(10,9,8,.62)}
 .lb button::after{display:none}
-.lb button:hover{filter:none;background:#fff}
-.lb svg{width:26px;height:26px;stroke:#0A0A0A;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;filter:none;transition:stroke .2s}
-.lb button:hover svg{stroke:#744A17}
-.lb-p,.lb-n{margin-top:-32px}
-.lb-p{left:24px}.lb-n{right:24px}
-.lb button.lb-x{width:56px;height:56px;top:max(18px,env(safe-area-inset-top,0px));right:20px}
-.lb button.lb-x svg{width:22px;height:22px;stroke-width:2.6}
-@media (max-width:599px){.lb button.lb-p,.lb button.lb-n{width:52px;height:52px;margin-top:-26px}.lb-p{left:10px}.lb-n{right:10px}.lb button.lb-x{width:48px;height:48px;right:12px}.lb svg{width:22px;height:22px}.lb button.lb-x svg{width:20px;height:20px}}
+.lb button.lb-p,.lb button.lb-n{top:50%;width:60px;height:112px;margin-top:-56px}
+.lb button.lb-p{left:0;right:auto;padding:0 6px 0 0;border-radius:0 18px 18px 0}
+.lb button.lb-n{right:0;left:auto;padding:0 0 0 6px;border-radius:18px 0 0 18px}
+.lb button.lb-p svg,.lb button.lb-n svg{display:none}
+.lb button.lb-p::before,.lb button.lb-p::after,.lb button.lb-n::before,.lb button.lb-n::after{content:"";display:block;position:static;flex:none;width:15px;height:15px;left:auto;right:auto;top:auto;border-radius:0;background:none;border:0 solid #fff;pointer-events:none;transform:rotate(45deg)}
+.lb button.lb-n::before,.lb button.lb-n::after{border-width:3px 3px 0 0;animation:lbItR 1.6s ease-in-out infinite}
+.lb button.lb-p::before,.lb button.lb-p::after{border-width:0 0 3px 3px;animation:lbItL 1.6s ease-in-out infinite}
+.lb button.lb-n::after{display:block;margin-left:-5px;opacity:.55;animation-delay:.12s}
+.lb button.lb-p::after{display:block;order:-1;margin-right:-5px;opacity:.55;animation-delay:.12s}
+@keyframes lbItR{0%,100%{transform:translateX(0) rotate(45deg)}50%{transform:translateX(5px) rotate(45deg)}}
+@keyframes lbItL{0%,100%{transform:translateX(0) rotate(45deg)}50%{transform:translateX(-5px) rotate(45deg)}}
+.lb button.lb-x{top:max(18px,env(safe-area-inset-top,0px));right:18px;left:auto;width:56px;height:56px;border-radius:16px}
+.lb button.lb-x svg{width:22px;height:22px;stroke:#fff;stroke-width:2.4;stroke-linecap:round;filter:none;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.lb button.lb-x:hover svg{transform:rotate(90deg)}
+.lb.on .lb-x svg{animation:lbXin .5s .15s cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes lbXin{from{transform:rotate(-90deg) scale(.5);opacity:0}}
+@media (max-width:599px){.lb button.lb-p,.lb button.lb-n{width:46px;height:86px;margin-top:-43px}.lb button.lb-p::before,.lb button.lb-p::after,.lb button.lb-n::before,.lb button.lb-n::after{width:12px;height:12px}.lb button.lb-n::before,.lb button.lb-n::after{border-width:2.5px 2.5px 0 0}.lb button.lb-p::before,.lb button.lb-p::after{border-width:0 0 2.5px 2.5px}.lb button.lb-x{width:48px;height:48px;right:12px}.lb button.lb-x svg{width:20px;height:20px}}
+@media (prefers-reduced-motion:reduce){.lb button::before,.lb button::after,.lb.on .lb-x svg{animation:none !important}}
 /* FOTOGRAF CEKIMLERI: Daha fazla yaninda kapatma */
 .pf-more{gap:12px}
 .pf-x{flex:none;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;padding:0;border-radius:12px;border:1px solid rgba(216,180,119,.55);background:rgba(255,255,255,.04);color:#F7E9CC;cursor:pointer;transition:transform .3s var(--ease),background .3s,border-color .3s}
