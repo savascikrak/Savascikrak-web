@@ -550,6 +550,11 @@ main .sm-l{white-space:normal}
 .c-btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
 .c-btn[disabled]{opacity:.6;cursor:wait}
 .c-btn svg{width:18px;height:18px}
+.c-err{display:block;font-style:normal;font-size:12.5px;line-height:1.4;color:#F28B7D}.c-err:empty{display:none}
+.c-form label.bad input,.c-form label.bad select,.c-form label.bad textarea{border-color:#E5534B;background-color:rgba(229,83,75,.06)}
+.c-form label.c-kvkk.bad input{outline:2px solid #E5534B;outline-offset:2px}
+.c-form select.bos{color:#A8A398}
+.c-form label[hidden]{display:none}
 .c-msg{margin:0;font-size:14px;color:#A8A398}
 .c-msg.ok{color:#7FD49B}.c-msg.err{color:#F2A08A}
 @media (max-width:600px){.c-row{grid-template-columns:minmax(0,1fr)}}
@@ -928,20 +933,20 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
       <div class="pf3-hw pf3-dark"><h2 class="pf3-h" style="--lw:11.1"><span>Bir projeniz mi var?</span><em>Konuşalım.</em></h2></div>
       <p class="pf3-p pf3-dark">Çekim, eğitim, sosyal medya ya da firmanıza özel bir sistem için yazın, en kısa sürede dönüş yapayım.</p>
     </div>
-    <div class="c-links rv">
-      <a href="https://wa.me/905310317444?text=Merhaba%2C%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener"><span><small>WhatsApp</small>0531 031 74 44</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="mailto:iletisim@savascikrak.com"><span><small>E-posta</small>iletisim@savascikrak.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    </div>
     <form class="c-form rv" id="c-form" novalidate>
-      <p class="c-fh">ya da formu doldurun</p>
+      <p class="c-fh">Formu doldurun</p>
       <div class="c-row">
-        <label><small>Adınız</small><input name="ad" type="text" autocomplete="name" required maxlength="100"></label>
-        <label><small>E-posta veya telefon</small><input name="iletisim" type="text" autocomplete="email" required maxlength="120"></label>
+        <label><small>Adınız *</small><input name="ad" type="text" autocomplete="name" maxlength="100"><em class="c-err" aria-live="polite"></em></label>
+        <label><small>E-posta *</small><input name="eposta" type="email" autocomplete="email" inputmode="email" maxlength="120"><em class="c-err" aria-live="polite"></em></label>
       </div>
-      <label><small>Konu</small><select name="konu"><option>Çekim</option><option>Eğitim</option><option>Sosyal medya yönetimi</option><option>Firmalara özel çözümler</option><option>Diğer</option></select></label>
-      <label><small>Mesajınız</small><textarea name="mesaj" rows="4" required maxlength="4000"></textarea></label>
+      <div class="c-row">
+        <label><small>Telefon</small><input name="telefon" type="tel" autocomplete="tel" inputmode="tel" maxlength="20"><em class="c-err" aria-live="polite"></em></label>
+        <label><small>Konu *</small><select name="konu" class="bos"><option value="" selected disabled hidden>Seçiniz</option><option>Fotoğraf Çekimi</option><option>Video Çekimi</option><option>Fotoğrafçılık Eğitimi</option><option>Sosyal Medya Yönetimi</option><option>Firmalara Özel Fotoğraf Çözümleri</option><option>Diğer</option></select><em class="c-err" aria-live="polite"></em></label>
+      </div>
+      <label class="c-diger" hidden><small>Konunuz *</small><input name="konu_diger" type="text" maxlength="80" placeholder="Kısaca yazın"><em class="c-err" aria-live="polite"></em></label>
+      <label><small>Mesajınız *</small><textarea name="mesaj" rows="4" maxlength="4000"></textarea><em class="c-err" aria-live="polite"></em></label>
       <label class="c-hp" aria-hidden="true">Web<input name="web" type="text" tabindex="-1" autocomplete="off"></label>
-      <label class="c-kvkk"><input name="kvkk" type="checkbox" required><span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum, iletişim için bilgilerimin kullanılmasını kabul ediyorum.</span></label>
+      <label class="c-kvkk"><input name="kvkk" type="checkbox"><span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum, iletişim için bilgilerimin kullanılmasını kabul ediyorum.<em class="c-err" aria-live="polite"></em></span></label>
       <div class="c-fend"><button type="submit" class="c-btn">Gönder <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><p class="c-msg" id="c-msg" role="status" aria-live="polite"></p></div>
     </form>
   </div>
@@ -1067,6 +1072,30 @@ lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedT
 })();
 </script>
 <script>document.querySelectorAll(".sm-d").forEach(function(d){d.addEventListener("toggle",function(){if(d.open)document.querySelectorAll(".sm-d").forEach(function(o){if(o!==d)o.open=false})})})</script>
-<script>(function(){var f=document.getElementById("c-form");if(!f)return;var m=document.getElementById("c-msg"),b=f.querySelector(".c-btn");f.addEventListener("submit",function(e){e.preventDefault();var d={ad:f.ad.value.trim(),iletisim:f.iletisim.value.trim(),konu:f.konu.value,mesaj:f.mesaj.value.trim(),web:f.web.value,kvkk:f.kvkk.checked};m.className="c-msg";if(!d.ad||!d.iletisim||d.mesaj.length<5){m.textContent="Lütfen adınızı, iletişim bilginizi ve mesajınızı yazın.";m.classList.add("err");return}if(!d.kvkk){m.textContent="Göndermek için KVKK onayını işaretleyin.";m.classList.add("err");return}b.disabled=true;m.textContent="Gönderiliyor…";fetch("/api/iletisim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).then(function(r){if(!r.ok)throw 0;f.reset();m.textContent="Teşekkürler, mesajınız ulaştı. En kısa sürede dönüş yapacağım.";m.classList.add("ok")}).catch(function(){m.innerHTML='Mesaj gönderilemedi. Lütfen <a href="https://wa.me/905310317444" style="color:#D8B477">WhatsApp</a>\'tan yazın.';m.classList.add("err")}).finally(function(){b.disabled=false})})})()</script>
+<script>(function(){var f=document.getElementById("c-form");if(!f)return;var m=document.getElementById("c-msg"),b=f.querySelector(".c-btn"),dg=f.querySelector(".c-diger");
+var RE=/^[^\s@]+@([A-Za-z0-9ğüşıöçĞÜŞİÖÇ-]+\.)+[A-Za-z]{2,}$/;
+function lab(el){return el.closest("label")}
+function errEl(l){return l.querySelector(".c-err")}
+function hata(el,t){var l=lab(el);l.classList.add("bad");errEl(l).textContent=t;el.setAttribute("aria-invalid","true")}
+function temiz(el){var l=lab(el);if(!l||!l.classList.contains("bad"))return;l.classList.remove("bad");errEl(l).textContent="";el.removeAttribute("aria-invalid")}
+function konuAyar(){var d=f.konu.value==="Diğer";dg.hidden=!d;f.konu.classList.toggle("bos",!f.konu.value);if(!d)temiz(f.konu_diger)}
+f.addEventListener("input",function(e){temiz(e.target)});f.addEventListener("change",function(e){temiz(e.target);if(e.target===f.konu)konuAyar()});
+f.addEventListener("reset",function(){setTimeout(konuAyar,0)});
+function denetle(){var ilk=null;function h(el,t){hata(el,t);if(!ilk)ilk=el}
+[].forEach.call(f.querySelectorAll("label.bad"),function(l){l.classList.remove("bad");errEl(l).textContent=""});
+if(!f.ad.value.trim())h(f.ad,"Adınızı yazın.");
+var ep=f.eposta.value.trim();if(!ep)h(f.eposta,"E-posta adresinizi yazın.");else if(!RE.test(ep))h(f.eposta,"Geçerli bir e-posta adresi yazın (ör. ad@alanadi.com).");
+var tl=f.telefon.value.trim(),rk=tl.replace(/\D/g,"");if(tl&&(!/^[\d\s()+\-.]+$/.test(tl)||rk.length<10||rk.length>13))h(f.telefon,"Geçerli bir telefon numarası yazın (ör. 0532 123 45 67).");
+if(!f.konu.value)h(f.konu,"Bir konu seçin.");else if(f.konu.value==="Diğer"&&!f.konu_diger.value.trim())h(f.konu_diger,"Konunuzu kısaca yazın.");
+var ms=f.mesaj.value.trim();if(!ms)h(f.mesaj,"Mesajınızı yazın.");else if(ms.length<10)h(f.mesaj,"Mesajınız en az 10 karakter olmalı ("+ms.length+"/10).");
+if(!f.kvkk.checked)h(f.kvkk,"Göndermek için KVKK onayını işaretleyin.");
+return ilk}
+f.addEventListener("submit",function(e){e.preventDefault();m.className="c-msg";m.textContent="";var ilk=denetle();if(ilk){ilk.focus({preventScroll:true});lab(ilk).scrollIntoView({behavior:"smooth",block:"center"});return}
+var d={ad:f.ad.value.trim(),eposta:f.eposta.value.trim(),telefon:f.telefon.value.trim(),konu:f.konu.value,konu_diger:f.konu_diger.value.trim(),mesaj:f.mesaj.value.trim(),web:f.web.value,kvkk:f.kvkk.checked};
+b.disabled=true;m.textContent="Gönderiliyor…";
+fetch("/api/iletisim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{ok:r.ok,j:j}})}).then(function(x){
+if(x.ok){f.reset();m.textContent="Teşekkürler, mesajınız ulaştı. En kısa sürede dönüş yapacağım.";m.classList.add("ok");return}
+if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.alan].focus();return}throw 0}).catch(function(){m.textContent="Mesaj gönderilemedi. Lütfen sağ alttaki WhatsApp düğmesinden yazın.";m.classList.add("err")}).finally(function(){b.disabled=false})})})()</script>
+<script src="/assets/wa.js" defer></script>
 </body>
 </html>
