@@ -27,6 +27,9 @@ body[data-ub=seffaf] .ub-bos{display:none}
 .ub-nav+.ub-cta+.ub-sos{margin-left:-24px}
 .ub .ub-s{justify-content:center;width:40px;height:40px;color:#D8B477}
 .ub .ub-s svg{width:20px;height:20px}
+/* UST BAR MARKA RENKLI SOSYAL (footer haric) */
+.ub .ub-s.ub-wa{color:#3FC873}.ub .ub-s.ub-wa:hover{color:#5BDB8A}
+.ub .ub-s.ub-wa svg,.ub .ub-s.ub-ig svg{opacity:.92;transition:opacity .25s}.ub .ub-s.ub-wa:hover svg,.ub .ub-s.ub-ig:hover svg{opacity:1}
 .ub .ub-mbtn{display:none;justify-content:center;width:44px;height:44px;color:#F4F1EA}
 .ub-mbtn svg{width:26px;height:26px}
 .ub-cek{position:fixed;inset:0;z-index:49;color:#F4F1EA;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5;background:radial-gradient(70% 50% at 85% 15%,rgba(216,180,119,.14),rgba(216,180,119,0) 70%),#0B0B0D;padding:88px var(--ub-gut) 32px;display:flex;flex-direction:column;overflow-y:auto;opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s}
