@@ -371,7 +371,8 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
 .ed-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center}
 .ed h2{font-size:clamp(36px,4.7vw,64px);line-height:1.04;font-weight:750;letter-spacing:-.035em;text-transform:uppercase;text-wrap:balance}
 .ed h2 span,.ed h2 em{display:block}
-.ed h2 em{font-style:normal;background:linear-gradient(100deg,#B58A4B,#8A6838 75%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ed h2 span,.ed h2 em{padding:.14em 0;margin:-.14em 0}
+.ed h2 em{font-style:normal;background:linear-gradient(100deg,#C8A266 0%,#9A7442 45%,#634829 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ed-lead{margin-top:24px;font-size:clamp(19px,1.9vw,24px);font-weight:550;line-height:1.45;letter-spacing:-.025em;max-width:540px;text-wrap:balance}
 .ed-copy{margin-top:18px;color:#66616A;font-size:16px;line-height:1.8;max-width:540px}
 .ed-formats{margin-top:22px;color:#71695C;font-size:12px;line-height:1.7;letter-spacing:.02em}
@@ -582,6 +583,31 @@ body,button,input,select,textarea{font-family:"Manrope",system-ui,-apple-system,
 .dy,.pf,.ed{padding-top:var(--blok) !important;padding-bottom:var(--blok) !important}
 .dy h2 .y{background:linear-gradient(100deg,#F7E9CC 0%,#D8B477 45%,#9A7442 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .dy h2 .y{font-size:1.011em}
+
+/* ===== BASLIK SABLONU pf3 (9 Ekim): yapay-zeka-ile-urun-fotografi main .pf3-* ile ayni (anasayfa .ed h2 / .e2-lead / .e2-p birebir) ===== */
+main .pf3-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(36px,4.4vw,60px);text-align:left}
+main .pf3-intro{container-type:inline-size;min-width:0}
+main .pf3-hw{min-width:0;container-type:inline-size}
+main .pf3-hw .pf3-h{margin:0;font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:min(clamp(36px,4.7vw,64px),calc(100cqi / var(--lw,1)));line-height:1.04;font-weight:750;letter-spacing:-.035em;text-transform:uppercase;text-wrap:balance;white-space:normal;color:#16151A;text-align:left;padding:0}
+main .pf3-hw .pf3-h span,main .pf3-hw .pf3-h em{display:block;padding:.14em 0;margin:-.14em 0}
+main .pf3-hw .pf3-h em{font-style:normal;background:linear-gradient(100deg,#C8A266 0%,#9A7442 45%,#634829 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+main .pf3-lead{display:flex;align-items:center;gap:14px;margin:0;font-size:min(24px,calc((100cqi - 50px) / 19.2));font-weight:600;line-height:1.4;letter-spacing:-.02em;color:#16151A;white-space:nowrap}
+main .pf3-lead::before{content:"";flex:none;width:36px;height:2px;border-radius:2px;background:linear-gradient(90deg,#B58A4B,rgba(181,138,75,.15))}
+main .pf3-p{margin:16px 0 0;padding-left:18px;border-left:2px solid #B58A4B;color:#55505A;font-size:16px;font-weight:400;line-height:1.75;max-width:560px;text-align:left}
+main .pf3-intro > .pf3-p:first-child{margin-top:0}
+@media (max-width:1023px){main .pf3-hw .pf3-h{font-size:min(clamp(34px,4.7vw,48px),calc(100cqi / var(--lw,1)))}}
+@media (max-width:767px){
+  main .pf3-head{grid-template-columns:minmax(0,1fr);gap:18px}
+  main .pf3-hw .pf3-h{font-size:min(clamp(31px,8.8vw,43px),calc(100cqi / var(--lw,1)))}
+  main .pf3-p{font-size:15px;line-height:1.7}
+  main .pf3-lead{gap:10px}
+  main .pf3-lead::before{width:24px}
+}
+/* koyu zeminli bolumler (Fotograf cekimleri, Iletisim): 1. satir acik renk, aciklama acik gri */
+main .pf3-dark .pf3-h,main .pf3-dark .pf3-lead{color:#F4F1EA}
+main .pf3-dark .pf3-p,main .pf3-p.pf3-dark{color:#A8A398}
+/* koyu zeminde 2. satir: manset 'GORSEL URETIM' degradesi (Savas begendi) */
+main .pf3-dark .pf3-h em{background:linear-gradient(100deg,#F7E9CC 0%,#D8B477 45%,#9A7442 100%);-webkit-background-clip:text;background-clip:text}
 </style>
 </head>
 <body>
@@ -677,9 +703,9 @@ body,button,input,select,textarea{font-family:"Manrope",system-ui,-apple-system,
 <!-- FOTOĞRAF ÇEKİMLERİ + mini portfolyo -->
 <section class="pf" id="fotograf" aria-labelledby="pf-h">
   <div class="pf-in">
-    <div class="pf-hd rv">
-      <h2 id="pf-h"><span>Fotoğraf</span> <em>çekimleri</em></h2>
-      <p>Her ürünün kendine özgü bir dokusu, biçimi ve karakteri var. Çekimlerimde ışığı ve kompozisyonu bu özellikleri ortaya çıkarmak için kullanıyorum.</p>
+    <div class="pf3-head pf3-dark rv">
+      <div class="pf3-hw"><h2 id="pf-h" class="pf3-h" style="--lw:5.2"><span>Fotoğraf</span><em>çekimleri</em></h2></div>
+      <div class="pf3-intro"><p class="pf3-p">Her ürünün kendine özgü bir dokusu, biçimi ve karakteri var. Çekimlerimde ışığı ve kompozisyonu bu özellikleri ortaya çıkarmak için kullanıyorum.</p></div>
     </div>
     <div class="pf-g">
       <a class="pf-t rv" data-i="0" href="/portfolyo/foto/still-life-moon-b.webp"><img src="/portfolyo/foto/still-life-moon-k.webp" width="900" height="1125" alt="Still life fotoğrafı" loading="lazy" decoding="async"></a>
@@ -726,9 +752,9 @@ body,button,input,select,textarea{font-family:"Manrope",system-ui,-apple-system,
 <!-- ALANLAR -->
 <section class="sec" id="alanlar">
   <div class="wrap">
-    <div class="s-head rv">
-      <div><span class="kick">Neler yapıyorum</span><h2>Işık, çekim, yapay zeka ve eğitim</h2></div>
-      <p>Markalar ve ajanslarla otuz yılı aşkın görsel üretim deneyimini bugün yeni nesil yapay zeka araçlarıyla birleştiriyorum.</p>
+    <div class="pf3-head rv">
+      <div class="pf3-hw"><h2 class="pf3-h" style="--lw:6.25"><span>Neler</span><em>yapıyorum?</em></h2></div>
+      <div class="pf3-intro"><p class="pf3-lead"><span>Işık, çekim, yapay zeka ve eğitim.</span></p><p class="pf3-p">Markalar ve ajanslarla otuz yılı aşkın görsel üretim deneyimini bugün yeni nesil yapay zeka araçlarıyla birleştiriyorum.</p></div>
     </div>
     <div class="rows">
 
@@ -778,9 +804,8 @@ body,button,input,select,textarea{font-family:"Manrope",system-ui,-apple-system,
 <section class="contact" id="iletisim">
   <div class="wrap">
     <div class="rv">
-      <span class="kick" style="color:var(--gold)">İletişim</span>
-      <h2 style="margin-top:14px">Bir projeniz mi var? <em>Konuşalım.</em></h2>
-      <p>Çekim, eğitim, sosyal medya ya da firmanıza özel bir sistem için yazın, en kısa sürede dönüş yapayım.</p>
+      <div class="pf3-hw pf3-dark"><h2 class="pf3-h" style="--lw:11.1"><span>Bir projeniz mi var?</span><em>Konuşalım.</em></h2></div>
+      <p class="pf3-p pf3-dark">Çekim, eğitim, sosyal medya ya da firmanıza özel bir sistem için yazın, en kısa sürede dönüş yapayım.</p>
     </div>
     <div class="c-links rv">
       <a href="https://wa.me/905310317444?text=Merhaba%2C%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener"><span><small>WhatsApp</small>0531 031 74 44</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
