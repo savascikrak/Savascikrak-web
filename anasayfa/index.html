@@ -505,6 +505,13 @@ main .sm-l{white-space:normal}
 .sm + #firmalar{margin-top:var(--blok)}
 #firmalar{background:#F5EFE7;box-shadow:0 0 0 100vmax #F5EFE7;clip-path:inset(0 -100vmax);padding:var(--blok) 0}
 #alanlar{padding-bottom:0}
+/* TANITIM VE REKLAM FILMLERI: beyaz zemin */
+#firmalar + #reklam{margin-top:0}
+#reklam{background:#fff;box-shadow:0 0 0 100vmax #fff;clip-path:inset(0 -100vmax);padding:var(--blok) 0}
+.rk-ls{list-style:none;margin:clamp(14px,1.6vw,20px) 0;padding:0;display:grid;gap:9px}
+.rk-ls li{position:relative;padding-left:22px;font-size:clamp(15px,1.25vw,17px);font-weight:650;line-height:1.4;color:#16151A}
+.rk-ls li::before{content:"";position:absolute;left:0;top:.52em;width:8px;height:8px;border-radius:2px;background:linear-gradient(135deg,#94641F,#5A3810)}
+.rk-son{margin:0;max-width:640px;font-weight:600;color:#16151A}
 /* NELER YAPIYORUM KUTULARI: kum beji, daha ince */
 .sm-ne .sm-ls li{gap:12px;padding:clamp(11px,1.1vw,14px) clamp(14px,1.4vw,18px);background:#F2E9DC;border-color:rgba(116,74,23,.12)}
 .sm-ne .sm-ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(184,145,84,.14),rgba(116,74,23,.06)),#fff}
@@ -933,6 +940,21 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
         <div class="fm-end rv"><a class="fm-cta" href="https://wa.me/905310317444?text=Merhaba%2C%20firmam%20i%C3%A7in%20foto%C4%9Fraf%20%C3%BCretim%20sistemi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">Firmanız için planlayalım <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </div>
 
+
+      <div class="sm" id="reklam">
+        <div class="pf3-head rv">
+          <div class="pf3-hw"><h2 class="pf3-h" style="--lw:9.2"><span>Tanıtım ve</span><em>reklam filmleri</em></h2></div>
+          <div class="pf3-intro"><p class="pf3-lead sm-l"><span>Markanız için güçlü fikirler, etkileyici filmler.</span></p>
+          <ul class="rk-ls"><li>Marka tanıtım filmleri</li><li>Ürün tanıtım ve reklam filmleri</li><li>Sosyal medya için kısa videolar ve Reels</li><li>Yemek ve ürün videoları</li><li>Storyboard ve kampanya konseptleri</li></ul>
+          <p class="pf3-p">Uzun yıllardır markalar ve ajanslar için tanıtım ve reklam filmleri hazırlıyorum. Fikirden son teslime kadar tüm süreci tek elden yürütüyorum: konsept, senaryo, storyboard, çekim, ışık, kurgu ve renk düzenleme.</p></div>
+        </div>
+        <div class="sm-ne rv">
+          <div class="pf3-hw"><h2 class="pf3-h" style="--lw:9.8"><span>Üç farklı üretim</span><em>çalışmamız var</em></h2></div>
+          <ul class="sm-ls"><li><details class="sm-d" name="rk-ne" open><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></i><span class="sm-dt">Gerçek çekim</span></summary><p>Kamera, ışık ve prodüksiyon ekibiyle markanıza özel tanıtım ve reklam filmleri hazırlıyoruz.</p></details></li><li><details class="sm-d" name="rk-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 16v4M17 18h4"/></svg></i><span class="sm-dt">Yapay zeka destekli prodüksiyon</span></summary><p>Gerçek çekimleri yapay zekayla zenginleştiriyor; farklı sahneler, mekanlar ve kampanya versiyonları geliştiriyoruz. Projenin ihtiyaçlarına göre üretimi hızlandırıyor, bütçeyi daha verimli kullanmaya yardımcı oluyoruz.</p></details></li><li><details class="sm-d" name="rk-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="3"/><path d="M10 9l5 3-5 3z"/></svg></i><span class="sm-dt">Tamamen yapay zekayla üretilen videolar</span></summary><p>Fiziksel çekim yapmadan, fikrinizi videoya dönüştürüyoruz. Stilize dünyalar ve çekimle gerçekleştirilmesi zor görsel fikirler için yaratıcı çözümler sunuyoruz. Hayal ettiğiniz her şey mümkün.</p></details></li></ul>
+        </div>
+        <div class="fm-end rv"><p class="pf3-p rk-son">Arayın, projenizi konuşalım; hedefinize ve bütçenize uygun üretim yaklaşımını birlikte belirleyelim.</p></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1149,7 +1171,7 @@ lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touche
 lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))goster(dx<0?cur+1:cur-1,dx<0?1:-1);else if(dy>90)kapa();x0=null},{passive:true});
 })();
 </script>
-<script>document.querySelectorAll(".sm-d").forEach(function(d){d.addEventListener("toggle",function(){if(d.open)document.querySelectorAll(".sm-d").forEach(function(o){if(o!==d)o.open=false})})})</script>
+<script>document.querySelectorAll(".sm-d").forEach(function(d){d.addEventListener("toggle",function(){if(d.open)document.querySelectorAll('.sm-d[name="'+d.getAttribute("name")+'"]').forEach(function(o){if(o!==d)o.open=false})})})</script>
 <script>(function(){var f=document.getElementById("c-form");if(!f)return;var m=document.getElementById("c-msg"),b=f.querySelector(".c-btn"),dg=f.querySelector(".c-diger");
 var RE=/^[^\s@]+@([A-Za-z0-9ğüşıöçĞÜŞİÖÇ-]+\.)+[A-Za-z]{2,}$/;
 function lab(el){return el.closest("label")}
