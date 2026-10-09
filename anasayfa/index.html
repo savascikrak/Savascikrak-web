@@ -443,7 +443,116 @@ a.hx-c:focus-visible{outline:2px solid var(--hx-g2);outline-offset:3px}
 .e2-arrow svg{width:18px;height:18px}
 .e2-end{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:clamp(32px,4vw,48px)}
 .e2-end .ed-actions{justify-content:center}
-#sosyal-medya{grid-template-columns:minmax(0,1fr)}#sosyal-medya .r-tx{max-width:720px}
+/* SOSYAL MEDYA YONETIMI */
+.sm{padding:0;margin:0}
+#alanlar .rows{display:block;gap:0}
+.sm + .sm{margin-top:calc(2 * var(--blok))}
+main .sm-l{white-space:normal}
+.sm .pf3-head{margin-bottom:clamp(28px,3.6vw,48px)}
+.sm-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:clamp(32px,5vw,80px)}
+.sm-2 > .pf3-intro{grid-column:2}
+.sm-son{display:block;margin-top:14px;font-weight:700;color:#16151A}
+.sm-ne{margin-top:clamp(40px,5vw,64px)}
+.sm-ls{list-style:none;margin:clamp(18px,2.2vw,26px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.2vw,16px)}
+.sm-ls li{display:flex;align-items:center;gap:14px;padding:clamp(16px,1.6vw,20px) clamp(16px,1.8vw,22px);background:#fff;border:1px solid rgba(116,74,23,.16);border-radius:14px;font-size:clamp(15px,1.25vw,17px);font-weight:650;line-height:1.3;color:#16151A}
+.sm-ic{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;color:#744A17;background:linear-gradient(135deg,rgba(184,145,84,.14),rgba(116,74,23,.06));border:1px solid rgba(116,74,23,.22)}
+.sm-ic svg{width:20px;height:20px;stroke-width:2}
+.sm-ne .pf3-hw{max-width:560px}
+@media (max-width:900px){.sm-ls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.sm-ls{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:767px){.sm-2{grid-template-columns:minmax(0,1fr)}.sm-2 > .pf3-intro{grid-column:1}}
+/* BLOK ARALIKLARI: bloklar arasi gorunur bosluk = 2 x --blok */
+#hakkimda.sk{padding:calc(var(--blok) + 54px) 0 var(--blok)}
+@media (max-width:767px){#hakkimda.sk{padding:var(--blok) 0}}
+/* FIRMALAR */
+.fm-ls{margin-top:0;grid-template-columns:repeat(4,minmax(0,1fr))}
+.fm-ls b{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;letter-spacing:.02em;color:#fff;background:linear-gradient(155deg,#94641F,#744A17,#4C300E)}
+.fm-end{margin-top:clamp(24px,3vw,36px)}
+.fm-cta{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:10px;background:linear-gradient(135deg,#94641F,#5A3810);color:#fff;font-size:15px;font-weight:700;text-decoration:none;transition:background .3s,transform .3s}
+.fm-cta:hover{background:linear-gradient(135deg,#825219,#482C0C);transform:translateY(-1px)}
+.fm-cta svg{width:18px;height:18px}
+@media (max-width:1100px){.fm-ls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.fm-ls{grid-template-columns:minmax(0,1fr)}}
+/* FIRMALAR ZAMAN CIZELGESI */
+.fm-tl{list-style:none;margin:0;padding:0;display:grid;gap:22px;max-width:880px}
+.fm-ti{position:relative;display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:16px;align-items:start}
+.fm-ti:not(:last-child)::before{content:"";position:absolute;left:31px;top:64px;bottom:-22px;width:2px;background:linear-gradient(180deg,#744A17,rgba(116,74,23,.45))}
+.fm-n{position:relative;z-index:1;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:21px;font-weight:700;background:linear-gradient(155deg,#94641F,#744A17 48%,#4C300E);box-shadow:0 0 0 6px #F3E6D6,0 8px 18px rgba(116,74,23,.28)}
+.fm-card{background:#fff;border:1px solid #ECE3D8;border-radius:18px;box-shadow:0 10px 30px -18px rgba(40,28,12,.25)}
+.fm-card summary{list-style:none;cursor:pointer;display:grid;gap:12px;padding:18px 18px 18px}
+.fm-card summary::-webkit-details-marker{display:none}
+.fm-tag{display:inline-flex;align-items:center;gap:8px;width:fit-content;padding:7px 11px;border-radius:8px;background:#F6EBDD;border:1px solid #E9D5BF;color:#8C6738;font-size:11.5px;font-weight:500;letter-spacing:.14em;line-height:1;text-transform:uppercase}
+.fm-tag svg{width:15px;height:15px}
+.fm-t{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:clamp(18px,1.9vw,24px);font-weight:800;line-height:1.25;letter-spacing:-.01em;color:#16151A}
+.fm-ch{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid rgba(116,74,23,.25);position:relative;transition:transform .3s,background .3s}
+.fm-ch::before{content:"";position:absolute;left:50%;top:45%;width:8px;height:8px;border-right:2px solid #744A17;border-bottom:2px solid #744A17;transform:translate(-50%,-50%) rotate(45deg)}
+.fm-card[open] .fm-ch{transform:rotate(180deg);background:#F6EBDD}
+.fm-card summary:hover .fm-t{color:#744A17}
+.fm-card p{margin:0;padding:0 18px 20px;font-size:16px;font-weight:400;line-height:1.7;color:#4A453F}
+@media (min-width:900px){.fm-tl{gap:28px}.fm-ti{grid-template-columns:80px minmax(0,1fr);column-gap:24px}.fm-ti:not(:last-child)::before{left:39px;top:80px;bottom:-28px}.fm-n{width:80px;height:80px;font-size:26px;box-shadow:0 0 0 7px #F3E6D6,0 12px 26px rgba(116,74,23,.3)}.fm-card summary{padding:24px 28px}.fm-card p{padding:0 28px 26px;font-size:16.5px}.fm-tag{font-size:12px;padding:8px 12px}}
+/* FIRMALAR: firma sayfasi yazi olculeri ile ayni */
+.fm-card{container-type:inline-size}
+.fm-card summary{padding:16px 16px 14px}
+.fm-t{font-size:min(20px,100cqi / 14.1);font-weight:900;color:#1A1714}
+.fm-card p{padding:0 16px 18px;font-size:14.5px;font-weight:500;line-height:1.65;color:#3F3A32}
+.fm-tag{font-size:11px;font-weight:400}
+.fm-n{width:62px;height:62px}.fm-ti{grid-template-columns:62px minmax(0,1fr)}.fm-ti:not(:last-child)::before{left:30px;top:62px}
+@media (min-width:900px){.fm-card summary{padding:28px 30px 16px}.fm-t{font-size:min(25px,100cqi / 14.1)}.fm-card p{padding:0 30px 28px;font-size:16px}.fm-tag{font-size:12px}.fm-n{width:80px;height:80px}.fm-ti{grid-template-columns:80px minmax(0,1fr)}.fm-ti:not(:last-child)::before{left:39px;top:80px}.fm-card:not([open]) summary{padding-bottom:28px}}
+.fm-card:not([open]) summary{padding-bottom:18px}
+.fm-tx{white-space:nowrap;font-size:max(16.5px,min(20px,(100cqi - 78px) / 12.3))}@media (max-width:400px){.fm-tx{white-space:normal}}
+@media (min-width:900px){.fm-tx{font-size:min(25px,(100cqi - 110px) / 12.3)}}
+/* FIRMALAR ZEMIN: firma sayfasi ile ayni */
+.sm + #firmalar{margin-top:var(--blok)}
+#firmalar{background:#F5EFE7;box-shadow:0 0 0 100vmax #F5EFE7;clip-path:inset(0 -100vmax);padding:var(--blok) 0}
+#alanlar{padding-bottom:0}
+/* NELER YAPIYORUM KUTULARI: kum beji, daha ince */
+.sm-ne .sm-ls li{gap:12px;padding:clamp(11px,1.1vw,14px) clamp(14px,1.4vw,18px);background:#F2E9DC;border-color:rgba(116,74,23,.12)}
+.sm-ne .sm-ic{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,rgba(184,145,84,.14),rgba(116,74,23,.06)),#fff}
+.sm-ne .sm-ic svg{width:17px;height:17px}
+/* NELER YAPIYORUM ACILIR MADDELER */
+.sm-ne .sm-ls{align-items:start}
+.sm-ne .sm-ls li{display:block;padding:0}
+.sm-d summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:clamp(11px,1.1vw,14px) clamp(14px,1.4vw,18px)}
+.sm-d summary::-webkit-details-marker{display:none}
+.sm-dt{flex:1;min-width:0}
+.sm-d .fm-ch{width:26px;height:26px}
+.sm-d[open] .fm-ch{transform:rotate(180deg);background:#fff}
+.sm-d summary:hover .sm-dt{color:#744A17}
+.sm-d p{margin:0;padding:0 clamp(14px,1.4vw,18px) clamp(14px,1.4vw,18px) calc(clamp(14px,1.4vw,18px) + 48px);font-size:14.5px;font-weight:500;line-height:1.65;color:#3F3A32}
+@media (min-width:900px){.sm-d p{font-size:15px}}
+/* NELER YAPIYORUM: egitim sayfasi akordeon stili, beyaz */
+.sm-ne .sm-ls li{background:none;border:0;border-radius:0}
+.sm-d{background:#fff;border:1px solid #ECE3D8;border-radius:14px;box-shadow:0 8px 22px -16px rgba(40,28,12,.22);transition:border-color .2s,box-shadow .2s}
+.sm-d[open]{border-color:#744A17;box-shadow:0 6px 18px rgba(116,74,23,.10)}
+.sm-d summary{position:relative;padding-right:calc(clamp(14px,1.4vw,18px) + 40px)}
+.sm-d summary::after{content:"";position:absolute;right:clamp(14px,1.4vw,18px);top:50%;width:30px;height:30px;margin-top:-15px;box-sizing:border-box;border-radius:50%;border:1.25px solid #744A17;background:#744A17 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFF8EF' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") center/15px no-repeat}
+.sm-d[open] summary::after{background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23744A17' stroke-width='1.8' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/14px no-repeat}
+.sm-d summary:hover .sm-dt{color:#8C6738}
+.sm-dt{font-weight:700;color:#16151A}
+.sm-d p{margin:0;padding:0 clamp(14px,1.4vw,18px) clamp(14px,1.4vw,18px) calc(clamp(14px,1.4vw,18px) + 48px);background:none;border:0}
+/* ILETISIM FORMU */
+.c-form{display:grid;gap:16px;margin-top:clamp(32px,4vw,48px);max-width:760px}
+.c-fh{margin:0 0 4px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:rgba(233,201,138,.8)}
+.c-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.c-form label{display:grid;gap:7px}
+.c-form small{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#A8A398}
+.c-form input,.c-form select,.c-form textarea{width:100%;font:inherit;font-size:16px;color:#F4F1EA;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:13px 14px;outline:none;transition:border-color .2s,background .2s}
+.c-form select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23D8B477' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:16px;padding-right:40px}
+.c-form option{color:#16151A}
+.c-form textarea{resize:vertical;min-height:120px}
+.c-form input:focus,.c-form select:focus,.c-form textarea:focus{border-color:#D8B477;background-color:rgba(255,255,255,.07)}
+.c-form .c-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.c-form .c-kvkk{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.5;color:#A8A398}
+.c-kvkk input{width:18px;height:18px;flex:none;margin-top:1px;padding:0;accent-color:#D8B477}
+.c-kvkk a{color:#D8B477;text-decoration:underline;text-underline-offset:2px}
+.c-fend{display:flex;align-items:center;flex-wrap:wrap;gap:12px 18px}
+.c-btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 28px;border:0;border-radius:10px;cursor:pointer;font:inherit;font-size:15px;font-weight:700;letter-spacing:.04em;color:#16151A;background:linear-gradient(100deg,#F7E9CC,#D8B477 60%,#B89058);transition:filter .2s,transform .2s}
+.c-btn:hover{filter:brightness(1.06);transform:translateY(-1px)}
+.c-btn[disabled]{opacity:.6;cursor:wait}
+.c-btn svg{width:18px;height:18px}
+.c-msg{margin:0;font-size:14px;color:#A8A398}
+.c-msg.ok{color:#7FD49B}.c-msg.err{color:#F2A08A}
+@media (max-width:600px){.c-row{grid-template-columns:minmax(0,1fr)}}
 /* EGITIM TURLERI */
 .e2-types{margin-top:clamp(40px,5vw,64px)}
 .e2-tg{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,20px)}
@@ -782,26 +891,29 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
   <div class="wrap">
     <div class="rows">
 
-      <article class="row" id="sosyal-medya">
-        <div class="r-tx rv">
-          <span class="num"><b>03</b>Sosyal medya çalışmaları</span>
-          <h2>Takip edilen içerik, <em>markanın diliyle.</em></h2>
-          <p>Kendi hesabımda 125 bini aşkın takipçiyle büyüttüğüm içerik dilini markalar için üretiyorum.</p>
-          <ul><li>Reels ve kısa video</li><li>Kampanya görselleri</li><li>Marka işbirlikleri</li></ul>
-          <div class="h-act"><a class="btn p" href="#iletisim">Birlikte çalışalım <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tlink" href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener">Instagram <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="sm" id="sosyal-medya">
+        <div class="pf3-head rv">
+          <div class="pf3-hw"><h2 class="pf3-h" style="--lw:7.2"><span>Sosyal medya</span><em>yönetimi</em></h2></div>
+          <div class="pf3-intro"><p class="pf3-lead sm-l"><span>Kameranın arkasını da önünü de biliyorum.</span></p><p class="pf3-p">Otuz yılı aşkın süredir markalar için çekim yapıyor ve yönetiyorum. Aynı zamanda kamera karşısında kendi sosyal medya içeriklerimi üretiyorum. İki tarafı da yaşamış biri olarak, fikrin ilk halinden çekime, kurgudan paylaşıma kadar içeriklerinizi gelin birlikte hazırlayalım. Kamera karşısında rahat ve kendiniz gibi olabilmeniz için de yanınızdayım.</p></div>
         </div>
-      </article>
+        <div class="sm-2 rv">
+          <div class="pf3-intro"><p class="pf3-lead"><span>Sizin sesiniz, benim deneyimim.</span></p>
+          <p class="pf3-p">Önce ne anlatmak istediğinizi birlikte netleştirelim. Sonra işinizi ve uzmanlığınızı gerçekten yansıtan içerikleri planlayalım. Nasıl duracağınızdan nasıl anlatacağınıza kadar sizinleyim; çekimden paylaşıma bütün süreç bende.<strong class="sm-son">Siz en iyi bildiğiniz şeyi anlatmaya odaklanın.</strong></p></div>
+        </div>
+        <div class="sm-ne rv">
+          <div class="pf3-hw"><h2 class="pf3-h" style="--lw:6.25"><span>Neler</span><em>yapıyorum?</em></h2></div>
+          <ul class="sm-ls"><li><details class="sm-d" name="sm-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></i><span class="sm-dt">Strateji ve konumlandırma</span></summary><p>Markanın mevcut durumu, rakipler ve hedef kitle analiz edilir. Sonuçta içerik sütunları, ton ve görsel dil net biçimde tanımlanır; sonraki bütün üretim bu çerçeveye göre yapılır.</p></details></li><li><details class="sm-d" name="sm-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4M8 14h3M8 17h6"/></svg></i><span class="sm-dt">İçerik planlaması</span></summary><p>Aylık içerik takvimi hazırlanır: hangi gün, hangi formatta (gönderi, Reels, hikaye), hangi mesajla paylaşılacağı baştan belirlenir. Kampanya ve seri kurguları takvime işlenir.</p></details></li><li><details class="sm-d" name="sm-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></i><span class="sm-dt">Fotoğraf ve görsel prodüksiyon</span></summary><p>Ürün, marka ve yaşam tarzı çekimleri profesyonel stüdyoda, kontrollü ışıkla yapılır. Gerektiğinde yapay zeka destekli görsel üretimle kampanya çeşitliliği artırılır; ürün birebir korunur, tüm görseller aynı görsel dilde teslim edilir.</p></details></li><li><details class="sm-d" name="sm-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></svg></i><span class="sm-dt">Video ve Reels üretimi</span></summary><p>Senaryo, çekim, kurgu ve renk düzenlemesi tek elden yürütülür. Her video platformun dikey formatına ve izlenme alışkanlıklarına göre kurgulanır.</p></details></li><li><details class="sm-d" name="sm-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16z"/><path d="m13.5 6.5 4 4"/></svg></i><span class="sm-dt">Metin yazımı</span></summary><p>Caption, Reels metni, hashtag ve bio markanın tonuna uygun yazılır. Metinler doğal konuşma ritmini korur; kurumsal kalıp cümlelerden kaçınılır.</p></details></li><li><details class="sm-d" name="sm-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/><path d="M8 9h8M8 12h5"/></svg></i><span class="sm-dt">Yayın ve topluluk yönetimi</span></summary><p>İçerikler planlanan zamanda yayınlanır. Yorum ve DM'lere yanıt verilir, takipçi etkileşimi düzenli olarak yönetilir.</p></details></li><li><details class="sm-d" name="sm-ne"><summary><i class="sm-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4v16h16"/><path d="m8 15 4-4 3 3 5-6"/></svg></i><span class="sm-dt">Performans analizi ve raporlama</span></summary><p>Erişim, kaydetme, paylaşım ve takipçi büyümesi ölçülür. Aylık raporda hangi içeriğin neden çalıştığı yorumlanır ve bir sonraki ay için somut aksiyonlar önerilir.</p></details></li></ul>
+        </div>
+      </div>
 
-      <article class="row" id="firmalar">
-        <div class="r-im wide rvl"><img src="/firmalara-ozel-fotograf-cozumleri/assets/studio.webp" alt="" loading="lazy"></div>
-        <div class="r-tx rv">
-          <span class="num"><b>04</b>Firmalar için fotoğraf çözümleri</span>
-          <h2>Kendi fotoğrafını <em>kendi üreten firma.</em></h2>
-          <p>Şirket içinde ürün fotoğrafını sürekli ve tutarlı üreten bir sistem kuruyorum.</p>
-          <ul><li>Stüdyo kurulumu</li><li>Ekip eğitimi</li><li>Büyük ürün serilerinde iş akışı</li></ul>
-          <div class="h-act"><a class="btn p" href="/firmalara-ozel-fotograf-cozumleri/">Detaylar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="tlink" href="#iletisim">Görüşme planla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="sm fm" id="firmalar">
+        <div class="pf3-head rv">
+          <div class="pf3-hw"><h2 class="pf3-h" style="--lw:11.05"><span>Firmanıza özel</span><em>fotoğraf çözümleri</em></h2></div>
+          <div class="pf3-intro"><p class="pf3-lead sm-l"><span>Sistemi biz kuralım, ürünlerinizi siz çekin.</span></p><p class="pf3-p">Firmanızda profesyonel ürün çekimi yapabileceğiniz bir alan kuruyor, ekibinizi eğitiyor ve size özel yapay zeka görsel üretim sistemini kuruyoruz.</p></div>
         </div>
-      </article>
+        <ol class="fm-tl rv"><li class="fm-ti"><span class="fm-n" aria-hidden="true">01</span><details class="fm-card" open><summary><span class="fm-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>ÇEKİM</span><span class="fm-t"><span class="fm-tx">Çekim Sistemi Kurulumu</span><i class="fm-ch" aria-hidden="true"></i></span></summary><p>Ürünlerinizin boyutuna, malzemesine ve kullanım alanına uygun bir çekim sistemi kuruyoruz. Işık, arka plan, kamera ve yardımcı ekipmanları belirliyor; ürün hazırlığından çekime ve dosya düzenine kadar tüm süreci planlıyoruz. Böylece her çekimde tutarlı kalite sağlayan, kullanımı kolay bir üretim alanı oluşturuyoruz.</p></details></li><li class="fm-ti"><span class="fm-n" aria-hidden="true">02</span><details class="fm-card"><summary><span class="fm-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2a5 5 0 0 1 5 5.8"/></svg>EĞİTİM</span><span class="fm-t"><span class="fm-tx">Personel Eğitimi</span><i class="fm-ch" aria-hidden="true"></i></span></summary><p>Ekibinize kendi ürünleriniz üzerinden uygulamalı çekim eğitimi veriyoruz. Işık kullanımı, doğru açı seçimi, kompozisyon, kamera ayarları ve temel fotoğraf düzenleme adımlarını birlikte çalışıyoruz. Hazırladığımız çekim rehberiyle ekibinizin günlük üretimi bağımsız ve güvenle sürdürebilmesini sağlıyoruz.</p></details></li><li class="fm-ti"><span class="fm-n" aria-hidden="true">03</span><details class="fm-card"><summary><span class="fm-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></svg>YAPAY ZEKA</span><span class="fm-t"><span class="fm-tx">Yapay Zeka Sistemi Kurulumu</span><i class="fm-ch" aria-hidden="true"></i></span></summary><p>Firmanıza özel yapay zeka görsel üretim sistemleri kuruyoruz. Ürün fotoğraflarınızı farklı kullanım sahnelerine, kampanya ve sosyal medya görsellerine dönüştürebileceğiniz bir altyapı oluşturuyoruz. Sistemi ürünleriniz ve marka kimliğiniz doğrultusunda yapılandırıyor; ekibinize kullanım, görsel düzenleme ve kalite kontrol eğitimi vererek üretimi kendi bünyenizde sürdürebilmenizi sağlıyoruz.</p></details></li><li class="fm-ti"><span class="fm-n" aria-hidden="true">04</span><details class="fm-card"><summary><span class="fm-tag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></svg>ÜRETİM</span><span class="fm-t"><span class="fm-tx">Sürekli Üretim Altyapısı</span><i class="fm-ch" aria-hidden="true"></i></span></summary><p>Kurulum ve eğitimi, firmanızın günlük işleyişine uyarlanmış bir görsel üretim düzeniyle tamamlıyoruz. Görev dağılımı, çekim takvimi, dosya arşivi, görsel şablonlar ve onay adımlarını tanımlıyoruz. Böylece yeni ürünleriniz ve kampanyalarınız için kendi ekibinizle düzenli, tutarlı ve sürdürülebilir içerik üretebilirsiniz.</p></details></li></ol>
+        <div class="fm-end rv"><a class="fm-cta" href="https://wa.me/905310317444?text=Merhaba%2C%20firmam%20i%C3%A7in%20foto%C4%9Fraf%20%C3%BCretim%20sistemi%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">Firmanız için planlayalım <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
 
     </div>
   </div>
@@ -819,8 +931,19 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
     <div class="c-links rv">
       <a href="https://wa.me/905310317444?text=Merhaba%2C%20sitenizden%20ula%C5%9F%C4%B1yorum." target="_blank" rel="noopener"><span><small>WhatsApp</small>0531 031 74 44</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="mailto:iletisim@savascikrak.com"><span><small>E-posta</small>iletisim@savascikrak.com</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="https://www.instagram.com/savascikrak/" target="_blank" rel="noopener"><span><small>Instagram</small>@savascikrak</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
+    <form class="c-form rv" id="c-form" novalidate>
+      <p class="c-fh">ya da formu doldurun</p>
+      <div class="c-row">
+        <label><small>Adınız</small><input name="ad" type="text" autocomplete="name" required maxlength="100"></label>
+        <label><small>E-posta veya telefon</small><input name="iletisim" type="text" autocomplete="email" required maxlength="120"></label>
+      </div>
+      <label><small>Konu</small><select name="konu"><option>Çekim</option><option>Eğitim</option><option>Sosyal medya yönetimi</option><option>Firmalara özel çözümler</option><option>Diğer</option></select></label>
+      <label><small>Mesajınız</small><textarea name="mesaj" rows="4" required maxlength="4000"></textarea></label>
+      <label class="c-hp" aria-hidden="true">Web<input name="web" type="text" tabindex="-1" autocomplete="off"></label>
+      <label class="c-kvkk"><input name="kvkk" type="checkbox" required><span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum, iletişim için bilgilerimin kullanılmasını kabul ediyorum.</span></label>
+      <div class="c-fend"><button type="submit" class="c-btn">Gönder <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><p class="c-msg" id="c-msg" role="status" aria-live="polite"></p></div>
+    </form>
   </div>
 </section>
 </main>
@@ -943,5 +1066,7 @@ lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;y0=e.touche
 lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))goster(dx<0?cur+1:cur-1,dx<0?1:-1);else if(dy>90)kapa();x0=null},{passive:true});
 })();
 </script>
+<script>document.querySelectorAll(".sm-d").forEach(function(d){d.addEventListener("toggle",function(){if(d.open)document.querySelectorAll(".sm-d").forEach(function(o){if(o!==d)o.open=false})})})</script>
+<script>(function(){var f=document.getElementById("c-form");if(!f)return;var m=document.getElementById("c-msg"),b=f.querySelector(".c-btn");f.addEventListener("submit",function(e){e.preventDefault();var d={ad:f.ad.value.trim(),iletisim:f.iletisim.value.trim(),konu:f.konu.value,mesaj:f.mesaj.value.trim(),web:f.web.value,kvkk:f.kvkk.checked};m.className="c-msg";if(!d.ad||!d.iletisim||d.mesaj.length<5){m.textContent="Lütfen adınızı, iletişim bilginizi ve mesajınızı yazın.";m.classList.add("err");return}if(!d.kvkk){m.textContent="Göndermek için KVKK onayını işaretleyin.";m.classList.add("err");return}b.disabled=true;m.textContent="Gönderiliyor…";fetch("/api/iletisim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).then(function(r){if(!r.ok)throw 0;f.reset();m.textContent="Teşekkürler, mesajınız ulaştı. En kısa sürede dönüş yapacağım.";m.classList.add("ok")}).catch(function(){m.innerHTML='Mesaj gönderilemedi. Lütfen <a href="https://wa.me/905310317444" style="color:#D8B477">WhatsApp</a>\'tan yazın.';m.classList.add("err")}).finally(function(){b.disabled=false})})})()</script>
 </body>
 </html>

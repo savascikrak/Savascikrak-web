@@ -869,7 +869,7 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 .mh-sh{position:absolute;left:0;right:0;top:0;z-index:2;display:grid;gap:2px;padding:56px 18px 0;color:#fff;font-weight:900;letter-spacing:-.025em;line-height:1.08;font-size:min(44px,calc(100cqi / 12.4))}
 .mh-l{display:block;overflow:hidden;padding-bottom:.06em}
 .mh-l > span{display:inline-block;white-space:nowrap;text-shadow:0 1.5px 0 #000}
-.mh-l.mh-k{color:#E9C98A}
+.mh-l.mh-k{color:#fff}
 .mh-js .mh-s .mh-l > span{transform:translateY(105%);opacity:0}
 .mh-js .mh-s.mh-aktif .mh-l > span{transform:none;opacity:1;transition:transform .9s cubic-bezier(.16,.84,.24,1) .15s,opacity .6s ease .15s}
 .mh-js .mh-s.mh-aktif .mh-l.mh-k > span{transition-delay:.3s}
@@ -984,13 +984,13 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
 /* ONLINE WORKSHOP + slider yazilari: ince, zarif (9 Ekim) */
 .mh-lbl{font-weight:300;letter-spacing:.24em;font-size:min(26px,calc((100cqi - 8px) / 14));padding-left:.24em}
 @media (min-width:900px){.mh-lbl{font-size:min(30px,calc((100cqi - 8px) / 14))}}
-.mh-sh{font-weight:300;letter-spacing:-.015em}
-.mh-l.mh-k{font-weight:500}
+.mh-sh{font-weight:400;letter-spacing:-.015em}
+.mh-l.mh-k{font-weight:900}
 .mh-l > span{text-shadow:0 1px 10px rgba(0,0,0,.45),0 1px 1px rgba(0,0,0,.35)}
 /* Slider yazilari: basta kalin siyah cizgi; slayt gelince soldan girer, yazilar ayni anda belirir (9 Ekim) */
 .mh-sh{--pt:56px;--px:18px;padding:var(--pt) var(--px) 0 calc(var(--px) + 14px);font-size:min(44px,calc((100cqi - 54px) / 11.45))}
 @media (min-width:900px){.mh-sh{--pt:68px;--px:28px;font-size:min(44px,calc((100cqi - 74px) / 11.45))}}
-.mh-sh::before{content:"";position:absolute;left:var(--px);top:calc(var(--pt) + .06em);bottom:.1em;width:7px;border-radius:1px;background:#FFFFFF;box-shadow:0 1px 6px rgba(0,0,0,.25)}
+.mh-sh::before{content:"";position:absolute;left:var(--px);top:calc(var(--pt) + .06em);bottom:.1em;width:7px;border-radius:1px;background:linear-gradient(180deg,#FFB800,#FF7A00);box-shadow:0 1px 6px rgba(0,0,0,.25)}
 .mh-js .mh-s .mh-sh::before{transform:translateX(calc(-1 * var(--px) - 8px));opacity:0}
 .mh-js .mh-s.mh-aktif .mh-sh::before{transform:none;opacity:1;transition:transform .9s cubic-bezier(.16,.84,.24,1) .15s,opacity .6s ease .15s}
 .mh-anlik .mh-sh::before{transition:none !important}
@@ -1122,7 +1122,6 @@ main .pf3-h em,.hero-live,.hero-event .hero-live,.hero .sub,.plist .n,.price-amo
     </div>
     <span class="mh-once mh-on" data-k="saat"><img src="assets/saat-kaynak-m.webp" width="520" height="780" alt="Beyaz fonda çekilmiş gerçek saat fotoğrafı"><span>Gerçek fotoğraf</span></span>
     <span class="mh-once mh-yatay" data-k="goz"><img src="assets/gozluk-gercek-fotograf.webp" width="1100" height="619" alt="Beyaz fonda çekilmiş gerçek gözlük fotoğrafı" loading="lazy"><span>Gerçek fotoğraf</span></span>
-    <span class="mh-tag"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Yapay zeka</span>
     <div class="mh-ind" aria-hidden="true"><span class="mh-n"><b id="mh-n">01</b> / 04</span><span class="mh-ln"><i id="mh-fill"></i></span></div>
     <button class="mh-ipucu mh-ipucu-l" id="mh-ipucu-l" type="button" aria-label="Önceki görsel"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button>
     <button class="mh-ipucu" id="mh-ipucu" type="button" aria-label="Sonraki görsel"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button>
