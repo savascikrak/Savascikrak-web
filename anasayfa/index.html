@@ -509,14 +509,14 @@ main .sm-l{white-space:normal}
 .hb{background:#fff;padding:clamp(23px,3vw,39px) 0 clamp(8px,1.5vw,20px)}
 #duyuru{padding-bottom:0 !important}
 .hb-w{max-width:1200px;margin:0 auto;padding:0 var(--gut)}
-.hb-in{max-width:560px;margin:0 auto;background:#fff;border:1px solid #ECE3D8;border-radius:16px;box-shadow:0 8px 22px -16px rgba(40,28,12,.22)}
-.hb-t{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 18px 8px 22px}
-.hb-tx{display:block;min-width:0}
-.hb-tx b{display:block;font-family:"Manrope",system-ui,sans-serif;font-size:clamp(17px,1.9vw,20px);line-height:1.25;font-weight:750;letter-spacing:-.02em;color:#16151A}
-.hb-tx small{display:block;margin-top:6px;font-size:14px;line-height:1.55;font-weight:400;color:#55505A}
-.hb-ic{flex:none;align-self:flex-start;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:#744A17;color:#FFF8EF}
-.hb-ic svg{width:19px;height:19px}
-.hb-f{margin-top:-6px;padding:0 22px 16px}
+.hb-in{position:relative;overflow:hidden;max-width:560px;margin:0 auto;background:#fff;border:1px solid #ECE3D8;border-radius:16px;box-shadow:0 8px 22px -16px rgba(40,28,12,.22)}
+.hb-in::before{content:"";position:absolute;right:-34px;top:50%;width:min(300px,62%);aspect-ratio:1;transform:translateY(-50%) rotate(-14deg);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B89154' stroke-width='1.1' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='20' height='16' x='2' y='4' rx='2.5'/%3E%3Cpath d='m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7'/%3E%3C/svg%3E") center/contain no-repeat;opacity:.11;pointer-events:none}
+.hb-t,.hb-f{position:relative}
+.hb-t{padding:20px 18px 8px}
+.hb-tx{display:block;container-type:inline-size}
+.hb-tx b{display:block;white-space:nowrap;font-family:"Manrope",system-ui,sans-serif;font-size:min(34px,calc(100cqi / var(--tw,16.2)));line-height:1.2;font-weight:750;letter-spacing:-.02em;text-transform:uppercase;color:#16151A}
+.hb-tx small{display:block;margin-top:8px;font-size:min(17px,calc(100cqi / var(--dw,21.3)));line-height:1.5;font-weight:400;color:#4A454E;text-wrap:balance}
+.hb-f{margin-top:-6px;padding:0 18px 16px}
 .hb .sender-form-field{width:100%;min-height:1px}
 /* TANITIM VE REKLAM FILMLERI: beyaz zemin */
 #firmalar + #reklam{margin-top:0}
@@ -866,7 +866,7 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
 <!-- YENİ EĞİTİMLERDEN HABERDAR OL (Sender formu; form çizilince görünür) -->
 <section class="hb" id="haberdar" aria-labelledby="hb-h">
   <div class="hb-w"><div class="hb-in" id="hb-in">
-    <div class="hb-t"><span class="hb-tx"><b id="hb-h">Yeni eğitimlerden haberdar ol</b><small>Yemek, ürün, portre fotoğrafçılığı, video prodüksiyonu eğitimleri, ücretsiz workshoplar ve daha fazlasından seni haberdar edelim.</small></span><i class="hb-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2.5"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></i></div>
+    <div class="hb-t"><span class="hb-tx"><b id="hb-h">Yeni eğitimlerden haberdar ol</b><small>Yemek, ürün, portre fotoğrafçılığı, video prodüksiyonu eğitimleri, ücretsiz workshoplar ve daha fazlasından seni haberdar edelim.</small></span></div>
     <div class="hb-f"><div style="text-align: left" class="sender-form-field" data-sender-form-id="aKr4BR"></div></div>
   </div></div>
 </section>
