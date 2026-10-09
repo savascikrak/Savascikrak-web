@@ -20,3 +20,19 @@
   X-Robots-Tag: noindex, nofollow, noarchive
 /anasayfa
   X-Robots-Tag: noindex, nofollow, noarchive
+
+# HTML sayfalari: tarayici her seferinde sunucuya sorsun (degismediyse 304, yavaslatmaz); yeni yayin hemen gorunur
+/
+  Cache-Control: no-cache
+/anasayfa/
+  Cache-Control: no-cache
+/iletisim/
+  Cache-Control: no-cache
+/kvkk/
+  Cache-Control: no-cache
+/portfolyo/
+  Cache-Control: no-cache
+/firmalara-ozel-fotograf-cozumleri/
+  Cache-Control: no-cache
+/yapay-zeka-ile-urun-fotografi/
+  Cache-Control: no-cache
