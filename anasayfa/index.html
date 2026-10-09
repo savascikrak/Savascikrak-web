@@ -769,7 +769,7 @@ main .pf3-dark .pf3-h em{background:linear-gradient(100deg,#F7E9CC 0%,#D8B477 45
 .sk h2 em,.ed h2 em,main .pf3-hw:not(.pf3-dark) .pf3-h em,.ed-top,.ed-pair figcaption b,.e2-pair figcaption b,.ed-topics .ed-num{background-image:linear-gradient(100deg,#B89154 0%,#8C6738 50%,#6B4A22 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw .pf3-h em{background-image:linear-gradient(100deg,#F7E9CC 0%,#D8B477 45%,#9A7442 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 </style>
-<link rel="stylesheet" href="/assets/ortak.css?v=c56c0f8c">
+<link rel="stylesheet" href="/assets/ortak.css?v=3bcd981e">
 </head>
 <body data-ub="seffaf">
 <!--UB-->
@@ -879,7 +879,7 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
       <a class="pf-t rv" data-i="6" href="/portfolyo/foto/istanbul-kahve-120-b.webp"><img src="/portfolyo/foto/istanbul-kahve-120-k.webp" width="900" height="1253" alt="Kahve fotoğrafı" loading="lazy" decoding="async"></a>
       <a class="pf-t rv" data-i="7" href="/portfolyo/foto/viquen-1-b.webp"><img src="/portfolyo/foto/viquen-1-k.webp" width="900" height="1125" alt="Ürün fotoğrafı" loading="lazy" decoding="async"></a>
     </div>
-    <div class="pf-more rv"><button class="pf-b" id="pf-daha" type="button" aria-controls="fotograf">Daha fazla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    <div class="pf-more rv"><button class="pf-b" id="pf-daha" type="button" aria-controls="fotograf">Daha fazla <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button class="pf-x" id="pf-kapat" type="button" aria-label="Fotoğrafları kapat, ilk haline dön" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
   </div>
 </section>
 
@@ -1052,13 +1052,22 @@ function liste(){return fetch('/portfolyo/',{credentials:'same-origin'}).then(fu
   o.push({b:b,k:new URL(im.getAttribute('src'),location.origin+'/portfolyo/').pathname,w:im.getAttribute('width'),h:im.getAttribute('height')})});
  return o})}
 function pasif(){btn.setAttribute('aria-disabled','true');btn.disabled=true;btn.classList.add('pasif')}
+var kapat=document.getElementById('pf-kapat'),ilkSay=say;
+function ac(){btn.removeAttribute('aria-disabled');btn.disabled=false;btn.classList.remove('pasif')}
+kapat.addEventListener('click',function(){
+ var ek=[].slice.call(document.querySelectorAll('.pf-g2'));
+ ek.forEach(function(g){grids=grids.filter(function(o){return o.g!==g});g.remove()});
+ if(window.pfKes)window.pfKes(ilkSay);
+ say=ilkSay;kalan=null;ac();kapat.hidden=true;
+ btn.closest('.pf-more').scrollIntoView({block:'center'});btn.focus({preventScroll:true});
+});
 function ekle(L){
  var g=document.createElement('div');g.className='pf-g pf-g2';
  var tiles=L.map(function(x){var a=document.createElement('a');a.className='pf-t yeni';a.dataset.i=say++;a.href=x.b;
   var im=document.createElement('img');im.src=x.k;im.width=x.w;im.height=x.h;im.alt='Ürün fotoğrafı';im.decoding='async';a.appendChild(im);g.appendChild(a);return a});
  btn.closest('.pf-more').parentNode.insertBefore(g,btn.closest('.pf-more'));
  lay(reg(g));
- if(window.pfEkle)window.pfEkle(tiles);
+ if(window.pfEkle)window.pfEkle(tiles);kapat.hidden=false;
  tiles.forEach(function(a,i){setTimeout(function(){a.classList.add('on')},az?0:40+i*70)});
 }
 btn.addEventListener('click',function(){
@@ -1128,6 +1137,7 @@ function goster(i,yon){
 function ac2(el){liste=gor();son=el;lb.hidden=false;document.documentElement.style.overflow='hidden';goster(liste.indexOf(el),0);requestAnimationFrame(function(){lb.classList.add('on')});lb.querySelector('.lb-x').focus()}
 function kapa(){lb.classList.remove('on');document.documentElement.style.overflow='';setTimeout(function(){lb.hidden=true;sil();[].slice.call(lb.querySelectorAll('.lb-eski')).forEach(function(x){x.remove()});im.removeAttribute('src')},az?0:300);if(son)son.focus()}
 items.forEach(function(el){el.addEventListener('click',function(e){e.preventDefault();ac2(el)})});
+window.pfKes=function(n){items.length=n};
 window.pfEkle=function(l){l.forEach(function(el){items.push(el);el.addEventListener('click',function(e){e.preventDefault();ac2(el)})})};
 lb.querySelector('.lb-x').addEventListener('click',kapa);
 lb.querySelector('.lb-p').addEventListener('click',function(){goster(cur-1,-1)});
@@ -1164,6 +1174,6 @@ b.disabled=true;m.textContent="Gönderiliyor…";
 fetch("/api/iletisim",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(d)}).then(function(r){return r.json().catch(function(){return{}}).then(function(j){return{ok:r.ok,j:j}})}).then(function(x){
 if(x.ok){f.reset();m.textContent="Teşekkürler, mesajınız ulaştı. En kısa sürede dönüş yapacağım.";m.classList.add("ok");return}
 if(x.j.alan&&f[x.j.alan]){m.textContent="";hata(f[x.j.alan],x.j.error);f[x.j.alan].focus();return}throw 0}).catch(function(){m.textContent="Mesaj gönderilemedi. Lütfen sağ alttaki WhatsApp düğmesinden yazın.";m.classList.add("err")}).finally(function(){b.disabled=false})})})()</script>
-<script src="/assets/ortak.js?v=c56c0f8c" defer></script>
+<script src="/assets/ortak.js?v=3bcd981e" defer></script>
 </body>
 </html>

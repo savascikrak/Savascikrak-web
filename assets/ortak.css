@@ -126,3 +126,23 @@ button.pf-b{border:0;font-family:inherit;cursor:pointer}
 .sk-ig,.sk-ig:hover{border:0;background:none;padding:0;border-radius:0;box-shadow:none}
 .sk-ig:hover{transform:none}
 @media (max-width:767px){.sk-ig{padding:0;border:0;background:none}}
+
+/* BUYUK GORUNTULEME OKLARI/CARPI: egitim sayfasi slider oklariyla ayni stil (beyaz yuvarlak, koyu ok), daha buyuk */
+.lb button{width:64px;height:64px;border:0;background:rgba(255,255,255,.9);box-shadow:0 8px 24px -6px rgba(0,0,0,.55);color:#0A0A0A}
+.lb button::after{display:none}
+.lb button:hover{filter:none;background:#fff}
+.lb svg{width:26px;height:26px;stroke:#0A0A0A;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round;filter:none;transition:stroke .2s}
+.lb button:hover svg{stroke:#744A17}
+.lb-p,.lb-n{margin-top:-32px}
+.lb-p{left:24px}.lb-n{right:24px}
+.lb button.lb-x{width:56px;height:56px;top:max(18px,env(safe-area-inset-top,0px));right:20px}
+.lb button.lb-x svg{width:22px;height:22px;stroke-width:2.6}
+@media (max-width:599px){.lb button.lb-p,.lb button.lb-n{width:52px;height:52px;margin-top:-26px}.lb-p{left:10px}.lb-n{right:10px}.lb button.lb-x{width:48px;height:48px;right:12px}.lb svg{width:22px;height:22px}.lb button.lb-x svg{width:20px;height:20px}}
+/* FOTOGRAF CEKIMLERI: Daha fazla yaninda kapatma */
+.pf-more{gap:12px}
+.pf-x{flex:none;display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;padding:0;border-radius:12px;border:1px solid rgba(216,180,119,.55);background:rgba(255,255,255,.04);color:#F7E9CC;cursor:pointer;transition:transform .3s var(--ease),background .3s,border-color .3s}
+.pf-x[hidden]{display:none}
+.pf-x svg{width:22px;height:22px}
+.pf-x:hover{transform:translateY(-2px);background:rgba(216,180,119,.14);border-color:#D8B477}
+.pf-x:focus-visible{outline:2px solid #F7E9CC;outline-offset:3px}
+@media (max-width:767px){.pf-x{width:52px;height:52px}.pf-more .pf-b{flex:1;width:auto}}
