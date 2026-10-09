@@ -58,7 +58,7 @@ export async function onRequestPost({ request, env }) {
 
   const konuMetni = konu === 'Diğer' ? konuDiger : konu;
   const satir = (k, v) => `<tr><td style="padding:5px 18px 5px 0;color:#777;vertical-align:top">${k}</td><td style="padding:4px 0">${v}</td></tr>`;
-  const html = `<table style="font:17px/1.6 Arial,sans-serif;color:#16151A">${satir('Ad', esc(ad))}${satir('E-posta', `<a href="mailto:${esc(eposta)}">${esc(eposta)}</a>`)}${satir('Telefon', telefon ? esc(telefon) : '-')}${satir('Konu', esc(konu === 'Diğer' ? `Diğer: ${konuDiger}` : konu))}</table><p style="font:17px/1.7 Arial,sans-serif;color:#16151A;margin:18px 0 0">${esc(mesaj).replace(/\n/g, '<br>')}</p>`;
+  const html = `<table style="font:16px/27.2px Arial,sans-serif;color:#16151A">${satir('Ad', esc(ad))}${satir('E-posta', `<a href="mailto:${esc(eposta)}">${esc(eposta)}</a>`)}${satir('Telefon', telefon ? esc(telefon) : '-')}${satir('Konu', esc(konu === 'Diğer' ? `Diğer: ${konuDiger}` : konu))}</table><p style="font:16px/27.2px Arial,sans-serif;color:#16151A;margin:18px 0 0">${esc(mesaj).replace(/\n/g, '<br>')}</p>`;
 
   const r = await fetch('https://api.resend.com/emails', {
     method: 'POST',

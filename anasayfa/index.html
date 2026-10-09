@@ -558,6 +558,16 @@ main .sm-l{white-space:normal}
 .c-msg{margin:0;font-size:14px;color:#A8A398}
 .c-msg.ok{color:#7FD49B}.c-msg.err{color:#F2A08A}
 @media (max-width:600px){.c-row{grid-template-columns:minmax(0,1fr)}}
+/* DUYURU: CANLI YAYIN IKONU */
+.dy-ic.dy-live{background:radial-gradient(circle at 30% 25%,#34343A,#151418 70%);color:#22E36B;box-shadow:0 10px 30px -8px rgba(0,0,0,.55),inset 0 0 0 1px rgba(216,180,119,.45)}
+.dy-ic.dy-live svg{transform:none;filter:drop-shadow(0 0 6px rgba(34,227,107,.65))}
+.dy-ic.dy-live::before,.dy-ic.dy-live::after{border-color:rgba(34,227,107,.55)}
+.dy-live .w1{animation:dyDalga 1.6s ease-in-out infinite}
+.dy-live .w2{animation:dyDalga 1.6s ease-in-out .3s infinite}
+.dy-live circle{animation:dyYayin 1.6s ease-in-out infinite;transform-origin:12px 12px}
+@keyframes dyDalga{0%,100%{opacity:.25}40%{opacity:1}}
+@keyframes dyYayin{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.8)}}
+@media (prefers-reduced-motion:reduce){.dy-live .w1,.dy-live .w2,.dy-live circle{animation:none;opacity:1}}
 /* EGITIM TURLERI */
 .e2-types{margin-top:clamp(40px,5vw,64px)}
 .e2-tg{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,20px)}
@@ -817,7 +827,7 @@ main .pf3-dark .pf3-h em,main .pf3-hw.pf3-dark .pf3-h em,main .pf3-dark .pf3-hw 
   <div class="dy-in">
     <div class="dy-c">
       <div class="dy-tx">
-        <p class="dy-k"><span class="dy-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></span>Canlı online eğitim</p>
+        <p class="dy-k"><span class="dy-ic dy-live" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2.4" fill="currentColor" stroke="none"/><path class="w1" d="M8.6 8.6a4.8 4.8 0 0 0 0 6.8M15.4 8.6a4.8 4.8 0 0 1 0 6.8"/><path class="w2" d="M5.6 5.6a9 9 0 0 0 0 12.8M18.4 5.6a9 9 0 0 1 0 12.8"/></svg></span>Canlı online eğitim</p>
         <h2 id="dy-h"><span class="w">Ürün fotoğraflarını</span> <span class="y">yapay zekayla dönüştür</span></h2>
         <div class="dy-ev">
           <div class="dy-date"><span><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>17 Ekim 2026 · Cumartesi</span><i aria-hidden="true"></i><strong><svg class="ico" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>20:00</strong></div>
