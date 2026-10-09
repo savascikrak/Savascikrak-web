@@ -888,6 +888,9 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 @media (min-width:900px){.mh-sh{font-size:min(44px,calc((100cqi - 60px) / 11.45))}}
 /* egitmen karti biyografi: her telefonda 14px, eski satirlar; yazi yuze degmesin diye dar telefonda fotograf saga kayar */
 @media (max-width:599px){.tcard .bio:not(.bio-mas){font-size:14px}.trainer .tcard img{right:calc(-1 * var(--pad) - 70px - max(0px, (428px - 100vw) * .6) - max(0px, (482px - 100vw) * .42))}}
+/* slider: sag tik / basili tutma menusu yok (fotografi kaydet cikmasin) */
+.mh-sl,.mh-sl img{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.mh-sl img{-webkit-user-drag:none}
 /* ust kart bosluklari yariya (9 Ekim): ust 14/32px, kart-slider arasi 11px */
 .mh{padding-top:calc(var(--sec-y) / 2);gap:11px}
 .mh-sl{margin-bottom:30px}
@@ -1214,6 +1217,7 @@ main > section.pf{padding-top:var(--sec-y) !important;padding-bottom:var(--sec-y
 /* MANSET SLIDER (9 Ekim) — sonsuz dongu: basa ve sona kopya slayt */
 (function(){
   var tr=document.getElementById('mh-track');if(!tr)return;
+  var slk=tr.closest('.mh-sl');slk.addEventListener('contextmenu',function(e){e.preventDefault();});slk.addEventListener('dragstart',function(e){e.preventDefault();});
   document.documentElement.classList.add('mh-js');
   var gercek=[].slice.call(tr.children),say=gercek.length;
   var ilk=gercek[0].cloneNode(true),son=gercek[say-1].cloneNode(true);
